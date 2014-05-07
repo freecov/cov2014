@@ -1,0 +1,90 @@
+#!/usr/bin/expect --
+#
+# Best way to use this would be to rename /usr/bin/svnmerge to
+# /usr/bin/svnmerge.real and install this script as /usr/bin/svnmerge.
+# Then when you run svnmerge with any arguments, they're passed on
+# transparently to the actual svnmerge, but you only have to type your
+# password once.
+#
+
+# May be useful to adjust if your connection (or the svn server) is slow
+set timeout 300
+
+set svnmerge "INSTALL_PREFIX/svnmerge.real"
+set command2 ":"
+set command3 ":"
+set command4 ":"
+
+set havepasswd "0"
+
+set which [ lindex [ split $argv0 / ] end ]
+set s_cmd ""
+
+if [ expr [ string first "trunk6" $which ] > -1 ] {
+	set s_cmd [ string range $which 0 [ expr [ string first "trunk6" $which ] - 1 ] ]
+	set command [ concat "$s_cmd -P trunk-merged -B trunk-blocked -f ../merge.msg -r" [ lrange $argv 0 end ] ]
+	set command2 "svn pd branch-1.4-merged . > /dev/null"
+	set command3 "svn pd branch-1.4-blocked . > /dev/null"
+	set command4 "rm -f dir_conflicts.prej"
+} elseif [ expr [ string first "4trunk" $which ] > -1 ] {
+	set s_cmd [ string range $which 0 [ expr [ string first "4trunk" $which ] - 1 ] ]
+	set command [ concat "$s_cmd -P branch-1.4-merged -B branch-1.4-blocked -f ../merge.msg -r" [ lrange $argv 0 end ] ]
+	set command2 "svn pd branch-1.2-merged . > /dev/null"
+	set command3 "svn pd branch-1.2-blocked . > /dev/null"
+	set command4 "rm -f dir_conflicts.prej"
+} elseif [ expr [ string first "trunkdev" $which ] > -1 ] {
+	set s_cmd [ string range $which 0 [ expr [ string first "trunkdev" $which ] - 1 ] ]
+	set command [ concat "merge -f /tmp/merge.msg -r" [ lrange $argv 0 end ] ]
+} elseif [ expr [ string first "from" $which ] > -1 ] {
+	set branch [ lrange $argv 0 0 ]
+	set s_cmd [ string range $which 0 [ expr [ string first "from" $which ] - 1 ] ]
+	set command [ concat "$s_cmd -P $branch-merged -B $branch-blocked -f ../merge.msg -r" [ lrange $argv 1 end ] ]
+} elseif [ string equal $which "mergeinit" ] {
+	set command "init"
+} elseif [ string equal $which "autoinit" ] {
+	set command "init"
+	set command2 "svn ps 'automerge' '*' . > /dev/null"
+	set command3 "svn ps 'automerge-email' `cat ~/.automerge` . > /dev/null"
+} elseif [ string equal $which "svnmerge" ] {
+	set command [ concat [ lrange $argv 0 end ] ]
+} else {
+	puts -nonewline "Command not recognized: "
+	puts [ lindex [ split $argv0 / ] end ]
+	exit 2
+}
+
+# Avail doesn't use the -f or -r options
+if [ string equal $s_cmd "avail" ] {
+	set command [ string range $s_cmd 0 [ expr [ string first " -f " $command ] - 1 ] ]
+}
+
+eval [ concat "spawn" $svnmerge $command ]
+
+expect {
+	"Passphrase for" {
+		stty -echo
+		expect_user -re "(.*)\n"
+		stty echo
+		send "$expect_out(1,string)\r"
+		set havepasswd "1"
+	}
+	eof {
+	}
+}
+
+
+while ([string equal $havepasswd "1"]) {
+	expect {
+		"Passphrase for" {
+			send "$expect_out(1,string)\r"
+		}
+		eof {
+			break
+		}
+	}
+}
+
+system $command2
+system $command3
+system $command4
+exit

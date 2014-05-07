@@ -1,0 +1,1 @@
+ALTER TABLE cms_counters ADD name VARCHAR(255);

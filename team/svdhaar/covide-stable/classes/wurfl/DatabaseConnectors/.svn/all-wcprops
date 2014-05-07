@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/DatabaseConnectors
+END
+TeraWurflDatabase_MSSQL2005.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/DatabaseConnectors/TeraWurflDatabase_MSSQL2005.php
+END
+TeraWurflDatabase_MySQL4.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/DatabaseConnectors/TeraWurflDatabase_MySQL4.php
+END
+TeraWurflDatabase_MySQL5.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/DatabaseConnectors/TeraWurflDatabase_MySQL5.php
+END
+TeraWurflDatabase.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/DatabaseConnectors/TeraWurflDatabase.php
+END

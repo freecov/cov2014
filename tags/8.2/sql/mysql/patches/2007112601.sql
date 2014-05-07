@@ -1,0 +1,1 @@
+ALTER TABLE `finance_offertes` ADD `email` VARCHAR( 255 ) NOT NULL ;

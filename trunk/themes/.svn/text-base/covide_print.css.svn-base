@@ -1,0 +1,40 @@
+/*
+ * Covide Print CSS
+ */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	line-height:16px;
+	color:#000;
+}
+
+a{color:#000;text-decoration:underline;}
+img{display:none;}
+#search{display:none;}
+input,select{display:none;}
+h1{font-size:16px;font-weight:bold;}
+
+/*
+ * Header
+ */
+#headerwrap{display:none;}
+
+/*
+ * Content
+ */
+#pagecontainer{margin-top:10px;width:auto;height:auto;float:none !important; padding:0;}
+#contentcontainer{width:100%;height:auto;margin:0;float:none !important;}
+#mod_content{width:auto;height:auto;border:1px solid #e2e2e2; float:none !important;}
+#mod_header_menu, #mod_footer_menu{display:none;}
+
+#calendarform{display:none;} 
+#projectsearch{display:none;} 
+
+th.list_header_center{text-align:left;font-weight:bold;}
+td.list_data_submapping{font-weight:bold;background:#f4f4f4;}  
+ 
+ /*
+  * Footer
+  */
+#covide_info{display:none;}	

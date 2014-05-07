@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/p/covide/code/!svn/ver/4610/tags/8.2/common
+END
+functions_postgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/4610/tags/8.2/common/functions_postgres.php
+END
+functions_pear.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/4610/tags/8.2/common/functions_pear.php
+END
+check_requirements.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/4610/tags/8.2/common/check_requirements.php
+END
+handle_php_bugs.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4610/tags/8.2/common/handle_php_bugs.php
+END
+handle_magicquotesgpc.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4610/tags/8.2/common/handle_magicquotesgpc.php
+END
+handle_virus_scan.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/4610/tags/8.2/common/handle_virus_scan.php
+END
+initInfoWindow.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/4610/tags/8.2/common/initInfoWindow.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/covide/code/!svn/ver/4610/tags/8.2/common/autoload.php
+END
+functions_xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/4610/tags/8.2/common/functions_xml.php
+END
+headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/covide/code/!svn/ver/4610/tags/8.2/common/headers.php
+END

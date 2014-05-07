@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `xs_funambol_version` TINYINT( 3 ) NOT NULL ;

@@ -1,0 +1,46 @@
+Mon, 15 Feb 2010 14:46:28 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Mon, 15 Feb 2010 14:46:28 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Mon, 15 Feb 2010 14:46:36 +0000 [STEVELAPTOP 15196][rebuildCacheTable] WARNING: Rebuilt cache table, existing table was empty - this is very unusual.
+Mon, 15 Feb 2010 14:46:36 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 16.68 seconds
+Wed, 17 Feb 2010 14:09:23 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (device_claims_web_support), returning NULL
+Wed, 17 Feb 2010 14:09:31 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (device_claims_web_support), returning NULL
+Wed, 17 Feb 2010 14:12:08 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (device_claims_web_support), returning NULL
+Wed, 17 Feb 2010 14:12:35 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (device_claims_web_support), returning NULL
+Wed, 17 Feb 2010 14:20:16 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (device_claims_web_support), returning NULL
+Wed, 17 Feb 2010 14:21:41 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (brand_name), returning NULL
+Wed, 17 Feb 2010 14:21:41 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (model_name), returning NULL
+Wed, 17 Feb 2010 14:32:35 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Wed, 17 Feb 2010 14:32:35 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Wed, 17 Feb 2010 14:32:41 +0000 [STEVELAPTOP 15196][rebuildCacheTable] WARNING: Rebuilt cache table, existing table was empty - this is very unusual.
+Wed, 17 Feb 2010 14:32:41 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 14.17 seconds
+Wed, 17 Feb 2010 14:43:13 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: I could not find the requested capability (fallback_tree), returning NULL
+Wed, 17 Feb 2010 16:02:32 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Wed, 17 Feb 2010 16:02:32 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Wed, 17 Feb 2010 16:02:42 +0000 [STEVELAPTOP 15196][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 17.52 seconds
+Tue, 23 Feb 2010 13:00:46 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Tue, 23 Feb 2010 13:00:46 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Tue, 23 Feb 2010 13:00:53 +0000 [STEVELAPTOP 2240][rebuildCacheTable] WARNING: Rebuilt cache table, existing table was empty - this is very unusual.
+Tue, 23 Feb 2010 13:00:53 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 14.25 seconds
+Tue, 23 Feb 2010 14:59:46 +0000 [STEVELAPTOP 2240][TeraWurflWebservice] WARNING: Denied webservice access to client 172.16.10.133
+Tue, 23 Feb 2010 15:03:34 +0000 [STEVELAPTOP 2240][TeraWurflWebservice] WARNING: Denied webservice access to client 172.16.10.133
+Wed, 24 Feb 2010 07:16:50 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Wed, 24 Feb 2010 07:16:50 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Wed, 24 Feb 2010 07:16:56 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 14.01 seconds
+Wed, 24 Feb 2010 07:18:37 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Wed, 24 Feb 2010 07:18:37 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Wed, 24 Feb 2010 07:18:46 +0000 [STEVELAPTOP 2240][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 16.33 seconds
+Thu, 25 Feb 2010 13:25:38 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Thu, 25 Feb 2010 13:25:38 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Thu, 25 Feb 2010 13:25:47 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 15.89 seconds
+Thu, 25 Feb 2010 13:31:38 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Thu, 25 Feb 2010 13:31:38 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Thu, 25 Feb 2010 13:31:49 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 19.17 seconds
+Thu, 25 Feb 2010 13:33:57 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Thu, 25 Feb 2010 13:33:57 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Thu, 25 Feb 2010 13:34:08 +0000 [STEVELAPTOP 5100][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-02-03 10:31:00 (Wed Feb 03 10:35:26 -0600 2010) in 18.19 seconds
+Sun, 18 Apr 2010 21:13:37 +0200 [h1359705.stratoserver.net 19568][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Sun, 18 Apr 2010 21:13:37 +0200 [h1359705.stratoserver.net 19568][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Sun, 18 Apr 2010 21:13:48 +0200 [h1359705.stratoserver.net 19568][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-03-22 04:19:34 (Mon Mar 22 04:24:15 -0500 2010) in 21.91 seconds
+Sun, 18 Apr 2010 21:17:54 +0200 [h1359705.stratoserver.net 30501][Tera-WURFL] WARNING: Loading patch: custom_web_patch.xml
+Sun, 18 Apr 2010 21:17:54 +0200 [h1359705.stratoserver.net 30501][Tera-WURFL] WARNING: Loading patch: web_browsers_patch.xml
+Sun, 18 Apr 2010 21:18:03 +0200 [h1359705.stratoserver.net 30501][Tera-WURFL] WARNING: Finished loading WURFL www.wurflpro.com - 2010-03-22 04:19:34 (Mon Mar 22 04:24:15 -0500 2010) in 19.53 seconds

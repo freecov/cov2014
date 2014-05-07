@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc
+END
+show_import_start.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_import_start.php
+END
+show_import_step2.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_import_step2.php
+END
+edit_hrm.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/edit_hrm.php
+END
+dataDelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataDelete.php
+END
+show_item.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_item.php
+END
+listTitles.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/listTitles.php
+END
+show_list.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_list.js
+END
+relcardsearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/relcardsearch.php
+END
+removeSelection.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/removeSelection.php
+END
+dataGetBcardsXML.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataGetBcardsXML.php
+END
+editTitles.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/editTitles.php
+END
+exportBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/exportBcard.php
+END
+dataStore2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataStore2db.php
+END
+address_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/address_edit.js
+END
+dataGenerateLetterinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataGenerateLetterinfo.php
+END
+relcard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/relcard_actions.js
+END
+export.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/export.php
+END
+addclaMulti.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/addclaMulti.php
+END
+title_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/title_actions.js
+END
+address_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/address_actions.js
+END
+selectClassification.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/selectClassification.php
+END
+print_selection.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/print_selection.php
+END
+sync.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/sync.js
+END
+relcardsearch_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/relcardsearch_actions.js
+END
+relationCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/relationCard.php
+END
+addclaMulti.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/addclaMulti.js
+END
+userCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/userCard.php
+END
+show_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_list.php
+END
+showBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/showBcard.php
+END
+show_metafields.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_metafields.php
+END
+show_edit_private.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_edit_private.php
+END
+import_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/import_actions.js
+END
+bcard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/bcard_actions.js
+END
+dataSyncMultivers.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataSyncMultivers.php
+END
+editBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/editBcard.php
+END
+dataGetMailAddressesById.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataGetMailAddressesById.php
+END
+dataImportSave.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataImportSave.php
+END
+dataSaveBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataSaveBcard.php
+END
+show_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/show_edit.php
+END
+relcardsearchform.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/relcardsearchform.php
+END
+dataGetRelationsList.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4608/tags/7.4/classes/address/inc/dataGetRelationsList.php
+END

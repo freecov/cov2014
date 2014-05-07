@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql
+END
+genindexes.psql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/genindexes.psql
+END
+after_migration.sql
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/after_migration.sql
+END
+covide_data.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/covide_data.sql
+END
+covide_migration_5to6_postgres.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/covide_migration_5to6_postgres.txt
+END
+covide_schema_5X.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/covide_schema_5X.sql
+END
+covide_schema_6X.sql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/2284/branches/covide-stable/sql/postgresql/covide_schema_6X.sql
+END

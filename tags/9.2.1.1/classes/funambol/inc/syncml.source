@@ -1,0 +1,10 @@
+#
+#<fulldate>
+name=<store>
+sourceClass=com.funambol.syncclient.spds.source.SIFSyncSource
+sourceDirectory=<sourcedir>
+type=<mimetype>
+sync=two-way
+encode=true
+last=<timestamp>
+sourceURI=<store>

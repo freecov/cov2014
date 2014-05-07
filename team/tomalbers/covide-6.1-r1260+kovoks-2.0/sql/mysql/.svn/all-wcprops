@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql
+END
+kovoks-add-speeddial.sql
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-add-speeddial.sql
+END
+kovoks-finance-scemes.sql
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-finance-scemes.sql
+END
+covide_schema_6X.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/covide_schema_6X.mysql
+END
+kovoks-products.sql
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-products.sql
+END
+kovoks-add-trasporter-and-contact.sql
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-add-trasporter-and-contact.sql
+END
+after_migration.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/after_migration.mysql
+END
+kovoks-add-events2calendar.sql
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-add-events2calendar.sql
+END
+covide_6_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/covide_6_install.sql
+END
+kovoks-products-no-sell.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-products-no-sell.sql
+END
+indexes.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/indexes.mysql
+END
+patch1.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/patch1.mysql
+END
+kovoks-relations-scemes.sql
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/sql/mysql/kovoks-relations-scemes.sql
+END

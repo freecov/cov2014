@@ -1,0 +1,1 @@
+ALTER TABLE `finance_offertes` ADD `template_id` INT( 11 ) NOT NULL ;

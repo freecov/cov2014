@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc
+END
+project_print.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/project_print.php
+END
+dataGetHoursList.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataGetHoursList.php
+END
+activities.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/activities.js
+END
+show_overview.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/show_overview.js
+END
+show_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/show_info.php
+END
+dataSetLfact.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataSetLfact.php
+END
+edit_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/edit_project.js
+END
+showHours.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/showHours.php
+END
+pick_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/pick_project.js
+END
+show_activities.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/show_activities.php
+END
+dataGetProjectsBySearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataGetProjectsBySearch.php
+END
+hourOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/hourOverview.php
+END
+activate_projectfolders.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/activate_projectfolders.php
+END
+dataGetSubprojectsById.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataGetSubprojectsById.php
+END
+hour_operations.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/hour_operations.js
+END
+show_overview.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/show_overview.php
+END
+project.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/project.php
+END
+dataGetProjectById.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataGetProjectById.php
+END
+edit_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/edit_project.php
+END
+edit_master_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/edit_master_project.js
+END
+dataGetMasterProjectArray.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataGetMasterProjectArray.php
+END
+pick_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/pick_project.php
+END
+dataSaveProject.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/dataSaveProject.php
+END
+show_info.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/project/inc/show_info.js
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory
+END
+Shmop.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Shmop.php
+END
+Apachenote.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Apachenote.php
+END
+PEAR.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/PEAR.php
+END
+Common.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Common.php
+END
+Eaccelerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Eaccelerator.php
+END
+Systemv.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Systemv.php
+END
+Mmcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Mmcache.php
+END
+Sharedance.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Sharedance.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/File.php
+END
+Sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Sqlite.php
+END
+Memcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Memcache.php
+END
+Apc.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/6027/tags/8.4/classes/chat/inc/lib/pear/System/SharedMemory/Apc.php
+END

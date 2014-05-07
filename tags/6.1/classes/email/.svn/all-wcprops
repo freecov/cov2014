@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email
+END
+generate.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/generate.php
+END
+output.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/output.php
+END
+container.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/container.php
+END
+smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/smtp.php
+END
+default.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/default.php
+END
+retrieve.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/retrieve.php
+END
+common.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/common.php
+END
+data.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/data.php
+END
+migration.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/4606/tags/6.1/classes/email/migration.php
+END

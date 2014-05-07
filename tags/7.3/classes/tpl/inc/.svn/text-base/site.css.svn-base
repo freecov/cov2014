@@ -1,0 +1,7 @@
+em.tt_tooltip {
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+img.imagebutton:hover {
+	-moz-opacity: .50;
+}

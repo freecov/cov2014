@@ -1,0 +1,108 @@
+#!/usr/bin/php
+<?php
+ob_implicit_flush(true);
+set_time_limit(6);
+$in = fopen("php://stdin","r");
+$stdlog = fopen("/var/log/asterisk/my_agi.log", "w");
+// toggle debugging output (more verbose)
+$debug = false;
+// Do function definitions before we start the main loop
+function read() {
+	global $in, $debug, $stdlog;
+	$input = str_replace("\n", "", fgets($in, 4096));
+	if ($debug) fputs($stdlog, "read: $input\n");
+	return $input;
+}
+
+function errlog($line) {
+	global $err;
+	echo "VERBOSE \"$line\"\n";
+}
+
+function write($line) {
+	global $debug, $stdlog;
+	if ($debug) fputs($stdlog, "write: $line\n");
+	echo $line."\n";
+}
+
+// parse agi headers into array
+while ($env=read()) {
+	$s = split(": ",$env);
+	$agi[str_replace("agi_","",$s[0])] = trim($s[1]);
+	if (($env == "") || ($env == "\n")) {
+		break;
+	}
+}
+//make database connection
+//write("VERBOSE \"we are going to query ".$agi["context"]."\"");
+require("db_oop.php");
+$db = pg_connect("host=$db_host port=$db_port dbname=$db_database user=$db_user password=$db_passwd") or die("error: PostgreSQL server not running!");
+
+//remove all CFIM keys
+write("DATABASE DELTREE CFIM");
+write("VERBOSE \"Deleted all CFIM keys\"");
+$n = read();
+$sql = "SELECT user_id FROM calendar WHERE (timestamp_start <= ".mktime()." AND timestamp_end >= ".mktime().") AND is_dnd=1";
+$res = pg_query($sql);
+while ($row = pg_fetch_assoc($res)) {
+	$dnd_users[] = $row["user_id"];
+}
+if (count($dnd_users)) {
+	$dnd_users = array_unique($dnd_users);
+	$dnd_users = implode(",", $dnd_users);
+}
+if (strlen($dnd_users)>=1) {
+	$sql = "SELECT voip_device FROM users WHERE id IN ($dnd_users)";
+	$res = pg_query($sql);
+	while ($row = pg_fetch_assoc($res)) {
+		$dnd_devices[] = $row["voip_device"];
+	}
+	$dnd_devices = array_unique($dnd_devices);
+}
+if (count($dnd_devices)) {
+	foreach ($dnd_devices as $dnd_device) {
+		//FIXME: this needs to be put in the database. Not every customer has these ;)
+		if ($dnd_device == "SIP/karin" || $dnd_device == "SIP/kantine") {
+			echo "VERBOSE \"$dnd_device is not allowed to be put on DND mode\" \n";
+		} else {
+			write("DATABASE PUT CFIM $dnd_device 1");
+			write("VERBOSE \"put $dnd_device in dnd mode\"");
+			$n = read();
+		}
+	}
+}
+//fix callerid
+if (substr($agi["callerid"],0,4)=="0031") {
+	$agi["callerid"] = substr($agi["callerid"],4,strlen($agi["callerid"]));
+	$calleridnum = "0".$agi["callerid"];
+	write("EXEC SetCallerID \"0".$agi["callerid"]."\"");
+	write("EXEC SetCIDNum \"0".$agi["callerid"]."\"");
+}
+if (substr($agi["callerid"],0,2)=="31") {
+	$agi["callerid"] = substr($agi["callerid"],2,strlen($agi["callerid"]));
+	$calleridnum = "0".$agi["callerid"];
+	write("EXEC SetCallerID \"0".$agi["callerid"]."\"");
+	write("EXEC SetCIDNum \"0".$agi["callerid"]."\"");
+}
+//lookup company name and id
+$sql = "SELECT a.id,a.companyname FROM address as a LEFT JOIN address_businesscards as b ON a.id=b.address_id WHERE (replace(replace(a.phone_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."' OR replace(replace(a.mobile_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."' OR replace(replace(b.business_phone_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."' OR replace(replace(b.business_mobile_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."' OR replace(replace(b.personal_phone_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."' OR replace(replace(b.personal_mobile_nr,'-',''), ' ','') ILIKE '%".$agi["callerid"]."')";
+$res = pg_query($sql);
+if (pg_num_rows($res)) {
+	$row = pg_fetch_assoc($res);
+	write("EXEC SetCIDName \"".$row["companyname"]."\"");
+} else {
+	$row["id"] = 0;
+	$row["companyname"] = $calleridnum;
+}
+if ($argv[1]) {
+	$row["companyname"] = $argv[1].": ".$row["companyname"];
+}
+//put it in our temp database table
+$sql = "INSERT INTO active_calls VALUES ('".$row["companyname"]."',".$row["id"].",".mktime().")";
+$res = pg_query($sql);
+//show info on CLI
+echo "VERBOSE \"call from ".$row["companyname"]."!\" \n";
+fclose($in);
+fclose($stdlog);
+exit;
+?> 

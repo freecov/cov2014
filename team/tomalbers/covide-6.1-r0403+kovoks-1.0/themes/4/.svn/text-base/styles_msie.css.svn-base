@@ -1,0 +1,23 @@
+BODY {
+	scrollbar-face-color: #EEEEEE;
+	scrollbar-shadow-color: #AAAAAA;
+	scrollbar-highlight-color: #AAAAAA;
+	scrollbar-3dlight-color: #EEEEEE;
+	scrollbar-darkshadow-color: #EEEEEE;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #DD7700;
+}
+.inputtext {
+	margin: 3px;
+	height: 20px;
+}
+div.infolayer {
+	filter:alpha(opacity=85)
+}
+form {
+	white-space: nowrap;
+}
+#clock_container {
+	display: inline;
+	white-space: nowrap;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `address` ADD `bankaccount` VARCHAR( 255 ) NOT NULL ;

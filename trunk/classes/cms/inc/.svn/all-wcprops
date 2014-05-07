@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc
+END
+poll_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/3601/trunk/classes/cms/inc/poll_actions.js
+END
+cmsList.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/2737/trunk/classes/cms/inc/cmsList.php
+END
+script_fp.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/3425/trunk/classes/cms/inc/script_fp.js
+END
+metadata.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/metadata.php
+END
+dataCreateCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/3882/trunk/classes/cms/inc/dataCreateCache.php
+END
+editAuthorisations.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/editAuthorisations.php
+END
+cmsPageSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/3765/trunk/classes/cms/inc/cmsPageSettings.js
+END
+siteCounters.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/siteCounters.php
+END
+editAccount.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/2768/trunk/classes/cms/inc/editAccount.js
+END
+cmsFormSettings.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsFormSettings.php
+END
+cmsPageSettingsRel.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/cmsPageSettingsRel.js
+END
+dateOptions.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/dateOptions.php
+END
+cmsEditor.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsEditor.php
+END
+cmsPageSettings.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsPageSettings.php
+END
+editAccount.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/editAccount.php
+END
+createInlineThumb.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6978/trunk/classes/cms/inc/createInlineThumb.php
+END
+cmsGallery.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsGallery.php
+END
+dateOptionsItemEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/dateOptionsItemEdit.js
+END
+cmsSitemap.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsSitemap.php
+END
+functions.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/functions.php
+END
+cmsPageList.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/3013/trunk/classes/cms/inc/cmsPageList.php
+END
+metadataDefinitions.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/metadataDefinitions.php
+END
+editAbbr.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/editAbbr.php
+END
+cms_hover.htc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/2551/trunk/classes/cms/inc/cms_hover.htc
+END
+cmsFormEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsFormEdit.php
+END
+cmsFormSettings.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/4823/trunk/classes/cms/inc/cmsFormSettings.js
+END
+validateSitemap.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/validateSitemap.php
+END
+deletePageConfirm.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/deletePageConfirm.php
+END
+cmsImport.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsImport.php
+END
+generateSitemap.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6978/trunk/classes/cms/inc/generateSitemap.php
+END
+dateOptionsItemEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/dateOptionsItemEdit.php
+END
+dateOptions.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/dateOptions.js
+END
+dataConstruct.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/3223/trunk/classes/cms/inc/dataConstruct.php
+END
+cmsEditor.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/5696/trunk/classes/cms/inc/cmsEditor.js
+END
+editTemplate.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/editTemplate.php
+END
+cmsImportExec.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/2398/trunk/classes/cms/inc/cmsImportExec.php
+END
+metadataDefinitionsEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/metadataDefinitionsEdit.php
+END
+siteTemplates.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/siteTemplates.php
+END
+editSiteInfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/editSiteInfo.php
+END
+registerAccount.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/2135/trunk/classes/cms/inc/registerAccount.js
+END
+cmsGalleryItemEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsGalleryItemEdit.php
+END
+cmsKeywordDensity.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6116/trunk/classes/cms/inc/cmsKeywordDensity.php
+END
+dataDecodeOptions.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/3223/trunk/classes/cms/inc/dataDecodeOptions.php
+END
+cmsTextPreview.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6131/trunk/classes/cms/inc/cmsTextPreview.php
+END
+script_cms.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/script_cms.js
+END
+cmsPageList.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/cms/inc/cmsPageList.js
+END
+cmsBannerList.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/3002/trunk/classes/cms/inc/cmsBannerList.php
+END
+showOptionsInfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/3002/trunk/classes/cms/inc/showOptionsInfo.php
+END

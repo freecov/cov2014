@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc
+END
+showListExternal.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/showListExternal.php
+END
+external_support_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/external_support_actions.js
+END
+save2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/save2db.php
+END
+showEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/showEdit.php
+END
+dataGetExternalIssues.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/dataGetExternalIssues.php
+END
+dataGetSupportItems.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/dataGetSupportItems.php
+END
+showIssue.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/showIssue.php
+END
+showList.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/showList.php
+END
+dataGetSupportItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/dataGetSupportItemById.php
+END
+issue_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/support/inc/issue_actions.js
+END

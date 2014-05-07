@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha/README
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha/LICENSE
+END
+example-captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha/example-captcha.php
+END
+recaptchalib.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha/recaptchalib.php
+END
+example-mailhide.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7038/trunk/classes/recaptcha/example-mailhide.php
+END

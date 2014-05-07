@@ -1,0 +1,163 @@
+<?php
+/**
+ * Covide Template Parser module
+ *
+ * @author Stephan vd Haar <svdhaar@users.sourceforge.net>
+ * @version %%VERSION%%
+ * @license http://www.gnu.org/licenses/gpl.html GPL
+ * @link http://www.covide.net Project home.
+ * @copyright Copyright 2000-2007 Covide BV
+ * @package Covide
+ */
+
+	if (!class_exists("Tpl_output")) {
+		die("no class definition found");
+	}
+
+	$output  = new Layout_output();
+	$output2 = new Layout_output();
+
+	if (!$pageid)
+		$pageid = $this->pageid;
+
+	echo "\n\n<!-- start of page footer -->";
+	echo "\n\n<div id='print_container'></div>\n";
+
+	$output2->addSpace();
+	$output2->addTag("span", array(
+		"id"    => "cms_navigation",
+		"class" => "cms_navigation"
+	));
+
+	$output2->insertAction("previous", gettext("back"), "javascript: pageHistory();");
+	$output2->addSpace();
+	$output2->addCode("\n");
+	$output2->insertAction("access", gettext("text version"), "/text/".$_REQUEST["page"]);
+	$output2->addSpace();
+	$output2->addCode("\n");
+	if ($this->pageid) {
+		$output2->insertAction("print", gettext("print"), "javascript: pagePrint('".$this->pageid."');");
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+	/*
+	if ($this->rss) {
+		$output2->insertAction("rss_page", gettext("page specific rss feed"), $this->rss);
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+	$output2->insertAction("search", gettext("search"), "/search/");
+	$output2->addSpace();
+	$output2->addCode("\n");
+	*/
+
+	if ($this->cms_license["cms_shop"]) {
+		$output2->insertAction("shop", gettext("shopping cart"), "/mode/shopcontents");
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+	/*
+	$output2->insertAction("mail_templates", gettext("sitemap"), "/sitemap.htm");
+	$output2->addSpace();
+	$output2->addCode("\n");
+	*/
+
+	if ($this->allow_edit[$pageid] || $page_xs == 1) {
+		$output2->insertAction("edit", gettext("edit this page"), sprintf("javascript: cmsEdit(%d);", $pageid));
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+	if ($this->display_login || $_SESSION["user_id"]) {
+		if ($_SESSION["user_id"]) {
+			$uri = sprintf("javascript: popup('http://%s/?mod=desktop&amp;cmslogin=1', 'cms_covide_login');", $this->manage_hostname);
+			$output2->addTag("a", array("href" => $uri, "style" => "text-decoration: none;"));
+			if ($_SESSION["user_id"] && $this->manage_hostname == $this->http_host) {
+				$output2->addCode("<img src='themes/default/icons/jabber_online.png' alt='login' id='remote_login_image' width='16' height='16' border='0'>");
+				$output2->endTag("a");
+			} else {
+				$output2->addCode("<img src='themes/default/icons/jabber_offline.png' alt='login' id='remote_login_image' width='16' height='16' border='0'>");
+				$output2->endTag("a");
+				$output2->start_javascript();
+					$output2->addCode(sprintf("addLoadEvent(checkRemoteLogin('%s'))", $this->manage_hostname));
+				$output2->end_javascript();
+			}
+		} else {
+			$uri = sprintf("javascript: cmsLoginPage('%s')", $_REQUEST["page"]);
+			$output2->insertAction("covide", gettext("login to covide"), $uri);
+		}
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+
+	/* create the uri */
+	$uri = sprintf("%s%s/page/%s",
+		$this->protocol, $_SERVER["HTTP_HOST"], $this->checkAlias($this->pageid));
+
+	if ($_SESSION["user_id"] || $_SESSION["visitor_id"]) {
+		$output2->addSpace();
+		if ($_SESSION["user_id"]) {
+			$user_data = new User_data();
+			$output2->addCode(gettext("Logged in as user").": ");
+			$output2->insertTag("b", $user_data->getUserNameById($_SESSION["user_id"]));
+		} else {
+			$output2->addCode(gettext("Logged in as visitor or customer").": ");
+			$output2->insertTag("b", $this->cms->getUserNameById($_SESSION["visitor_id"]));
+		}
+		$output2->addSpace(3);
+
+		$output2->insertAction("logout", gettext("logout"), sprintf(
+			"javascript: cmsLogout('%s', '%s', '%s');",
+			urlencode($uri),
+			addslashes(gettext("Do you also want to logout from the Covide office / CMS backend?")),
+			($this->manage_hostname == $this->http_host) ? "":$this->manage_hostname
+		));
+		$output2->addSpace();
+		$output2->addCode("\n");
+	}
+	$pt = $this->getPageTitle($pageid, -1, 1);
+	$pt = $this->limit_string($pt, 70, 0);
+	$pt = preg_replace("/\.{3}$/s", "", $pt);
+
+	if ($this->pageid != $this->default_page) {
+		$output->addTag("span", array(
+			"id"    => "cms_textfooter",
+			"class" => "cms_textfooter"
+		));
+		$output->insertTag("a", "&lt; ".gettext("terug"), array(
+			"href" => "javascript: pageHistory();"
+		));
+		$output->addCode(" ");
+		if ($this->pageid) {
+			$output->addCode("| ");
+			$output->insertTag("a", gettext("print"), array(
+				"href" => "javascript: pagePrint('".$this->pageid."');"
+			));
+			$output->addCode(" | ");
+			$output->insertTag("a", gettext("text"), array(
+				"href" => "/text/".$_REQUEST["page"]
+			));
+			$output->addCode(" | ");
+		}
+		$output->insertTag("b",
+			$this->limit_string($this->getPageTitle($this->pageid, -1, 1), 100, 0
+		));
+		$output->endTag("span");
+
+		$output->addSpace(2);
+		$output2->addCode("\n");
+	}
+	$output2->endTag("span");
+
+	echo "<br><br>";
+	echo $output->generate_output();
+
+	if ($this->alternative_footer) {
+		$this->alternative_text.= "\n<!-- start footer icons -->\n";
+		$this->alternative_text.= "<div id='alternative_footer'>\n";
+		$this->alternative_text.= $output2->generate_output();
+		$this->alternative_text.= "</div>";
+		$this->alternative_text.= "\n<!-- end footer icons -->\n";
+	} else {
+		echo $output2->generate_output();
+	}
+?>

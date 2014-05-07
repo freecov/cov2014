@@ -1,0 +1,1 @@
+ALTER TABLE `cms_data` ADD `isProtected` INT( 11 ) NOT NULL ;

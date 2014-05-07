@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip
+END
+default.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip/default.php
+END
+data.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip/data.php
+END
+agi.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip/agi.php
+END
+asteriskmanager.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip/asteriskmanager.php
+END
+output.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/voip/output.php
+END

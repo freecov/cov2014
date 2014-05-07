@@ -1,0 +1,1 @@
+ALTER TABLE `address` ADD `jobtitle` VARCHAR( 255 ) NOT NULL ;

@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+
+# mkrelease script
+# Michiel van Baak <mvanbaak@users.sourceforge.net>
+
+TOOLSDIR=`type -p mkrelease`
+case "${TOOLSDIR}" in
+	"")
+		echo "This script requires that tools checkout is in your PATH!"
+		exit 1
+		;;
+	* ) : ;;
+esac
+
+# exit on non-zero exit of code
+set -e
+
+TOOLSDIR=`dirname ${TOOLSDIR}`
+
+PROJECT=covide
+BRANCH=${1}
+TAG=${2}
+PREVTAG=${3}
+REV=${4}
+
+# Username to use for uploading releases.
+# If none is given, it will use the username of the user
+# running this script
+SFUSERNAME=
+if test "x${SFUSERNAME}" == "x"; then
+	SFUSERNAME=`whoami`
+fi
+
+if test "x${REV}" != "x"; then
+	REV="-r ${REV}"
+fi
+
+if test "x${BRANCH}" == "x"
+then
+	echo "Usage: mkrelease <branch> <tag> [prevtag] [release rev]"
+	echo
+	echo "Example: mkrelease covide-stable 8.3 8.2"
+	echo "Example: mkrelease covide-stable 8.3.1 8.3 3805"
+	exit 1
+fi
+
+REPOROOT=https://dev.covide.nl/svn
+
+echo "Making release: ${PROJECT}-${TAG}.tar.gz ..."
+
+if [ "${BRANCH}" = "trunk" ]
+then
+	BRANCH_PATH=trunk
+else
+	BRANCH_PATH=branches/${BRANCH}
+fi
+
+LOGBASE=${SVNBASE#*/}
+
+if [ "${LOGBASE}" = "${SVNBASE}" ]
+then
+	LOGPATH=/${BRANCH_PATH}
+else
+	LOGPATH=/${LOGBASE}/${BRANCH_PATH}
+fi
+
+# Create tag for this release
+echo "Creating ${PROJECT}/tags/${TAG} ..."
+svn copy ${REV} ${REPOROOT}/${BRANCH_PATH} ${REPOROOT}/tags/${TAG} -m "Creating tag for the release of ${PROJECT}-${TAG}"
+
+if [ "${PREVTAG}" = "" ]
+then
+	# first release from a branch, log starts at branch creation
+	LOGSTART=1
+	LOGEND=`svn log --verbose --stop-on-copy --xml ${REPOROOT}/tags/${TAG} | grep copyfrom-rev | cut -d = -f 2 | sed -e s/\"//g`
+	svn log --verbose --xml -r${LOGEND}:${LOGSTART} ${REPOROOT}/${BRANCH_PATH} | python `which svn2log` -p "/${BRANCH_PATH}" -u ${TOOLSDIR}/authors -o ChangeLog -D 86400
+	CHL="ChangeLog"
+else
+	# new release from a branch, log starts from previous release
+	svn export ${REPOROOT}/tags/${PREVTAG}/ChangeLog OldLog
+	LOGSTART=`svn log --verbose --stop-on-copy --xml ${REPOROOT}/tags/${PREVTAG} | grep copyfrom-rev | cut -d = -f 2 | sed -e s/\"//g | tail -n1`
+	LOGEND=`svn log --verbose --stop-on-copy --xml ${REPOROOT}/tags/${TAG} | grep copyfrom-rev | cut -d = -f 2 | sed -e s/\"//g`
+	svn log --verbose --xml -r${LOGEND}:${LOGSTART} ${REPOROOT}/${BRANCH_PATH} | python `which svn2log` -p "${LOGPATH}" -u ${TOOLSDIR}/authors -o NewLog -D 86400
+	#cat NewLog OldLog > ChangeLog
+	CHL="NewLog"
+fi
+
+echo "It's time to make the necessary changes by hand to the ChangeLog:"
+echo
+echo "1) Add a note to the top that notes this release"
+echo "2) Remove any commit messages that are just repository fixes, such as fixing"
+echo "   svn executable properties, etc."
+echo
+echo "Press any key to continue ..."
+read
+
+${EDITOR:-vi} ${CHL}
+
+if [ "${CHL}" = "NewLog" ]
+then
+	cat NewLog OldLog > ChangeLog
+fi
+
+# Make necessary changes to the tag
+svn co ${REPOROOT}/tags/${TAG} ${PROJECT}-${TAG}
+pushd ${PROJECT}-${TAG}
+mv ../ChangeLog .
+svn add ChangeLog
+svn ps svn:mime-type text/plain ChangeLog
+svn ps svn:eol-style native ChangeLog
+svn ps svn:keywords none ChangeLog
+svn commit -m "Importing files for ${TAG} release"
+svn update
+popd
+rm -rf ${PROJECT}-${TAG}
+
+# Time to make the tarball
+svn export ${REPOROOT}/tags/${TAG} ${PROJECT}-${TAG}
+if [ -x ${PROJECT}-${TAG}/build_tools/prep_tarball ]
+then
+	pushd ${PROJECT}-${TAG}
+	./build_tools/prep_tarball
+	popd
+fi
+tar -czvf ${PROJECT}-${TAG}.tar.gz ${PROJECT}-${TAG}/
+#sha1sum ${PROJECT}-${TAG}.tar.gz > ${PROJECT}-${TAG}.tar.gz.sha1
+cp ${PROJECT}-${TAG}/ChangeLog ChangeLog-${TAG}
+cp ${PROJECT}-${TAG}/README README-${TAG}
+
+# NEWFILES="${PROJECT}-${TAG}.tar.gz ${PROJECT}-${TAG}.tar.gz.sha1 ChangeLog-${TAG} README-${TAG}"
+NEWFILES="${PROJECT}-${TAG}.tar.gz ChangeLog-${TAG} README-${TAG}"
+
+# If there was a previous release, make a patch between them for
+# simple upgrading
+#if [ "${PREVTAG}" != "" ]
+#then
+#	HAVEPATCH=yes
+#	svn diff ${REPOROOT}/tags/${PREVTAG} ${REPOROOT}/tags/${TAG} > ${PROJECT}-${TAG}-patch
+#	gzip -9 ${PROJECT}-${TAG}-patch
+#	#sha1sum ${PROJECT}-${TAG}-patch.gz > ${PROJECT}-${TAG}-patch.gz.sha1
+#	#NEWFILES="${NEWFILES} ${PROJECT}-${TAG}-patch.gz ${PROJECT}-${TAG}-patch.gz.sha1"
+#	NEWFILES="${NEWFILES} ${PROJECT}-${TAG}-patch.gz"
+#fi
+
+gpg --armor --detach-sign --output ${PROJECT}-${TAG}.tar.gz.asc ${PROJECT}-${TAG}.tar.gz || true
+NEWFILES="${NEWFILES} ${PROJECT}-${TAG}.tar.gz.asc"
+if [ "${HAVEPATCH}" != "" ]
+then
+	gpg --armor --detach-sign --output ${PROJECT}-${TAG}-patch.gz.asc ${PROJECT}-${TAG}-patch.gz || true
+	NEWFILES="${NEWFILES} ${PROJECT}-${TAG}-patch.gz.asc"
+fi
+
+# Add the release to sourceforge
+rsync -avP -e ssh ${PROJECT}-${TAG}.tar.gz ${SFUSERNAME},covide@frs.sourceforge.net:/home/frs/project/c/co/covide/${PROJECT}/${PROJECT}-${TAG}/
+rsync -avP -e ssh ${PROJECT}-${TAG}.tar.gz.asc ${SFUSERNAME},covide@frs.sourceforge.net:/home/frs/project/c/co/covide/${PROJECT}/${PROJECT}-${TAG}/
+rsync -avP -e ssh ${CHL} ${SFUSERNAME},covide@frs.sourceforge.net:/home/frs/project/c/co/covide/${PROJECT}/${PROJECT}-${TAG}/
+rsync -avP -e ssh README-${TAG} ${SFUSERNAME},covide@frs.sourceforge.net:/home/frs/project/c/co/covide/${PROJECT}/${PROJECT}-${TAG}/
+
+# Remaining Cleanup
+rm -rf ${PROJECT}-${TAG}
+rm -f NewLog OldLog
+
+# Final notes ...
+echo
+echo "Congratulations on the release of ${PROJECT}-${TAG} !!!"
+echo

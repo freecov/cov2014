@@ -1,0 +1,1 @@
+ALTER TABLE `cms_license` ADD `custom_loginprofile` INT( 11 ) NOT NULL ;

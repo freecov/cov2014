@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend
+END
+Loader.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Loader.php
+END
+Registry.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Registry.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Exception.php
+END
+Uri.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Uri.php
+END
+Gdata.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Gdata.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/Zend/Version.php
+END

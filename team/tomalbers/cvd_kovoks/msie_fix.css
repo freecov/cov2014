@@ -1,0 +1,30 @@
+@media screen {
+	body {
+		<!--[if IE]>
+		scrollbar-face-color: #EEEEEE;
+		scrollbar-shadow-color: #AAAAAA;
+		scrollbar-highlight-color: #AAAAAA;
+		scrollbar-3dlight-color: #EEEEEE;
+		scrollbar-darkshadow-color: #EEEEEE;
+		scrollbar-track-color: #FFFFFF;
+		scrollbar-arrow-color: #DD7700;
+		<![endif]-->
+	}
+
+	.menuItem {
+		<!--[if IE]>
+		padding: 0px 1px 30px 1px !important;
+		background-position: 0px 9px !important;
+		<![endif]-->
+	}
+	.menuItem img {
+		<!--[if IE]>
+			margin-top: 0px !important;
+		<![endif]-->
+	}
+	.inputbutton {
+		<!--[if IE]>
+			cursor: hand;
+		<![endif]-->
+	}
+}

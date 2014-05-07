@@ -1,0 +1,52 @@
+Here's a list that explains the different files and lists how to get them.
+They need jquery 1.2.6 (at least that's what we use) (../jquery.js is 1.2.6 packed)
+
+File: ui.js
+Description: jquery UI framework - core (packed)
+Web: http://ui.jquery.com
+Version: 1.5.3
+Use: The blocks on the dashboard use this.
+
+File: ui.sortable.js 
+Description: jquery UI framework - sortable plugin (packed)
+Web: http://ui.jquery.com
+Version: 1.5.3
+Use: The blocks on the dashboard use this.
+
+File: ui.draggable.js 
+Description: jquery UI framework - draggable plugin (packed)
+Web: http://ui.jquery.com
+Version: 1.5.3
+Use: The blocks on the dashboard use this.
+
+File: akModal.js
+Description: simplest alternative to thickbox
+Web:  http://amiworks.co.in/talk/akmodal-simplest-alternative-to-thickbox/
+Version: 1.1
+Use: instead of popup windows we use this to generate 'inline popups'
+
+File: interface.js
+Description: Interface elements for jquery
+Web: http://interface.eyecon.ro
+Version: 1.2
+Use: Needed by akModal
+Remarks: Added small function on top of this file to make it compatible with jquery 1.2.x
+
+File: dimensions.js
+Description: provide dimension-centric methods for getting widths, heights, offsets and more.
+Web: http://plugins.jquery.com/project/dimensions
+Version: 1.2.0
+Use: Needed by akModal
+
+File: dimmer.js
+Description: Creates a lightbox type effect
+Web: http://docs.jquery.com/Plugins/dimScreen
+Version: unknown
+Use: Needed by akModal
+Remarks: There's no download on the jquery web but the code is there inline.
+
+File: md5.js
+Description: MD5 hashing implementation in jquery
+Web: http://www.semnanweb.com/jquery-plugin/md5.html
+Version: unknown
+Use: In the loginscreen we hash the password before sending it to the server.

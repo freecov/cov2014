@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts
+END
+covidecron.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/covidecron.py
+END
+setup_permissions.sh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/setup_permissions.sh
+END
+mailfetch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/mailfetch.sh
+END
+covide_install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/covide_install.sh
+END
+syncstyles.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/syncstyles.sh
+END
+cron.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/cron.sh
+END
+update.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/update.sh
+END
+covidevm_setup
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/covidevm_setup
+END
+update_translations.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/update_translations.sh
+END
+convertdb.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/convertdb.sh
+END
+mailfetch.zsh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/6029/tags/9.1.2/shellscripts/mailfetch.zsh
+END

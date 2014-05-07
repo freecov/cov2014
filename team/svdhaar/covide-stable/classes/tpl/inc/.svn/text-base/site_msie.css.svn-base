@@ -1,0 +1,11 @@
+/* fix for msie to emulate position fixed */
+/* sites that use valid xhtml or html strict do not require or use this hack and have no tearing in IE */
+div#alternative_footer {
+	_position: absolute;
+	_bottom:;
+	_top: expression(eval(document.body.clientHeight - 21 + document.body.scrollTop));
+}
+/* button img hover */
+A:hover img.imagebutton {
+	background-color: #d0d0d0;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE projects_ext_metafields CHANGE default_value default_value mediumtext;

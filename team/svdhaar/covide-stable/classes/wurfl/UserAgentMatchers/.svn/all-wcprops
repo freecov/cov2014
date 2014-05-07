@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers
+END
+LGUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/LGUserAgentMatcher.php
+END
+WindowsCEUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/WindowsCEUserAgentMatcher.php
+END
+SiemensUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SiemensUserAgentMatcher.php
+END
+QtekUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/QtekUserAgentMatcher.php
+END
+PhilipsUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/PhilipsUserAgentMatcher.php
+END
+PanasonicUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/PanasonicUserAgentMatcher.php
+END
+CatchAllUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/CatchAllUserAgentMatcher.php
+END
+KddiUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/KddiUserAgentMatcher.php
+END
+ChromeUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/ChromeUserAgentMatcher.php
+END
+SamsungUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SamsungUserAgentMatcher.php
+END
+NintendoUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/NintendoUserAgentMatcher.php
+END
+HTCUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/HTCUserAgentMatcher.php
+END
+AndroidUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/AndroidUserAgentMatcher.php
+END
+DoCoMoUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/DoCoMoUserAgentMatcher.php
+END
+OperaMiniUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/OperaMiniUserAgentMatcher.php
+END
+SimpleDesktopUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SimpleDesktopUserAgentMatcher.php
+END
+BenQUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/BenQUserAgentMatcher.php
+END
+ToshibaUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/ToshibaUserAgentMatcher.php
+END
+MotorolaUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/MotorolaUserAgentMatcher.php
+END
+SagemUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SagemUserAgentMatcher.php
+END
+MSIEUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/MSIEUserAgentMatcher.php
+END
+GrundigUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/GrundigUserAgentMatcher.php
+END
+NokiaUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/NokiaUserAgentMatcher.php
+END
+AppleUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/AppleUserAgentMatcher.php
+END
+VodafoneUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/VodafoneUserAgentMatcher.php
+END
+FirefoxUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/FirefoxUserAgentMatcher.php
+END
+SafariUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SafariUserAgentMatcher.php
+END
+NecUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/NecUserAgentMatcher.php
+END
+AlcatelUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/AlcatelUserAgentMatcher.php
+END
+OperaUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/OperaUserAgentMatcher.php
+END
+SPVUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SPVUserAgentMatcher.php
+END
+PortalmmmUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/PortalmmmUserAgentMatcher.php
+END
+AOLUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/AOLUserAgentMatcher.php
+END
+SharpUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SharpUserAgentMatcher.php
+END
+UserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/UserAgentMatcher.php
+END
+MitsubishiUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/MitsubishiUserAgentMatcher.php
+END
+BlackBerryUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/BlackBerryUserAgentMatcher.php
+END
+PantechUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/PantechUserAgentMatcher.php
+END
+BotUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/BotUserAgentMatcher.php
+END
+KonquerorUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/KonquerorUserAgentMatcher.php
+END
+SanyoUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SanyoUserAgentMatcher.php
+END
+KyoceraUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/KyoceraUserAgentMatcher.php
+END
+SonyEricssonUserAgentMatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentMatchers/SonyEricssonUserAgentMatcher.php
+END

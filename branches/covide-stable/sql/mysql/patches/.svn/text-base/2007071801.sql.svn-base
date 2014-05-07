@@ -1,0 +1,5 @@
+-- ALTER TABLE `cms_gallery` ADD INDEX ( `pageid` )
+-- ALTER TABLE `cms_data` ADD INDEX ( `apEnabled` )
+-- ALTER TABLE `cms_data` ADD INDEX ( `pageAlias` )
+-- ALTER TABLE `cms_feedback` ADD INDEX ( `page_id` )
+-- ALTER TABLE `cms_formulieren` ADD INDEX ( `pageid` )

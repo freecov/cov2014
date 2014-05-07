@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books
+END
+VolumeEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books/VolumeEntry.php
+END
+VolumeFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books/VolumeFeed.php
+END
+CollectionEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books/CollectionEntry.php
+END
+VolumeQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books/VolumeQuery.php
+END
+CollectionFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Books/CollectionFeed.php
+END

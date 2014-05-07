@@ -1,0 +1,15 @@
+# This is a sample configuration for the SMS provider http://media.fivemile.net/
+# please replace your username and passwort in the insert string. The CompanyId
+# is carried on the 'cookie' field in the gateway backend and is used to detemine
+# which office sent the sms (for billing purposes)
+# In this case the default country ID is "49".
+
+INSERT INTO `sms_settings` (`companyid`, `userid`, `password`, `sender`, `request_uri`, `default_prefix`, `trans`) VALUES
+('CompanyId', 'UserId', 'Password', 'sender', 'http://sms.visual.de/incoming/sms.php', '49', 'CompanyId->c:UserId->uid:Password->pw:Msisdn->n:MessageText->m:OasText->o');
+
+# This is a working translation for the Kannel Gateway
+# software. In this case the default country ID is "49".
+
+INSERT INTO `sms_settings` (`companyid`, `userid`, `password`, `sender`, `request_uri`, `default_prefix`, `trans`) VALUES
+('companyid', 'userid', 'password', 'sender', 'http://smsbox.host.name:13013/cgi-bin/sendsms', '49', 'CompanyId->account:UserID->user:Password->pass:Msisdn->to:MessageText->text:OasText->from');
+

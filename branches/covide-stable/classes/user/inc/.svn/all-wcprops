@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7250/branches/covide-stable/classes/user/inc
+END
+js_userlist.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/user/inc/js_userlist.js
+END
+show_index.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/user/inc/show_index.js
+END
+show_groupinfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/user/inc/show_groupinfo.js
+END
+showManagerAccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4429/branches/covide-stable/classes/user/inc/showManagerAccess.php
+END
+autocomplete.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/4429/branches/covide-stable/classes/user/inc/autocomplete.php
+END
+show_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7250/branches/covide-stable/classes/user/inc/show_index.php
+END
+usereditcheck.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/user/inc/usereditcheck.js
+END
+show_login.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/user/inc/show_login.php
+END
+dataSaveUserSettings.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/user/inc/dataSaveUserSettings.php
+END
+useredit.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/6068/branches/covide-stable/classes/user/inc/useredit.js
+END
+pop_tester.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/5484/branches/covide-stable/classes/user/inc/pop_tester.js
+END
+pick_user.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/user/inc/pick_user.js
+END
+js_common.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/user/inc/js_common.js
+END
+useredit.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/user/inc/useredit.php
+END
+show_online.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/user/inc/show_online.php
+END
+pick_user.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/user/inc/pick_user.php
+END
+autocomplete.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/user/inc/autocomplete.js
+END

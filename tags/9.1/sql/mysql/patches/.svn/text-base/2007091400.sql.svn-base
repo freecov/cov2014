@@ -1,0 +1,9 @@
+-- ALTER TABLE `cms_data` ADD INDEX `cms_pagedata` ( `pageData` ( 255 ) );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_pagetitle` ( `pageTitle` );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_pagelabel` ( `pageLabel` );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_pagealias` ( `pageAlias` );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_pageheader` ( `pageHeader` ( 255 ) );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_search_title` ( `search_title` );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_search_fields` ( `search_fields` );
+-- ALTER TABLE `cms_data` ADD INDEX `cms_search_descr` ( `search_descr` );
+-- ALTER TABLE `cms_metadata` ADD INDEX `cms_metadata_value` ( `value` ( 255 ) );

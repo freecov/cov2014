@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 68
+check.txt
+lastcall_*
+chatclean.txt
+tiny_mce*
+phplint_*
+funambol.log
+
+END

@@ -1,0 +1,1 @@
+RENAME TABLE `campain_records` TO `campaign_records` ;

@@ -1,0 +1,82 @@
+- Ferry Boender
+  http://www.electricmonk.nl
+* Initial Idea and code (quinnet, later evolved to Covide)
+
+- Willem Massier
+* Initial Idea and constant stream of new functionality
+
+- JanWillem Vermeer
+  http://www.inborn.net
+* Initial Idea and code (quinnet, later evolved to Covide)
+
+- Michiel van Baak, Covide
+  mvanbaak@users.sourceforge.net
+  http://michiel.vanbaak.eu
+* Code in almost all modules
+
+- Stephan vd Haar, Covide
+  svdhaar@users.sourceforge.net
+  http://www.svdhaar.eu
+* Code in almost all modules
+
+- Gerben Jacobs, Covide
+  ghjacobs@users.sourceforge.net
+  http://www.gerbenjacobs.nl
+* Code in several modules
+
+- Menno van Uffelen
+* Design of default themes
+* Invoice module
+
+- Michel Hoffman
+* Invoice module
+* Classification module in addressbook
+
+- Vincent Ekelschot
+* Enquete module (no longer part of the current package)
+* External support integration
+
+- Christian de Vogt
+* Manual of CMS
+* Several ideas and bugreports
+* Testing
+
+- Nancy van Baak
+* translating customer questions to feature requests
+* providing support on the dutch user forum
+
+- Okke Petekamp
+* For taking constant blame for all issues that show up and issues that dont show up
+
+- Chris vd Pelt
+* Several parts of the calendar module
+* Letter/template module
+
+- Tom Albers, KovoKs B.V.
+  http://www.kovoks.nl && http://www.own-it.nl
+* bugfixes
+* several feature request implementations
+* Konqueror support
+* Support for external calendars 
+
+- Svante Kvarnstrom
+* several feature request implementations
+* Consultant module
+* Customer module for use with the Consultant module
+* Several bugfixes
+* Portability fixes for *BSD
+
+- Jan and Susanne Beers
+* German translation
+* bugfixes
+
+- Eva Massier and Juan Balaguer
+* Spanish translations
+
+- Quard Technology (Leif Serup)
+* Danish translations
+* implementing biometric authentication using Quard Technology creditcard fingerprint reader
+
+- Rembrandt Leliveld, Initx
+  http://www.initx.nl
+* loads and loads of testing and bugreporting

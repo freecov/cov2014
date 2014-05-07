@@ -1,0 +1,2 @@
+ALTER TABLE issues ADD execution_time INT NOT NULL,
+ADD remarks MEDIUMTEXT NOT NULL;

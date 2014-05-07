@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands
+END
+update.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/update.class.php
+END
+debug.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/debug.class.php
+END
+help.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/help.class.php
+END
+whois.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/whois.class.php
+END
+error.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/error.class.php
+END
+who.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/who.class.php
+END
+updatemynick.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/updatemynick.class.php
+END
+invite.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/invite.class.php
+END
+ban.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/ban.class.php
+END
+redirect.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/redirect.class.php
+END
+me.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/me.class.php
+END
+init.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/init.class.php
+END
+whois2.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/whois2.class.php
+END
+op.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/op.class.php
+END
+who2.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/who2.class.php
+END
+quit.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/quit.class.php
+END
+asknick.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/asknick.class.php
+END
+nick.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/nick.class.php
+END
+version.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/version.class.php
+END
+clear.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/clear.class.php
+END
+deop.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/deop.class.php
+END
+privmsg.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/privmsg.class.php
+END
+send.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/send.class.php
+END
+connect.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/connect.class.php
+END
+leave.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/leave.class.php
+END
+banlist.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/banlist.class.php
+END
+join.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/join.class.php
+END
+getnewmsg.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/getnewmsg.class.php
+END
+unban.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/unban.class.php
+END
+privmsg2.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/privmsg2.class.php
+END
+rehash.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/rehash.class.php
+END
+identify.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/identify.class.php
+END
+notice.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/notice.class.php
+END
+join2.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/join2.class.php
+END
+kick.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6680/tags/8.4.1/classes/chat/inc/src/commands/kick.class.php
+END

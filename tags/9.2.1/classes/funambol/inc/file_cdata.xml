@@ -1,0 +1,7 @@
+<![CDATA[
+<File>
+<name>{name}</name>
+<body enc="base64">{base64}</body>
+<size>{size}</size>
+</File>
+]]>

@@ -1,0 +1,6 @@
+<?php
+	/* example for contrib options, you can declare the constant within offices.php */
+	$contrib["USE_CONTRIB_THEME"]  = "vamos";  //loads a custom theme plugin
+	$contrib["USE_CONTRIB_SCRIPT"] = "vamos";  //loads a custom script plugin at every call
+	$contrib["USE_CONTRIB_LOGIN"]  = "vamos";  //loads a custom script plugin at the login screen
+?>

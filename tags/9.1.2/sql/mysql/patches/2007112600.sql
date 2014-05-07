@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `has_factuur` TINYINT( 3 ) NOT NULL ;

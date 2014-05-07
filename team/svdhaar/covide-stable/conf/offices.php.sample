@@ -1,0 +1,120 @@
+<?php
+/**
+ * Configuration file for the database connection.
+ * In this file you can specify each office you are hosting.
+ * This is an example file that should be edited to your needs and then be copied to offices.php
+ *
+ * The dsn format is: databasetype://username:password@protocol(host:port)/database
+ * If databasetype is prefixed with 'pdo_' Covide will use the PHP builtin PDO classes.
+ * If not, Covide will use MDB2 abstraction classes.
+ */
+/* Connect to a database based on the url */
+$dsn = false;
+switch($_SERVER["SERVER_NAME"]) {
+	case "covide.customer.a":
+		$dsn = "mysql://mysql:mysql@tcp(localhost:3306)/covide";
+		break;
+	case "covide.customer.b":
+		$dsn = "pgsql://postgressql:postgresql@tcp(localhost:5432)/covide";
+		break;
+	case "covide.customer.c":
+		$dsn = "pdo_mysql://mysql:mysql@tcp(localhost:3306)/covide";
+		break;
+	default :
+		if (is_dir("conf/offices.d") || is_dir($GLOBALS["autoloader_include_path"]."conf/offices.d")) {
+			if (is_dir("conf/offices.d")) {
+				$confpath = "conf/offices.d";
+			} else {
+				$confpath = sprintf("%s%s", $GLOBALS["autoloader_include_path"], "conf/offices.d");
+			}
+			$_conf_dh = opendir($confpath);
+			while (false !== ($_conf_file = readdir($_conf_dh))) {
+				if ($_conf_file != "." && $_conf_file != ".." && substr($_conf_file, -3) == "php") {
+					$_conffile = sprintf("%s/%s", $confpath, $_conf_file);
+					include($_conffile);
+				}
+			}
+			closedir($_conf_dh);
+		}
+		if (!$dsn) {
+			die("No covide office configuration found for this url. Check conf/offices.php file content.");
+		}
+		break;
+}
+/* run a contrib folder */
+// $contrib["USE_CONTRIB_SCRIPT"] = "covide";
+
+/* set certificate file */
+// $certificate = "conf/server.crt";
+
+/* offload beagle to an external index machine */
+// $beagle["prefix"] = "ssh -C 192.168.1.2 -p 1026 -l www-data";
+// $beagle["home"]   = "/var/indexinfo";
+
+/* do 'page'-less cms rewrites (without the /page/ folder) */
+// $cms["page_less_rewrites"] = 1;
+
+/* set php binary path for the cms (used in lint checks) */
+// $cms["phpbin"] = "/usr/bin/php5";
+
+/* some extra settings */
+
+/* use cms rewriting schema without the /page/ folder */
+// $cms["page_less_rewrites"] = 1;
+
+/* use a minimalistic version of the cms footer in the website */
+// $cms["minimal_footer"] = 1;
+
+/* disable the static gzip compression */
+// $html["no_static_gzip_compression"] = 1;
+
+/* define a custom pagesize settings */
+// $html["custom_pagesize"] = array(
+//	5 => 5,
+//	10 => 10,
+//	20 => 20,
+//	25 => 25,
+//	50 => 50,
+//	100 => 100,
+//	150 => 150,
+//	200 => 200
+//);
+
+/* specify some custom smtp settings
+// $smtp = array(
+// "server_hostname" => "localhost",
+// "server_port"     => 174,
+// "server_timeout"  => 60,
+// "helo"            => "covide.localhost",
+// "tls"             => 1,
+// "auth_enable"     => 1,
+// "auth_username"   => "covide",
+// "auth_password"   => "mysmtppass",
+// "logscript"       => "/usr/local/bin/covidelog.php"
+//);
+/* define a custom polling interval */
+
+// example log script for smtp[logscript]
+/*
+#!/usr/bin/php
+<?php
+$params = $argv;
+$message = sprintf("covide.%s", $params[1]);
+$from = $params[2];
+$rcpt = explode(",", $params[3]);
+$size = $params[4] + 1024; // 1024 = average header size
+// now do whatever you like to do with it ;)	
+?>
+*/
+
+//$voip["polling_interval"] = 30;
+
+/* define custom virus settings */
+// $virus["conf"] = array(
+// "enable_fprot"  => 0,
+// "enable_clamav" => 1
+//);
+
+/* set this to use database driven session store */
+//$conf["sessions"] = "database";
+?>

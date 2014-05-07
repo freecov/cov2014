@@ -1,0 +1,47 @@
+System and software requirements for Covide 6.0 OOP release:
+
+System environment:
+- Any environment with full support for the software listed below
+- Linux Debian Sarge (current stable release) with DotDebian packages is recommended
+
+
+Webserver environment:
+* Apache-SSL (1.3.29) -or-
+* Apache2 (2.0.55) (recommended)
+
+Script environment:
+* PHP 5.0.2 minimum (5.1.2 as Apache Module or higher strongly recommended) with the following extensions:
+ - pgsql (PostgreSQL)
+ - mysql (MySQL)
+ - imap  (IMAP/POP3)
+ - mbstring (MultiByte String)
+ - session  (Session)
+ - gettext  (Gettext)
+ - pcre (Perl regular expressions)
+ - zlib (gzip compression support)
+* Zend Extension PHP5-eaccelerator is supported (tested and recommended on PHP 5.1.2)
+
+Database environment:
+- PostgreSQL 7.4 minimum (PostgreSQL 8.0 or higher with TSearchV2 strongly recommended) -or-
+- MySQL 4.1 minimum (MySQL 5.0 or higher strongly recommended)
+
+System programs:
+- Beagle (Indexing tool) (version 0.2.4 recommended)
+- UUDecode (decoder for uuencoded files) (version 4.2.1 recommended)
+- UUDeview (decoder for various binary file formats) (version 2.5.20 recommended)
+- TNef (Transport Neutral Encapsulation Format support) (version 1.4 recommended)
+- PdfToHtml (pdf to html conversion)
+- wvHtml (MsWord to html conversion)
+- xlHtml (Excel to html conversion)
+- unzip (unzip support)
+- o3view (OpenOffice.org conversion)
+- utf8tolatin1 (commandline utf8 to latin1 conversion)
+- ELinks (Text based browser) (version 0.10.6 or higher recommended)
+- convert (for image conversions)
+- wmf2eps (wmf support)
+- sfftobmp (Structured Fax File to Bitmap support)
+- tiff2pdf (convert Tiff files to Pdf)
+- Html2Ps (html to PostScript support)
+- Ps2Pdf (PostScript to Pdf support)
+- Curl (to retrieve images inside the pdf convertor)
+

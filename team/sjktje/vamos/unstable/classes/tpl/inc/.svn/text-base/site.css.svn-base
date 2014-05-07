@@ -1,0 +1,24 @@
+em.tt_tooltip {
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+img.imagebutton:hover {
+	-moz-opacity: .50;
+}
+div#alternative_footer {
+	background-color: white;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	padding-top: 1px;
+	padding-right: 1px;
+	position: fixed;
+	visibility: hidden;
+	right: 0px;
+	bottom: 0px;
+}
+div#alternative_icon {
+	padding-right: 1px;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+}

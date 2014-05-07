@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/parser
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/parser/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/parser/README
+END
+parser.lex.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/parser/parser.lex.c
+END
+parser.l
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/parser/parser.l
+END

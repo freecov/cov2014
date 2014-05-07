@@ -1,0 +1,674 @@
+<?php
+/**
+ * Covide Groupware-CRM
+ *
+ * Covide Groupware-CRM is the solutions for all groups off people
+ * that want the most efficient way to work to together.
+ * @version %%VERSION%%
+ * @license http://www.gnu.org/licenses/gpl.html GPL
+ * @link http://www.covide.net Project home.
+ * @author Michiel van Baak <mvanbaak@users.sourceforge.net>
+ * @author Stephan vd Haar <svdhaar@users.sourceforge.net>
+ * @copyright Copyright 2000-2007 Covide BV
+ * @package Covide
+ */
+Class Covide {
+	/* variables */
+	public $pagesize = 20;
+	public $pagesize_default = 20;
+	public $pagesize_alt = 10;
+
+	public $loaded_scripts = array();
+
+	/**
+	 * @var integer show debug information.
+	 */
+	public $debug = 1;
+	/**
+	 * @var integer clean output html with indenting.
+	 */
+	public $debug_indent = 0;
+	/**
+	 * @var array holds all license info for an office.
+	 */
+	public $license = Array();
+	/**
+	 * @var string holds version number
+	 */
+	public $vernr = "7.4 dev";
+	/**
+	 * @var array holds all user info
+	 */
+	public $userinfo = Array();
+	/**
+	 * @var object database connection identifier
+	 */
+	public $db;
+	public $dsn;
+	/**
+	 * @var integer theme number
+	 */
+	public $theme = 0;
+	/**
+	 * @var array of tags to filter
+	 */
+	public $filter_tags = array("iframe", "script");
+	public $filter_pattern;
+	/**
+	 * @var string physical filesystem location for files
+	 */
+	public $filesyspath = "";
+	public $temppath = "";
+	public $logpath = "";
+	public $webroot = "";
+	public $sslmode;
+	public $certificate;
+
+	public $mobile = 0;
+
+	public $conversion;
+
+	public $current_module = array();
+	public $contrib        = array();
+	public $sync_stats     = array();
+	/* methods */
+
+    /* 	__construct {{{ */
+    /**
+     * 	__construct. Init a covide object and set some defaults
+     */
+	public function __construct() {
+		/* do the session initialization here. */
+		session_cache_limiter('private, must-revalidate');
+		session_start();
+
+		ini_set('include_path',ini_get('include_path').':./PEAR:');
+
+		/* open database connection and set some defaults. */
+		require_once("MDB2.php");
+		require_once("conf/offices.php");
+
+		$options = array(
+			"persistent"  => TRUE,
+			'portability' => MDB2_PORTABILITY_NONE
+		);
+
+		$this->dsn = $dsn;
+		$this->certificate = $certificate;
+
+		$this->db =& MDB2::connect($dsn, $options);
+		if (PEAR::isError($this->db)) {
+			 echo ("Warning: no Covide office configured at this address or no valid database specified. ");
+			 echo ($this->db->getMessage());
+			 die();
+		}
+		/* include our own db lib. This should be removed asap. */
+		require_once("common/functions_pear.php");
+		$this->db->setFetchMode(DB_FETCHMODE_ASSOC);
+		$this->db->setOption("autofree", 1);
+
+		/* create the database structure */
+		/*
+		$patch = new Covide_postgresql(&$this->db);
+		$patch->check_database();
+		*/
+
+		/* fill some default stuff we need throughout whole covide. */
+		$this->_get_license();
+		/* check if we have everything in place for covide */
+		$this->_check_officereq();
+
+		/* check for patches to be applied */
+		$this->checkPatchLevel();
+
+		$this->temppath = dirname($_SERVER["SCRIPT_FILENAME"])."/tmp/";
+		/* set the gettext env. */
+		$this->_set_language();
+
+		$dir = dirname($_SERVER["SCRIPT_NAME"])."/";
+		$dir = preg_replace("/\/{1,}/s", "/", $dir);
+		if ($_SERVER["HTTPS"] == "on" || $_SERVER["HTTP_X_FORWARDED_PROTOCOL"] == "https") {
+			$uri = "https://";
+		} else {
+			$uri = "http://";
+		}
+		$uri.= $_SERVER["HTTP_HOST"].$dir;
+		$this->webroot = $uri;
+
+		/* overwrite default theme 0 if session theme is set */
+		$compress_level = 1;
+		if (isset($_SESSION["theme"])) {
+			$this->theme = $_SESSION["theme"];
+		} else {
+			$this->theme = 1;
+		}
+		if ($_SESSION["pagesize"] < 5) {
+			$_SESSION["pagesize"] = 5;
+		}
+		if ($_SESSION["pagesize"] > 1000) {
+			$_SESSION["pagesize"] = 1000;
+		}
+		if ($_SESSION["pagesize"]) {
+			$this->pagesize = $_SESSION["pagesize"];
+		}
+
+		$this->conversion = new Layout_conversion();
+		$this->retrieve_dayquote();
+
+		$this->contrib = $contrib;
+
+		if (isset($_REQUEST["disable_dx"]))
+			setcookie("disable_dx_transform", (int)$_REQUEST["disable_dx"]);
+
+		/* preset database connection into the db var, so custom scripts can be run */
+		/* this will we overwritten when the covide object is inited */
+		$GLOBALS["covide"]->db = $this->db;
+		$GLOBALS["covide"]->theme = $_SESSION["theme"];
+
+		if ($this->contrib["USE_CONTRIB_SCRIPT"]) {
+			$file = "contrib/".$this->contrib["USE_CONTRIB_SCRIPT"]."/pre_covide.php";
+			if (file_exists($file))
+				require_once($file);
+		}
+
+	}
+    /* }}} */
+    /* 	__destruct {{{ */
+    /**
+     * 	__destruct. clean up everything
+     */
+	public function __destruct() {
+		/* disconnect from database. */
+		@$this->db->disconnect();
+	}
+    /* }}} */
+    /* 	_get_license {{{ */
+    /**
+     * 	_get_license. Read the license table and init some vars
+     */
+	private function _get_license() {
+		$q = "SELECT * FROM license ;";
+		$res = $this->db->query($q);
+		//$res->fetchInto($row);
+		$row = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
+
+		$this->license = $row;
+		if (trim($row["filesyspath"])) {
+			$basepath = $row["filesyspath"];
+		} else {
+			$basepath = "/var/covide_files/";
+		}
+		$basepath .= $row["code"];
+		$this->filesyspath = $basepath;
+		$this->logpath = sprintf("%s/../logs/%s", $basepath, $row["code"]);
+		$res->free();
+	}
+    /* }}} */
+
+	/* _set_language {{{ */
+	/**
+	 * Set the gettext enviroment for complete covide.
+	 */
+	private function _set_language($override_lang="") {
+		if ($_SESSION["user_id"] || $override_lang) {
+			//language settings
+			if (!$override_lang) {
+				$sql = sprintf("SELECT language FROM users WHERE id=%d", $_SESSION["user_id"]);
+				$res = $this->db->query($sql);
+				//$res->fetchInto($row);
+				$row = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
+			} else {
+				$row["language"] = $override_lang;
+			}
+		} else {
+			/* get the default language from the database */
+			if ($this->license["default_lang"]) {
+				$row["language"] = $this->license["default_lang"];
+			}
+		}
+		switch ($row["language"]) {
+			case "NL" : $language = "nl_NL"; $hlindex = "index.htm";    break;
+			case "DE" : $language = "de_DE"; $hlindex = "index_de.htm"; break;
+			case "ES" : $language = "es_ES"; $hlindex = "index_es.htm"; break;
+			case "IT" : $language = "it_IT"; $hlindex = "index_it.htm"; break;
+			case "SE" : $language = "sv_SE"; $hlindex = "index_sv.htm"; break;
+			default   : $language = "en_US"; $hlindex = "index_en.htm"; break;
+		}
+		putenv("LANG=$language");
+		$_SESSION["locale"] = $language;
+		setlocale(LC_ALL, $language);
+		setlocale(LC_NUMERIC, "en_US"); //always use . as decimal
+		setlocale(LC_MONETARY, "C"); //C system locale
+		$domain = 'messages';
+		$filepath = $_SERVER["SCRIPT_FILENAME"];
+		$path_parts = explode("/", $filepath);
+		$path_len = count($path_parts)-1;
+		$path1 = "";
+		for ($i=0;$i<$path_len;$i++) {
+			$path1 .= "/".$path_parts[$i];
+		}
+		$path1 .= "/".$parent."lang";
+		bindtextdomain($domain, $path1);
+		bind_textdomain_codeset($domain, "UTF-8");
+		textdomain($domain);
+	}
+	/* }}} */
+	/* override_language {{{ */
+	/**
+	 * override_language. Override the language setting
+	 *
+	 * @param string set to language.
+	 */
+	public function override_language($lang) {
+		$this->_set_language($lang);
+	}
+	/* }}} */
+
+
+	/* run_module {{{ */
+	/**
+	 * run_module. Run the class we want
+	 *
+	 * This function is to run the correct module.
+	 *
+	 * @param string name of the class.
+	 */
+	public function run_module($module="") {
+		$module = str_replace("/", "", $module);
+		$this->current_module[] = $module;
+		switch ($module) {
+			case "address" :
+				$address = new Address();
+				break;
+			case "classification" :
+				$classification = new Classification();
+				break;
+			case "calendar" :
+				$calendar = new Calendar();
+				break;
+            case "consultants":
+                $consultants = new Consultants();
+                break;
+			case "customers":
+				$customers = new Customers();
+				break;
+			case "logbook":
+				$logbook = new Logbook();
+				break;
+			case "note" :
+				$note = new Note();
+				break;
+			case "todo" :
+				$todo = new Todo();
+				break;
+			case "email" :
+				$email = new Email();
+				break;
+			case "newsletter" :
+				$this->current_module[] = "email";
+				$newsletter = new Newsletter();
+				break;
+			case "user" :
+				$user = new User();
+				break;
+			case "filesys" :
+				$filesys = new Filesys();
+				break;
+			case "project" :
+				$project = new Project();
+				break;
+			case "projectext" :
+				$project = new ProjectExt();
+				break;
+			case "history" :
+				$history = new Layout_history();
+				break;
+			case "voip" :
+				$voip = new Voip();
+				break;
+			case "support" :
+				$support = new Support();
+				break;
+			case "rss" :
+				$rss = new Rss();
+				break;
+			case "sales":
+				$sales = new Sales();
+				break;
+			case "index":
+				$sales = new Index();
+				break;
+			case "templates":
+				$this->current_module[] = "address";
+				$sales = new Templates();
+				break;
+			case "metafields":
+				$meta = new Metafields();
+				break;
+			case "mortgage":
+				$this->current_module[] = "address";
+				$mortgage = new Mortgage();
+				break;
+			case "cms":
+				$cms = new Cms();
+				break;
+			case "snack":
+				$snack = new Snack();
+				break;
+			case "funambol":
+				$funambol = new Funambol();
+				break;
+			case "projectdeclaration":
+				$this->current_module[] = "project";
+				$declaration = new ProjectDeclaration();
+				break;
+			case "privoxyconf" :
+				$this->current_module[] = "user";
+				$privoxyconf = new Privoxyconf();
+				break;
+			case "twinfield" :
+				$this->current_module[] = "twinfield";
+				$twinfield = new Twinfield();
+				break;
+			default :
+				if (!$_SESSION["user_id"]) {
+					/* remove old temp files */
+					$this->cleanUpTempDir();
+
+					/* show login */
+					$user = new User_output();
+					$user->show_login();
+				} else {
+					/* show desktop */
+					$desktop = new Desktop();
+				}
+				break;
+		}
+	}
+	/* }}} */
+
+	public function detect_mobile($str) {
+		$agent = $_SERVER["HTTP_USER_AGENT"];
+		if (preg_match($str, $agent)) {
+			$this->mobile = 1;
+			$this->theme = 9;
+			header("X-Covide-Version: Mobile");
+		} else {
+			header("X-Covide-Version: Normal");
+		}
+	}
+
+	public function force_ssl($state) {
+		/* detect and change ssl state */
+		if ($this->mobile) {
+			//$state = 0;
+		} else {
+			$uri = $_SERVER["HTTP_HOST"]."/".dirname($_SERVER["SCRIPT_NAME"])."/?".$_SERVER["QUERY_STRING"];
+			$uri = preg_replace("/\/{1,}/s", "/", $uri);
+			$uri = preg_replace("/\?{1,}/s", "?", $uri);
+
+			if ($state == 3 && ($_SERVER["HTTPS"] || $_SERVER["HTTP_X_FORWARDED_PROTOCOL"] == "https")) {
+				header("Location: http://".$uri);
+				exit();
+			} elseif ((($state == 1 && $_SESSION["user_id"]) || ($_SESSION["ssl_enable"] && $state != 3)) && !$_SERVER["HTTPS"] && $_SERVER["HTTP_X_FORWARDED_PROTOCOL"] != "https") {
+				/* some exceptions */
+				if ($_REQUEST["mod"] == "cms") {
+					$this->force_ssl = 3;
+					return;
+				}
+				/* some ssl exceptions */
+				/* filesys is checked inside filesystem module on highest parent = cms */
+				if (!($_REQUEST["mod"] == "email" && $_REQUEST["action"] == "retrieve")
+					&& !($_REQUEST["mod"] == "user" && $_REQUEST["action"] == "cron")
+					&& !($_REQUEST["mod"] == "user" && $_REQUEST["action"] == "translate")
+					&& !($_REQUEST["mod"] == "user" && $_REQUEST["action"] == "logout")
+					&& !($_REQUEST["mode"] == "loginimage")
+					&& !($_REQUEST["mod"] == "filesys" && in_array($_REQUEST["action"], array(
+						"opendir", "fdownload", "view_file", "preview_file",
+						"getPreviewFile", "preview_header")))
+					) {
+
+					$q = sprintf("select cms_manage_hostname from cms_license");
+					$res = sql_query($q);
+					$mhost = strtolower(trim(sql_result($res,0)));
+					$hhost = preg_replace("/((^http(s){0,1}:\/\/)|(\/$))/s", "", $GLOBALS["covide"]->webroot);
+					if ($mhost != $hhost) {
+						//echo sprintf("no access with this hostname [%s], please use <a href='http://%s/covide/'>http://%s/covide/</a>", $hhost, $mhost);
+						header(sprintf("Location: http://%s/covide/", $mhost));
+						exit();
+					}
+					header("Location: https://".$uri);
+					exit();
+				}
+			}
+		}
+		$this->sslmode = $state;
+	}
+
+	/* this mechanism prevents caching of *.js and *.css files */
+	public function load_file($file) {
+
+		if (!file_exists($file))
+			exit();
+
+		$fn = $file;
+		ini_set("open_basedir", dirname($_SERVER["SCRIPT_FILENAME"]));
+
+		$allowed_extensions = array(
+			"png" => "image/png",
+			"gif" => "image/gif",
+			"css" => "text/plain",
+			"js"  => "text/javascript"
+		);
+
+		if (preg_match("/(\.|\/){2,}/s", $file))
+			exit("no access");
+
+		$f = basename($file);
+		$f = preg_replace("/[^a-z0-9_\.]/si", "", $f);
+		$f = explode(".", $f);
+		$ext = strtolower( $f[count($f)-1] );
+
+		if ($allowed_extensions[$ext]) {
+			$mime = $allowed_extensions[$ext];
+
+			/* Image not cached or cache outdated, we respond '200 OK' and output the image. */
+			Header("Expires: ".gmdate("D, j M Y H:i:s", mktime()+(24*60*60))." GMT");
+			header('Last-Modified: '.gmdate('D, d M Y H:i:s', mktime()-(24*60*60)).' GMT', true, 200);
+			header("Content-Transfer-Encoding: binary");
+			header('Content-Type: '.$mime);
+			header("Pragma: public");
+			print file_get_contents($fn);
+		}
+
+		ini_restore("open_basedir");
+		exit();
+	}
+
+	public function trigger_login() {
+		echo "<html>";
+		echo "<body>";
+			?>
+			<script language="javascript">
+				alert('<?=addslashes(gettext("You are not logged in."))?>');
+				setTimeout('document.location.href="index.php"', 1000);
+			</script>
+			<?
+		echo "</body>";
+		echo "</html>";
+		exit();
+	}
+
+	/* _check_officereq() {{{ */
+	/**
+	 * Check wether we have all directories with correct permissions
+	 */
+	private function _check_officereq() {
+		/* check only first time of the session */
+		if (!$_SESSION["allok"]) {
+			/* dir structure we need */
+			$dirs = array(
+				"bestanden",
+				"email",
+				"bedrijfsinfo",
+				"templates",
+				"maildata",
+				"mailhandtekening",
+				"faxes",
+				"relphotos",
+				"relphotos/bcards",
+				"syncml",
+				"syncml/calendar",
+				"syncml/contacts",
+				"syncml/todos",
+				"funambol",
+				"gallery",
+				"cmscache",
+				"../logs",
+				"../logs/".$this->license["code"]
+			);
+			/* check office filesyspath */
+			if (!is_dir($this->filesyspath)) {
+				if (!mkdir($this->filesyspath)) {
+					die("Could not create needed directory: ".$this->filesyspath);
+				}
+			}
+			if (!is_writable($this->filesyspath)) {
+				die("Could not write to directory: ".$this->filesyspath);
+			}
+			foreach ($dirs as $dir) {
+				$check = $this->filesyspath."/".$dir;
+				if (!is_dir($check)) {
+					/* missing dir */
+					if (!mkdir($check)) {
+						die("Could not create needed directory: $check");
+					}
+				}
+				if (!is_writable($check)) {
+					die("Could not write to directory: $check");
+				}
+			}
+			$_SESSION["allok"] = 1;
+		}
+	}
+	/* }}} */
+
+	public function cleanUpTempDir() {
+		$exclude = array(".", "..", ".svn", "README", "check.txt", "menu");
+		$files = scandir($this->temppath);
+		foreach ($files as $file) {
+			if (!in_array($file, $exclude) && !preg_match("/^lastcall_/s", $file)) {
+				$ctime = @filectime($this->temppath.$file);
+				/* if file change time is older than 15 minutes */
+				if ($ctime + (15*60) <= mktime()) {
+					if (is_dir($this->temppath.$file)) {
+						/* remove directory */
+						$dirfiles = scandir($this->temppath.$file);
+						foreach ($dirfiles as $dirfile) {
+							/* remove contents of directory */
+							if (!in_array($dirfile, $exclude) && file_exists($this->temppath.$file."/".$dirfile))
+								@unlink($this->temppath.$file."/".$dirfile);
+						}
+						@rmdir($this->temppath.$file);
+					} else {
+						/* remove file */
+						@unlink($this->temppath.$file);
+					}
+				}
+			}
+		}
+		/* move (or merge) old log files */
+		$files = scandir($this->filesyspath);
+		foreach ($files as $file) {
+			if (!is_dir($file) && preg_match("/\.log$/s", $file)) {
+				$target = $this->logpath."/".$file;
+				$target = preg_replace("/\.log$/s", ".moved.log", $target);
+				$file   = $this->filesyspath."/".$file;
+
+				copy($file, $target);
+				unlink($file);
+			}
+		}
+
+	}
+	private function retrieve_dayquote() {
+		/* prepare dayqoute */
+		$today = mktime(0,0,0,date("m"),date("d"),date("Y"));
+		if ($this->license["dayquote"] != $today) {
+			/* make new qoute */
+			if (file_exists("/usr/games/fortune")) {
+				$cmd = "/usr/games/fortune -a";
+				exec($cmd, $ret, $retval);
+				$this->license["dayquote_nr"] = implode("\n", $ret);
+				$this->license["dayquote"]    = $today;
+
+				$q = sprintf("update license set dayquote = %d, dayquote_nr = '%s'",
+					$today, $this->license["dayquote_nr"]);
+				$this->db->query($q);
+			}
+		}
+	}
+
+	public function checkPatchLevel() {
+		if (preg_match("/^mysql(i){0,1}:\/\//s", $this->dsn)) {
+			if ($this->license["autopatcher_enable"]) {
+				$this->patchAll();
+			}
+		}
+	}
+	public function patchAll() {
+		if (preg_match("/^mysql(i){0,1}:\/\//s", $this->dsn)) {
+			$dir = scandir("sql/mysql/patches");
+			$files = array();
+			foreach ($dir as $file) {
+				if (preg_match("/\.sql$/s", $file)) {
+					$files[] = (int)preg_replace("/\.sql$/s", "", $file);
+				}
+			}
+			/* get last patch level */
+			$lastpatch = (int)$this->license["autopatcher_lastpatch"];
+
+			/* if at least the last patchfile needs to be applied */
+			if (count($files) > 0) {
+				if (end($files) > $lastpatch) {
+					/* reparse peardb dsn to array */
+					$dsn = preg_replace("/^mysql(i){0,1}:\/\//s", "", $this->dsn);
+					$dsn = str_replace("@tcp(", ":", $dsn);
+					$dsn = str_replace(")/", ":", $dsn);
+					$dsn = explode(":", $dsn);
+
+					/* check if patches need to be applied */
+					foreach ($files as $f) {
+						$patches++;
+						if ($f > $lastpatch) {
+							/* apply patch */
+							$fn = sprintf("sql/mysql/patches/%d.sql", $f);
+							$cmd = sprintf("/usr/bin/mysql --host=%s --port=%s --user=%s --password=%s %s < %s",
+								escapeshellarg($dsn[2]),
+								escapeshellarg($dsn[3]),
+								escapeshellarg($dsn[0]),
+								escapeshellarg($dsn[1]),
+								escapeshellarg($dsn[4]),
+								$fn
+							);
+							#echo $cmd."<BR>";
+							exec($cmd, $ret, $retval);
+						}
+					}
+					/* update autopatcher lastpatch */
+					$cmd = sprintf("/usr/bin/mysql --host=%s --port=%s --user=%s --password=%s %s --execute=%s",
+						escapeshellarg($dsn[2]),
+						escapeshellarg($dsn[3]),
+						escapeshellarg($dsn[0]),
+						escapeshellarg($dsn[1]),
+						escapeshellarg($dsn[4]),
+						sprintf("\"update license set autopatcher_lastpatch='%s'\"", end($files))
+					);
+					#echo $cmd."<BR>";
+					exec($cmd, $ret, $retval);
+				}
+			}
+		}
+	}
+}
+?>

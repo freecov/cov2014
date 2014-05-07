@@ -1,0 +1,1 @@
+ALTER TABLE `sales` ADD `multirel` VARCHAR( 255 ) NULL ;

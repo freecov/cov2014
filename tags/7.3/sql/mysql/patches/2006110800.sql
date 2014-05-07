@@ -1,0 +1,1 @@
+ALTER TABLE `project` ADD `executor` INT( 11 ) NULL DEFAULT '0';

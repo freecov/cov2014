@@ -1,0 +1,1 @@
+ ALTER TABLE `cms_users` ADD `confirm_hash` VARCHAR( 255 ) NOT NULL ;

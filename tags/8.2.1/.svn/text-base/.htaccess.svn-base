@@ -1,0 +1,121 @@
+AddDefaultCharset utf-8
+<IfModule mod_deflate.c>
+	<Files *.js>
+		AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript
+	</Files>
+	<Files *.css>
+		AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript
+	</Files>
+</IfModule>
+<Files *.js.gz>
+	ForceType text/javascript
+	Header set Content-Encoding: gzip
+</Files>
+<Files *.css.gz>
+	ForceType text/css
+	Header set Content-Encoding: gzip
+</Files>
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	#rewrite for java applet
+	#RewriteRule ^/{0,1}wjhk/(.*)$ /jupload/wjhk/$1 [NC,L,R=301]
+
+	#msie6 alpha loader fix
+	RewriteRule ^/{0,1}page/themes/(.*)$ /themes/$1 [NC,L]
+
+	#covide compressor
+	RewriteRule ^/{0,1}compress/(.*)$ compress.php?f=$1 [NC,L]
+
+	#some cms rewrites
+	RewriteRule ^/{0,1}page/(.*)$ /site.php?page=$1 [NC,L]
+
+	#'page'-less rewrite feature
+	RewriteCond %{REQUEST_URI} !((/.*/)|(sitemap\.htm)|(sitemap_plain\.htm)|(blank\.htm))
+	RewriteRule ^/{0,1}(.*\.htm.*)$ /site.php?pageless=1&page=$1 [NC,L]
+
+	RewriteRule ^/{0,1}activate/(.*)$ /index.php?mod=cms&action=registerAccountConfirm&$1 [NC,L]
+	RewriteRule ^/{0,1}list/(.*)$ /site.php?list=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}feedback/(.*)$ /site.php?feedback=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}gallery/(.*)$ /site.php?gallery=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}enquete/(.*)$ /site.php?enquete=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}metadata(.*) /site.php?mode=metadata&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}addressdata(.*) /site.php?mode=addressdata&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}menu/(.*)$ /site.php?mode=menu&pid=$1 [NC,L]
+	RewriteRule ^/{0,1}include/(.*)$ /site.php?include=$1 [NC,L]
+	RewriteRule ^/{0,1}cmslogin(.*) /site.php?mode=cmslogin&uri=%{QUERY_STRING} [NC,L,R=301]
+	RewriteRule ^/{0,1}loginimage.png /site.php?mode=loginimage&dl=1 [NC,L,R=301]
+
+	RewriteRule ^/{0,1}search/(.*) /site.php?mode=search&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}filesearch/(.*) /site.php?mode=filesearch&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}text(/){0,1}(.*) /site.php?mode=text&page=$2 [NC,L]
+	RewriteRule ^/{0,1}sitemap_plain.htm$ /site.php?mode=sitemap_plain [NC,L]
+
+	#cms images
+	RewriteRule ^/{0,1}cmsfile/(.*)$ /showcms.php?dl=1&id=$1 [NC,L]
+	RewriteRule ^/{0,1}cmscache/(.*)$ /showcms.php?dl=1&cacheid=$1 [NC,L]
+	RewriteRule ^/{0,1}cmsgallery/.*[^/]/(.*)$ /showcms.php?dl=1&galleryid=$1 [NC,L]
+	RewriteRule ^/{0,1}savefile/(.*)$ /showcms.php?dl=1&save=1&id=$1 [NC,L]
+
+	RewriteRule ^/{0,1}menudata/menuimages/{1,}cmsfile/(.*)$ /showcms.php?dl=1&id=$1 [NC,L]
+
+	#old cms files
+	RewriteRule ^/{0,1}cmsfiles/(.*)$ /showcms.php?oldfile=$1 [NC,L]
+	RewriteRule ^/{0,1}beheer/cmsfiles/(.*)$ /showcms.php?oldfile=$1 [NC,L]
+	RewriteRule ^/{0,1}cms_style\.php(.*)$ /classes/tpl/inc/site_empty.css [NC,L]
+
+	#rss feeds and robots
+	RewriteRule ^/{0,1}rss/address/(.*)$ /site.php?dl=1&mode=rss&address=1&sel=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/meta/(.*)$ /site.php?dl=1&mode=rss&meta=1&sel=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/feed/(.*)$ /site.php?dl=1&mode=rss&parent=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/live/(.*)$ /site.php?dl=1&mode=rss&live=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/{0,1}$ /site.php?dl=1&mode=rss [NC,L]
+	RewriteRule ^/{0,1}robots.txt$ /site.php?dl=1&mode=robots [NC,L]
+	RewriteRule ^/{0,1}mode/(.*)$ /site.php?dl=1&mode=$1 [NC,L]
+
+	#sitemaps
+	RewriteRule ^/{0,1}sitemap.xml$ /site.php?dl=1&mode=google [NC,L]
+	RewriteRule ^/{0,1}sitemap.(\d{1,})\.xml.gz$ /site.php?dl=1&mode=googlegz&part=$1 [NC,L]
+	RewriteRule ^/{0,1}sitemap.(\d{1,})\.xml.text$ /site.php?dl=1&mode=googlegz&nocompress=1&part=$1 [NC,L]
+	RewriteRule ^/{0,1}sitemap.htm$ /site.php?dl=1&mode=sitemap [NC,L]
+	RewriteRule ^/{0,1}search.xml$ /site.php?dl=1&mode=xmlsearch [NC,L]
+
+	#favicon and logo
+	RewriteRule ^/{0,1}favicon.ico$ /site.php?mode=favicon [NC,L]
+
+	#covide logins to manage domain
+	RewriteRule ^/{0,1}covide/{0,1}$ /site.php?mode=covideloginalt [NC,L]
+	RewriteRule ^/{0,1}login$ /?mod=desktop [NC,L]
+
+	#calendar loader
+	RewriteRule ^/{0,1}calendar/(.*)$ /site.php?mode=calendar&$1 [NC,L]
+	RewriteRule ^/{0,1}calendarpage/(.*)$ /site.php?calendar=1&page=$1 [NC,L]
+
+	#finance rewrites
+	RewriteRule ^/{0,1}classes/finance/non-oop/.*/themes/(.*)$ /themes/$1 [L]
+	RewriteRule ^/{0,1}classes/finance/non-oop/.*/img/(.*)$ /img/$1 [L]
+	RewriteRule ^/{0,1}classes/finance/non-oop/.*/classes/(.*)$ /classes/$1 [L]
+
+	#some mvblog internal rewrites
+	#RewriteRule ^/{0,1}blog/post/(.*)$ /blog/index.php?action=view&id=$1 [NC]
+	#RewriteRule ^/{0,1}blog/archive/(.*)$ /blog/index.php?action=archive&m=$1 [NC]
+	#RewriteRule ^/{0,1}blog/category/(.*)$ /blog/index.php?action=archive_cat&c=$1 [NC]
+
+	#some blog/cms specific rewrites
+	#RewriteRule ^/{0,1}common/tb.php(.*)$ /plugins/mvblog/common/tb.php?%{QUERY_STRING} [NC,L]
+	#RewriteRule ^/{0,1}blog/index.php(.*)$ /site.php?mode=blog&%{QUERY_STRING} [NC,L]
+	#RewriteRule ^/{0,1}blog/(menudata/|themes/|classes/|compress.php)(.*)$ /$1$2 [NC,L]
+	#RewriteRule ^/{0,1}blog/{0,1}(.*)$ /site.php?mode=blog&param=$1 [NC,L]
+
+	#RewriteRule ^/{0,1}forum$ /site.php?mode=forum [NC,L]
+
+	# get rid of the annoying linkcheckers
+	RewriteCond %{HTTP_USER_AGENT} ".*MSIE 6.0; Windows NT 5.1; SV1\)$" [OR]
+	RewriteCond %{HTTP_USER_AGENT} ".*MSIE 6.0; Windows NT 5.1;1813\)$"
+	RewriteCond %{REQUEST_METHOD} ^GET$
+	RewriteCond %{HTTP_REFERER} ^$
+	RewriteCond %{HTTP:Accept-Encoding} ^$
+	RewriteCond %{HTTP:Accept-Language} ^$
+	RewriteCond %{HTTP:Accept-Charset} ^$
+	RewriteRule ^.* http://www.grisoft.com/ww.upgrade [R=307,L]
+</IfModule>

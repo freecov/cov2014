@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc
+END
+save2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/save2db.php
+END
+showEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showEdit.php
+END
+showSupportForm.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showSupportForm.js
+END
+showExport.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showExport.js
+END
+dataGetExternalIssues.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/dataGetExternalIssues.php
+END
+dataGetSupportItems.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/dataGetSupportItems.php
+END
+showIssue.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showIssue.php
+END
+showList.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showList.php
+END
+dataGetSupportItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/dataGetSupportItemById.php
+END
+issue_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/issue_actions.js
+END
+showListExternal.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showListExternal.php
+END
+showSupportForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/showSupportForm.php
+END
+external_support_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/support/inc/external_support_actions.js
+END

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DaemonConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://ww w.w3.org/2001/XMLSchema-instance">
+	<StaticQueryables />
+	<AllowedBackends />
+	<DeniedBackends />
+	<IndexSynchronization>true</IndexSynchronization>
+	<AllowRoot>false</AllowRoot>
+</DaemonConfig>

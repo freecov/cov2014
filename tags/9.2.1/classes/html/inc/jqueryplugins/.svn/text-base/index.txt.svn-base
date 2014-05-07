@@ -1,0 +1,28 @@
+Here's a list that explains the different files and lists how to get them.
+They need jquery 1.3.2 (at least that's what we use) (../jquery.js is 1.3.2 packed)
+
+File: md5.js
+License: GPL
+Description: MD5 hashing implementation in jquery
+Web: http://www.semnanweb.com/jquery-plugin/md5.html
+Version: unknown
+Use: In the loginscreen we hash the password before sending it to the server.
+
+File: jquery-ui-1.7.custom.min.js
+License: GPLv2 and MIT
+Description: ui plugin with the following options checked:
+  UI Core
+  Interactions:
+    Draggable
+	Resizable
+	Sortable
+  Widgets:
+    Dialog
+	Datepicker
+	Progressbar
+  Version:
+    1.7 (Current stable for jQuery 1.3+)
+Minified
+Web: http://jqueryui.com
+Version: 1.7
+Use: popups, dashboard draggable blocks, infolayers, progressbars in login and newsletter

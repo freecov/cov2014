@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/6952/installer/covide_config
+END
+install_covide_base.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6952/installer/covide_config/install_covide_base.sh
+END
+generate_beagle_config.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6952/installer/covide_config/generate_beagle_config.sh
+END
+covide_install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6952/installer/covide_config/covide_install.sh
+END
+install_beagle_base.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6952/installer/covide_config/install_beagle_base.sh
+END
+generate_covide_certificate.sh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6952/installer/covide_config/generate_covide_certificate.sh
+END

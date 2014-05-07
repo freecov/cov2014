@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/support/inc
+END
+showList.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/support/inc/showList.php
+END
+dataGetSupportItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/5527/branches/covide-stable/classes/support/inc/dataGetSupportItemById.php
+END
+issue_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4899/branches/covide-stable/classes/support/inc/issue_actions.js
+END
+showListExternal.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/support/inc/showListExternal.php
+END
+showSupportForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4429/branches/covide-stable/classes/support/inc/showSupportForm.php
+END
+external_support_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/support/inc/external_support_actions.js
+END
+save2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/support/inc/save2db.php
+END
+showEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/support/inc/showEdit.php
+END
+showSupportForm.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/support/inc/showSupportForm.js
+END
+showExport.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/support/inc/showExport.js
+END
+dataGetExternalIssues.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/support/inc/dataGetExternalIssues.php
+END
+dataGetSupportItems.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/support/inc/dataGetSupportItems.php
+END
+showIssue.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/support/inc/showIssue.php
+END

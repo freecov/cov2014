@@ -1,0 +1,3050 @@
+2009-05-08 17:01 +0000 Michiel van Baak <michiel@covide.nl>
+
+	* Covide 9.1.2 released
+
+2009-05-08 14:38 +0000 [r6023-6025]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/email/inc/emailOpen.js,
+	  classes/email/inc/dataGetEmailBySearch.php,
+	  classes/email/inc/emailList.php,
+	  classes/email/inc/dataGetEmailById.php,
+	  classes/email/inc/emailOpen.php: - getEmailBySearch now uses
+	  getEmailById to fill in all the details. - fix a couple of places
+	  where too much info on emails a user has no access to were shown.
+
+	* /, classes/covide/default.php: Merged revisions 6021 via svnmerge
+	  from https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6021 | mvanbaak | 2009-05-08 12:54:56 +0200 (Fri, 08
+	  May 2009) | 2 lines update version number ........
+
+	* classes/finance/non-oop/inc_wrapper.php: dont put items under
+	  'more actions' as this is not working here. Rewrite to pure oop
+	  is on it's way, but takes some time
+
+2009-05-07 10:26 +0000 [r5996-6015]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/cms/data.php, sql/mysql/patches/2009050700.sql (added),
+	  /, classes/tpl/output.php, classes/cms/inc/cmsSitemap.php,
+	  classes/cms/output.php, classes/cms/default.php: Merged revisions
+	  6014 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6014 | mvanbaak | 2009-05-07 12:23:09 +0200 (Thu, 07
+	  May 2009) | 4 lines track logins from cms users Fixes #80
+	  ........
+
+	* /, classes/address/inc/dataSaveBcard.php: Merged revisions 6012
+	  via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6012 | mvanbaak | 2009-05-06 14:36:46 +0200 (Wed, 06
+	  May 2009) | 6 lines a countryfield that's not filled will have
+	  'XX' as value. Make sure to get rid of that in the loop to check
+	  if we have to copy data from the RCBC. Fixes #155 ........
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  classes/note/inc/generate_list.php,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: cleanup the menuitems and
+	  subtitles for notes list. Fixes #54
+
+	* shellscripts/update_translations.sh: figure out automagically if
+	  we have to do a 'cd ..'
+
+	* /, classes/tpl/inc/handleList.php, classes/tpl/output.php: Merged
+	  revisions 6008 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6008 | mvanbaak | 2009-05-05 16:56:44 +0200 (Tue, 05
+	  May 2009) | 6 lines revert revision 6003 based on feedback from
+	  svdhaar. This patch is now on reviewboard, and it needs some work
+	  before it can come back Please see
+	  http://reviewboard.vanbaak.info/r/9/ for the patch ........
+
+	* classes/project/output.php: add menuitems to create a new record
+	  when viewing notes, todos and/or calendars from the
+	  projectoverview
+
+	* classes/todo/inc/edit_todo.php: make it possible to specify a
+	  project to link a new todo to
+
+	* /, classes/tpl/inc/handleList.php, classes/tpl/output.php: Merged
+	  revisions 6002-6004 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6002 | mvanbaak | 2009-05-05 13:44:14 +0200 (Tue, 05
+	  May 2009) | 2 lines let's test this ........ r6003 | mvanbaak |
+	  2009-05-05 13:57:45 +0200 (Tue, 05 May 2009) | 6 lines make the
+	  default imagesize in lists go from 50 to 175 50 is way way too
+	  small Fixes #68 ........ r6004 | mvanbaak | 2009-05-05 13:59:42
+	  +0200 (Tue, 05 May 2009) | 3 lines remove test prop. It works, we
+	  should probably start to do something with this ........
+
+	* /, classes/address/inc/userCard.php: Merged revisions 6000 via
+	  svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r6000 | mvanbaak | 2009-05-05 11:30:41 +0200 (Tue, 05
+	  May 2009) | 2 lines only show active projects on usercard.
+	  ........
+
+	* classes/project/inc/edit_project.php, /,
+	  classes/project/inc/dataSaveProject.php,
+	  classes/html/conversion.php: Merged revisions 5997 via svnmerge
+	  from https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5997 | mvanbaak | 2009-05-04 16:57:06 +0200 (Mon, 04
+	  May 2009) | 5 lines Format budget field on projectcard. Fixes #12
+	  Patch by wwinterberg. ........
+
+	* classes/html/editor.php, /: Merged revisions 5995 via svnmerge
+	  from https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5995 | mvanbaak | 2009-05-04 16:31:26 +0200 (Mon, 04
+	  May 2009) | 10 lines fix fontselector in editor. If we dont want
+	  fonts in there, dont show the dropdown box The only place this
+	  really showed up was with lettertemplates. Because there's a
+	  setting to force a font there, we are not using the inline fonts
+	  from the editor there. Fixes #14 Based on a patch by wwinterberg
+	  ........
+
+2009-04-29 09:00 +0000 [r5972-5983]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/address/inc/show_import_step2.php: Merged revisions
+	  5982 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5982 | mvanbaak | 2009-04-29 10:54:06 +0200 (Wed, 29
+	  Apr 2009) | 2 lines fix syntax error in import ........
+
+	* /, classes/email/inc/emailOpen.js: Merged revisions 5980 via
+	  svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5980 | mvanbaak | 2009-04-28 15:24:57 +0200 (Tue, 28
+	  Apr 2009) | 5 lines put the new projectid in the hidden
+	  formfield. This will make the 'save attachment to Covide
+	  filesystem' show the relevant project folder. Fixes #85 ........
+
+	* /, classes/calendar/inc/dataSave2db.php: Merged revisions 5978
+	  via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5978 | mvanbaak | 2009-04-28 13:30:05 +0200 (Tue, 28
+	  Apr 2009) | 4 lines use the correct sql query to remove users
+	  from an appointment that are no longer needed. Fixes #124
+	  ........
+
+	* /: Merged revisions 5975 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5975 | mvanbaak | 2009-04-27 14:15:59 +0200 (Mon, 27
+	  Apr 2009) | 2 lines cleanup login_current here as well ........
+
+	* classes/voip/inc/active_calls.js: always check the
+	  lastcall_<office>.txt file since it's used for chat. We should
+	  ripout the chat code and make it it's own but for now this does
+	  the trick as well
+
+	* classes/email/retrieve.php: temp disable the number of retries.
+
+	* classes/chat/default.php: swap two functions
+
+	* classes/html/output.php: if print stylesheet is present, send it
+	  to the browser
+
+2009-04-24 14:43 +0000 [r5960-5965]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/tpl/output.php, classes/tpl/inc/showMetaResults.php:
+	  Merged revisions 5964 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5964 | mvanbaak | 2009-04-24 16:30:41 +0200 (Fri, 24
+	  Apr 2009) | 2 lines allow to specify a sortorder in cms metadata
+	  search ........
+
+	* classes/html/inc/editor_wyzz.js: fix link creation in wyzz for
+	  chrome
+
+	* /, classes/tpl/output.php: Merged revisions 5959 via svnmerge
+	  from https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5959 | mvanbaak | 2009-04-24 11:31:29 +0200 (Fri, 24
+	  Apr 2009) | 2 lines return some more info for
+	  getPagesByMetadata() ........
+
+	* classes/html/editor.php, classes/html/inc/editor_wyzz.js,
+	  classes/email/inc/emailCompose.php,
+	  classes/note/inc/edit_note.php: - reindent and remove trailing
+	  whitespaces in the wyzz js file. - added option to specify width
+	  and height for the editor.
+
+2009-04-23 10:03 +0000 [r5945-5958]  Michiel van Baak <michiel@covide.nl>
+
+	* README, /: Merged revisions 5934 via svnmerge from
+	  https://svn.covide.net/svnroot/covide/branches/covide-stable
+	  ........ r5934 | mvanbaak | 2009-04-19 20:14:07 +0200 (Sun, 19
+	  Apr 2009) | 2 lines update year and version ........
+
+	* classes/user/inc/useredit.php,
+	  classes/email/inc/emailCompose.php,
+	  classes/email/inc/emailCompose.js: give the user the option to
+	  use the small and fast html editor in the email as well. The
+	  default will still be tinyMCE.
+
+	* classes/email/retrieve.php: set imap_open retries to 1 This will
+	  stop it from retrying two more times when the first login fails.
+	  After 1 failed login, it's not going to work the 2nd and 3rd
+	  time.
+
+	* classes/user/data.php: now that we dont update the login_current
+	  with time.php the time between updates can be as long as 5
+	  minutes. The default timeframe for the check function is now 10
+	  minutes.
+
+	* classes/email/inc/emailCompose.js: get rid of obsolete function
+
+	* classes/calendar/inc/show_main.php: remember date and user
+	  settings when switching between view with/without week
+
+	* classes/html/inc/editor_wyzz.js: added 'return false;' to the
+	  button links. Without this, the editor reloaded the page when
+	  picking a fontcolor. (and potentially other actions) Suggestion
+	  taken from the wyzz code discussion forum.
+	  http://www.wyzz.info/forum/index.php?action=vthread&forum=3&topic=85
+
+	* classes/user/inc/useredit.php, classes/calendar/default.php,
+	  lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  classes/calendar/inc/show_main.php,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: By default, do not show
+	  weekoverview on daily calendar. The user can now access the 'old'
+	  view with a mouseclick, and make it permanent in their
+	  usersettings. This idea has been discussed and approved @covide
+
+	* classes/html/inc/editor_wyzz.js (added): let's add the actual js
+	  file for wyzz as well mkay? No cookie for me.
+
+	* README, classes/note/inc/edit_note.js, wyzzicons/subscript.gif
+	  (added), wyzzicons/justifyfull.gif (added), wyzzicons/outdent.gif
+	  (added), wyzzicons/superscript.gif (added),
+	  wyzzicons/underline.gif (added), classes/html/editor.php,
+	  wyzzicons/cut.gif (added), wyzzicons (added),
+	  classes/calendar/inc/show_edit.js, wyzzicons/justifycenter.gif
+	  (added), wyzzicons/backcolor.gif (added), wyzzstyles (added),
+	  wyzzicons/close.gif (added), wyzzicons/undo.gif (added),
+	  wyzzicons/insertorderedlist.gif (added), wyzzicons/italic.gif
+	  (added), wyzzicons/removeformat.gif (added),
+	  classes/calendar/inc/show_edit.php, wyzzicons/insertimage.gif
+	  (added), wyzzstyles/editarea.css (added), wyzzicons/htmlmode.gif
+	  (added), wyzzicons/copy.gif (added), wyzzicons/headers.gif
+	  (added), wyzzicons/paste.gif (added),
+	  classes/calendar/inc/reg_input.php, wyzzicons/specialchar.gif
+	  (added), wyzzicons/upsize.gif (added), wyzzicons/bold.gif
+	  (added), wyzzicons/indent.gif (added),
+	  classes/todo/inc/todo_actions.js, classes/todo/inc/edit_todo.php,
+	  classes/note/inc/edit_note.php, wyzzicons/help.gif (added),
+	  wyzzicons/redo.gif (added), wyzzicons/forecolor.gif (added),
+	  wyzzstyles/style.css (added), wyzzicons/justifyright.gif (added),
+	  wyzzicons/link.gif (added), wyzzicons/downsize.gif (added),
+	  wyzzicons/strikethrough.gif (added),
+	  classes/calendar/inc/reg_input.js,
+	  wyzzicons/inserthorizontalrule.gif (added), wyzzicons/font.gif
+	  (added), wyzzicons/justifyleft.gif (added),
+	  wyzzicons/insertunorderedlist.gif (added): - add Wyzz, an
+	  ultra-small, very light WYSIWYG Editor From their homepage: Wyzz
+	  is an ultra-small, very light WYSIWYG (What You See Is What You
+	  Get) Editor for use in your web applications. It's written in
+	  JavaScript, and is free (as in speech and as in beer) for you to
+	  use in your web applications and/or alter to your needs (see the
+	  licence conditions). The license of wyzz is LGPL This editor is
+	  now used in calendar, notes and todo's. Possibly other places
+	  will be converted as well. We dont need all the bellz'n'wizzles
+	  that tinyMCE brings. Switching to wyzz made loading the edit
+	  screens here roughly 30% faster.
+
+	* classes/email/inc/emailOpen.php: Use the cleaned emailaddress for
+	  the new 'create businesscard' functionality in the email
+
+2009-04-20 11:49 +0000 [r5933-5944]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/address/inc/editBcard.php,
+	  classes/address/inc/dataSaveBcard.php,
+	  classes/email/inc/emailOpen.php: allow creation of a businesscard
+	  with the sender emailaddress of a received mail. Fixes #43
+
+	* classes/calendar/inc/show_main.php: when viewing multi calendars,
+	  respect the interval setting of the user
+
+	* classes/html/inc/time.php: simplify time.php - the xml_recall
+	  stuff in the campaign module was not implemented. Removed - We
+	  dont have to update the logininfo everytime we call time.php now
+	  that we have the header_alerts. This is run every 5 minutes and
+	  goes through the Covide main object. There the logininfo is
+	  already updated.
+
+	* classes/address/inc/print_selection.php,
+	  classes/address/inc/show_list.php: handle printing of address
+	  selection the same way as other print dialogs
+
+	* classes/html/inc/page_header.php: as suggested by nancyvb: Add
+	  link to main page of wiki in top menu (next to logout) Thank you
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css: updates from arjenc to make all the themes
+	  usable now
+
+	* classes/index/data.php: beagle switched to some new cli params.
+	  This has been running in our production setup for over 2 months
+	  now
+
+	* classes/email/inc/dataSendMailComplex.php,
+	  classes/email/data.php: if a user puts a link like
+	  'http://foo.com/%%EMAILADDRLINK%%' the %%EMAILADDRLINK%% will be
+	  replaced with &email=<emailaddressofrecepient>
+
+	* classes/address/inc/dataGetRelationsList.php: remove block that's
+	  been here for some time and is not needed anymore
+
+	* classes/filesys/inc/show_index.php,
+	  classes/user/inc/show_index.php, classes/campaign/output.php,
+	  classes/cms/inc/cmsSitemap.php, classes/support/inc/showList.php,
+	  classes/email/inc/emailList.php, classes/finance/output.php,
+	  classes/note/inc/generate_list.php,
+	  classes/project/inc/show_overview.php,
+	  classes/calendar/inc/show_main.php,
+	  classes/todo/inc/show_todos.php, classes/sales/output.php,
+	  classes/address/inc/show_list.php, classes/desktop/output.php:
+	  add links to the wiki for users that have selected 'Dutch' as
+	  language. In the near future this will be changed again to
+	  include those links in other languages as well. But for now we do
+	  it this way. While there add some 'new' menuitems to the main
+	  menu instead of the 'more actions' menu on modules where this was
+	  lacking. Now all modules behave the same.
+
+	* classes/cms/inc/editTemplate.php,
+	  classes/cms/inc/siteTemplates.php: remove two dead 'close window'
+	  links
+
+2009-04-17 13:30 +0000 [r5910-5931]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/calendar/inc/show_main.php: dont show body content in
+	  view with multiple calendars. This is now in line with some other
+	  calendar applications we looked at.
+
+	* classes/note/output.php: use history class to go back when
+	  reading a note. Fixes #154
+
+	* classes/project/inc/dataGetProjectsBySearch.php,
+	  classes/project/inc/show_overview.php: remember wether we are
+	  looking at active or non-active projects, even on search Fixes
+	  #156
+
+	* /, classes/email/data.php: Merged revisions 5927 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5927 | mvanbaak | 2009-04-16 13:40:07 +0200 (Thu, 16
+	  Apr 2009) | 10 lines only add alternative mailaddresses to the
+	  pick-email-address dropdown if they are actually there. With this
+	  patch the emailclient wont ask for the emailaddress to use if the
+	  user only has 1 emailaddress configured. Based on the patch
+	  uploaded by wwinterberg, but he timedout on
+	  http://reviewboard.vanbaak.info/r/5 Comments I posted there are
+	  addressed in this patch Fixes #92 ........
+
+	* classes/calendar/inc/show_main.php: wrap header of column in a
+	  span so it can be styled
+
+	* classes/projectext/data.php: fix popup handling in projectext
+	  module Fixes #121
+
+	* /, classes/address/inc/show_import_step2.php: Merged revisions
+	  5923 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5923 | mvanbaak | 2009-04-16 12:30:36 +0200 (Thu, 16
+	  Apr 2009) | 4 lines make it possible to import 'p: country' as
+	  well Fixes #60 ........
+
+	* classes/calendar/inc/show_week.php: use standalone popup for
+	  printing the weekoverview
+
+	* classes/address/data.php: fix newsletter to employees. Fixes bug
+	  #128
+
+	* classes/calendar/inc/show_main.php: add classes to the various
+	  columns so they can be styled with css
+
+	* classes/project/inc/dataGetProjectsBySearch.php: show hours icon
+	  on master projects that have subprojects with hours
+
+	* classes/todo/default.php: Give delete_todo a todoid as first
+	  argument because it's _NOT_ optional
+
+	* classes/todo/data.php, classes/address/inc/relationCard.php:
+	  introduce todo history on relationcard Fixes #134
+
+	* classes/address/inc/show_list.php: add menuitem to create new
+	  businesscard Fixes #129
+
+	* /, classes/projectext/output.php: Merged revisions 5913 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5913 | mvanbaak | 2009-04-15 16:21:00 +0200 (Wed, 15
+	  Apr 2009) | 4 lines allow more options in the order field for
+	  extra fields Fixes #122 ........
+
+	* /, classes/address/inc/editBcard.php: Merged revisions 5912 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5912 | mvanbaak | 2009-04-15 16:16:29 +0200 (Wed, 15
+	  Apr 2009) | 4 lines rename first tab of businesscard overview.
+	  Fixes #135 ........
+
+	* /, classes/html/history.php: Merged revisions 5909 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5909 | mvanbaak | 2009-04-15 15:53:07 +0200 (Wed, 15
+	  Apr 2009) | 4 lines reverse the saved checkpoints so the newest
+	  one is on top Fixes #48 ........
+
+	* /, classes/covide/default.php: Merged revisions 5908 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5908 | mvanbaak | 2009-04-15 13:27:14 +0200 (Wed, 15
+	  Apr 2009) | 5 lines restructure the maintainance functions a bit.
+	  - Make sure we only check if we need to clean chatdata once a day
+	  - run cleanupTempDir once a day ........
+
+2009-04-14 13:01 +0000 [r5903-5907]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/cms/data.php, /, classes/cms/output.php,
+	  classes/cms/default.php: Merged revisions 5905 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5905 | mvanbaak | 2009-04-14 14:47:11 +0200 (Tue, 14
+	  Apr 2009) | 3 lines add functionality to restore a page to a
+	  specific revision. ........
+
+	* /, classes/tpl/output.php, classes/tpl/inc/sendpoll.php: Merged
+	  revisions 5904 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5904 | mvanbaak | 2009-04-14 14:46:27 +0200 (Tue, 14
+	  Apr 2009) | 2 lines Make it possible to hide the poll results
+	  ........
+
+	* /, lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  classes/html/inc/editor_tinymce_includes.js,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5900,5902
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5900 | mvanbaak | 2009-04-10 17:04:32 +0200 (Fri, 10
+	  Apr 2009) | 2 lines regen ........ r5902 | mvanbaak | 2009-04-14
+	  14:32:30 +0200 (Tue, 14 Apr 2009) | 2 lines always allow inline
+	  images in the editor ........
+
+2009-04-10 14:00 +0000 [r5898]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/cms/data.php, /, classes/cms/output.php,
+	  sql/mysql/patches/2009041000.sql (added),
+	  classes/cms/default.php: Merged revisions 5897 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5897 | mvanbaak | 2009-04-10 15:51:45 +0200 (Fri, 10
+	  Apr 2009) | 7 lines introduce the cms pagehistory/changelog
+	  module. Every change to a page is logged and can be viewed. Soon,
+	  reverting to a specific version will be implemented. Fixes #106
+	  ........
+
+2009-04-09 12:35 +0000 [r5861-5890]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/user/inc/show_login.php: make loginscreen xhtml valid
+
+	* /, classes/calendar/inc/dataGetAppointments.php,
+	  classes/calendar/data.php, classes/calendar/inc/show_main.php:
+	  Merged revisions 5884-5888 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5884 | mvanbaak | 2009-04-09 13:58:36 +0200 (Thu, 09
+	  Apr 2009) | 2 lines only grab the userdetails for the currently
+	  loggedin user once ........ r5885 | mvanbaak | 2009-04-09
+	  14:01:38 +0200 (Thu, 09 Apr 2009) | 2 lines use an innerjoin here
+	  instead of multiselect ........ r5886 | mvanbaak | 2009-04-09
+	  14:08:23 +0200 (Thu, 09 Apr 2009) | 3 lines revert previous
+	  commit ........ r5887 | mvanbaak | 2009-04-09 14:23:10 +0200
+	  (Thu, 09 Apr 2009) | 2 lines use innerjoin here as well instead
+	  of multiselect ........ r5888 | mvanbaak | 2009-04-09 14:23:51
+	  +0200 (Thu, 09 Apr 2009) | 2 lines remove some unused class
+	  instances here ........
+
+	* classes/calendar/inc/dataGetCalendarItemById.php, /: Merged
+	  revisions 5882 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5882 | mvanbaak | 2009-04-09 12:16:37 +0200 (Thu, 09
+	  Apr 2009) | 2 lines only fetch 1 row because we are only using
+	  the first row ........
+
+	* classes/calendar/inc/dataGetCalendarItemById.php, /: Merged
+	  revisions 5880 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5880 | mvanbaak | 2009-04-09 12:05:00 +0200 (Thu, 09
+	  Apr 2009) | 2 lines use a join here instead of multiselect
+	  ........
+
+	* classes/calendar/inc/dataGetCalendarItemById.php, /: Merged
+	  revisions 5878 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5878 | mvanbaak | 2009-04-09 11:54:01 +0200 (Thu, 09
+	  Apr 2009) | 2 lines we forgot the ' = %d' here in the query
+	  ........
+
+	* classes/calendar/inc/dataGetCalendarItemById.php, /: Merged
+	  revisions 5876 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5876 | mvanbaak | 2009-04-09 11:26:25 +0200 (Thu, 09
+	  Apr 2009) | 2 lines dont fetch complete project, only the name is
+	  enough (it's the only property used anywayz) ........
+
+	* classes/note/output.php: re-enable all actions in a note when
+	  opening it from RC or UC Re #26
+
+	* /, classes/tpl/inc/site.js: Merged revisions 5873 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5873 | mvanbaak | 2009-04-08 13:41:50 +0200 (Wed, 08
+	  Apr 2009) | 2 lines use absolute url in logout url so the logout
+	  button in cms actually logs you out. ........
+
+	* classes/desktop/output.php: scan tweets for urls and make them
+	  clickable
+
+	* classes/email/data.php: only implode if variable is an array
+
+	* classes/note/output.php: use the same trick for printing notes as
+	  used in printing emails. This fixes the problem that printing a
+	  long note is capped on one page
+
+	* classes/calendar/inc/dataSave2db.php: make sure we only run
+	  implode on arrays.
+
+	* sql/mysql/patches/2009040700.sql (added), /: Merged revisions
+	  5867 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5867 | mvanbaak | 2009-04-07 11:40:43 +0200 (Tue, 07
+	  Apr 2009) | 2 lines add indexes on login_current table ........
+
+	* /, classes/user/data.php: Merged revisions 5865 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5865 | mvanbaak | 2009-04-07 11:09:39 +0200 (Tue, 07
+	  Apr 2009) | 2 lines cleanup old items in login_current table
+	  ........
+
+	* classes/html/editor.php, /, classes/email/inc/emailCompose.php,
+	  classes/email/inc/templateEdit.php,
+	  classes/email/inc/signatureEdit.php: Merged revisions 5860 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5860 | mvanbaak | 2009-04-06 11:27:18 +0200 (Mon, 06
+	  Apr 2009) | 2 lines allow <font> tags in some places where the
+	  editor is used. ........
+
+2009-03-30 09:19 +0000 [r5857-5859]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/campaign/data.php: dont refresh parent window as this
+	  will close the popup. The refresh is useless anyways. Fixes #105
+
+	* classes/desktop/output.php: it's time for this old info to go
+	  away.
+
+	* classes/desktop/output.php: add bday block
+
+2009-03-27 11:35 +0000 [r5844-5853]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/email/inc/retrieveMailProcess.php: Merged revisions
+	  5851 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5851 | mvanbaak | 2009-03-27 12:24:06 +0100 (Fri, 27
+	  Mar 2009) | 10 lines Send autoreply if daterange match, even with
+	  'active' not enabled. After discussing this new feature
+	  internally and with some customers we have come to the conclusion
+	  this is a better way to handle it. The 'active' checkbox can be
+	  used for a non-date handled autoreply. If you specify a daterange
+	  the autoreply will be active during these dates, if you enable
+	  'enabled' the autoreply will be active untill you uncheck this
+	  box again. ........
+
+	* classes/address/inc/export.php: only check for debtornr in
+	  reeleezee export
+
+	* classes/support/inc/showList.php: links to calendar should have
+	  the calendar icon, not the todo icon
+
+	* classes/calendar/inc/show_main.php: fix scrollbar again now that
+	  the calendar module has been updated
+
+	* classes/address/inc/show_list.js,
+	  classes/address/inc/show_list.php: now that the 'more actions'
+	  are no longer a dropdown, they have to update the exportinfo var
+	  themselves. Without this, the checkboxen make no sense.
+
+	* classes/email/inc/emailOpen.js: add some more actions to the
+	  'open new window in popup' usersetting
+
+	* themes/0/covide.css, themes/1/covide.css,
+	  classes/calendar/inc/show_main.php: theme updates by arjenc
+
+	* classes/googlemaps/inc/googleroute.js: fix destination address
+
+	* /, classes/googlemaps/inc/googleroute.js: Merged revisions 5843
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5843 | mvanbaak | 2009-03-25 14:35:17 +0100 (Wed, 25
+	  Mar 2009) | 2 lines fix googlemaps js file ........
+
+2009-03-24 11:49 +0000 [r5815-5842]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/user/output.php: we dont do popup with alerts anymore
+
+	* classes/html/inc/page_header.php: raise the reload timer from 1
+	  to 5 minutes
+
+	* classes/desktop/default.php, classes/html/inc/page_header.php,
+	  classes/desktop/output.php: make header alert info reloadable
+
+	* classes/email/inc/emailSelectFrom.js: use correct function here
+
+	* sql/mysql/patches/2009032401.sql (added),
+	  sql/mysql/patches/2009032402.sql (added),
+	  sql/mysql/patches/2009031800.sql (removed),
+	  sql/mysql/patches/2009031801.sql (removed): with the twitter
+	  merge I forgot to rename the sql files. So it might be possible
+	  people did not get those database upgrades. Moving them to today
+	  just to make sure they will be applied
+
+	* classes/email/inc/emailSelectFromPrepare.php,
+	  classes/user/inc/useredit.php,
+	  classes/email/inc/dataSendMailComplex.php,
+	  classes/email/inc/emailOpen.js,
+	  classes/user/inc/dataSaveUserSettings.php,
+	  classes/email/inc/emailSelectFrom.js,
+	  classes/email/inc/emailOpen.php, sql/mysql/patches/2009032400.sql
+	  (added): make the new popup/iframe method a usersetting because
+	  it does not work nice on a thin-client setup of a customer
+
+	* themes/1/covide.css: make loginscreen use a color for text in
+	  input elements as well. Now I can see what I type in there again.
+	  (I'm using a theme where background is dark and text is white by
+	  default, If you dont specify a txt color in the css it will be
+	  white here)
+
+	* classes/email/inc/emailOpen.php: unhide the date that a mail was
+	  received by default.
+
+	* classes/project/inc/show_info.php,
+	  classes/project/inc/dataGetSubprojectsById.php: sync subproject
+	  overview icons and captions with normal project overview
+
+	* classes/calendar/inc/dataRegSave.php: fix popup handling for
+	  registration saving
+
+	* classes/project/inc/dataGetHoursList.php: same fix for warnings
+	  if no activities are in the database
+
+	* classes/project/inc/dataGetSubprojectsById.php: fix php warning
+	  when no activities present in database
+
+	* classes/html/inc/actions.php, themes/default/icons/kspread.png
+	  (added), classes/project/inc/show_overview.php: better icons and
+	  alt text for project overview
+
+	* classes/html/inc/page_header.php,
+	  classes/voip/inc/active_calls.js: if user has not enabled popups
+	  for voip, dont check if we need to spawn popup. Fixes a bug and
+	  is also a possible performance update: - voip popups were always
+	  shown, no matter what this setting was - the lastcall_office was
+	  checked every 20 seconds to find out if we need to show popup,
+	  while user does not want popup. This check is now no longer done
+	  when user has 'show popup for voip' set to false.
+
+	* classes/email/inc/emailList.js: use a 1 second timeout before we
+	  show the mail preview. The instant preview is a bit annoying.
+
+	* classes/html/inc/page_header.php: fix link to notes module
+
+	* classes/tpl/output.php, classes/tpl/inc/html_header.php: load
+	  jquery by default because some other scripts we load depend on it
+	  now. Also, disable the loadJQuery template function because we
+	  already have jquery loaded. Oh, and the copyright year in public
+	  comments has been bumped
+
+	* classes/todo/data.php, classes/todo/inc/edit_todo.php: add times
+	  to todo's.
+
+	* classes/desktop/output.php: show @screen_name so it's easier to
+	  reply to tweets
+
+	* themes/0/covide.css: this background color for input elements is
+	  better.
+
+	* themes/0/covide.css: give the text in input areas a color. This
+	  makes it more readable
+
+	* classes/user/inc/useredit.php,
+	  lang/nn_NO/LC_MESSAGES/messages.po,
+	  classes/html/inc/page_header.php,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: 'abuse' the old
+	  show-popups-with-alert to transform it into 'play sound with
+	  alert' Updated translations as well
+
+	* classes/twitter/data.php (added), classes/user/inc/useredit.php,
+	  classes/twitter (added), sql/mysql/patches/2009031800.sql
+	  (added), classes/covide/default.php, classes/desktop/default.php,
+	  sql/mysql/patches/2009031801.sql (added),
+	  classes/user/inc/dataSaveUserSettings.php,
+	  classes/desktop/inc/desktop.js, classes/twitter/default.php
+	  (added), classes/desktop/output.php: Add twitter support to
+	  Covide. This is implemented as a desktop 'block' As soon as you
+	  have saved your twitter username and password you can enable the
+	  twitter desktop block. This block will show tweets from the
+	  people you are following, and a box to update your status. When
+	  you reach the 100 requests within the hour it will show the last
+	  history and disable the input box. Every refresh of the desktop
+	  this rate-limit is checked again and as soon as it's reset on the
+	  twitter network you will be able to post new tweets again. DM, RT
+	  and other features may be coded in the future, but it all depends
+	  on community feedback and contributions.
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: prepare language directory
+	  for twitter merge
+
+2009-03-20 16:12 +0000 [r5759-5808]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/html/inc/page_header.php, themes/default/reminder.swf
+	  (added): blink alerts and play sound.
+
+	* classes/html/inc/page_header.php: indent this code
+
+	* themes/0/covide.css, classes/calendar/inc/show_main.php: fix
+	  calendar layout
+
+	* themes/default/icons/mod_email.png (added),
+	  themes/default/icons/mod_notes.png (added),
+	  themes/default/icons/mod_calendar.png (added),
+	  classes/html/inc/actions.php, themes/default/icons/mod_todo.png
+	  (added): fixup icons
+
+	* classes/html/inc/page_header.php, themes/0/covide.css,
+	  themes/1/covide.css, themes/2/covide.css, themes/3/covide.css:
+	  placement changes based on feedback from terrazur
+
+	* classes/html/inc/page_header.php, themes/0/covide.css,
+	  classes/desktop/data.php, themes/1/covide.css,
+	  themes/2/covide.css, themes/3/covide.css,
+	  classes/desktop/output.php: add alert info to page header Re #47
+
+	* classes/email/inc/emailList.php: fix foldernaming in english and
+	  dutch. Second and final part of #153
+
+	* classes/email/inc/emailList.php: in shortview, show receipient
+	  for shared sent-items boxen instead of the sender. Part one of
+	  #153
+
+	* classes/email/output.php: Fix printing of mails that span
+	  multiple pages. Fixes #139
+
+	* themes/0/covide.css: align more actions menu a bit better
+
+	* themes/0/covide.css: mods for the mail info layer
+
+	* classes/email/inc/dataGetEmailBySearch.php: only run html2text on
+	  html email.
+
+	* classes/email/inc/emailList.php: fix errors
+
+	* classes/email/inc/emailList.php: wrap text in p tags
+
+	* classes/email/inc/emailList.php: - remove table. - give div it's
+	  own class
+
+	* classes/email/inc/dataGetEmailBySearch.php,
+	  classes/email/inc/emailList.php, classes/email/inc/emailList.js:
+	  start working on email preview. Need this in svn so arjenc can
+	  have a look at it as well
+
+	* /, classes/address/data.php: Merged revisions 5781 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5781 | mvanbaak | 2009-03-18 11:41:22 +0100 (Wed, 18
+	  Mar 2009) | 2 lines Use the correct variable to check for
+	  addresstype in newsletter rcpt selection ........
+
+	* classes/email/inc/filterEdit.php,
+	  classes/email/inc/emailList.php, classes/email/output.php: - make
+	  filterlist 100% width - Open filterlist in overlay instead of
+	  main window Fixes #152
+
+	* classes/calendar/inc/show_main.php: if calendar overview with
+	  multiple users does not fit, show scrollbar. Same fix as monthly
+	  overview.
+
+	* /, classes/templates/output.php, classes/templates/default.php:
+	  Merged revisions 5775 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5775 | mvanbaak | 2009-03-17 10:59:08 +0100 (Tue, 17
+	  Mar 2009) | 6 lines The default list in the template module are
+	  not templates but letters. So based on the feedback we got on
+	  ticket #110 we moved the default screen to the settingslist.
+	  Fixes #110 ........
+
+	* /, classes/classification/inc/pick_cla.js,
+	  classes/classification/inc/pick_cla.php: Merged revisions 5774
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5774 | mvanbaak | 2009-03-17 10:42:19 +0100 (Tue, 17
+	  Mar 2009) | 8 lines dont show the form to create a new
+	  classification in the pick-classification dialog because it
+	  confuses people. The form is now hidden an a wand icon is shown.
+	  When clicking the wand icon the form appears. Fixes #146 ........
+
+	* /, classes/email/inc/dataUserMove.php: Merged revisions 5773 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5773 | mvanbaak | 2009-03-17 10:20:28 +0100 (Tue, 17
+	  Mar 2009) | 4 lines move dutch text to english text. Fixes #115
+	  ........
+
+	* classes/html/venster.php, classes/calendar/inc/show_main.php:
+	  move searchbox from lefthand 'calendar menu' to top like in all
+	  modules. Vertical alignment is a bit off, and I have no idea why.
+	  I'll ask arjenc tomorrow
+
+	* classes/html/inc/page_header.php: move jquery stuff up so it's
+	  the first js files we load. We will need this when more and more
+	  gets redone in jquery
+
+	* classes/support/inc/showList.php: make search header in
+	  supportmodule more inline with the rest of the modules
+
+	* classes/todo/data.php, classes/todo/inc/show_todos.php: add
+	  searchbar in todoscreen
+
+	* classes/html/inc/jqueryplugins/ui.sortable.js (removed),
+	  classes/html/inc/jqueryplugins/akModal.js (removed),
+	  classes/html/inc/jqueryplugins/dimensions.js (removed),
+	  classes/html/inc/jqueryplugins/jquery-ui-1.7.custom.min.js
+	  (added), classes/html/inc/jqueryplugins/index.txt,
+	  classes/html/inc/jqueryplugins/dimmer.js (removed),
+	  classes/html/inc/jqueryplugins/ui.js (removed),
+	  classes/html/inc/jquery.js, classes/html/inc/page_header.php,
+	  classes/html/inc/jqueryplugins/interface.js (removed),
+	  classes/html/inc/js_popups.js,
+	  classes/html/inc/jqueryplugins/ui.draggable.js (removed): merge
+	  updates of popup handling from jquery-ajax branch. - Update
+	  jquery to 1.3.2 - Grab new minified version of the jquery-ui
+	  plugins - Get rid of akModal and it's dependencies This means we
+	  load 7 js files less.
+
+	* classes/filesys/inc/show_index.php: add empty line to make the
+	  searchbar look better
+
+	* classes/filesys/inc/show_index.php: add searchbar on default
+	  screen. rearrange next screen(s) header a bit so it is more in
+	  line with other modules
+
+	* classes/email/inc/emailList.php: remove useless table cell to
+	  lineup the searchoptions. Now complies to addressbook and notes
+	  search
+
+	* classes/address/inc/show_list.php: remove useless cell in
+	  searchbar. It now looks the same as searchbar in notes
+
+	* classes/note/inc/generate_list.php: add searchbar on top of notes
+	  view
+
+	* classes/html/inc/actions.php: sync actions
+
+2009-03-13 16:03 +0000 [r5740-5753]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/html/inc/js_classes.js, classes/html/inc/page_header.php,
+	  classes/index/output.php: Dont start searching when coming from
+	  the top searchbar, but give the user a change to uncheck what
+	  they dont need. Fixes #57
+
+	* /, classes/tpl/inc/handleForm.php: Merged revisions 5748 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5748 | mvanbaak | 2009-03-13 14:35:55 +0100 (Fri, 13
+	  Mar 2009) | 2 lines add id to reset link of forms so it can be
+	  styled ........
+
+	* documentation/CODING-GUIDELINES.txt (added), /: Merged revisions
+	  5746 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5746 | mvanbaak | 2009-03-13 12:16:07 +0100 (Fri, 13
+	  Mar 2009) | 3 lines add first draft of coding guidelines. To be
+	  completed ... ........
+
+	* classes/filesys/output.php: fix handling of saving files from
+	  email module. Fixes #7
+
+	* /, lang/nn_NO/LC_MESSAGES/messages.po,
+	  classes/email/inc/emailList.php,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5744 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5744 | mvanbaak | 2009-03-12 16:07:17 +0100 (Thu, 12
+	  Mar 2009) | 4 lines make it clear we are looking at emails in a
+	  shared folder Fixes #71 ........
+
+	* jupload.php: fix handling of jupload applet in the new 'popup'
+	  system. Because the popup was not removed, the applet would stay
+	  active holding the lock on the local files. Fixes #132
+
+	* /, lang/nn_NO/LC_MESSAGES/messages.po, classes/email/data.php,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5739 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5739 | mvanbaak | 2009-03-12 14:08:37 +0100 (Thu, 12
+	  Mar 2009) | 4 lines Better names for some mail folders Fixes #69
+	  ........
+
+	* /, classes/project/inc/show_overview.php: Merged revisions 5738
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5738 | mvanbaak | 2009-03-12 13:49:33 +0100 (Thu, 12
+	  Mar 2009) | 4 lines make it clear if we are showing a list of
+	  inactive projects Fixes #116 ........
+
+	* tinymce322/jscripts/tiny_mce/plugins/safari,
+	  tinymce322/jscripts/tiny_mce/plugins/example/img/example.gif,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/default,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img,
+	  tinymce322/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/pasteword.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js,
+	  tinymce322/examples/templates, classes/html/editor.php,
+	  tinymce322/jscripts/tiny_mce/utils/editable_selects.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/template.htm,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/ui.css,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/print,
+	  tinymce322/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style,
+	  tinymce322/jscripts/tiny_mce/plugins/template/css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/img/icons.gif,
+	  tinymce322/jscripts/tiny_mce/tiny_mce_gzip.php,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/autosave/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/img,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/o2k7/content.css,
+	  tinymce322/jscripts/tiny_mce/plugins/media/css/content.css,
+	  tinymce322/jscripts/tiny_mce/themes/simple/img,
+	  tinymce322/jscripts/tiny_mce/plugins/contextmenu,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/charmap.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak,
+	  tinymce322/jscripts/tiny_mce/plugins/print/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/css/advhr.css,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/template/blank.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example,
+	  tinymce322/jscripts/tiny_mce/plugins/layer/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/rule.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/es_dlg.js,
+	  tinymce322/examples/media/sample.ram,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/source_editor.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/link.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/includes/general.php,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/example.html,
+	  tinymce322/jscripts/tiny_mce/plugins/style/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/directionality,
+	  tinymce322/jscripts/tiny_mce/utils/validate.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/img,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/nl.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/flv_player.swf,
+	  tinymce322/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/css/advlink.css,
+	  tinymce322/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/css/pasteword.css,
+	  tinymce322/jscripts/tiny_mce/plugins/table/js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/css,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/o2k7,
+	  tinymce322/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/css,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/jscripts/embed.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/default/ui.css,
+	  tinymce322/examples/templates/snippet1.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/bbcode,
+	  tinymce322/jscripts/tiny_mce,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/emotions.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/compat2x/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/es.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/js/image.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/SpellChecker.php,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/img,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/nl.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/langs/en_dlg.js,
+	  tinymce322/examples/word.html,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/css,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/table/js/table.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/editor_template.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/js,
+	  tinymce322/jscripts/tiny_mce/langs/nl.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/tiny_mce_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/includes,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-sealed.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/langs/en.js,
+	  tinymce322/jscripts/tiny_mce/plugins/iespell/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/layer,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/template/template.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/table/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/en.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/example/js/dialog.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/media/js/embed.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/js/row.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/css/cell.css,
+	  tinymce322/examples/translate.html,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/image.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/trans.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/cite.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-innocent.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/changelog,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/css/table.css,
+	  tinymce322/jscripts/tiny_mce/plugins/nonbreaking,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/es.js,
+	  tinymce322/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/utils/mctabs.js,
+	  tinymce322/examples/media/sample.avi,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/sv.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/de.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/css,
+	  tinymce322/jscripts/tiny_mce/langs/es.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/source_editor.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/css/content.css,
+	  tinymce322/examples/lists/image_list.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/image.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/en.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions,
+	  tinymce322/jscripts/tiny_mce/plugins/iespell,
+	  tinymce322/jscripts/tiny_mce/langs/en.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/table/table.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/default/content.css,
+	  tinymce322/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/media/css/media.css,
+	  tinymce322/jscripts/tiny_mce/plugins/table/css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/sv.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/de.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css,
+	  tinymce322/jscripts/tiny_mce/plugins/safari/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif,
+	  tinymce322/examples/media/sample.mov,
+	  tinymce322/jscripts/tiny_mce/langs/de.js,
+	  tinymce322/jscripts/tiny_mce/langs/sv.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/props.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/quicktime.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/flash.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/utils/JSON.php,
+	  tinymce322/jscripts/tiny_mce/plugins/directionality/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullscreen,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/js/advlink.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/css,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-frown.gif,
+	  tinymce322/examples/templates/layout1.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-cry.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/charmap.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/js/pasteword.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/acronym.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/realmedia.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/noneditable,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/fullpage.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/media/media.htm,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/img/icons.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/tiny_mce_gzip.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/da_dlg.js,
+	  tinymce322/examples/media/sample.dcr,
+	  tinymce322/jscripts/tiny_mce/plugins/table/js/cell.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/nn_dlg.js,
+	  tinymce322/examples/index.html,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/anchor.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/save/editor_plugin_src.js,
+	  tinymce322/examples,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/PSpell.php,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/css,
+	  tinymce322/jscripts/tiny_mce/plugins/autosave,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/nn.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/css,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/img,
+	  tinymce322/jscripts/tiny_mce/plugins/example/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/table/js/merge_cells.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs/da.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace,
+	  tinymce322/jscripts/tiny_mce/tiny_mce.js,
+	  tinymce322/examples/media,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/nl_dlg.js,
+	  tinymce322 (added),
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/PSpellShell.php,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg,
+	  tinymce322/jscripts/tiny_mce/plugins/insertdatetime,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css,
+	  tinymce322/jscripts/tiny_mce/plugins/style/css/props.css,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-embarassed.gif,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default,
+	  tinymce322/jscripts/tiny_mce/tiny_mce_popup.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/template/js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/img,
+	  tinymce322/examples/full.html,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple,
+	  tinymce322/jscripts/tiny_mce/themes/simple/editor_template_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/nn.js,
+	  tinymce322/jscripts/tiny_mce/langs/nn.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/da.js,
+	  tinymce322/examples/css,
+	  tinymce322/jscripts/tiny_mce/plugins/template/js/template.js,
+	  tinymce322/jscripts/tiny_mce/license.txt,
+	  tinymce322/examples/skins.html,
+	  tinymce322/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/dialog.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/langs/da.js,
+	  tinymce322/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js,
+	  tinymce322/examples/media/sample.swf,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/css,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/js/props.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/attributes.js,
+	  tinymce322/examples/menu.html,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/config.php,
+	  tinymce322/jscripts/tiny_mce/plugins,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/GoogleSpell.php,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker,
+	  tinymce322/jscripts/tiny_mce/themes,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/preview.html,
+	  tinymce322/jscripts/tiny_mce/plugins/template/css/template.css,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/utils/Logger.php,
+	  tinymce322/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/css/advimage.css,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/del.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced,
+	  tinymce322/changelog.txt,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/utils/form_utils.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/img/sample.gif,
+	  tinymce322/jscripts/tiny_mce/utils,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/js/emotions.js,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/jscripts,
+	  tinymce322/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js,
+	  tinymce322/examples/lists,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/js/pastetext.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-kiss.gif,
+	  tinymce3211 (removed),
+	  tinymce322/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/blank.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/media/js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/css,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/link.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/link.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/da_dlg.js, /,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins,
+	  tinymce322/jscripts/tiny_mce/plugins/compat2x/editor_plugin.js,
+	  tinymce322/examples/css/content.css,
+	  tinymce322/jscripts/tiny_mce/plugins/preview,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/image.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/visualchars,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-smile.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/table,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/js,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/nn_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/merge_cells.htm,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img,
+	  tinymce322/jscripts/tiny_mce/themes/simple/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png,
+	  tinymce322/jscripts/tiny_mce/plugins/media/editor_plugin_src.js,
+	  tinymce322/examples/lists/media_list.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/de_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/sv_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/anchor.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/color_picker.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/save/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/css/row.css,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/rpc.php,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras,
+	  tinymce322/jscripts/tiny_mce/plugins/media,
+	  tinymce322/examples/css/word.css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif,
+	  tinymce322/examples/media/logo.jpg,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/pastetext.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/media/js/media.js,
+	  tinymce322/examples/lists/link_list.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/shockwave.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/safari/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/compat2x,
+	  tinymce322/jscripts/tiny_mce/plugins/table/cell.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/media/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/save,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr/js/rule.js,
+	  tinymce322/examples/media/sample.rm,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/advhr,
+	  tinymce322/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/tabfocus,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/js/element_common.js,
+	  tinymce322/jscripts,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/js,
+	  tinymce322/jscripts/tiny_mce/plugins/example/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/about.js,
+	  tinymce322/jscripts/tiny_mce/plugins/print/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css,
+	  tinymce322/jscripts/tiny_mce/plugins/searchreplace/langs/es_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/template/langs,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/img,
+	  tinymce322/jscripts/tiny_mce/plugins/paste/css/blank.css,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/o2k7/img,
+	  tinymce322/jscripts/tiny_mce/plugins/safari/blank.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/table/row.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/style/css,
+	  tinymce322/jscripts/tiny_mce/themes/simple/editor_template.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/advimage/langs/nl_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/css/content.css,
+	  tinymce322/jscripts/tiny_mce/plugins/table/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage,
+	  tinymce322/jscripts/tiny_mce/plugins/preview/editor_plugin.js,
+	  tinymce322/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/utils,
+	  tinymce322/jscripts/tiny_mce/plugins/spellchecker/classes/EnchantSpell.php,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/about.htm,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/js/color_picker.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/editor_template_src.js,
+	  tinymce322/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js,
+	  tinymce322/examples/media/logo_over.jpg,
+	  tinymce322/examples/simple.html,
+	  tinymce322/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/content.css,
+	  tinymce322/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/media/langs/en_dlg.js,
+	  tinymce322/jscripts/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png,
+	  tinymce322/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif,
+	  tinymce322/jscripts/tiny_mce/plugins/style/langs/da_dlg.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs,
+	  tinymce322/examples/lists/template_list.js,
+	  tinymce322/jscripts/tiny_mce/plugins/advlink/langs/es_dlg.js:
+	  Merged revisions 5737 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5737 | mvanbaak | 2009-03-12 12:30:18 +0100
+	  (Thu, 12 Mar 2009) | 52 lines Merged revisions 5734 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5734 | svdhaar | 2009-03-11 19:42:35 +0100 (Wed, 11 Mar
+	  2009) | 46 lines Version 3.2.2 (2009-03-05) Added new CSS
+	  selector engine. Sizzle the same one that jQuery and other
+	  libraries are using. Added new is and getParents methods to the
+	  DOMUtils class. These use the new Sizzle engine to select
+	  elements. Added new removeformat_selector option, enables you to
+	  specify a CSS selector pattern of elements to remove when using
+	  removeformat. Fixed so the getParent method can take CSS
+	  expressions when selecting it's parents. Added new ant based
+	  build process, includes a new javabased preprocessor and a
+	  yuicompressor ant task. Moved the tab_focus logic into a plugin
+	  called tabfocus, so the old tab_focus option has been removed
+	  from the core. Replaced the TinyMCE custom unit testing framework
+	  with Qunit and rewrote all tests to match the new logic. Moved
+	  the examples/testcases to a root directory called tests since it
+	  now includes slickspeed. Fixed bug where nbsp wasn't replaced
+	  correctly in ForceBlocks.js. Patch contributed by thorn. Fixed
+	  bug where an dom exception would be thrown in Gecko when the
+	  theme_advanced_path path was set to false under xml application
+	  mode. Fixed bug where it was impossible to get out of a link at
+	  the end of a block element in Gecko. Fixed bug where the latest
+	  WebKit nightly would fail when changing font size and font
+	  family. Fixed bug where the latest WebKit nightly would fail when
+	  opening dialogs due to changes to the arguments object. Fixed bug
+	  where paragraphs wasn't added to elements positioned absolute
+	  using classes. Fixed bug where font size values with dot's like
+	  1.4em would produce a class instead of the style value. Fixed bug
+	  where IE 8 would return an incorrect position for elements. Fixed
+	  bug where IE 8 would render colorpicker/filepicker icons
+	  incorrectly. Fixed bug where trailing slashes for directories in
+	  URLs would be removed. Fixed bug where autostart and other
+	  boolean values in the media dialog wouldn't be stored/parsed
+	  correctly. Fixed bug where the repaint call for the media plugin
+	  wouldn't be executed due to a typo in the source. Fixed bug where
+	  id attribute of object elements wasn't kept intact by the media
+	  plugin. Fixed bug where preview of embeded elements when the
+	  media_use_script option was used would fail. Fixed bug where
+	  inlinepopups could be rendered at an incorrect location on IE 6
+	  while dragging. Fixed bug where the blocker shim could be placed
+	  at an incorrect location on IE 6. Fixed bug where the multiple
+	  and size attributes of select elements would produce incorrect
+	  values while running in IE. Fixed bug where IE would loose the
+	  caret position is you selected a color from the color drop down.
+	  Fixed bug where remove format wouldn't work on IE since it
+	  couldn't remove span elements that had style information. Fixed
+	  bug where Opera was removing links when removing formatting from
+	  selected contents. Fixed bug where paragraphs could be produced
+	  inside non positional elements styled with the CSS position value
+	  of static. Fixed bug where removeformat wouldn't work if you
+	  selected part of a span in IE. Fixed bug where media plugin
+	  didn't retain the style attribute on embed/object elements. Fixed
+	  bug where auto focus on empty editor instances could produce
+	  strange results if you inserted an image into it. Fixed bug where
+	  &nbsp; characters would be removed in FF when inserted with the
+	  mceInsertContent or selection.setContent methods. Fixed bug where
+	  warning message of missing paste support wasn't displayed on
+	  WebKit browsers. Fixed bug where anchor links could include other
+	  links. The selected range is now unlinked before adding news
+	  links to it. Fixed memory leak when TinyMCE was used with
+	  prototype. Patch contributed by James Ots. Fixed so the non
+	  documented fullpage_hide_in_source_view option for the fullpage
+	  plugin works again in the 3.x branch. Fixed so tables doesn't get
+	  inserted into paragraphs by default since it's not W3C valid. Can
+	  be disabled by using the fix_table_elements option. Fixed so the
+	  source view dialog sets a source_view state to the event object.
+	  Enables plugins to intercept the source view mode. Fixed various
+	  validation issues with the html dialogs and pages. Removed ask
+	  mode option since there is way better ways of doing this now. Use
+	  the add/remove control methods instead. Removed logic for
+	  compatibility with Safari 2.x, this browser is no longer
+	  supported since no one is using it. Removed the auto domain
+	  relaxing feature. If loading scripts cross sub domains it's
+	  better to specify the document.domain by hand. ........
+	  ................
+
+	* /, classes/address/inc/selectRowsBcard.php,
+	  classes/address/inc/show_list.php: Merged revisions 5736 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5736 | mvanbaak | 2009-03-12 11:59:25 +0100 (Thu, 12
+	  Mar 2009) | 5 lines dont show 'warning' field when we are dealing
+	  with businesscards. Only relations have this field. Fixes #147
+	  ........
+
+	* /, common/tinymce/config.ini, common/tinymce/install.php: Merged
+	  revisions 5735 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5735 | mvanbaak | 2009-03-12 11:51:54 +0100
+	  (Thu, 12 Mar 2009) | 9 lines Merged revisions 5733 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5733 | svdhaar | 2009-03-11 19:37:59 +0100 (Wed, 11 Mar
+	  2009) | 2 lines updated tmce update scripts (tinymce has changed
+	  pack structure) ........ ................
+
+2009-03-10 15:42 +0000 [r5683-5732]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/address/data.php: Merged revisions 5731 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5731 | mvanbaak | 2009-03-10 16:35:50 +0100 (Tue, 10
+	  Mar 2009) | 4 lines if adding a classification to a selection,
+	  add it to all the businesscards instead of only the RCBC's. Only
+	  add it to RCBCs only when we have addresstype == relations
+	  ........
+
+	* classes/classification/inc/pick_cla.php: remove redundant close
+	  button
+
+	* classes/address/inc/editBcard.php: automagically tick checkbox
+	  'complete addressdata from RCBC' when creating a new businesscard
+	  Fixes #136
+
+	* classes/address/inc/relationCard.php: change icon in todolist so
+	  delete becomes 'flag done' on relationcard as well Re #134
+
+	* classes/address/inc/show_list.php: fix default columns in bcard
+	  view. Now it makes more sense. And it's more clear how the
+	  sorting is done. Fixes #133
+
+	* classes/tpl/inc/showMetaOptions.php, /: Merged revisions 5724 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5724 | mvanbaak | 2009-03-10 11:24:53 +0100 (Tue, 10
+	  Mar 2009) | 4 lines dont update counter on both 'onclick' and
+	  'onupdate' This resulted in a double increment per item so
+	  instead of 5 only 2 items could be checked. ........
+
+	* /, classes/address/inc/dataImportSave.php: Merged revisions 5723
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5723 | mvanbaak | 2009-03-09 14:42:46 +0100 (Mon, 09
+	  Mar 2009) | 2 lines dont trim memo content ........
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po,
+	  classes/todo/inc/todo_actions.js, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Fix confirm text in todo.
+
+	* /, jupload/RELEASE-NOTES.txt, jupload/wjhk.jupload.jar: Merged
+	  revisions 5720 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5720 | mvanbaak | 2009-03-08 19:52:24 +0100
+	  (Sun, 08 Mar 2009) | 19 lines Merged revisions 5635 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5635 | svdhaar | 2009-02-28 16:36:53 +0100 (Sat, 28 Feb
+	  2009) | 13 lines v4.2.0 Fix: - [Major] Upload speed restored (50%
+	  quicker than 4.x releases): it has slown down due to the
+	  management of the progress bar, and the increase of debug
+	  information logged. The debug file has been removed. - [Major]
+	  Corrected a NullPointerException, when 'HttpOnly' is in the
+	  SetCookie header. Typically, with PHP, when
+	  session.cookie_httponly is set to 1. - [Major] Management of
+	  urlToSendErrorTo would generate an error (but the error was
+	  correctly sent to the URL). Thanks to (thanks to Zapp29,
+	  sourceforge account: brusaf) - [Minor] Uploaded file would not be
+	  correctly released, until the java applet would close. (thanks to
+	  Zapp29, sourceforge account: brusaf) - [Minor] Add of the missing
+	  call to uploadPolicy.beforeUpload() (regression since 4.0).
+	  (thanks to Zapp29, sourceforge account: brusaf) ........
+	  ................
+
+	* common/functions_pear.php, /: Merged revisions 5718 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5718 | mvanbaak | 2009-03-08 19:49:07 +0100 (Sun, 08
+	  Mar 2009) | 5 lines merged rev 5611 from
+	  team/svdhaar/covide-stable mysqli has it's own real_escape_string
+	  function, so use that instead of the mysql_ version ........
+
+	* /, jupload/RELEASE-NOTES.txt, jupload/wjhk.jupload.jar: Merged
+	  revisions 5716 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5716 | mvanbaak | 2009-03-08 19:38:15 +0100
+	  (Sun, 08 Mar 2009) | 23 lines Merged revisions 5594 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5594 | svdhaar | 2009-02-20 19:01:15 +0100 (Fri, 20 Feb
+	  2009) | 17 lines v4.1.0 Fix: - [Major] Regression in the 4.0: the
+	  SUCCESS or ERROR in the HTTP return was not properly checked. -
+	  [Major] In some cases, chunk upload would not work (two files
+	  would be sent at once, which doesn't work) - [Major] For
+	  afterUploadURL in javascript: the parameters msg and body were
+	  not correctly managed. - [Minor] The upload speed, and the
+	  estimated time of arrival were wrong. Calculation is now more
+	  precise than before. - [Minor] Add of a new message, when trying
+	  to transform (resize, rotate) a gif picture, in JRE 1.5: not
+	  supported by the sun JRE. JRE 1.6 is needed. - [Minor] FTP: add
+	  of the ftpTransfertBinary and ftpTransfertPassive parameters. -
+	  [Minor] Regression in the 4.0: after the STOP button has been
+	  hit, the other button would not return to their correct state.
+	  Martin Westin found another way to sign applet. See:
+	  https://sourceforge.net/forum/forum.php?thread_id=2991519&forum_id=199106
+	  (ref added to the README.txt file) ........ ................
+
+	* /, classes/tpl/output.php: Merged revisions 5713 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5713 | mvanbaak | 2009-03-08 19:34:08 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5592 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5592 | svdhaar | 2009-02-20 18:44:21 +0100 (Fri, 20 Feb
+	  2009) | 2 lines move sitemap to the top, some browsers will only
+	  downloads the first n kb ........ ................
+
+	* /, site.php: Merged revisions 5712 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5712 | mvanbaak | 2009-03-08 19:31:43 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5558 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5558 | svdhaar | 2009-02-16 21:09:53 +0100 (Mon, 16 Feb
+	  2009) | 2 lines added rewriting of index.php in cms ........
+	  ................
+
+	* /, jupload.php: Merged revisions 5710 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5710 | mvanbaak | 2009-03-08 19:28:51 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5554 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5554 | svdhaar | 2009-02-15 20:32:29 +0100 (Sun, 15 Feb
+	  2009) | 2 lines use other descriptions ........ ................
+
+	* /, showcms.php: Merged revisions 5708 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5708 | mvanbaak | 2009-03-08 19:23:26 +0100
+	  (Sun, 08 Mar 2009) | 14 lines Merged revisions 5552-5553 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5552 | svdhaar | 2009-02-15 17:19:32 +0100 (Sun, 15 Feb
+	  2009) | 3 lines removed some comments; why was session writing
+	  still open? ........ r5553 | svdhaar | 2009-02-15 17:22:56 +0100
+	  (Sun, 15 Feb 2009) | 2 lines thats why ........ ................
+
+	* /, jupload.php: Merged revisions 5706 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5706 | mvanbaak | 2009-03-08 19:18:53 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5551 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5551 | svdhaar | 2009-02-15 14:06:12 +0100 (Sun, 15 Feb
+	  2009) | 2 lines add 1 second timeout ........ ................
+
+	* themes/default/icons/upload_image.png (added), /,
+	  classes/cms/inc/cmsGallery.php, classes/html/inc/actions.php,
+	  classes/filesys/inc/file_operations.js,
+	  classes/filesys/output.php, jupload.php,
+	  classes/html/inc/insertactions.php,
+	  themes/default/icons/upload_multiple.png (added),
+	  classes/filesys/inc/show_files.php: Merged revisions 5704 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5704 | mvanbaak | 2009-03-08 19:15:36 +0100
+	  (Sun, 08 Mar 2009) | 12 lines Merged revisions 5550 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5550 | svdhaar | 2009-02-15 13:59:50 +0100 (Sun, 15 Feb
+	  2009) | 45 lines created a new icon for multiple image upload and
+	  multiple file upload; added multiple image upload to filesys,
+	  this is useful for uploading images directly from your digital
+	  camera; added support for delete from within the cms inline image
+	  page; redone some of the javascript implementation of multiple
+	  uploads and file deletes; ........ ................
+
+	* classes/cms/data.php, /: Merged revisions 5702 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5702 | mvanbaak | 2009-03-08 18:48:40 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5548 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5548 | svdhaar | 2009-02-14 22:56:03 +0100 (Sat, 14 Feb
+	  2009) | 2 lines supress warning ........ ................
+
+	* /, classes/covide/default.php: Merged revisions 5700 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5700 | mvanbaak | 2009-03-08 18:40:01 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5544 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5544 | svdhaar | 2009-02-13 20:13:16 +0100 (Fri, 13 Feb
+	  2009) | 2 lines some tiny connection tweaks. not sure if we use
+	  prepared statements already, but it should not break anything :)
+	  ........ ................
+
+	* /, classes/cms/inc/generateSitemap.php: Merged revisions 5698 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5698 | mvanbaak | 2009-03-08 18:34:32 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5538 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5538 | svdhaar | 2009-02-12 23:00:38 +0100 (Thu, 12 Feb
+	  2009) | 2 lines removed one warning ........ ................
+
+	* /, classes/tpl/inc/html_header.php: Merged revisions 5695 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5695 | mvanbaak | 2009-03-08 18:26:11 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5536 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5536 | svdhaar | 2009-02-12 22:55:02 +0100 (Thu, 12 Feb
+	  2009) | 2 lines tags should be lowercase officially ........
+	  ................
+
+	* classes/email/smtp.php, common/functions_pear.php,
+	  classes/cms/data.php, classes/html/inc/actions.php (added), /,
+	  classes/cms/inc/createInlineThumb.php, classes/address/data.php,
+	  classes/address/inc/dataGenerateLetterinfo.php,
+	  classes/html/output.php, classes/tpl/inc/html_header.php,
+	  conf/offices.php.sample, lang/nl_NL/LC_MESSAGES/messages.mo,
+	  classes/html/inc/page_footer.php, classes/cms/inc/cmsEditor.js,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5685-5694
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5685 | mvanbaak | 2009-03-08 17:08:28 +0100
+	  (Sun, 08 Mar 2009) | 17 lines Merged revisions 5337 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5337 | svdhaar | 2009-01-18 15:49:25 +0100 (Sun, 18 Jan
+	  2009) | 11 lines a very ugly hack to reduce memory usage up to
+	  70% (ie address book). php includes and the way covide works will
+	  eat up all the memory without freeing it. So we use static mode
+	  as escape route here. In future, my suggestion is a reprogramming
+	  of the code to a proper design pattern like the factory pattern
+	  which should be very useful here. for now this is fixed. ........
+	  ................ r5686 | mvanbaak | 2009-03-08 17:12:16 +0100
+	  (Sun, 08 Mar 2009) | 10 lines Merged revisions 5339 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5339 | svdhaar | 2009-01-18 22:34:40 +0100 (Sun, 18 Jan
+	  2009) | 3 lines modification to improve speed/memory usage even
+	  more. singleton/visitor design pattern ........ ................
+	  r5687 | mvanbaak | 2009-03-08 17:15:35 +0100 (Sun, 08 Mar 2009) |
+	  9 lines Merged revisions 5338 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5338 | svdhaar | 2009-01-18 20:28:32 +0100 (Sun, 18 Jan
+	  2009) | 2 lines fixed 2 cms translations ........
+	  ................ r5688 | mvanbaak | 2009-03-08 17:40:49 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5340 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5340 | svdhaar | 2009-01-18 22:53:02 +0100 (Sun, 18 Jan
+	  2009) | 2 lines same tweak for memory and performance as in
+	  insertAction ........ ................ r5689 | mvanbaak |
+	  2009-03-08 17:42:29 +0100 (Sun, 08 Mar 2009) | 9 lines Merged
+	  revisions 5436 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5436 | svdhaar | 2009-01-30 15:49:55 +0100 (Fri, 30 Jan
+	  2009) | 2 lines fixed error ........ ................ r5690 |
+	  mvanbaak | 2009-03-08 17:47:16 +0100 (Sun, 08 Mar 2009) | 9 lines
+	  Merged revisions 5444 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5444 | svdhaar | 2009-02-02 21:28:16 +0100 (Mon, 02 Feb
+	  2009) | 2 lines timers under rage (60 seconds where 0.6 seconds
+	  somehow) ........ ................ r5691 | mvanbaak | 2009-03-08
+	  17:53:54 +0100 (Sun, 08 Mar 2009) | 9 lines Merged revisions 5462
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5462 | svdhaar | 2009-02-04 22:56:43 +0100 (Wed, 04 Feb
+	  2009) | 2 lines added support for log scripts (i.e. for email
+	  statistics) ........ ................ r5692 | mvanbaak |
+	  2009-03-08 17:59:14 +0100 (Sun, 08 Mar 2009) | 9 lines Merged
+	  revisions 5463 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5463 | svdhaar | 2009-02-05 09:07:38 +0100 (Thu, 05 Feb
+	  2009) | 2 lines some example settings ........ ................
+	  r5693 | mvanbaak | 2009-03-08 18:13:52 +0100 (Sun, 08 Mar 2009) |
+	  9 lines Merged revisions 5482 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5482 | svdhaar | 2009-02-05 20:14:17 +0100 (Thu, 05 Feb
+	  2009) | 2 lines added check if file is writable ........
+	  ................ r5694 | mvanbaak | 2009-03-08 18:19:54 +0100
+	  (Sun, 08 Mar 2009) | 9 lines Merged revisions 5535 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5535 | svdhaar | 2009-02-12 22:53:12 +0100 (Thu, 12 Feb
+	  2009) | 2 lines ll should be officially index,follow ........
+	  ................
+
+	* /, classes/html/inc/page_footer.php: Merged revisions 5682 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5682 | mvanbaak | 2009-03-08 16:32:51 +0100 (Sun, 08
+	  Mar 2009) | 3 lines - bytes=>kilobytes=>megabytes is factor 1024,
+	  not 1204 - hide processinginfo in popupwindows again. ........
+
+	* classes/cms/data.php, /, classes/tpl/inc/handleFormData.php,
+	  classes/tpl/inc/sendform.php: Merged revisions 5680 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5680 | mvanbaak | 2009-03-05 10:16:59 +0100 (Thu, 05
+	  Mar 2009) | 2 lines allow multiple select fields in forms
+	  ........
+
+2009-03-06 12:53 +0000 [r5681]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/address/inc/export.php: if pobox is given, use this as
+	  default address in reeleezee. This way bills will be sent to the
+	  pobox if present.
+
+2009-03-04 10:01 +0000 [r5649-5675]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/cms/output.php: Merged revisions 5674 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5674 | mvanbaak | 2009-03-04 10:54:29 +0100
+	  (Wed, 04 Mar 2009) | 9 lines Merged revisions 5331 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5331 | svdhaar | 2009-01-17 20:44:33 +0100 (Sat, 17 Jan
+	  2009) | 2 lines re-order menu items to make more sense ........
+	  ................
+
+	* /, classes/tpl/inc/getPageFooter.php, conf/offices.php.sample:
+	  Merged revisions 5670 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5670 | mvanbaak | 2009-03-04 10:43:06 +0100
+	  (Wed, 04 Mar 2009) | 16 lines Merged revisions 5328,5330 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  With mod by me to document this new setting in offices.php.sample
+	  ........ r5328 | svdhaar | 2009-01-17 00:13:39 +0100 (Sat, 17 Jan
+	  2009) | 3 lines cleanup this file; show icons (except login) only
+	  when logged in ........ r5330 | svdhaar | 2009-01-17 13:45:46
+	  +0100 (Sat, 17 Jan 2009) | 2 lines make footer setting optional,
+	  in response to Mvanbaak's response regarding patch 5328 ........
+	  ................
+
+	* /, classes/cms/inc/cmsSitemap.php,
+	  documentation/manual/quickstart_cms_7_nl.pdf (removed),
+	  documentation/manual/manual_cms_7_nl.pdf (removed): Merged
+	  revisions 5668 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5668 | mvanbaak | 2009-03-04 10:34:45 +0100
+	  (Wed, 04 Mar 2009) | 9 lines Merged revisions 5327 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5327 | svdhaar | 2009-01-16 23:35:28 +0100 (Fri, 16 Jan
+	  2009) | 2 lines removed old manuals from cms ........
+	  ................
+
+	* classes/cms/data.php, /: Merged revisions 5666 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5666 | mvanbaak | 2009-03-04 10:32:23 +0100
+	  (Wed, 04 Mar 2009) | 13 lines Merged revisions 5326 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5326 | svdhaar | 2009-01-16 23:28:30 +0100 (Fri, 16 Jan
+	  2009) | 7 lines fixed #2236505
+	  https://sourceforge.net/tracker2/?func=detail&aid=2236505&group_id=98036&atid=619849
+	  Error when opening filemanager in CMS ........ ................
+
+	* /, jupload/RELEASE-NOTES.txt, jupload/wjhk.jupload.jar: Merged
+	  revisions 5664 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5664 | mvanbaak | 2009-03-04 10:27:47 +0100
+	  (Wed, 04 Mar 2009) | 46 lines Merged revisions 5325 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5325 | svdhaar | 2009-01-16 23:23:17 +0100 (Fri, 16 Jan
+	  2009) | 40 lines v4.0.0 Fix: - [Major] Fixed a regression in
+	  chunk upload, which came with the 4.0.0rc1 version. - [Minor]
+	  relpathinfo was empty, when files were dropped or pasted onto the
+	  applet. - [Minor] JUpload is compatible again with a JRE 1.5.
+	  Translation: - [Arabic] Add of the Arabic translation, thanks to
+	  Abdulrhman Alkhodiry V4.0.0rc1 Changes: - [MAJOR] Rewrite of the
+	  core upload code. Introduction of multi-threading: one thread to
+	  prepare files, one to upload files. Especially useful for picture
+	  mode. - [Major] Add of a new applet parameter: browsingDirectory.
+	  It allows the control of the directory in which the browse button
+	  will open the FileChooser for the first time. - [Minor] The
+	  allowHttpPersistent default value is now false, as a lot of
+	  people had troubles with persistent connections. - [Minor] When
+	  opening the FileChooser a second time, it will open where the
+	  user has closed it the previous time. - [Minor] When the file is
+	  too big, the applet now displays a file size in Gb, Mb or Kb,
+	  instead of the total amount of bytes. - [Minor] Hidden files are
+	  no more visible in the file chooser. They can still be added by
+	  drag'n'drop or paste operations. - [Minor] When a file is too
+	  big, the alert message now displays a size in Mb, Gb... (not the
+	  while byte number). - [Minor] Hidden files are not visible within
+	  the FileChooser. Hidden files can still be dropped or pasted onto
+	  the applet. - [Minor] There are now two progress bar: file
+	  preparation (quite useless for default upload policy) and the
+	  upload progress. Text has been updated. - [Minor] In picture
+	  mode, the file chooser is much more reactive to user
+	  interactions, especially on directory containing a lot of files.
+	  Fix: - [Major] Allows sending very large number of files.
+	  Previous version was crashing with 4000 files. - [2189777] The
+	  applet would generate a non-blocking NullPointerException for
+	  server response with Content-Length to 0. Typically: a HEAD
+	  response. ........ ................
+
+	* /, classes/tpl/inc/handleFormData.php: Merged revisions 5661 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5661 | mvanbaak | 2009-03-04 10:17:08 +0100 (Wed, 04
+	  Mar 2009) | 3 lines fix crm form generation so the commencement
+	  field is actually labeled correctly This fixes storing the
+	  commencement, and fixes js error in the check function. ........
+
+	* /, classes/address/inc/editBcard.php,
+	  classes/address/inc/show_edit.php: Merged revisions 5660 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5660 | mvanbaak | 2009-03-04 10:13:04 +0100 (Wed, 04
+	  Mar 2009) | 2 lines set some sane defaults for commencement and
+	  letterhead ........
+
+	* /, classes/sales/output.php: Merged revisions 5658 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5658 | mvanbaak | 2009-03-03 13:02:06 +0100 (Tue, 03
+	  Mar 2009) | 4 lines remove two useless menuitems in sales module
+	  Fixes bug #62 ........
+
+	* /, classes/tpl/inc/handleFormData.php: Merged revisions 5656 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5656 | mvanbaak | 2009-03-03 11:57:56 +0100 (Tue, 03
+	  Mar 2009) | 5 lines make the fieldnames of addressforms start
+	  with an uppercase character. Based on the many questions about
+	  this. Fixes bug #42 ........
+
+	* themes/2, themes/3, themes/4, themes/5, themes/6, themes/7:
+	  remove svn:mergeinfo fields
+
+	* /, classes/email/inc/dataSendMailComplex.php,
+	  classes/email/inc/dataSaveConcept.php: Merged revisions 5653 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5653 | mvanbaak | 2009-03-03 11:33:48 +0100 (Tue, 03
+	  Mar 2009) | 5 lines remove two lines of outputtext that are never
+	  used but sometimes show up right before a popupwindow is closed.
+	  This happened at least with saving a supportitem and with saving
+	  a calendar item with sending mail to customer. ........
+
+	* /, classes/tpl/inc/sendform.php: Merged revisions 5651 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5651 | mvanbaak | 2009-03-03 11:16:04 +0100 (Tue, 03
+	  Mar 2009) | 3 lines if value is an array, someone tricked the
+	  form to make selects multiple-selects. Handle this case by
+	  imploding the array with a , ........
+
+	* themes/0/covide.css: update monthly calendar styles
+
+	* /, classes/cms/inc/generateSitemap.php: Merged revisions 5648 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5648 | mvanbaak | 2009-03-02 08:53:38 +0100 (Mon, 02
+	  Mar 2009) | 2 lines fix warning when variable is not an array
+	  ........
+
+2009-03-01 13:06 +0000 [r5637-5643]  Michiel van Baak <michiel@covide.nl>
+
+	* /, jupload/RELEASE-NOTES.txt, jupload/wjhk.jupload.jar: Merged
+	  revisions 5642 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5642 | mvanbaak | 2009-03-01 13:55:59 +0100
+	  (Sun, 01 Mar 2009) | 34 lines Merged revisions 5058 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5058 | svdhaar | 2008-12-18 19:50:41 +0100 (Thu, 18 Dec
+	  2008) | 29 lines V4.0.0rc1 Changes: - [MAJOR] Rewrite of the core
+	  upload code. Introduction of multi-threading: one thread to
+	  prepare files, one to upload files. Especially useful for picture
+	  mode. - [Major] Add of a new applet parameter: browsingDirectory.
+	  It allows the control of the directory in which the browse button
+	  will open the FileChooser for the first time. - [Minor] The
+	  allowHttpPersistent default value is now false, as a lot of
+	  people had troubles with persistent connections. - [Minor] When
+	  opening the FileChooser a second time, it will open where the
+	  user has closed it the previous time. - [Minor] When the file is
+	  too big, the applet now displays a file size in Gb, Mb or Kb,
+	  instead of the total amount of bytes. - [Minor] Hidden files are
+	  no more visible in the file chooser. They can still be added by
+	  drag'n'drop or paste operations. - [Minor] When a file is too
+	  big, the alert message now displays a size in Mb, Gb... (not the
+	  while byte number). - [Minor] Hidden files are not visible within
+	  the FileChooser. Hidden files can still be dropped or pasted onto
+	  the applet. - [Minor] There are now two progress bar: file
+	  preparation (quite useless for default upload policy) and the
+	  upload progress. Text has been updated. - [Minor] In picture
+	  mode, the file chooser is much more reactive to user
+	  interactions, especially on directory containing a lot of files.
+	  Fix: - Allows sending very large number of files. Previous
+	  version was crashing with 4000 files. - [2189777] The applet
+	  would generate a non-blocking NullPointerException for server
+	  response with Content-Length to 0. Typically: a HEAD response.
+	  ........ ................
+
+	* common/check_requirements.php, /: Merged revisions 5636 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5636 | mvanbaak | 2009-02-28 23:28:13 +0100 (Sat, 28
+	  Feb 2009) | 2 lines remove two binaries that are no longer
+	  available ........
+
+2009-02-27 16:25 +0000 [r5596-5632]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/filesys/inc/extractPermissions.php,
+	  classes/filesys/data.php: Merged revisions 5629 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5629 | mvanbaak | 2009-02-27 16:23:24 +0100 (Fri, 27
+	  Feb 2009) | 6 lines also show 'projects' toplevel folder for
+	  non-projectadmins. This now behaves the same as the relations
+	  special folder Fixes bug #38 ........
+
+	* /, classes/email/data.php: Merged revisions 5628 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5628 | mvanbaak | 2009-02-27 15:25:24 +0100 (Fri, 27
+	  Feb 2009) | 4 lines Dont search in headers, this gives 'weird'
+	  results in the eyes of a user. Fixes bug #37 ........
+
+	* /, classes/calendar/inc/show_km.php: Merged revisions 5627 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5627 | mvanbaak | 2009-02-27 14:43:47 +0100 (Fri, 27
+	  Feb 2009) | 4 lines fix printing of kilometers. Fixes bug #36
+	  ........
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: regen
+
+	* /: Merged revisions 5623 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5623 | mvanbaak | 2009-02-27 13:19:01 +0100 (Fri, 27
+	  Feb 2009) | 2 lines regen ........
+
+	* /, themes/2, classes/finance/output.php, themes/3, themes/4,
+	  themes/5, themes/6, themes/7: Merged revisions 5622 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5622 | mvanbaak | 2009-02-27 13:17:40 +0100 (Fri, 27
+	  Feb 2009) | 4 lines added some missing gettext calls in finace
+	  module Re #33 ........
+
+	* sql/mysql/patches/2009022700.sql (added),
+	  classes/classification/output.php, classes/user/inc/useredit.php,
+	  /, classes/user/inc/dataSaveUserSettings.php,
+	  classes/address/inc/dataGetRelationsList.php,
+	  classes/classification/inc/pick_cla.php: Merged revisions 5620
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5620 | mvanbaak | 2009-02-27 12:30:09 +0100 (Fri, 27
+	  Feb 2009) | 19 lines Add field to limit addressview to specific
+	  classification If strict_permissions is enabled you can grant
+	  access to addresses based on classifications. This was
+	  troublesome in some situations: User1 has access to
+	  classification A and B User2 has access to classification C and B
+	  User1 could now see addresses labeled with B, even if A was not
+	  set. Companies that work with countries and devisions had trouble
+	  with this. What this patch does is: Make classification A a
+	  forced selection in usersettings if User1 now goes to the
+	  addressbook all access granted to classifications will apply to
+	  addresses also labeled with A. An address that has C and B as
+	  labels wont show up for User1 anymore. Fixes bug #5 ........
+
+	* /, classes/email/inc/emailCompose.js: Merged revisions 5618 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5618 | mvanbaak | 2009-02-27 10:21:34 +0100 (Fri, 27
+	  Feb 2009) | 6 lines grab linked project id from mailmessage and
+	  use this for the link 'add attachment from covide filesystem'
+	  This way it will show the correct project folder in the popup
+	  screen Fixes bug #2 ........
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  classes/address/inc/show_list.php,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: show in header that you are
+	  in the list of inactive addresses. Fixes bug #10
+
+	* classes/cms/data.php, classes/tpl/inc/site.js,
+	  classes/html/inc/js_popups.js: fix popup handling in CMS backend
+	  and on site frontend. Closes issue #11
+
+	* classes/email/inc/emailOpen.js, themes/0/covide.css,
+	  themes/1/covide.css, themes/2/covide.css, themes/3/covide.css,
+	  classes/email/inc/emailOpen.php: way better handling of 'show
+	  extra fields' in mailview. Also fixes bug #4
+
+	* classes/filesys/inc/show_index.php: fix warning because we used
+	  uninitialized array in a foreach loop.
+
+	* classes/filesys/data.php: fix popuphandling in filesys module.
+
+	* themes/0/covide.css: style updates from arjenc
+
+	* README: Fix small typo in README file
+
+	* classes/project/inc/showHours.php: fix layout of projectview
+
+	* /, lang/da_DK/LC_MESSAGES/messages.mo,
+	  classes/email/inc/dataGetEmailById.php,
+	  classes/email/inc/emailOpen.php,
+	  lang/da_DK/LC_MESSAGES/messages.po: Merged revisions 5601-5602
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5601 | mvanbaak | 2009-02-23 15:03:12 +0100 (Mon, 23
+	  Feb 2009) | 2 lines updates from Leif. Thanks ........ r5602 |
+	  mvanbaak | 2009-02-23 15:57:41 +0100 (Mon, 23 Feb 2009) | 5 lines
+	  plug a couple of places where too much info was given on mails
+	  where the user did not have access too. Fixes bug #TZR-518418658
+	  ........
+
+	* classes/html/venster.php: added p tag for designers
+
+	* classes/todo/data.php, classes/todo/inc/show_todos.php: only
+	  return total count when needed
+
+	* classes/todo/data.php, classes/todo/inc/show_todos.php: - add
+	  paging to todo list - history of todo's shows all todos for
+	  todomanagers, not only their own - column customercontact has
+	  been replaced with a column username Fixes bug #8
+
+	* sql/mysql/patches/2009022402.sql (added),
+	  sql/mysql/patches/2009022403.sql (added),
+	  sql/mysql/patches/2009022404.sql (added),
+	  lang/nn_NO/LC_MESSAGES/messages.po, classes/note/data.php,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  classes/note/inc/edit_note.php, classes/address/data.php,
+	  lang/es_ES/LC_MESSAGES/messages.po, classes/note/output.php,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/de_DE/LC_MESSAGES/messages.po,
+	  sql/mysql/patches/2009022400.sql (added), lang/covide.pot,
+	  lang/nl_NL/LC_MESSAGES/messages.po,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  sql/mysql/patches/2009022401.sql (added): add phone info to
+	  notes.
+
+	* classes/voip/default.php: dont disconnect from AMI when we have
+	  more work to do
+
+	* classes/todo/data.php, lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  classes/todo/inc/show_todos.php,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Introduce 'todo is done'
+	  functionality. This also introduces history of todo's for a user.
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: regen
+
+	* classes/voip/default.php, classes/note/inc/edit_note.php: when
+	  click'n'dial is used and the addressid is given, start customer
+	  contact.
+
+	* classes/address/data.php, classes/address/inc/editBcard.php,
+	  classes/address/inc/show_edit.php,
+	  classes/address/inc/dataGetRelationsList.php,
+	  classes/address/inc/dataGetAddressById.php: add addressid and
+	  userid to the voip originate calls
+
+	* classes/voip/default.php: use the agi asteriskmanager class for
+	  originating calls (makes our voip compatible with current
+	  asterisk trunk) add CustomerID and UserID channel variables if
+	  they are sent to us.
+
+2009-02-20 13:22 +0000 [r5563-5591]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/email/inc/emailOpen.php: unhide 'mail is public/private'
+	  Fixes bug #2581859
+
+	* classes/email/inc/emailOpen.php: unhide CC field in mailview
+	  Fixes bug #2585829
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: regen
+
+	* /: Merged revisions 5587 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5587 | mvanbaak | 2009-02-20 13:26:09 +0100 (Fri, 20
+	  Feb 2009) | 2 lines regen ........
+
+	* classes/finance/non-oop/factuur/projecten.php,
+	  classes/finance/non-oop/inc_wrapper.php,
+	  classes/finance/output.php: this is far from ideal, but at least
+	  this makes the finance module 'usable' again
+
+	* classes/project/inc/showHours.php,
+	  classes/project/inc/show_overview.php,
+	  classes/projectdeclaration/data.php: fixes to make the
+	  declaration module work again.
+
+	* classes/address/inc/export.php: add pobox info to reeleezee
+	  export
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css, themes/4/covide.css, themes/5/covide.css,
+	  themes/6/covide.css, themes/7/covide.css: fix typo so that
+	  templates block on relationcard looks correct again
+
+	* lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/nl_NL/LC_MESSAGES/messages.po: spaces are cheap, so use them
+
+	* classes/todo/inc/show_todos.php: show 'new todo' by default
+
+	* classes/project/inc/showHours.php: remove double 'more actions'
+	  menu and merge them together
+
+	* classes/support/inc/showList.php: make support items list 100%
+	  width
+
+	* /, lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5577 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5577 | mvanbaak | 2009-02-19 16:14:09 +0100 (Thu, 19
+	  Feb 2009) | 2 lines fix language error ........
+
+	* /, classes/address/inc/dataCheckRcBc.php, classes/email/data.php,
+	  classes/email/inc/dataSaveConcept.php: Merged revisions
+	  5571,5574-5575 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5571 | mvanbaak | 2009-02-19 13:46:42 +0100 (Thu, 19
+	  Feb 2009) | 3 lines add country to RCBC check. Dont update
+	  timestamp when rcbc is there. ........ r5574 | mvanbaak |
+	  2009-02-19 16:08:03 +0100 (Thu, 19 Feb 2009) | 4 lines make it
+	  possible to get all mail aliases for a user. Use a function
+	  param. if not set it will use the $_SESSION["user_id"] Before
+	  this patch the code was _always_ using $_SESSION["user_id"]
+	  ........ r5575 | mvanbaak | 2009-02-19 16:09:25 +0100 (Thu, 19
+	  Feb 2009) | 2 lines dont include your own email in the 'reply
+	  all' CC list ........
+
+	* classes/address/inc/relationCard.php: add link to create new
+	  supportitem from relationcard.
+
+	* classes/address/inc/relationCard.php: fix sales view on
+	  relationcard.
+
+	* classes/email/data.php: use better function to remove realname
+	  etc from email address so read-notifications work correctly
+
+	* /, classes/address/data.php: Merged revisions 5568 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5568 | mvanbaak | 2009-02-19 13:12:40 +0100 (Thu, 19
+	  Feb 2009) | 2 lines fix reloading of opener when editing
+	  select'n'sort ........
+
+	* classes/address/inc/exportBcard.php, /: Merged revisions 5566 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5566 | mvanbaak | 2009-02-19 12:12:30 +0100 (Thu, 19
+	  Feb 2009) | 4 lines use the correct variable when trying to
+	  determine if we have pobox info or not. ok initx@ ........
+
+	* classes/cms/data.php, /, classes/tpl/inc/handleFormData.php:
+	  Merged revisions 5562 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5562 | mvanbaak | 2009-02-18 14:29:10 +0100 (Wed, 18
+	  Feb 2009) | 10 lines if a user is logged in on the website, use
+	  known emailaddress in forms If a user is logged in on a website,
+	  we know their email address from the cms account. If this account
+	  is linked to an address, it's possible there's an email address
+	  defined there. If the addresscard has an email specified, use
+	  that, otherwise use the emailaddress from the cms users table.
+	  This address will be used in the 'sender' special field on a
+	  contact form. ........
+
+	* /, classes/support/inc/showIssue.php: Merged revisions 5561 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5561 | mvanbaak | 2009-02-18 11:57:51 +0100 (Wed, 18
+	  Feb 2009) | 2 lines only use bcard fields if they are present
+	  ........
+
+	* /, classes/tpl/inc/search.php: Merged revisions 5559 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5559 | mvanbaak | 2009-02-17 11:35:29 +0100 (Tue, 17
+	  Feb 2009) | 3 lines give the ul where we list extra search
+	  options the id "extra_search_options" so it's easier to style for
+	  webdevs. ........
+
+2009-02-17 12:00 +0000 [r5560]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/email/inc/emailList.php: move 'toggle all' selectbox to
+	  the right
+
+2009-02-16 10:11 +0000 [r5555-5557]  Michiel van Baak <michiel@covide.nl>
+
+	* common/functions_pear.php, /, classes/tpl/inc/search.php: Merged
+	  revisions 5556 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5556 | mvanbaak | 2009-02-16 11:07:09 +0100 (Mon, 16
+	  Feb 2009) | 3 lines use the backend escape function instead of
+	  addslashes. Suggested and reviewed by Thomas. ........
+
+	* /, classes/tpl/inc/search.php, themes/2, themes/3, themes/4,
+	  themes/5, themes/6, themes/7: Merged revisions 5549 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5549 | mvanbaak | 2009-02-15 00:10:41 +0100 (Sun, 15
+	  Feb 2009) | 2 lines plug SQL injection vulnerability reported by
+	  Sander van Laar <sander (at) vanlaar (dot) cc> ........
+
+2009-02-13 14:06 +0000 [r5493-5543]  Michiel van Baak <michiel@covide.nl>
+
+	* /, themes/2, themes/3, themes/4, themes/5,
+	  lang/nl_NL/LC_MESSAGES/messages.mo, themes/6, themes/7,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Merged revisions 5542 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5542 | mvanbaak | 2009-02-13 14:16:42 +0100 (Fri, 13
+	  Feb 2009) | 2 lines postbank decided to change 'giro nummer' to
+	  'betaalrekening' ........
+
+	* classes/project/inc/show_overview.php: fix 'more actions' menu in
+	  projectview
+
+	* classes/email/inc/emailList.php: move 'more actions' dropdown in
+	  the emaillist to the menu like in other modules
+
+	* /, classes/address/data.php, themes/2, themes/3,
+	  classes/address/inc/dataGetRelationsList.php, themes/4, themes/5,
+	  themes/6, themes/7: Merged revisions 5533-5534 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5533 | mvanbaak | 2009-02-12 16:58:56 +0100 (Thu, 12
+	  Feb 2009) | 2 lines fix sql error when no classifications active
+	  ........ r5534 | mvanbaak | 2009-02-12 17:01:44 +0100 (Thu, 12
+	  Feb 2009) | 5 lines Administrator users should have access to all
+	  addresses, no matter what their access on classifications is.
+	  Related to #2132672, fixes first issue brought up there ........
+
+	* /, classes/project/data.php, classes/email/inc/emailList.php,
+	  classes/project/inc/dataGetProjectsBySearch.php,
+	  classes/address/inc/relationCard.php: Merged revisions 5531 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5531 | mvanbaak | 2009-02-12 15:49:23 +0100 (Thu, 12
+	  Feb 2009) | 5 lines Dont show projects on relationcard and
+	  emailarchive of an address a user has no access to. Fixes bug
+	  #2581496 ........
+
+	* /, classes/email/inc/retrieveMailProcess.php: Merged revisions
+	  5528 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5528 | mvanbaak | 2009-02-12 15:18:14 +0100 (Thu, 12
+	  Feb 2009) | 5 lines Check if target folder of mailfilters exists.
+	  We had some reports from people thinking their mail did not
+	  arrive, and found out they had mailfilters configured that
+	  directed mail to a folder that no longer existed. ........
+
+	* classes/support/inc/save2db.php,
+	  classes/support/inc/showEdit.php, /,
+	  classes/support/inc/dataGetSupportItems.php,
+	  classes/support/inc/showIssue.php,
+	  classes/support/inc/dataGetSupportItemById.php,
+	  sql/mysql/patches/2009021200.sql (added),
+	  classes/support/data.php, sql/mysql/patches/2009021201.sql
+	  (added), sql/mysql/patches/2009021202.sql (added): Merged
+	  revisions 5526-5527 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5526 | mvanbaak | 2009-02-12 10:35:47 +0100 (Thu, 12
+	  Feb 2009) | 4 lines make reference number in support module a
+	  varchar. Now that users can input their own reference number when
+	  creating an issue, people start to use non-numeric characters.
+	  ........ r5527 | mvanbaak | 2009-02-12 14:32:35 +0100 (Thu, 12
+	  Feb 2009) | 2 lines fix issues with support module ........
+
+	* themes/1/covide.css: oops, forgot theme 1
+
+	* classes/html/venster.php, themes/0/covide.css,
+	  themes/2/covide.css, themes/3/covide.css,
+	  classes/calendar/inc/show_main.php, themes/6/covide.css: move
+	  userselection in calendar to side right under the
+	  monthcalendarthingie
+
+	* classes/address/inc/show_list.php: move more actions menu to the
+	  menu
+
+	* classes/address/inc/show_list.php: new relation should not be in
+	  'more actions'
+
+	* classes/html/venster.php: remove empty lines
+
+	* classes/html/venster.php: add arrow
+
+	* themes/default/icons/cross.png: updated cross icon
+
+	* classes/email/inc/emailList.php: redo some common options that
+	  were icons in the new menu
+
+	* themes/4/covide.css, themes/5/covide.css, themes/6/covide.css,
+	  themes/7/covide.css: sync themes
+
+	* shellscripts/syncstyles.sh: theme 0 and 1 and 2 and 3 should be
+	  left alone
+
+	* classes/html/venster.php, classes/calendar/inc/show_main.php:
+	  restore handy calendar thingie in main calendar view
+
+	* classes/html/venster.php: add menu to bottom of frame as well.
+	  For this, we took the javascript generation out of the
+	  'generateMenuItems' and added it to the end of the frame
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css: add new styles for the soon to become real
+	  footermenu
+
+	* classes/note/output.php: unhide commonly used menu item While
+	  there, remove the redundant icons and cleanup some commented code
+
+	* classes/note/inc/generate_list.php,
+	  classes/calendar/inc/show_main.php: unhide some commonly used
+	  menu items
+
+	* classes/html/venster.php: make all menuitems appear in 'more
+	  actions' collapsable/expandable menu
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css, themes/4/covide.css, themes/5/covide.css:
+	  prepare for 'more actions' menu item with collapse menu
+
+	* classes/calendar/inc/show_monthview.php: remove borders in
+	  monthview of calendar.
+
+	* classes/html/view.php: make views 100% width all the time.
+
+	* classes/html/venster.php, themes/0/covide.css,
+	  themes/1/covide.css, themes/2/covide.css, themes/3/covide.css:
+	  move menu to upper right corner of frameheader
+
+	* classes/address/inc/export.php,
+	  classes/address/inc/show_list.php: add export in reeleezee xml
+	  format
+
+	* sql/mysql/patches/2009020900.sql (added),
+	  classes/support/inc/save2db.php,
+	  classes/support/inc/showEdit.php, /,
+	  classes/support/inc/showIssue.php: Merged revisions 5499 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5499 | mvanbaak | 2009-02-09 17:04:01 +0100 (Mon, 09
+	  Feb 2009) | 2 lines add field 'internal notes' to support module
+	  that wont be on the print. ........
+
+	* classes/support/inc/showEdit.php, /: Merged revisions 5495-5496
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5495 | mvanbaak | 2009-02-09 16:05:17 +0100 (Mon, 09
+	  Feb 2009) | 2 lines make reference number changeable ........
+	  r5496 | mvanbaak | 2009-02-09 16:08:02 +0100 (Mon, 09 Feb 2009) |
+	  2 lines only allow free input of reference number when creating a
+	  new issue ........
+
+	* classes/finance/non-oop/factuur/stap.php,
+	  classes/finance/non-oop/factuur/stapproduct.php: fix
+	  popuphandling here as well
+
+2009-02-06 10:53 +0000 [r5438-5491]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/calendar/inc/dataRegSave.php: use todo class' delete
+	  function instead of directly deleting the record from the
+	  database.
+
+	* classes/campaign/output.php, classes/campaign/data.php: fix
+	  popuphandling in campaign module
+
+	* classes/email/inc/emailOpen.php: restructure the email view
+	  screen a bit.
+
+	* /, classes/user/inc/pop_tester.js: Merged revisions 5484 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5484 | mvanbaak | 2009-02-06 11:25:18 +0100 (Fri, 06
+	  Feb 2009) | 6 lines In opera the window.open call returns
+	  something even if the popup is blocked. Use a try/catch block
+	  around closing the popup. If it fails, opera blocked the popup.
+	  This way we get the note about blocked popups in opera as well.
+	  ........
+
+	* classes/metafields/default.php: fix popup handling
+
+	* /, classes/address/inc/dataCheckRcBc.php: Merged revisions 5477
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5477 | mvanbaak | 2009-02-05 17:07:18 +0100 (Thu, 05
+	  Feb 2009) | 3 lines - revert passing modified info in address
+	  array. They are empty anywayz - backport fix from trunk to update
+	  modified info on rcbc when saving relation ........
+
+	* classes/address/inc/dataCheckRcBc.php: I dont know why we
+	  shouldn't update the 'modified' info of the rcbc when updating
+	  the relation.
+
+	* classes/campaign/data.php: close popup after refreshing
+	  classification
+
+	* /, classes/todo/inc/show_todos.php: Merged revisions 5472 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5472 | mvanbaak | 2009-02-05 16:24:16 +0100 (Thu, 05
+	  Feb 2009) | 2 lines remove useless menu item ........
+
+	* /, classes/address/inc/dataCheckRcBc.php: Merged revisions 5470
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5470 | mvanbaak | 2009-02-05 16:17:48 +0100 (Thu, 05
+	  Feb 2009) | 2 lines sync modified info as well ........
+
+	* /, classes/tpl/inc/handleFormData.php: Merged revisions 5467 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5467 | mvanbaak | 2009-02-05 13:05:19 +0100 (Thu, 05
+	  Feb 2009) | 3 lines exclude some fields in the address/crm form
+	  if the addressblock/crmblock is marked as mandatory. infix,
+	  fax_nr, birthday, cla and memo are allowed to be empty. ........
+
+	* /, classes/project/inc/dataGetSubprojectsById.php,
+	  classes/project/inc/dataGetHoursList.php: Merged revisions 5464
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5464 | mvanbaak | 2009-02-05 09:54:53 +0100 (Thu, 05
+	  Feb 2009) | 3 lines activity names can now be in subarrays
+	  because of the 'group' setting introduced some weeks ago. This
+	  made entries not show the activity. ........
+
+	* classes/user/inc/useredit.php, /: Merged revisions 5459 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5459 | mvanbaak | 2009-02-04 17:17:18 +0100 (Wed, 04
+	  Feb 2009) | 2 lines unhide this one ........
+
+	* /, classes/calendar/inc/dataSave2db.php: Merged revisions 5456
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5456 | mvanbaak | 2009-02-04 16:49:12 +0100 (Wed, 04
+	  Feb 2009) | 5 lines if calendaritem is linked to a relation, and
+	  user opted to notify the relation store the sent mail in the
+	  relation's archive. Fixes bug #2343043 ........
+
+	* /, classes/email/inc/dataGetEmailBySearch.php,
+	  classes/email/inc/dataGetEmailById.php: Merged revisions 5453 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5453 | mvanbaak | 2009-02-04 10:59:06 +0100 (Wed, 04
+	  Feb 2009) | 4 lines remove escape slashes if they were added with
+	  addslashes Fixes bug #2377346 ........
+
+	* classes/address/inc/show_list.js,
+	  classes/address/inc/show_list.php: make second actions dropdown
+	  actually do something
+
+	* classes/address/data.php: handle both relations and businesscard
+	  selection
+
+	* classes/address/inc/removeSelection.php: close button actually
+	  closes the screen
+
+	* classes/calendar/inc/show_edit.php: - Dont overwrite
+	  timestamp_start on editing a repeating item - Dont loose the
+	  repeat end date when editing a repeating item Fixes bug #2118149
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css, themes/4/covide.css, themes/5/covide.css:
+	  added some margins to ul and ol in general output
+
+	* classes/html/inc/jqueryplugins/akModal.js: re-enable scrolling
+
+	* classes/html/inc/jqueryplugins/akModal.js: - new version of
+	  akModal.js - fixed annoying closing issue - dont fade in/out but
+	  show/hide - use correct path to close image
+
+	* classes/email/output.php: replace title of 'predefined content'
+	  list. This makes it show the same as the edit screen Fixes bug
+	  #2263551
+
+	* classes/user/inc/show_login.php: use addTag instead of insertTag
+	  for a <br> Closes bug #2541407
+
+2009-01-29 14:09 +0000 [r5422-5433]  Michiel van Baak <michiel@covide.nl>
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  classes/email/inc/emailOpen.php,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: Remember to translate new
+	  strings, mkaythnxbyebbq
+
+	* classes/email/inc/emailOpen.php: implement the 'send read
+	  notification'
+
+	* classes/email/data.php: - make updateReadStatus return the status
+	  before the update. - fix date in read-notification email so it
+	  uses the original maildate instead of the readtime.
+
+	* classes/email/inc/emailOpen.php: move the update of readstatus in
+	  emailOpen to before we grab the message. This way the
+	  'read/unread' marker will show correctly.
+
+	* README: update Closes #1
+
+	* classes/address/inc/dataSaveBcard.php: fix js error in saving
+	  bcard
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  classes/email/inc/emailOpen.php,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: translation update
+
+2009-01-28 08:16 +0000 [r5396-5419]  Michiel van Baak <michiel@covide.nl>
+
+	* lang/nn_NO/LC_MESSAGES/messages.po,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: translation updates
+
+	* classes/email/data.php: actually, this is what I meant. Fixed in
+	  the train yesterday on my ride home.
+
+	* classes/finance/README (added),
+	  classes/finance/non-oop/inc_wrapper.php,
+	  classes/finance/non-oop/inc_common.php: - re-indent two files I
+	  was reading. - add README with some notes what to do with this
+	  module
+
+	* conf/offices.php.sample: document the 'dont compress js and css'
+	  option you can provide in offices.php
+
+	* shellscripts/covidevm_setup: make very sure the default user is
+	  set to active as well
+
+	* beagle-conf/.beagle/config/webservices.xml,
+	  beagle-conf/.beagle/config/daemon.xml,
+	  beagle-conf/.beagle/config/searching.xml,
+	  beagle-conf/.beagle/config/indexing.xml,
+	  beagle-conf/.beagle/config/networking.xml: update configuration.
+	  For some weird reason there were hidden characters at the start
+	  of the file
+
+	* contrib/vamos (removed): remove empty non-maintained contrib
+
+	* classes/email/default.php, classes/email/data.php,
+	  classes/email/inc/emailOpen.php: part of the soon to be released
+	  'send read notification' in email. The functional part is not
+	  done yet, but there's a comment in emailOpen.php that shows what
+	  I'm thinking. For now no functional change to covide.
+
+	* classes/address/data.php: fix 'set selection to non-active'
+	  functionality
+
+	* classes/note/output.php: give the show_note screen some extra
+	  space
+
+	* classes/email/inc/dataSendMailComplex.php: refresh prarent if
+	  needed
+
+	* classes/todo/inc/show_todos.php,
+	  classes/todo/inc/todo_actions.js: fix popup handling in todo
+	  print
+
+	* classes/user/inc/show_online.php: show all icons in 'online
+	  users' in a row instead of on two rows
+
+	* classes/filesys/data.php: fix popuphandling in filesystem when
+	  editing description of file
+
+	* classes/email/inc/dataSendMailComplex.php: close popup on sending
+	  mail directly from addressbook
+
+2009-01-23 16:37 +0000 [r5349-5395]  Michiel van Baak <michiel@covide.nl>
+
+	* classes/user/inc/useredit.php: fix layout of cms access
+
+	* themes/previews/thumb_theme0.png, themes/previews/theme0.png,
+	  themes/previews/thumb_theme6.png, themes/previews/theme6.png: new
+	  theme previews
+
+	* classes/user/inc/useredit.php, themes/0/covide.css,
+	  themes/6/covide.css: fix themes. you have to be carefull with the
+	  url thingie
+
+	* shellscripts/syncstyles.sh: theme6 is alias for theme0
+
+	* themes/0/covide_before_noOudlook.css (added),
+	  themes/0/bg_contentarea.png (added), themes/0/covide.css,
+	  themes/0/bg_tab.png (added), themes/0/bg_dashboard.png (added),
+	  themes/0/bg_mod_header.png (added), themes/0/modules/covide.png,
+	  themes/0/bg_sidetab.png (added), themes/0/bgreverse.png,
+	  themes/0/icons/ui/remove.png: make theme 0 the default (it was
+	  already) and show the same as 6
+
+	* themes/6/modules/covide.png, themes/6/bg_sidetab.png (added),
+	  themes/6/bgreverse.png, themes/6/icons/ui/remove.png,
+	  themes/6/covide_before_noOudlook.css (added),
+	  themes/6/RUW/icon_close_layer.psd (added),
+	  themes/6/RUW/bg_contentarea.psd (added), themes/6/RUW (added),
+	  themes/6/RUW/icon_close.psd (added), themes/6/bg_mod_header.png
+	  (added), themes/6/bg_dashboard.png (added),
+	  themes/6/RUW/bg_sidetab.psd (added), themes/6/bg_contentarea.png
+	  (added), themes/6/covide.css, themes/6/RUW/bg_mod_header.psd
+	  (added), themes/6/RUW/bg_dashboard.psd (added),
+	  themes/6/bg_tab.png (added): import new theme 6
+
+	* classes/html/inc/jqueryplugins/akModal.js: dont Puff/Grow the
+	  popups, but show/hide Fade for 100ms instead of 500ms
+
+	* classes/user/inc/useredit.php: fix type so usersettings now shows
+	  the cms settings
+
+	* classes/email/default.php, lang/nn_NO/LC_MESSAGES/messages.po,
+	  classes/email/data.php, classes/email/inc/emailList.php,
+	  lang/es_ES/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/sv_SE/LC_MESSAGES/messages.po,
+	  lang/de_DE/LC_MESSAGES/messages.po,
+	  classes/email/inc/emailList.js, lang/covide.pot,
+	  lang/da_DK/LC_MESSAGES/messages.po,
+	  lang/nl_NL/LC_MESSAGES/messages.po: create functionality to try
+	  and link a selection of emails to addresses
+
+	* classes/email/inc/dataSendMailComplex.php: fix popup handling in
+	  sending email.
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css: make the own_notes diff a tiny bit smaller
+	  so it aligns with the rest of the desktop Fixes bug #2504011
+
+	* classes/html/inc/page_header.php: fix stylesheetname for the
+	  finance module tab so the icon shows up Fixes bug #2504018
+
+	* classes/user/inc/pick_user.php: fix popup handling in pick_user
+	  Fixes bug #2504820
+
+	* classes/email/inc/emailList.php: align mailfolders with maillist
+	  Fixes bug #2503977
+
+	* classes/rss/output.php: fix popup handling in rss module Fixes
+	  bug #2503940
+
+	* classes/html/inc/js_classes.js, classes/html/inc/page_footer.php:
+	  make the performance info hide on non-dev versions again. Fixes
+	  bug #2503855
+
+	* classes/email/data.php, classes/email/inc/emailList.php,
+	  classes/email/output.php: fixes for the new popup handling and
+	  the groups in 'more actions' menu
+
+	* classes/email/default.php, classes/email/retrieve.php, /,
+	  classes/email/data.php, classes/email/inc/emailList.php,
+	  sql/mysql/patches/2009012200.sql (added),
+	  classes/email/inc/retrieveMailProcess.php,
+	  classes/email/output.php: Merged revisions 5363 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5363 | mvanbaak | 2009-01-22 11:31:44 +0100 (Thu, 22
+	  Jan 2009) | 4 lines Add autoreply functionality to the Covide
+	  mail module. Implements FR #2222254 ........
+
+	* classes/html/inc/js_popups.js: let's try with a default width and
+	  height for popup windows
+
+	* classes/project/inc/edit_project.php,
+	  classes/address/inc/exportBcard.php, /,
+	  classes/address/inc/export.php,
+	  classes/project/inc/showHours.php: Merged revisions
+	  5344-5345,5347 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5344 | mvanbaak | 2009-01-19 12:44:28 +0100 (Mon, 19
+	  Jan 2009) | 2 lines always show declarationlist (hourlist which
+	  is hidden by default in the normal project module) ........ r5345
+	  | mvanbaak | 2009-01-19 12:45:24 +0100 (Mon, 19 Jan 2009) | 2
+	  lines escape relation names so names with a ' do show up in the
+	  left side of the edit-screen ........ r5347 | mvanbaak |
+	  2009-01-20 10:46:24 +0100 (Tue, 20 Jan 2009) | 2 lines add
+	  classifications to the export ........
+
+	* classes/project/inc/dataSaveProject.php: fix saving of a project
+
+	* classes/calendar/inc/show_monthview.php: fix width-issue with
+	  montview calendar
+
+	* lang/nl_NL/LC_MESSAGES/messages.mo,
+	  lang/nl_NL/LC_MESSAGES/messages.po: fix translation
+
+	* classes/project/inc/show_overview.php: give edit screens a nice
+	  size as well
+
+	* classes/email/output.php: wait a bit longer before closing the
+	  window.
+
+	* classes/email/inc/emailOpen.php: add back button as well
+
+2009-01-16 13:54 +0000 [r5287-5321]  Michiel van Baak <michiel@covide.nl>
+
+	* /, classes/calendar/inc/dataSave2db.php,
+	  classes/calendar/inc/dataRegSave.php: Merged revisions 5320 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5320 | mvanbaak | 2009-01-16 14:50:48 +0100 (Fri, 16
+	  Jan 2009) | 2 lines better handling of registering repeating
+	  calendar items ........
+
+	* /, classes/todo/data.php: Merged revisions 5255-5256,5318 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5255 | mvanbaak | 2009-01-11 21:44:21 +0100 (Sun, 11
+	  Jan 2009) | 2 lines disable the cleanup of tmpdir for now
+	  ........ r5256 | mvanbaak | 2009-01-11 21:45:59 +0100 (Sun, 11
+	  Jan 2009) | 2 lines disable POP3S since it's not working with a
+	  lot of mailservers ........ r5318 | mvanbaak | 2009-01-16
+	  11:05:27 +0100 (Fri, 16 Jan 2009) | 2 lines fix handling of todo
+	  saving when the user_id of the todo is not the loggedin user
+	  ........
+
+	* classes/email/inc/emailOpen.js, classes/email/inc/emailOpen.php:
+	  update email module based on feedback: - put some action icons
+	  back - readstatus is now a dropdown that can change the status.
+
+	* themes/previews/thumb_theme2.png, themes/0/icons/ui/Thumbs.db
+	  (removed), themes/1/icons/ui/Thumbs.db (removed),
+	  themes/2/icons/ui/Thumbs.db (removed),
+	  themes/3/icons/ui/Thumbs.db (removed),
+	  themes/4/icons/ui/Thumbs.db (removed),
+	  themes/5/icons/ui/Thumbs.db (removed),
+	  themes/6/icons/ui/Thumbs.db (removed),
+	  themes/7/icons/ui/Thumbs.db (removed): sync with
+	  covide-iface-trunk branch
+
+	* classes/email/inc/emailOpen.php: re-enable the link to show
+	  external images in html email
+
+	* themes/6/dialoog_r.gif, themes/6/inputtextarea_bg.gif,
+	  themes/6/dialoog_bg_1.gif, themes/6/dialoog_bg_2.gif,
+	  themes/6/inputtext_bg.gif, themes/6/tabel_bg_1.gif,
+	  themes/6/tabel_bg_2.gif, themes/6/tabel_bg_3.gif,
+	  themes/7/dialoog_r2.gif, themes/2, themes/2/covide.css, themes/3,
+	  themes/4, themes/5, themes/6/covide.css, themes/6, themes/7,
+	  themes/6/bg_topnav.png, themes/7/ond_1.gif,
+	  themes/7/bg_header.gif, themes/7/ond_2.gif, themes/7/ond_3.gif,
+	  themes/6/bgreverse.png, themes/7/ond_4.gif,
+	  themes/7/inputtextarea_bg.gif, themes/7/dialoog_bg_1.gif,
+	  themes/7/dialoog_bg_2.gif, themes/7/inputtext_bg.gif,
+	  themes/6/dialoog_r2.gif, themes/6/menu_top.gif,
+	  themes/1/covide.css, themes/5/covide.css, themes/7/dialoog_o.gif,
+	  themes/6/logo.gif, themes/7/dialoog_r.gif,
+	  themes/6/menu_link_m_nav.gif, themes/7/menu_link_m_nav.gif,
+	  themes/6/gradient.png, themes/7/menu_top.gif, themes/7/bg.gif,
+	  themes/4/covide.css, themes/6/menu_link_l.gif,
+	  themes/7/menu_onder.gif, themes/6/menu_link_m.gif,
+	  themes/7/menu_link_l.gif, themes/7/menu_link_m.gif,
+	  themes/7/bg_topnav.png, themes/6/ond_1.gif,
+	  themes/6/bg_header.gif, themes/6/ond_2.gif, themes/7/logo.gif,
+	  themes/6/ond_3.gif, themes/6/menu_link_r.gif, themes/6/ond_4.gif,
+	  themes/7/menu_link_r.gif, themes/7/bgreverse.png,
+	  themes/7/gradient.png, themes/7/tabel_bg_1.gif,
+	  themes/7/tabel_bg_2.gif, themes/7/tabel_bg_3.gif,
+	  themes/default/modules/money_euro.png (added), themes/6/bg.gif,
+	  themes/3/covide.css, themes/6/menu_onder.gif,
+	  themes/6/dialoog_o.gif, themes/7/covide.css: sync with
+	  covide-iface branch
+
+	* classes/address/inc/show_list.php: make all edit screens same
+	  size, fixing some reports of to little space
+
+	* classes/email/inc/emailCompose.php, classes/email/output.php: fix
+	  classification selection in emailCompose screen
+
+	* classes/desktop/data.php, classes/desktop/output.php: fix edit
+	  functionality for own-notes on the dashboard
+
+	* classes/address/inc/show_import_step2.php: fix scrolling of
+	  import
+
+	* themes/previews/thumb_theme1.png, themes/previews/theme1.png: fix
+	  preview of theme 1
+
+	* classes/email/inc/emailOpen.js, classes/email/output.php: make
+	  printing of emails work again
+
+	* classes/note/output.php, classes/note/inc/note_actions.js: make
+	  printing of notes work again.
+
+	* /, classes/project/inc/dataGetProjectsBySearch.php,
+	  classes/project/inc/show_overview.php: Merged revisions 5286 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5286 | mvanbaak | 2009-01-14 13:46:27 +0100 (Wed, 14
+	  Jan 2009) | 2 lines fix sorting ........
+
+	* classes/email/smtp.php, /: Merged revisions 5285 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5285 | mvanbaak | 2009-01-14 13:18:23 +0100
+	  (Wed, 14 Jan 2009) | 13 lines Merged revisions 5281 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5281 | svdhaar | 2009-01-13 19:47:13 +0100 (Tue, 13 Jan
+	  2009) | 5 lines fixed EHLO handling. we should wait for an
+	  250<space> response instead of 250<end> ........ ................
+
+	* /, .htaccess: Merged revisions 5284 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ................ r5284 | mvanbaak | 2009-01-14 13:11:39 +0100
+	  (Wed, 14 Jan 2009) | 10 lines Merged revisions 5154 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/team/svdhaar/covide-stable
+	  ........ r5154 | svdhaar | 2009-01-08 21:06:39 +0100 (Thu, 08 Jan
+	  2009) | 2 lines rewriterule for browser without base href
+	  support, maybe spders? ........ ................
+
+	* /, classes/project/inc/dataGetProjectsBySearch.php,
+	  classes/project/inc/show_overview.php: Merged revisions 5283 via
+	  svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5283 | mvanbaak | 2009-01-14 11:14:41 +0100 (Wed, 14
+	  Jan 2009) | 2 lines sorting ........
+
+	* /, classes/email/inc/retrieveCheckBouncer.php: Merged revisions
+	  5280 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5280 | mvanbaak | 2009-01-13 14:55:47 +0100 (Tue, 13
+	  Jan 2009) | 2 lines try some extra things to find bounces
+	  ........
+
+	* /, classes/email/inc/retrieveCheckBouncer.php: Merged revisions
+	  5279 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5279 | mvanbaak | 2009-01-13 14:05:55 +0100 (Tue, 13
+	  Jan 2009) | 2 lines mark failed address as 'Bounced-Email' using
+	  classification ........
+
+	* classes/email/retrieve.php, /,
+	  classes/email/inc/retrieveCheckBouncer.php,
+	  classes/email/inc/retrieveParseMessage.php: Merged revisions 5278
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5278 | mvanbaak | 2009-01-13 12:48:32 +0100 (Tue, 13
+	  Jan 2009) | 3 lines - make bounced email detection work again. -
+	  added detection of bounced mail for postfix ........
+
+	* /, classes/email/inc/dataGetEmailBySearch.php: Merged revisions
+	  5277 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5277 | mvanbaak | 2009-01-13 12:04:34 +0100 (Tue, 13
+	  Jan 2009) | 2 lines use the new count function of
+	  get_tracker_items in getEmailBySearch ........
+
+	* /, classes/email/data.php: Merged revisions 5276 via svnmerge
+	  from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5276 | mvanbaak | 2009-01-13 12:03:25 +0100 (Tue, 13
+	  Jan 2009) | 2 lines introduce count_only flag for
+	  get_tracker_items ........
+
+	* classes/newsletter/output.php, /, classes/address/data.php,
+	  classes/email/data.php, sql/mysql/patches/2009011300.sql (added),
+	  sql/mysql/patches/2009011301.sql (added): Merged revisions 5275
+	  via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5275 | mvanbaak | 2009-01-13 11:30:56 +0100 (Tue, 13
+	  Jan 2009) | 5 lines speedup newsletter module. Instead of using
+	  the massive getRelationsList the module now uses a slimmed-down
+	  version. ........
+
+	* /: Recorded merge of revisions 5254 via svnmerge from
+	  https://covide.svn.sourceforge.net/svnroot/covide/branches/covide-stable
+	  ........ r5254 | mvanbaak | 2009-01-11 21:41:55 +0100 (Sun, 11
+	  Jan 2009) | 2 lines bump version number ........
+
+2009-01-12 12:31 +0000 [r5272-5274]  Michiel van Baak <michiel@covide.nl>
+
+	* themes/0/covide.css, themes/1/covide.css, themes/2/covide.css,
+	  themes/3/covide.css, themes/4/covide.css, themes/5/covide.css,
+	  themes/6/covide.css, themes/7/covide.css: fix image locations now
+	  I see it running with gzip compression
+
+	* shellscripts/syncstyles.sh: theme0 is also an alias for theme 1
+
+	* classes/project/inc/pick_project.js: fix selecting a project in
+	  various places
+
+2009-01-11 23:59 +0000 [r5261]  Michiel van Baak <michiel@covide.nl>
+
+	* Covide 9.1 released
+

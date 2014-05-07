@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/voip/agi_scripts/postgres
+END
+covide_asp.agi
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/voip/agi_scripts/postgres/covide_asp.agi
+END
+db_asp.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/voip/agi_scripts/postgres/db_asp.php
+END
+covide_end_asp.agi
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/voip/agi_scripts/postgres/covide_end_asp.agi
+END
+faxreceive.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/voip/agi_scripts/postgres/faxreceive.php
+END

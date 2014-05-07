@@ -1,0 +1,4 @@
+- add a wrapper to create easy commands to merge stuff between branches
+- add a Makefile to install all of this
+- add a script to create releases
+- everything else I forgot

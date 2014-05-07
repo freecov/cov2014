@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc
+END
+dataAddAttachmentsCovide.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataAddAttachmentsCovide.php
+END
+emailOpen.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailOpen.php
+END
+js_common.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/js_common.js
+END
+retrieveGetPart.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveGetPart.php
+END
+selectionMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/selectionMove.php
+END
+retrieveUUdecodeMailAtt.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveUUdecodeMailAtt.php
+END
+templateEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/templateEdit.php
+END
+retrieveParseMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveParseMessage.php
+END
+dataHtml2Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataHtml2Filter.php
+END
+dataSendMail.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataSendMail.php
+END
+dataGetEmailById.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataGetEmailById.php
+END
+signatureEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/signatureEdit.js
+END
+vcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/vcard.php
+END
+retrieveCheckBouncer.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveCheckBouncer.php
+END
+selectionMove.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/selectionMove.js
+END
+emailCompose.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailCompose.js
+END
+folderMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/folderMove.php
+END
+fitPicture.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/fitPicture.js
+END
+dataSaveConcept.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataSaveConcept.php
+END
+permissionsEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/permissionsEdit.js
+END
+signatureEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/signatureEdit.php
+END
+emailList.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailList.js
+END
+retrieveParseAttachments.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveParseAttachments.php
+END
+showPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/showPermissions.php
+END
+emailCompose.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailCompose.php
+END
+migration.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/migration.js
+END
+dataSendMailComplex.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataSendMailComplex.php
+END
+filterEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/filterEdit.js
+END
+vbook.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/vbook.php
+END
+vcard_style.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/vcard_style.css
+END
+permissionsEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/permissionsEdit.php
+END
+sendqueue.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/sendqueue.js
+END
+emailList.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailList.php
+END
+dataParseEmailHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataParseEmailHeader.php
+END
+dataHtml2Text.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataHtml2Text.php
+END
+autocomplete.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/autocomplete.js
+END
+retrieveMailProcess.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveMailProcess.php
+END
+retrieveXmailAdd.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveXmailAdd.php
+END
+emailSelectFromPrepare.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailSelectFromPrepare.php
+END
+filterEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/filterEdit.php
+END
+emailOpen.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailOpen.js
+END
+dataUserMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataUserMove.php
+END
+emailSelectFrom.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailSelectFrom.js
+END
+autocomplete.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/autocomplete.php
+END
+dataUploadFiles.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataUploadFiles.php
+END
+dataGetEmailBySearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataGetEmailBySearch.php
+END
+dataUserCopy.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/dataUserCopy.php
+END
+retrieveMimeScanMultipart.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/retrieveMimeScanMultipart.php
+END
+templateEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/templateEdit.js
+END
+emailGetFromList.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4599/team/tomalbers/covide-6.1-r1260+kovoks-2.0/classes/email/inc/emailGetFromList.php
+END

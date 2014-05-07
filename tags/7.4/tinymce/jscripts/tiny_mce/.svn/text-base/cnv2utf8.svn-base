@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Processing $1
+mv "$1" "$1.tmp"
+iconv --from-code=ISO-8859-1 --to-code=UTF-8 "$1.tmp" > "$1"
+rm "$1.tmp"

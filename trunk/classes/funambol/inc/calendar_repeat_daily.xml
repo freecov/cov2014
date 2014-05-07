@@ -1,0 +1,9 @@
+<DayOfMonth>0</DayOfMonth>
+<DayOfWeekMask>62</DayOfWeekMask>
+<Interval>1</Interval>
+<Instance>0</Instance>
+<MonthOfYear>0</MonthOfYear>
+<PatternStartDate>{repeat_start_date}</PatternStartDate>
+<NoEndDate>1</NoEndDate>
+<PatternEndDate></PatternEndDate>
+<RecurrenceType>1</RecurrenceType>

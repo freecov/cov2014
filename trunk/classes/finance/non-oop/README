@@ -1,0 +1,1 @@
+The finance part is ported from non-object-oriented code and is too difficult to rewrite to full object oriented. This 'finance' part will use some wrapper functions to use object oriented functionality, but will provide no oop functions.

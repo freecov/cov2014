@@ -1,0 +1,5 @@
+body, td, div, span, p {
+	font-family: arial, serif
+	font-size: 10pt;
+	color: black;
+}

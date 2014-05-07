@@ -1,0 +1,63 @@
+#!/usr/bin/php
+<?php
+ob_implicit_flush(true);
+set_time_limit(6);
+$in = fopen("php://stdin","r");
+$stdlog = fopen("/var/log/asterisk/my_agi.log", "w");
+// toggle debugging output (more verbose)
+$debug = false;
+// Do function definitions before we start the main loop
+function read() {
+	global $in, $debug, $stdlog;
+	$input = str_replace("\n", "", fgets($in, 4096));
+	if ($debug) fputs($stdlog, "read: $input\n");
+	return $input;
+}
+
+function errlog($line) {
+	global $err;
+	echo "VERBOSE \"$line\"\n";
+}
+
+function write($line) {
+	global $debug, $stdlog;
+	if ($debug) fputs($stdlog, "write: $line\n");
+	echo $line."\n";
+}
+// parse agi headers into array
+while ($env=read()) {
+	$s = split(": ",$env);
+	$agi[str_replace("agi_","",$s[0])] = trim($s[1]);
+	if (($env == "") || ($env == "\n")) {
+		break;
+	}
+}
+//make database connection
+require("db_asp.php");
+$db = mysql_connect($db_host, $db_user, $db_passwd);
+mysql_select_db($db_database, $db);
+
+if (substr($agi["callerid"],0,4)=="0031") {
+	$agi["callerid"] = substr($agi["callerid"],4,strlen($agi["callerid"]));
+}
+$agi["callerid"] = $argv[1];
+$sql = "SELECT a.id,a.companyname FROM address as a LEFT JOIN address_businesscards as b ON a.id=b.address_id WHERE (replace(replace(a.phone_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."' OR replace(replace(a.mobile_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."' OR replace(replace(b.business_phone_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."' OR replace(replace(b.business_mobile_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."' OR replace(replace(b.personal_phone_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."' OR replace(replace(b.personal_mobile_nr,'-',''), ' ','') LIKE '%".$agi["callerid"]."')";
+$res = mysql_query($sql);
+if (mysql_num_rows($res)) {
+	$row = mysql_fetch_assoc($res);
+} else {
+	$row["id"] = 0;
+	$row["companyname"] = "unknown";
+}
+$sql = "DELETE FROM active_calls WHERE name LIKE '%".$row["companyname"]."' AND address_id=".$row["id"];
+$res = mysql_query($sql);
+// main program
+//echo "VERBOSE \"Houston, we have $argv[1]\" \n";
+//echo "VERBOSE \"Here we go!\" 2\n";
+//read();
+//errlog("Call FROM $row[id] $row[bedrijfsnaam] ended");
+// clean up file handlers etc.
+fclose($in);
+fclose($stdlog);
+exit;
+?> 

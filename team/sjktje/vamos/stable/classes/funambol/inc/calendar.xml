@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appointment>
+	<Version>2.0</Version>
+	<AllDayEvent>{is_event}</AllDayEvent>
+	<IsRecurring>{recurring}</IsRecurring>
+	<Start>{datetime_start}</Start>
+	<End>{datetime_end}</End>
+	<Body ENCODING="QUOTED-PRINTABLE">{description}</Body>
+	<Categories>{category}</Categories>
+	<Location>{location}</Location>
+	<Sensitivity>{sensitivity}</Sensitivity>
+	<Subject>{subject}</Subject>
+	<ReminderSet>{reminder}</ReminderSet>
+	<ReminderMinutesBeforeStart>{reminder_min}</ReminderMinutesBeforeStart>
+	<ReminderOptions>{reminder_options}</ReminderOptions>
+	<ReminderSoundFile>reminder</ReminderSoundFile>
+	<ReminderInterval>0</ReminderInterval>
+	<ReminderRepeatCount>0</ReminderRepeatCount>
+</appointment>

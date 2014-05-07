@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 66
+.cache
+.settings
+.project
+.projectOptions
+tags
+non-oop
+custom.css
+
+K 16
+svnmerge-blocked
+V 16
+/trunk:1584,1588
+K 19
+svnmerge-integrated
+V 13
+/trunk:1-2386
+END

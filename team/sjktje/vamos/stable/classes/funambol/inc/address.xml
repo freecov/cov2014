@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contact>
+	<Body>{memo}</Body>
+	<Title></Title>
+	<FirstName>{contact_givenname}</FirstName>
+	<MiddleName>{contact_infix}</MiddleName>
+	<LastName>{contact_surname}</LastName>
+	<Suffix></Suffix>
+	<Categories>{categories}</Categories>
+	<FileAs>{tav}</FileAs>
+	<WebPage>{website}</WebPage>
+	<MobileTelephoneNumber>{mobile_nr}</MobileTelephoneNumber>
+	<HomeTelephoneNumber></HomeTelephoneNumber>
+	<JobTitle></JobTitle>
+	<CompanyName>{companyname}</CompanyName>
+	<BusinessAddressPostOfficeBox></BusinessAddressPostOfficeBox>
+	<BusinessAddressStreet>{address}</BusinessAddressStreet>
+	<BusinessAddressExtended></BusinessAddressExtended>
+	<BusinessAddressCity>{city}</BusinessAddressCity>
+	<BusinessAddressState></BusinessAddressState>
+	<BusinessAddressPostalCode>{zipcode}</BusinessAddressPostalCode>
+	<BusinessAddressCountry>{country}</BusinessAddressCountry>
+	<BusinessFaxNumber>{fax_nr}</BusinessFaxNumber>
+	<BusinessTelephoneNumber>{phone_nr}</BusinessTelephoneNumber>
+	<Business2TelephoneNumber>{mobile_nr_business}</Business2TelephoneNumber>
+</contact>

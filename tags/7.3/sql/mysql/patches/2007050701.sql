@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `funambol_server_version` INT( 11 ) NOT NULL DEFAULT 300;

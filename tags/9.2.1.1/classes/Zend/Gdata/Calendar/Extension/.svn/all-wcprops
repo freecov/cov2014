@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension
+END
+Color.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/Color.php
+END
+QuickAdd.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/QuickAdd.php
+END
+SendEventNotifications.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/SendEventNotifications.php
+END
+Selected.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/Selected.php
+END
+WebContent.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/WebContent.php
+END
+AccessLevel.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/AccessLevel.php
+END
+Timezone.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/Timezone.php
+END
+Hidden.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/Hidden.php
+END
+Link.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Calendar/Extension/Link.php
+END

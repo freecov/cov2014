@@ -1,0 +1,8 @@
+In this folder, custom scripts and icons can be placed.
+
+The structure within the themes folder can be used to override *all* icons in covide.
+To load this module, see conf/contrib.php.sample
+
+themes => folder with custom theme icons
+pre_covide.php => script executed before every covide call
+pre_login.php  => script executed at the login screen

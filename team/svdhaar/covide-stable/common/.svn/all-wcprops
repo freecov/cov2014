@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/7267/team/svdhaar/covide-stable/common
+END
+handle_magicquotesgpc.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/handle_magicquotesgpc.php
+END
+handle_virus_scan.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/handle_virus_scan.php
+END
+initInfoWindow.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/initInfoWindow.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/autoload.php
+END
+functions_xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/functions_xml.php
+END
+functions_pdo.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/functions_pdo.php
+END
+headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/headers.php
+END
+functions_postgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/functions_postgres.php
+END
+functions_pear.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/functions_pear.php
+END
+check_requirements.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/check_requirements.php
+END
+handle_php_bugs.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/common/handle_php_bugs.php
+END

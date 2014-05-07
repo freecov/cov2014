@@ -1,0 +1,9 @@
+ALTER TABLE `license` ADD `mail_migrated` TINYINT( 3 ) NOT NULL;
+CREATE TABLE `mail_messages_data` (
+	`mail_id` INT( 11 ) NOT NULL ,
+	`body` LONGTEXT NOT NULL ,
+	`header` MEDIUMTEXT NOT NULL ,
+	PRIMARY KEY ( `mail_id` )
+) TYPE = MYISAM;
+ALTER TABLE `mail_messages` ADD INDEX `flag_indexed` ( `indexed` );
+/* TODO: RENAME COLUMN IS_HTML TO IS_TEXT */

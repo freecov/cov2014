@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Validate
+END
+Interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Validate/Interface.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Validate/Abstract.php
+END
+Ip.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Validate/Ip.php
+END
+Hostname.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Validate/Hostname.php
+END

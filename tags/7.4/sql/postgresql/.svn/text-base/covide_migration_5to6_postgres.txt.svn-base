@@ -1,0 +1,61 @@
+This note will outline how to migrate Covide from version 5.3 to 6.0
+This wil involve som steps that you have to do in the exact
+order as described here.
+
+In order to start the upgrade, make sure you have the following packages installed on your server:
+
+php5       (apt-get install libapache2-mod-php5)
+php5-pear  (apt-get install php5-pear of apt-get install php-pear)
+pear DB module (pear install DB)
+
+beagle        (apt-get install beagle)
+uudecode      (apt-get install sharutils)
+uudeview      (apt-get install uudeview)
+tnef          (apt-get install tnef)
+pdftohtml     (apt-get install pdftohtml)
+wv            (apt-get install wv)
+xlhtml        (apt-get install xlhtml)
+unzip         (apt-get install unzip)
+o3view        (apt-get install o3read)
+utf8tolatin1  (apt-get install o3read)
+elinks        (apt-get install elinks)
+convert       (apt-get install imagemagick)
+wmf2eps       (apt-get install libwmf-bin)
+sfftobmp      (apt-get install sfftobmp)
+tiff2pdf      (apt-get install libtiff-tools)
+html2ps       (apt-get install html2ps)
+ps2pdf        (apt-get install gs-common)
+curl          (apt-get install curl)
+
+
+First of all, BACKUP !
+Make backups of your database and the folder /var/covide_files/office
+
+All database actions described below should be executed as the owner
+of the database, unless stated otherwise.
+
+When all that is done, it's a matter of:
+
+* dump the database as user postgres with: pg_dump -adix database_name > dumpfile.sql
+* create a new database as user postgres, owned by the user you have in inc_db.php
+* read the file covide_schema_6X.sql into that database.
+* read the file dumpfile.sql into that database.
+* read the file after_migration.sql into that database.
+* dump the database as user postgres with: pg_dump database_name > new_dump.sql
+* drop the new database.
+* create a new database as user postgres, owned by the user you have in inc_db.php
+* read the file new_dump.sql into that database as user postgres.
+* open the new covide like this: http://domain/index.php?fixdb=1
+* as user postgres, run a vaccuum full analyze against the new database.
+
+You now have the new database installed.
+
+First thing you have to do now is login an go to the email module.
+This will trigger an update for the email structure in the new Covide.
+This can take a long time if you have a lot of email in the archive.
+
+When Covide tells you the migration is done, run a vaccuum full analyze against
+the database, or wait till pg_autovacuum kicks in. This will give the whole
+system a performance boost.
+
+You will have a fully working covide 6.0 now.

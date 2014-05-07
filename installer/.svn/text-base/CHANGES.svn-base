@@ -1,0 +1,23 @@
+[29-08-2008]
+mvanbaak - Added debian backports for a better and faster clamav
+mvanbaak - Update comments and copyright notices
+mvanbaak - Updated package list just to be sure everything is there
+mvanbaak - Updated php.ini
+
+[13-11-2008]
+mvanbaak - moved all calls to 'apt-get' to 'aptitude'
+mvanbaak - resolved issue where pdftohtml was not-installable
+mvanbaak - moved SSL cert generation to before the apache restart
+mvanbaak - Make apache listen on port 443 as well
+mvanbaak - fixed beagle configuration files
+mvanbaak - only apply sql patches that are not applied to the database yet
+mvanbaak - update the inline requirements
+
+[02-02-2009]
+mvanbaak - make backups of the default php.ini files
+mvanbaak - also copy our php.ini to the cli configuration folder
+mvanbaak - add two missing packages to the list.
+mvanbaak - Closes bug #2513708
+
+[20-03-2009]
+mvanbaak - use etch for now instead of stable now that Debian 5 is released

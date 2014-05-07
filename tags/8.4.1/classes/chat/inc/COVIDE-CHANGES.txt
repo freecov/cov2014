@@ -1,0 +1,15 @@
+- index.php is our own version
+- containers/mysql.class.php:
+  * default config is taken from a GLOBALS variable if available
+  * table type is MyISAM instead of InnoDB
+- removed demo subdirectory
+- removed testcase subdirectory
+- src/pfctools.php line 180 chmod is prepended with a @ to supress warnings
+- removed some themes:
+  cerutti
+  phoenity
+  green
+  blune
+  msn
+  phpbb2
+

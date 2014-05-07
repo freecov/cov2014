@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchingConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http:/ /www.w3.org/2001/XMLSchema-instance">
+	<Autostart>true</Autostart>
+	<ShowSearchWindowBinding Ctrl="true" Alt="false">
+		<Key>F12</Key>
+	</ShowSearchWindowBinding>
+	<MaxDisplayed>5</MaxDisplayed>
+	<BestPosX>0</BestPosX>
+	<BestPosY>0</BestPosY>
+	<BestWidth>0</BestWidth>
+	<BestHeight>0</BestHeight>
+	<HolmesPosX>0</HolmesPosX>
+	<HolmesPosY>0</HolmesPosY>
+	<HolmesWidth>0</HolmesWidth>
+	<HolmesHeight>0</HolmesHeight>
+	<SearchHistory />
+</SearchingConfig>

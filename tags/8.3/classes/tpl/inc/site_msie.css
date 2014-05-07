@@ -1,0 +1,17 @@
+/* fix for msie to emulate position fixed */
+div#alternative_footer {
+	_position: absolute;
+	_bottom:;
+	_top: expression(eval(document.body.clientHeight - 21 + document.body.scrollTop));
+}
+/* button img hover */
+A:hover img.imagebutton {
+	background-color: #d0d0d0;
+}
+/* fix for msie 7 to prevent footer tearing */
+html {
+	background-image: url('img/spacer.gif');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}

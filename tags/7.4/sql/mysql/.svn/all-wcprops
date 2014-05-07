@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql
+END
+patch1.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/patch1.mysql
+END
+covide_schema_6X.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/covide_schema_6X.mysql
+END
+covide_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/covide_install.sql
+END
+after_migration.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/after_migration.mysql
+END
+covide_6_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/covide_6_install.sql
+END
+covide_7_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/covide_7_install.sql
+END
+indexes.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/indexes.mysql
+END
+patchfile_all_upto_2007071601.sql
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/4608/tags/7.4/sql/mysql/patchfile_all_upto_2007071601.sql
+END

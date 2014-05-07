@@ -1,0 +1,383 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/p/covide/code/!svn/ver/7113/trunk/classes/tpl/inc
+END
+triggerLogin.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/6978/trunk/classes/tpl/inc/triggerLogin.php
+END
+generateAddressList.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/2768/trunk/classes/tpl/inc/generateAddressList.php
+END
+opensearch.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/opensearch.xml
+END
+handleFeedback.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handleFeedback.php
+END
+showMetaResultsBase.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/showMetaResultsBase.php
+END
+site.css
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/6492/trunk/classes/tpl/inc/site.css
+END
+filesearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/filesearch.php
+END
+getRedirEndPoint.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/6978/trunk/classes/tpl/inc/getRedirEndPoint.php
+END
+handleFormData.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7109/trunk/classes/tpl/inc/handleFormData.php
+END
+html_header.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7106/trunk/classes/tpl/inc/html_header.php
+END
+site_gecko.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6492/trunk/classes/tpl/inc/site_gecko.css
+END
+sendform.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/sendform.php
+END
+sendpoll.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6978/trunk/classes/tpl/inc/sendpoll.php
+END
+site_empty.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/2866/trunk/classes/tpl/inc/site_empty.css
+END
+construct.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/construct.php
+END
+mootools-1.2-core.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4291/trunk/classes/tpl/inc/mootools-1.2-core.js
+END
+handleShop.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/2844/trunk/classes/tpl/inc/handleShop.php
+END
+getBanners.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/getBanners.php
+END
+handlePage.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handlePage.php
+END
+google_main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/google_main.xml
+END
+end_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/7107/trunk/classes/tpl/inc/end_html.php
+END
+site_opera.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/2603/trunk/classes/tpl/inc/site_opera.css
+END
+piwik_analytics.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/piwik_analytics.xhtml
+END
+google_map_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/google_map_item.xml
+END
+rssPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/rssPage.php
+END
+sitemapindex.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/sitemapindex.xsl
+END
+showMetaResults.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/showMetaResults.php
+END
+handleGallery.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handleGallery.php
+END
+triggerError.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/triggerError.php
+END
+handleRewrites.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/5070/trunk/classes/tpl/inc/handleRewrites.php
+END
+handleImages.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/3330/trunk/classes/tpl/inc/handleImages.php
+END
+generateAddressRecords.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/3469/trunk/classes/tpl/inc/generateAddressRecords.php
+END
+registerUser.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/2099/trunk/classes/tpl/inc/registerUser.php
+END
+switchCustomModes.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6778/trunk/classes/tpl/inc/switchCustomModes.php
+END
+handleList.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handleList.php
+END
+getPageFooter.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/getPageFooter.php
+END
+rss_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/1533/trunk/classes/tpl/inc/rss_item.xml
+END
+showMetaOptions.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/showMetaOptions.php
+END
+generate_menu_loader.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/3469/trunk/classes/tpl/inc/generate_menu_loader.php
+END
+getPageData.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/getPageData.php
+END
+sitemap.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/1704/trunk/classes/tpl/inc/sitemap.xsd
+END
+getCalendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/getCalendar.php
+END
+style_print.css
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/2135/trunk/classes/tpl/inc/style_print.css
+END
+handleForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handleForm.php
+END
+sitemap.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/sitemap.xsl
+END
+google_map.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/google_map.xml
+END
+shopContents.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/3643/trunk/classes/tpl/inc/shopContents.php
+END
+site.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/site.js
+END
+piwik_analytics.htm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/piwik_analytics.htm
+END
+handleMetaData.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/handleMetaData.php
+END
+wz_tooltip.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/wz_tooltip.js
+END
+siteindex.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/1704/trunk/classes/tpl/inc/siteindex.xsd
+END
+google_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/1570/trunk/classes/tpl/inc/google_item.xml
+END
+search.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/covide/code/!svn/ver/7113/trunk/classes/tpl/inc/search.php
+END
+getVisitorRestrictions.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/4986/trunk/classes/tpl/inc/getVisitorRestrictions.php
+END
+blogLiveSearch.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/1323/trunk/classes/tpl/inc/blogLiveSearch.js
+END
+textPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6778/trunk/classes/tpl/inc/textPage.php
+END
+start_html.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/start_html.php
+END
+site_msie.css
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/2523/trunk/classes/tpl/inc/site_msie.css
+END
+handleEnquete.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/3206/trunk/classes/tpl/inc/handleEnquete.php
+END
+rss_main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/1550/trunk/classes/tpl/inc/rss_main.xml
+END
+google_analytics.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/google_analytics.htm
+END
+google_analytics.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7038/trunk/classes/tpl/inc/google_analytics.xhtml
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src
+END
+pfcjson.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcjson.class.php
+END
+pfctemplate.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfctemplate.class.php
+END
+pfcurlprocessing.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcurlprocessing.php
+END
+pfcinfo.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcinfo.class.php
+END
+pfctools.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfctools.php
+END
+pfcresponse.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcresponse.class.php
+END
+pfccommand.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfccommand.class.php
+END
+pfci18n.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfci18n.class.php
+END
+phpfreechat.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/phpfreechat.class.php
+END
+pfcproxycommand.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcproxycommand.class.php
+END
+pfccontainer.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfccontainer.class.php
+END
+pfccontainerinterface.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfccontainerinterface.class.php
+END
+pfcuserconfig.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcuserconfig.class.php
+END
+pfcglobalconfig.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4725/tags/8.2.1/classes/chat/inc/src/pfcglobalconfig.class.php
+END

@@ -1,0 +1,15 @@
+ALTER TABLE `mail_filters` CHANGE `receipient` `recipient` VARCHAR( 255 );
+ALTER TABLE `notes` CHANGE `extra_receipients` `extra_recipients` VARCHAR( 255 );
+ALTER TABLE `notes` ADD `campaign_id` INT NOT NULL AFTER `address_id`;
+ALTER TABLE `campaign_records` ADD `note_id` INT NOT NULL;
+ALTER TABLE `campaign_records` ADD `email_id` INT NOT NULL;
+ALTER TABLE `campaign_records` ADD `appointment_id` INT NOT NULL;
+ALTER TABLE `campaign` ADD `tracker_id` INT NOT NULL;
+ALTER TABLE `campaign_records` ADD `call_again` INT NOT NULL;
+ALTER TABLE campaign ADD is_active tinyint(2) DEFAULT 1;
+UPDATE campaign set is_active = 1;
+ALTER TABLE `license` ADD `google_map_key` VARCHAR( 255 ) NOT NULL;
+ALTER TABLE address_businesscards ADD COLUMN rcbc tinyint(2) default 0;
+ALTER TABLE `funambol_calendar_sync` ADD INDEX ( `calendar_id` ); 
+ALTER TABLE `address_birthdays` ADD COLUMN `address_id` INT(11);
+ALTER TABLE `license` ADD COLUMN `calendar_migrated` int(11) default 0;

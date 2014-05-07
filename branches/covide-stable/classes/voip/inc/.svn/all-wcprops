@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/6718/branches/covide-stable/classes/voip/inc
+END
+active_calls.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6718/branches/covide-stable/classes/voip/inc/active_calls.js
+END
+fax_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/voip/inc/fax_actions.js
+END
+newvoip_calls.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/3642/branches/covide-stable/classes/voip/inc/newvoip_calls.js
+END

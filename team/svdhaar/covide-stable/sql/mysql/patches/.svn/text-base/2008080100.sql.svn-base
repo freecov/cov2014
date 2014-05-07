@@ -1,0 +1,1 @@
+ALTER TABLE sales ADD users VARCHAR( 255 ) NULL ;

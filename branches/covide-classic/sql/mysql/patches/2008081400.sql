@@ -1,0 +1,1 @@
+ALTER TABLE `notes` ADD `is_draft` INT NULL DEFAULT '0';

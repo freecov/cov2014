@@ -1,0 +1,32 @@
+* body.mceContentBody, body, td, span, div, a, p {
+	font-family: arial, serif !important;
+	font-size: 12px !important;
+	color: black !important;
+}
+
+/* covide css definitions */
+.head1 {
+	text-align: center;
+	background-color: #ddd;
+	font-weight: bold;
+}
+.head2 {
+	background-color: #eee;
+}
+.table1 {
+	border: 2px outset #999;
+}
+.cell1 {
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: arial, serif;
+	font-size: 12px;
+}
+.cell2 {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: arial, serif;
+	font-size: 12px;
+}
+/* end covide css definitions */

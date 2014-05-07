@@ -1,0 +1,3 @@
+-- alter table cms_gallery_photos add index ( internal_stat );
+-- alter table cms_gallery_photos add index ( rating );
+-- alter table cms_gallery_photos add index ( pageid );

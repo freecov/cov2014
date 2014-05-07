@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/covide/code/!svn/ver/4438/trunk/classes/funambol/inc
+END
+calendar_repeat_yearly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat_yearly.xml
+END
+syncml.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/2037/trunk/classes/funambol/inc/syncml.properties
+END
+calendar_repeat_monthly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat_monthly.xml
+END
+address.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/2055/trunk/classes/funambol/inc/address.xml
+END
+syncml.source
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/2037/trunk/classes/funambol/inc/syncml.source
+END
+todo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4438/trunk/classes/funambol/inc/todo.xml
+END
+calendar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/1806/trunk/classes/funambol/inc/calendar.xml
+END
+calendar_repeat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat.xml
+END
+calendar_repeat_weekly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat_weekly.xml
+END
+address.upc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/2041/trunk/classes/funambol/inc/address.upc.xml
+END
+calendar_repeat_2weekly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat_2weekly.xml
+END
+calendar_repeat_daily.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/1749/trunk/classes/funambol/inc/calendar_repeat_daily.xml
+END
+file_cdata.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/1755/trunk/classes/funambol/inc/file_cdata.xml
+END

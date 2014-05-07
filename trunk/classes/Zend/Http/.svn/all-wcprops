@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Http
+END
+Client.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Http/Client.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Http/Exception.php
+END
+Response.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Http/Response.php
+END

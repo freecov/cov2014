@@ -1,0 +1,244 @@
+<?php
+	if (!class_exists("User_output")) {
+		die("no class definition found");
+	}
+
+	@session_destroy();
+	@session_unset();
+	@session_start();
+
+	/* allow some custom scripting before the loginscreen is shown
+		A good example is to reset demo users. */
+	if (file_exists("custom/login_pre.php"))
+		@include("custom/login_pre.php");
+
+	/* generate an challenge string on the server for this request */
+	$_SESSION["challenge"] = crc32(session_id().rand().mktime());
+
+	$output = new Layout_output();
+	$output->layout_page(gettext("login"));
+
+	if ($GLOBALS["covide"]->license["has_cms"]) {
+
+		/* detect dirname */
+		if (preg_match("/[a-z0-9]/si", dirname($_SERVER["SCRIPT_NAME"]))) {
+			$output->addCode("<BR><BR><center><b>WARNING: COVIDE WITH CMS CANNOT RUN IN A DIRECTORY!</b></center>");
+		}
+
+		$uri = dirname($GLOBALS["covide"]->webroot)."/index.php?mod=desktop";
+		$uri = preg_replace("/\/{1,}/s", "/", $uri);
+	} else {
+		$uri = $GLOBALS["covide"]->webroot."index.php?mod=desktop";
+	}
+
+	$output->addTag("form", array(
+		"method" => "post",
+		"id"     => "login",
+		"action" => $uri
+	));
+
+	/* prevent double slashes */
+	if (preg_match("/\/{2,}/s", $_SERVER["SCRIPT_NAME"])) {
+		$uri = dirname($_SERVER["SCRIPT_NAME"])."/index.php?mod=desktop";
+		$uri = preg_replace("/\/{1,}/s", "/", $uri);
+		header("Location: ".$uri);
+		exit();
+	}
+	$output->addHiddenField("mod", "user");
+	$output->addHiddenField("subaction", "validate");
+
+	$output->addTag("div", array(
+		"style" => "position: absolute; right: 10px; bottom: 20px; z-index: 1;"
+	));
+	$output->insertImage("covide_bg.gif", "");
+	$output->endTag("div");
+
+	$table = new Layout_table( array(
+		"style" => "margin-top: 50px;"
+	));
+	$table->addTableRow();
+		$table->addTableData();
+			$venster = new Layout_venster(array(
+				"title" => "Covide Login"
+			));
+			$venster->addVensterData();
+				$table1 = new Layout_table(array("cellspacing"=>1));
+				$table1->addTableRow();
+					$table1->addTableData(array("colspan"=>2, "align"=>"center"));
+						$table1->insertImage("logo.gif", "Covide CRM-Groupware");
+					$table1->endTableData();
+				$table1->endTableRow();
+				if ($error == 1) {
+					$table1->addTableRow();
+						$table1->insertTableData(gettext("wrong username or password"), array("colspan" => 2), "header");
+					$table1->endTableRow();
+				}
+				/* detect supported browser versions */
+				require_once("classes/covide/browser.php");
+				$browser = browser_detection("full");
+				$ok = 0;
+				/* mozilla */
+				if ($browser["browser_name"] == "moz" && $browser["math_version"] >= 1.8) {
+					$ok = 1;
+				}
+				/* msie */
+				if ($browser["browser_name"] == "ie" && $browser["math_version"] >= 6.0) {
+					$ok = 1;
+				}
+				/* konqueror */
+				if ($browser["browser_name"] == "konq" && $browser["math_version"] >= 3.5) {
+					$ok = 1;
+				}
+				/* opera */
+				if ($browser["browser_name"] == "op" && $browser["math_version"] >= 9.0) {
+					$ok = 1;
+				}
+				/* safari */
+				if ($browser["browser_name"] == "saf" && $browser["math_version"] >= 417.9) {
+					$ok = 1;
+				}
+
+				#print_r($browser);
+				if (!$ok) {
+					$table1->addTableRow();
+						$table1->addTableData(array("colspan" => 2), "header");
+							$table1->addTag("div", array("style" => "width: 250px;"));
+							$table1->addCode(gettext("Your browser is not fully supported."));
+							$table1->addTag("br");
+							$table1->addTag("br");
+							$table1->addCode(gettext("To be able to use all functions of Covide we suggest you upgrade to"));
+							$table1->insertTag("a", "Firefox 1.5", array("href"=>"http://www.mozilla.com", "target"=>"_blank", "style"=>"text-decoration: underline"));
+							$table1->addCode(" (".gettext("or better").") ".gettext("or")." ");
+							$table1->insertTag("a", "Internet Explorer", array("href"=>"http://www.microsoft.com/ie", "target"=>"_blank", "style"=>"text-decoration: underline"));
+							$table1->addCode(" 6.0 SP1 (".gettext("or better").").");
+							$table1->endTag("div");
+						$table1->endTableData();
+					$table1->endTableRow();
+				}
+
+
+				/* check if cookie parameter is set */
+				if ($_COOKIE["covideuser"]) {
+					$login_cookie = explode("|", base64_decode($_COOKIE["covideuser"]));
+					for ($i=0;$i<=12;$i++) {
+						$login_cookie[3].="*";
+					}
+					$passstyle = array("style" => "background-color: #d8ffb6");
+				}
+				$table1->addTableRow();
+					$table1->addTableData((!$GLOBALS["covide"]->mobile) ? array("align"=>"right"):"");
+						$table1->addCode(gettext("login").":");
+					$table1->endTableData();
+					$table1->addTableData();
+						$table1->addTextField("login[username]", ($_REQUEST["login"]["username"]) ? $_REQUEST["login"]["username"]:$login_cookie[0]);
+					$table1->endTableData();
+				$table1->endTableRow();
+				$table1->addTableRow();
+					$table1->addTableData((!$GLOBALS["covide"]->mobile) ? array("align"=>"right"):"");
+						$table1->addCode(gettext("password").":");
+					$table1->endTableData();
+					$table1->addTableData();
+						$table1->addPasswordField("login[vis_password]", $login_cookie[3], $passstyle);
+						$table1->addHiddenField("login[password]", $login_cookie[1]); //hash from cookie
+						$table1->addHiddenField("login[use_cookie_password]", ($login_cookie[0]) ? 1:0);
+						$table1->insertAction("ok", gettext("login"), "javascript: login();");
+					$table1->endTableData();
+				$table1->endTableRow();
+				$table1->addTableRow();
+					$table1->addTableData(array("colspan"=>2, "align"=>"right"));
+						$table1->insertCheckbox("login[save_password]", 1, ($login_cookie[0]) ? 1:0);
+						$table1->addCode( gettext("remember password") );
+						$table1->addSpace(2);
+						if ($GLOBALS["covide"]->sslmode == 2) {
+							if ($_REQUEST["login"]["username"]) {
+								if ($_REQUEST["use_ssl"]) {
+									$ssl = 1;
+								} else {
+									$ssl = 0;
+								}
+							} else {
+								if ($login_cookie[2]==0 && $login_cookie[0]) {
+									$ssl = 0;
+								} else {
+									$ssl = 1;
+								}
+							}
+							$table1->insertCheckbox("use_ssl", 1, $ssl);
+							$table1->addCode(gettext("use ssl encryption"));
+							$table1->addSpace(2);
+						} else {
+							$table1->addHiddenField("use_ssl", 0);
+						}
+					$table1->endTableData();
+				$table1->endTableRow();
+				$table1->addTableRow();
+					$table1->addTableData(array("colspan"=>2));
+						$table1->addTag("div", array("id"=>"password_type_div", "style"=>"display: none"));
+							$table1->addTag("br");
+							$table1->addRadioField("login[remember_type]", gettext("let the browser handle the password"), "browser", ($login_cookie[3]) ? "covide":"browser", "pt_browser");
+							$table1->addRadioField("login[remember_type]", gettext("let Covide handle the password"), "covide", ($login_cookie[3]) ? "covide":"browser", "pt_covide");
+						$table1->endTag("div");
+					$table1->endTableData();
+				$table1->endTableRow();
+
+				$table1->endTable();
+				$venster->addCode($table1->generate_output());
+			$venster->endVensterData();
+			$table->addCode($venster->generate_output());
+			unset($venster);
+		$table->endTableData();
+	$table->endTableRow();
+	$table->endTable();
+
+	$output->addTag("div", array(
+		"style" => "position: relative; z-index: 2;"
+	));
+	$output->addCode($table->generate_output());
+	$output->endTag("div");
+
+	$output->endTag("form");
+
+	$output->load_javascript(self::include_dir."md5.js");
+	$output->load_javascript(self::include_dir."js_common.js");
+	$output->load_javascript(self::include_dir."pop_tester.js");
+
+
+	$output->start_javascript();
+		$output->addCode("
+			var crypt_challenge = '".$_SESSION["challenge"]."';
+
+			if (document.getElementById('use_ssl')) {
+				document.getElementById('use_ssl').onclick = function() {	checkstate();	}
+				addLoadEvent(checkstate());
+			}
+
+			function login_challenge() {
+				/* get visible password and real password fields */
+				var pw = document.getElementById('loginvis_password');
+				var realpw = document.getElementById('loginpassword');
+
+				/* if password is set by user  */
+				if (document.getElementById('loginuse_cookie_password').value == 0) {
+					/* calculate the hash md5 (challenge + md5(password) ) */
+					var str = new String().concat( hex_md5( pw.value ), crypt_challenge );
+					realpw.value = hex_md5(str);
+				} else {
+					/* if set by cookie */
+					var str = new String().concat(realpw.value, crypt_challenge );
+					realpw.value = hex_md5(str);
+				}
+				/* overwrite the user password with (*) */
+				if (document.getElementById('pt_browser').checked == false) {
+					pw.value = '';
+				}
+			}
+
+			if (!crypt_challenge) {
+				alert('Your system does not accept sessions or cookies. Please contact your system administrator.');
+			}
+		");
+	$output->end_javascript();
+
+	$output->layout_page_end();
+	$output->exit_buffer();
+?>

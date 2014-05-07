@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts
+END
+update.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/update.sh
+END
+covidevm_setup
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/covidevm_setup
+END
+update_translations.sh
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/update_translations.sh
+END
+convertdb.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/convertdb.sh
+END
+mailfetch.zsh
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/mailfetch.zsh
+END
+covidecron.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/covidecron.py
+END
+setup_permissions.sh
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/setup_permissions.sh
+END
+mailfetch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/mailfetch.sh
+END
+covide_install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/covide_install.sh
+END
+syncstyles.sh
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/syncstyles.sh
+END
+cron.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/shellscripts/cron.sh
+END

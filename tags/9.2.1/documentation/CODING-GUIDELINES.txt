@@ -1,0 +1,144 @@
+= Covide Coding Guidelines =
+
+This document gives some basic information on how the covide code
+ist structured. It covers the structure and style of individual files.
+
+Please read it to the end to understand in detail how the covide
+code is organized, and to know how to extend covide or contribute new code.
+
+Patches should be in the form of a unified (-u) diff, made from a checkout
+from subversion.
+
+/var/www/covide$ svn diff > ../mypatch.diff
+
+If you would like to only include changes to certain files in the patch, you
+can list them in the "svn diff" command:
+
+/var/www/covide$ svn diff classes/someclass/default.php clases/someclass/data.php > ../mypatch.diff
+
+== Coding Guidelines ==
+
+=== General rules ===
+
+- All code, filenames, function names and comments must be in English.
+
+- Don't annotate your changes with commens like "/* MvB 20090313 */"
+  Comments should explain what the code does, not when something was changed
+  or who changed it. If you have done a larger contribution, make sure
+  that your are added to the CREDITS file.
+
+- Don't make unnecessary whitespace changes throughout the code.
+  If you make changes, submit them to the tracker as seperate patches
+  that only include whitespace and formatting changes.
+
+- Try to match the existing formatting of the file you are working on.
+
+=== Code formatting ===
+
+Roughly, Covide code formatting guidelines are generally equivalent to the following:
+
+# indent -i4 -ts4 -br -cdw -ce -nbfda -npcs -nprs -saf -sai -saw
+
+this means in verbose:
+-i4:    indent level 4
+-ts4:   tab size 4
+-br:    braces on if line
+-cdw:   cuddle do while
+-ce:    cuddle else
+-nbfda: dont break function decl args
+-npcs:  no space after function call names
+-nprs:  no space after parentheses
+-saf:   space after for
+-sai:   space after if
+-saw:   space after while
+
+Function calls and arguments should be spaced in a consistent way across
+the codebase.
+GOOD: foo(arg1, arg2);
+BAD: foo(arg1,arg2);
+BAD: foo (arg1, arg2);
+BAD: foo( arg1, arg2 );
+BAD: foo(arg1, arg2,arg3);
+ 
+Don't treat keywords (if, while, do, return) as if they were functions;
+leave space between the keyword and the expression used (if any). For 'return',
+don't even put parentheses around the expression, since they are not
+required.
+
+There is no shortage of whitespace characters :-) Use them when they make
+the code easier to read. For example:
+ 
+	for (str=foo;str;str=str->next)
+ 
+is harder to read than
+ 
+	for (str = foo; str; str = str->next)
+ 
+Following are examples of how code should be formatted.
+ 
+- Functions:
+public function foo(a, b) {
+	return 0;
+}
+
+- If statements:
+if ($foo) {
+	bar();
+} else {
+	blah();
+}
+
+- Case statements:
+switch ($foo) {
+	case "bar":
+		blah();
+		break;
+	case "other":
+		other();
+		break;
+}
+
+- No nested statements without braces, e.g.:
+
+for ($x = 0; $x < 5; $x++)
+	if ($foo)
+		if ($bar)
+			baz();
+
+instead do:
+for ($x = 0; $x < 5; $x++) {
+	if ($foo) {
+		if ($bar) {
+			baz();
+		}
+	}
+}
+
+- Always use braces around the statements following an if/for/while construct,
+even if not strictly necessary, as it reduces future possible problems.
+
+=== PHPdoc API Documentation Guidelines ===
+To Be Done
+
+=== Finishing up before you submit your code ===
+
+- Look at the code once more
+  When you achieve your desired functionality, make another few refactor
+  passes over the code to optimize it.
+
+- Read the patch
+  Before submitting a patch, *read* the actual patch file to be sure that
+  all the changes you expect to be there are, and that there are no
+  suprising changes you did not expect. During your development, that
+  part of Covide may have changed, so make sure you compare with the
+  latest SVN.
+
+- Listen to advice
+  If you are asked to make changes to your patch, there is a good chance
+  the changes will introduce bugs, check it even more at this stage.
+  Also remember that the co-developer that adds comments is only human,
+  they may be in error.
+
+--------------------------------------------
+Welcome to the Covide development community!
+-- The Covide Development Team.

@@ -1,0 +1,91 @@
+-----------------------------------------------------------
+--- Functionality changes since Covide 8.1 was branched ---
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+--- In this file you will find the most notecabli       ---
+--- changes to Covide since the last release branch     ---
+--- Please always read this file when doing upgrades    ---
+--- as it will list incompatibility or other important  ---
+--- updates that you will have to check in your         ---
+--- environment to make sure covide works correctly.    ---
+---                                                     ---
+-----------------------------------------------------------
+
+New Modules:
+None
+
+Changes to existing modules:
+
+[2008-02-17] svdhaar: Introduced filesystem quotas
+			 Added a field to the license table                                                                                                                                                                   
+			 'filesys_quota' You can set the quota for an                                                                                                                                             
+			 office here. Format is: <int><modifier> where                                                                                                                                            
+			 modifier can be: M or G for Megabytes and                                                                                                                                                
+			 Gigabytes.                                                                                                                                                                               
+			 If an office reaches quota they will be unable                                                                                                                                           
+			 to upload new files to covide. The email module                                                                                                                                          
+			 will ignore this quota to prevent data loss.    
+
+[2008-03-01] svdhaar: Introduced offices.php parameter $voip["polling_interval"]
+			 Added a new offices.php config directive to modify the
+			 voip / chat / keepalive polling interval. This setting
+			 defaults to a value of 2 (seconds). This one is introduced
+			 because it is not such important on offices with both
+			 has_voip and has_chat disabled, such like cms only systems.
+			 A setting of 2sec on slower systems will eventually stress
+			 MSIE 6/7 clients too much and will hang these browsers. If
+			 this occurs, you can try raise the polling interval, i.e. to
+			 30 sec.
+
+[2008-03-01] svdhaar: Introduced offices.php parameter $virus["conf"]. This array 
+			 can currently have two keys (enable_clamav | enable_fprot)
+			 with values (1 | 0). This setting can be used to override 
+			 the default config. When using clamav I recommend using
+			 package clamav-daemon and replace clamscan by clamdscan 
+			 inside /usr/bin. The performance gain is 1000% or more ;)
+
+[2008-03-17] svdhaar: Added support for SMTP AUTH and custom smtp settings.
+			 Set this example inside offices.php and enjoy:
+ 
+			$smtp = array(
+				"server_hostname" => "localhost",
+				"server_port"     => 24,
+				"server_timeout"  => 60,
+				"helo"            => "covide.localhost",
+				"auth_enable"     => 1,
+				"auth_username"   => "my_username",
+				"auth_password"   => "my_password"
+			);
+
+[2008-03-23] mvanbaak: added extra parameter to getPageData and getPageTitle.
+             When set to 0, it wont do hostname removal in page data. This allows
+			 you to use your full webaddress in a page.
+
+			 For example, you are writing a HOWTO and point to some files people can
+			 download from your website with wget. Without this parameter you will see:
+			 'wget "/savefile/<id>/<filename>"'.
+			 If you set this parameter to 0 you will see:
+			 'wget "http://your.website.url/savefile/<id>/<filename>"'
+
+			 The default is to strip those hostnames (as it always was)
+[2008-04-03] svdhaar: Introduced $html['no_static_gzip_compression'] to disable
+			gzipped file creations inside the tmp folder. Background:
+			apache2.2 with mod_deflate enabled and correct mem_cache
+			setup does exactly the same. Also, with this setting, no
+			changes with mimetype negition are needed. I suggest 
+			making the no-gzip behavior the default one and to 
+			introduce a new variable named $html['use_static_gzip_compression']
+
+[2008-04-04] mvanbaak: You can now do: echo $template->displayPoll()
+			Without pollid it will take the latest active poll.
+			You can still use the pollid parameter to select a specific poll.
+
+[2008-04-27] mvanbaak: Applied patch submitted by Thomas Göttgens:
+			The sms functionality is now no longer Bayhamsystems only.
+			See documentation/README.smsgate for 2 examples
+
+[2008-04-30] svdhaar:  Introduced cms page setting on the source edit view. You can now
+			set a page to be edited in source view by default, rather than
+			the wysiwyg editor. This is useful for pages with scripts/html 
+			which will be broken after saving inside the editor.

@@ -1,0 +1,126 @@
+#!/bin/bash
+
+WC=/tmp/svn-automerge
+COMMITMSG=${WC}/.commit_message
+EMAIL=${WC}/.automerge_conflicts
+SVN=svn
+
+merge_branch() {
+    branchpath=${1}
+    branch=${2}
+
+    prop=`${SVN} propget automerge ${branchpath}`
+    [ "${prop}" = "" ] && return
+
+    integrated_source=`${SVN} propget automerge-sourcename ${branchpath}`
+    if [ "${integrated_source}" != "" ]
+    then
+        integrated_source="-S ${integrated_source}"
+    fi
+
+    svnmerge --force avail ${integrated_source} ${branchpath} > /dev/null
+    [ $? = 0 ] || return
+
+    rm -rf ${WC}
+    ${SVN} -q co ${branchpath} ${WC}
+    svnmerge merge ${integrated_source} -f ${COMMITMSG} ${WC} > /dev/null
+    ${SVN} resolved ${WC}
+    conflicts=`${SVN} status ${WC} | grep -e ^C | wc -l`
+    
+    if [ ${conflicts} = 0 ]; then
+		${SVN} ps automerge '*' ${WC}
+        ${SVN} commit -F ${COMMITMSG} ${WC} > /dev/null
+    
+        echo ${branchpath} done
+    else
+        address=`${SVN} propget automerge-email ${WC}`
+        if [ "${address}" != "" ]; then
+            echo "From: svn-automerge@covide.nl" > ${EMAIL}
+            echo "To: ${address}" >> ${EMAIL}
+            echo "Subject: automerge failure: ${branch}" >> ${EMAIL}
+            echo "X-SVN-Automerge: yes" >> ${EMAIL}
+            echo "" >> ${EMAIL}
+            ${SVN} status ${WC} >> ${EMAIL}
+            sendmail -f svn-automerge@covide.nl -i ${address} < ${EMAIL}
+        fi
+    
+        ${SVN} revert -R ${WC} > /dev/null
+        ${SVN} propdel automerge ${WC} > /dev/null
+        ${SVN} commit -m 'automerge cancel' ${WC} > /dev/null
+    
+        echo ${branchpath} had ${conflicts} conflicts
+    fi
+}
+
+while getopts :sdtc: OPT
+do
+    if [ "${OPT}" = "?" ];
+    then
+	echo "Unknown option found: \"${OPTARG}\""
+	exit 1
+    fi
+
+    if [ "${OPT}" = ":" ];
+    then
+	echo "Argument must be supplied for: \"${OPTARG}\""
+	exit 1
+    fi
+
+    case ${OPT} in
+	(s | d | t)
+	if [ "${mode}" != "" ];
+	then
+	    echo "Mode option \"${OPT}\" found, but mode already set to \"${mode}\""
+	    exit 1
+	fi
+	
+	mode=${OPT}
+	;;
+	(c)
+	SVN="svn --config-dir ${OPTARG}"
+	;;
+    esac
+done
+
+if [ "${mode}" = "" ];
+then
+    echo "Mode not specified; use -s, -d or -t"
+    exit 1
+fi
+
+if [ "${mode}" = "s" ];
+then
+    merge_branch file:///var/storage/linux/subversion/${!OPTIND} ${!OPTIND}
+fi
+
+if [ "${mode}" = "t" ];
+then
+    REPO=file:///var/storage/linux/subversion/${!OPTIND}
+    
+    for member in `${SVN} ls ${REPO}/team`; do
+        for branch in `${SVN} ls ${REPO}/team/${member}`; do
+            [ "${branch}" = "private/" ] && continue
+            branch=${branch%%/}
+            branchpath=${REPO}/team/${member}${branch}
+            merge_branch ${branchpath} ${branch}
+        done
+        for branch in `${SVN} ls ${REPO}/team/${member}/private 2> /dev/null`; do
+            branch=${branch%%/}
+            branchpath=${REPO}/team/${member}/private/${branch}
+            merge_branch ${branchpath} ${branch}
+        done
+    done
+fi
+
+if [ "${mode}" = "d" ];
+then
+    REPO=file:///var/storage/linux/subversion/${!OPTIND}
+    
+    for branch in `${SVN} ls ${REPO}`; do
+        branch=${branch%%/}
+        branchpath=${REPO}/${branch}
+        merge_branch ${branchpath} ${branch}
+    done
+fi
+
+rm -rf ${WC}

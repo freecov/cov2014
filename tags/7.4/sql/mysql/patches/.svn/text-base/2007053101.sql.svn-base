@@ -1,0 +1,1 @@
+ALTER TABLE `cms_feedback` ADD `is_visitor` TINYINT( 3 ) NOT NULL ;

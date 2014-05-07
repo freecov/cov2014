@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap
+END
+class.soap_server.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soap_server.php
+END
+class.wsdl.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.wsdl.php
+END
+nusoapmime.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/nusoapmime.php
+END
+changelog
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/changelog
+END
+class.soap_fault.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soap_fault.php
+END
+class.soap_transport_http.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soap_transport_http.php
+END
+class.wsdlcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.wsdlcache.php
+END
+class.soap_parser.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soap_parser.php
+END
+class.nusoap_base.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.nusoap_base.php
+END
+class.soapclient.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soapclient.php
+END
+class.xmlschema.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.xmlschema.php
+END
+nusoap.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/nusoap.php
+END
+class.soap_val.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/nusoap/class.soap_val.php
+END

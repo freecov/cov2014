@@ -1,0 +1,51 @@
+TR.cms_hover {
+	behavior: url('classes/cms/inc/cms_hover.htc');
+}
+body TBODY>TR.cms_hover:hover TD, TR.cms_hover_msie TD {
+	background-color: #ffeed9 !important;
+	border-color: #ffb559 !important;
+}
+.cms_right  {
+	border-right: 1px solid #666 !important;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.cms_top {
+	border-top: 1px solid #aaa !important;
+}
+.cms_top2 {
+	border-bottom: 1px solid #ddd !important;
+}
+.cms_bottom {
+	border-bottom: 1px solid #a0a0a0 !important;
+}
+.cms_level_msie {
+	display: inline-table;
+}
+.cms_level {
+	whitespace: nowrap;
+	padding-left: 3px;
+	padding-right: 4px;
+}
+img.cms_img {
+	border: 0px;
+}
+table.cms {
+	border: 1px solid #aaa; width: 100% !important;
+}
+
+.color_buffer  { background-color: #CCFFCC !important; }
+.color_search  { background-color: #FFCCCC !important; }
+.color_level_0 { background-color: #ffebb0 !important; }
+.color_level_1 { background-color: #ffffff !important; }
+.color_level_2 { background-color: #eeeeee !important; }
+.color_level_3 { background-color: #dddddd !important; }
+.color_level_4 { background-color: #cccccc !important; }
+.color_level_5 { background-color: #bbbbbb !important; }
+.color_level_6 { background-color: #aaaaaa !important; }
+.color_level_7 { background-color: #999999 !important; }
+.color_level_other    { background-color: #888888 !important; }
+.color_type_protected { background-color: #d0d2ff !important; }
+.color_type_deleted   { background-color: #ffd0d0 !important; }
+.color_type_default   { background-color: #e3e5e4 !important; }
+.color_type_record    { background-color: #ededed !important; }

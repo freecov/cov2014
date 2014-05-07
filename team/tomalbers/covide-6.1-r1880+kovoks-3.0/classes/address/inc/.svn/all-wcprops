@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc
+END
+dataSaveFinancialCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataSaveFinancialCard.php
+END
+address_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/address_actions.js
+END
+selectClassification.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/selectClassification.php
+END
+showRelationsCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/showRelationsCard.php
+END
+relationscard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relationscard_actions.js
+END
+editRelationsCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/editRelationsCard.php
+END
+print_selection.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/print_selection.php
+END
+dataSaveRelationsCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataSaveRelationsCard.php
+END
+relcardsearch_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relcardsearch_actions.js
+END
+relationCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relationCard.php
+END
+addclaMulti.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/addclaMulti.js
+END
+userCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/userCard.php
+END
+show_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_list.php
+END
+showBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/showBcard.php
+END
+show_metafields.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_metafields.php
+END
+import_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/import_actions.js
+END
+bcard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/bcard_actions.js
+END
+pick_bank.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/pick_bank.php
+END
+editBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/editBcard.php
+END
+dataGetMailAddressesById.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataGetMailAddressesById.php
+END
+dataImportSave.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataImportSave.php
+END
+dataSaveBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataSaveBcard.php
+END
+show_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_edit.php
+END
+editFinancialBank.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/editFinancialBank.php
+END
+dataGetRelationsList.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataGetRelationsList.php
+END
+relcardsearchform.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relcardsearchform.php
+END
+show_import_start.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_import_start.php
+END
+show_import_step2.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_import_step2.php
+END
+dataSaveFinancialBank.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataSaveFinancialBank.php
+END
+edit_hrm.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/edit_hrm.php
+END
+dataDelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataDelete.php
+END
+show_item.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/show_item.php
+END
+sync4j.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/sync4j.js
+END
+relcardsearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relcardsearch.php
+END
+pick_bank.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/pick_bank.js
+END
+exportBcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/exportBcard.php
+END
+dataStore2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataStore2db.php
+END
+address_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/address_edit.js
+END
+showFinancialCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/showFinancialCard.php
+END
+dataGenerateLetterinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/dataGenerateLetterinfo.php
+END
+relcard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/relcard_actions.js
+END
+export.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/export.php
+END
+financialcard_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/financialcard_actions.js
+END
+addclaMulti.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/addclaMulti.php
+END
+editFinancialCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/address/inc/editFinancialCard.php
+END

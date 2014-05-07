@@ -1,0 +1,9 @@
+***v 0.4****
+- Increases syntax highlight proccess speed by 5 => allow a better live editing mode with syntax highlight.
+- Now syntax highlight has a real language syntax. Text is parsing with rules depending of the language definition file. (limitation: there is only one language on the same time > doesn't allow to parse html and php on the same page).
+- Syntax highlight can be easily extended with new code languages (there is currently: php, css, js, html).
+- Add german language file (thanks to Olaf Brambrink).
+- Fix some little bugs.
+
+***v0.33***
+- First release.

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/classes/covide/inc
+END
+define_schema.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/classes/covide/inc/define_schema.php
+END
+init_db_postgresql.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/classes/covide/inc/init_db_postgresql.php
+END

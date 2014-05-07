@@ -1,0 +1,122 @@
+#!/bin/bash
+# This script is run the first time someone logs in
+# on the appliance. It will setup some systemvariables
+# and covide specific configs.
+
+# Some defaults one might want to alter if setup is different from mine
+CVD_DATABASE=covide
+MYSQL_DEFAULT_ROOT_PW=default
+
+# DONT CHANGE ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING
+
+# change the default users password
+clear
+echo "Thank you for choosing the Covide appliance"
+echo "For the security of the appliance, we need you to change this user's password now."
+echo ""
+passwd
+
+# get sudo password so it's cached
+echo ""
+echo "We will now ask for your password so this script can run without asking it over and over again"
+sudo ls > /dev/null
+echo ""
+# change the default mysql root password
+echo "We now need you to change the default MySQL root password."
+echo ""
+let done=0
+while [ $done -eq 0 ]; do
+	read -e -s -r -p "New MySQL root password:" PASS1
+	echo ""
+	read -e -s -r -p "Repeat:" PASS2
+	echo ""
+	if [[ "$PASS1" == "$PASS2" ]]; then
+		let done=1
+		mysqladmin -u root --password="$MYSQL_DEFAULT_ROOT_PW" password $PASS1
+		MYSQL_ROOT_PW=$PASS1
+	else
+		echo "The 2 passwords did not match. Please try again."
+	fi
+done
+
+# reinstall openssh-server so we have new keys
+echo ""
+echo "We are now going to generate you ssh keys."
+echo ""
+sudo rm /etc/ssh/ssh_host_key > /dev/null 2>&1
+sudo rm /etc/ssh/ssh_host_rsa_key > /dev/null 2>&1
+sudo rm /etc/ssh/ssh_host_dsa_key > /dev/null 2>&1
+echo -n "Creating SSH1 key. This may take some time..."
+sudo ssh-keygen -q -f /etc/ssh/ssh_host_key -N '' -t rsa1
+echo ""
+echo -n "Creating SSH2 RSA key. This may take some time..."
+sudo ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+echo ""
+echo -n "Creating SSH2 DSA key. This may take some time..."
+sudo ssh-keygen -q -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+echo ""
+sudo /etc/init.d/ssh restart
+
+# reset default covide user and password
+echo ""
+echo "We now need you to change the default Covide username and password."
+echo ""
+read -e -s -r -p "New Covide username:" CVDUSER
+echo ""
+let done=0
+while [ $done -eq 0 ]; do
+	read -e -s -r -p "$CVDUSER password:" CVDUSER_PASS1
+	echo ""
+	read -e -s -r -p "Repeat:" CVDUSER_PASS2
+	echo ""
+	if [[ "$CVDUSER_PASS1" == "$CVDUSER_PASS2" ]]; then
+		let done=1
+		MYSQL_QUERY="UPDATE users SET is_active=1, username='$CVDUSER', password=MD5('$CVDUSER_PASS1') WHERE username='covide';"
+		mysql -u root -p$MYSQL_ROOT_PW $CVD_DATABASE -e "$MYSQL_QUERY"
+	else
+		echo "The 2 passwords did not match. Please try again."
+	fi
+done
+
+# reset default administrator covide password
+echo ""
+echo "We now need you to change the administrator password for covide."
+echo ""
+let done=0
+while [ $done -eq 0 ]; do
+	read -e -s -r -p "New password:" ADMIN_PASS1
+	echo ""
+	read -e -s -r -p "Repeat:" ADMIN_PASS2
+	echo ""
+	if [[ "$ADMIN_PASS1" == "$ADMIN_PASS2" ]]; then
+		let done=1
+		MYSQL_ADMIN_QUERY="UPDATE users SET is_active=1,password=MD5('$ADMIN_PASS1') WHERE username='administrator';"
+		mysql -u root -p$MYSQL_ROOT_PW $CVD_DATABASE -e "$MYSQL_QUERY"
+	else
+		echo "The 2 passwords did not match. Please try again."
+	fi
+done
+
+# setup ssl certificate for this server
+echo ""
+echo "We will now recreate the SSL certificates"
+echo ""
+sudo rm -rf /etc/apache2/certificates > /dev/null 2>&1
+sudo mkdir -p /etc/apache2/certificates
+sudo openssl genrsa -out /etc/apache2/certificates/private.key 1024
+sudo openssl req -new -days 365 -key /etc/apache2/certificates/private.key -x509 -out /etc/apache2/certificates/server.crt
+sudo /etc/init.d/apache2 restart
+
+# Alter config so we wont be run again
+sudo touch /etc/default/covidevm
+sudo chmod 777 /etc/default/covidevm
+echo "RUN_VM_SETUP=no" >> /etc/default/covidevm
+sudo chmod 755 /etc/default/covidevm
+
+clear
+echo "Thank you for your time."
+echo "Your system is now configured and this setup wont be run again."
+echo ""
+echo "The Covide team"
+echo ""
+echo ""

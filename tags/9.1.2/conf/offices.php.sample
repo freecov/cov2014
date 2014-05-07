@@ -1,0 +1,91 @@
+<?php
+/**
+ * Configuration file for the database connection.
+ * In this file you can specify each office you are hosting.
+ * This is an example file that should be edited to your needs and then be copied to offices.php
+ *
+ * The $dsn uses the PEAR DB class syntax.
+ * For info check here: http://pear.php.net/manual/en/package.database.db.intro-dsn.php
+ * In short: databasetype://username:password@protocol(host:port)/database
+ */
+/* Connect to a database based on the url */
+switch($_SERVER["SERVER_NAME"]) {
+	case "covide.customer.a":
+		$dsn = "mysql://mysql:mysql@tcp(localhost:3306)/covide";
+		break;
+	case "covide.customer.b":
+		$dsn = "pgsql://postgressql:postgresql@tcp(localhost:5432)/covide";
+		break;
+	default :
+		die("No covide office configuration found for this url. Check conf/offices.php file content.");
+		break;
+}
+/* some extra settings */
+
+/* run a contrib folder */
+// $contrib["USE_CONTRIB_SCRIPT"] = "covide";
+
+/* set certificate file */
+// $certificate = "conf/server.crt";
+
+/* offload beagle to an external index machine */
+// $beagle["prefix"] = "ssh -C 192.168.1.2 -p 1026 -l www-data";
+// $beagle["home"]   = "/var/indexinfo";
+
+/* set php binary path for the cms (used in lint checks) */
+// $cms["phpbin"] = "/usr/bin/php5";
+
+
+/* use cms rewriting schema without the /page/ folder */
+// $cms["page_less_rewrites"] = 1;
+
+/* use a minimalistic version of the cms footer in the website */
+// $cms["minimal_footer"] = 1;
+
+/* disable the static gzip compression */
+// $html["no_static_gzip_compression"] = 1;
+
+/* define a custom pagesize settings */
+// $html["custom_pagesize"] = array(
+//	5 => 5,
+//	10 => 10,
+//	20 => 20,
+//	25 => 25,
+//	50 => 50,
+//	100 => 100,
+//	150 => 150,
+//	200 => 200
+//);
+
+/* specify some custom smtp settings
+// $smtp = array(
+// "server_hostname" => "localhost",
+// "server_port"     => 174,
+// "server_timeout"  => 60,
+// "helo"            => "covide.localhost",
+// "auth_enable"     => 1,
+// "auth_username"   => "covide",
+// "auth_password"   => "mysmtppass",
+// "logscript"       => "/usr/local/bin/covidelog.php"
+//);
+/* define a custom polling interval */
+
+// example log script for smtp[logscript]
+//  1 #!/usr/bin/php
+//  2 <?php
+//  3 $params = $argv;
+//  4 $message = sprintf("covide.%s", $params[1]);
+//  5 $from = $params[2];
+//  6 $rcpt = explode(",", $params[3]);
+//  7 $size = $params[4] + 1024; // 1024 = average header size
+//  8 // now do whatever you like to do with it ;)	
+//  9 ?>
+
+//$voip["polling_interval"] = 30;
+
+/* define custom virus settings */
+// $virus["conf"] = array(
+// "enable_fprot"  => 0,
+// "enable_clamav" => 1
+//);
+?>

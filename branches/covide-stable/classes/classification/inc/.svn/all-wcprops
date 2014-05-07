@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/7149/branches/covide-stable/classes/classification/inc
+END
+cla_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/classification/inc/cla_edit.php
+END
+pick_cla.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/classification/inc/pick_cla.php
+END
+pick_cla.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/classification/inc/pick_cla.js
+END
+select_classification.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/7149/branches/covide-stable/classes/classification/inc/select_classification.php
+END
+show_classifications.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4808/branches/covide-stable/classes/classification/inc/show_classifications.php
+END
+classification_select.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/classification/inc/classification_select.js
+END
+classification_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/classification/inc/classification_actions.js
+END

@@ -1,0 +1,4 @@
+-- ADD FIELDS:
+mail_signatures.realname: varchar(255) - done in psql 2006011900.sql
+mail_signatures.companyname: varchar(255) - done in psql 2006011900.sql
+mail_berichten.options: varchar(255) - done in psql 2006011900.sql

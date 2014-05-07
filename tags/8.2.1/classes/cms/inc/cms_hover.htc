@@ -1,0 +1,13 @@
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Hover()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Unhover()" />
+<SCRIPT LANGUAGE="JScript">
+  function Hover() {
+    element.className += " cms_hover_msie";
+  }
+
+  function Unhover() {
+    element.className = element.className.replace(/\s*cms_hover_msie/, "");
+  }
+</SCRIPT>
+</PUBLIC:COMPONENT>

@@ -1,0 +1,13 @@
+	/* custom styles */
+
+	.venster_data {
+		border-top: 1px solid #d56a73;
+		border-left: 1px solid #d56a73;
+		border-bottom: 1px solid #d56a73;
+	}
+
+	.venster_right {
+		border-top: 1px solid #d56a73;
+		border-right: 1px solid #d56a73;
+		border-bottom: 1px solid #d56a73;
+	}

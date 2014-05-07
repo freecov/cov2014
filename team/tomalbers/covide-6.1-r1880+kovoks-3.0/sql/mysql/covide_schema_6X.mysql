@@ -1,0 +1,1316 @@
+CREATE TABLE active_calls (
+    `name` varchar(255),
+    address_id int(11),
+    `timestamp` int(11)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres (
+    `id` int(11) NOT NULL auto_increment,
+    surname varchar(255),
+    givenname varchar(255),
+    companyname varchar(255),
+    address varchar(255),
+    zipcode varchar(255),
+    city varchar(255),
+    phone_nr varchar(255),
+    fax_nr varchar(255),
+    email varchar(255),
+    user_id int(11),
+    is_company smallint(3),
+    link int(11),
+    is_public smallint(3),
+    mobile_nr varchar(255),
+    debtor_nr int(11),
+    country varchar(255),
+    company_type smallint(3),
+    `comment` mediumtext,
+    website varchar(255),
+    relation_type smallint(3),
+    tav varchar(255),
+    contact_person varchar(255),
+    is_customer smallint(3),
+    is_supplier smallint(3),
+    is_partner smallint(3),
+    is_prospect smallint(3),
+    is_other smallint(3),
+    `warning` varchar(255),
+    pobox varchar(255),
+    pobox_zipcode varchar(255),
+    pobox_city varchar(255),
+    classification varchar(255),
+    account_manager int(11),
+    is_active smallint(3) DEFAULT 1,
+    contact_letterhead smallint(3) DEFAULT 2,
+    contact_commencement smallint(3) DEFAULT 2,
+    contact_initials varchar(255),
+    contact_givenname varchar(255),
+    contact_infix varchar(255),
+    contact_surname varchar(255),
+    e4lid varchar(255),
+    title int(11),
+    relname varchar(255),
+    relpass varchar(255),
+    modified int(11),
+    sync_modified int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_multivers (
+    `id` int(11) NOT NULL auto_increment,
+    surname varchar(255),
+    givenname varchar(255),
+    companyname varchar(255),
+    address varchar(255),
+    zipcode varchar(255),
+    city varchar(255),
+    phone_nr varchar(255),
+    fax_nr varchar(255),
+    email varchar(255),
+    user_id int(11),
+    is_company smallint(3),
+    link int(11),
+    is_public smallint(3),
+    mobile_nr varchar(255),
+    debtor_nr int(11),
+    country varchar(255),
+    company_type smallint(3),
+    `comment` mediumtext,
+    website varchar(255),
+    relation_type smallint(3),
+    tav varchar(255),
+    contact_person varchar(255),
+    is_customer smallint(3),
+    is_supplier smallint(3),
+    is_partner smallint(3),
+    is_prospect smallint(3),
+    is_other smallint(3),
+    `warning` varchar(255),
+    pobox varchar(255),
+    pobox_zipcode varchar(255),
+    pobox_city varchar(255),
+    classification varchar(255),
+    account_manager int(11),
+    is_active smallint(3) DEFAULT 1,
+    contact_letterhead smallint(3) DEFAULT 2,
+    contact_commencement smallint(3) DEFAULT 2,
+    contact_initials varchar(255),
+    contact_givenname varchar(255),
+    contact_infix varchar(255),
+    contact_surname varchar(255),
+    e4lid varchar(255),
+    title int(11),
+    relname varchar(255),
+    relpass varchar(255),
+    modified int(11),
+    sync_modified int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_overig (
+    `id` int(11) NOT NULL auto_increment,
+    companyname varchar(255),
+    surname varchar(255),
+    givenname varchar(255),
+    address varchar(255),
+    zipcode varchar(255),
+    city varchar(255),
+    phone_nr varchar(255),
+    fax_nr varchar(255),
+    email varchar(255),
+    user_id int(11),
+    is_company smallint(3),
+    is_public smallint(3),
+    mobile_nr varchar(255),
+    `comment` mediumtext,
+    website varchar(255),
+    pobox varchar(255),
+    pobox_zipcode varchar(255),
+    pobox_city varchar(255),
+    is_active smallint(3) DEFAULT 1,
+    is_companylocation smallint(3) DEFAULT 0,
+    arbo_kantoor smallint(3) DEFAULT 0,
+    arbo_bedrijf int(11),
+    arbo_code varchar(255),
+    arbo_team varchar(255),
+    sync_modified int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_personen (
+    `id` int(11) NOT NULL auto_increment,
+    surname varchar(255),
+    givenname varchar(255),
+    address varchar(255),
+    zipcode varchar(255),
+    city varchar(255),
+    phone_nr varchar(255),
+    fax_nr varchar(255),
+    email varchar(255),
+    user_id int(11),
+    is_company smallint(3),
+    is_public smallint(3),
+    mobile_nr varchar(255),
+    `comment` mediumtext,
+    website varchar(255),
+    pobox varchar(255),
+    pobox_zipcode varchar(255),
+    pobox_city varchar(255),
+    is_active smallint(3) DEFAULT 1,
+    e4lid varchar(255),
+    country varchar(255),
+    modified int(11),
+    sync_modified int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_sync (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11),
+    address_table varchar(255),
+    is_private int(11),
+    account_manager int(11),
+    sync_modified int(11),
+    sync_hash varchar(255),
+    `parent_id` int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_sync_guid (
+    `id` int(11) NOT NULL auto_increment,
+    sync_id int(11),
+    sync_guid int(11),
+    user_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adres_sync_records (
+    `id` int(11) NOT NULL auto_increment,
+    address_table varchar(255),
+    address_id int(11),
+    user_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE adresinfo (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11) NOT NULL DEFAULT 0,
+    `comment` mediumtext,
+    classification varchar(255),
+    `warning` varchar(255),
+    photo varchar(255),
+    provision_perc numeric(8,2),
+    md5 varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE agenda (
+    `id` int(11) NOT NULL auto_increment,
+    timestamp_start int(11),
+    timestamp_end int(11),
+    description mediumtext,
+    user_id int(11),
+    address_id int(11),
+    project_id int(11),
+    is_private smallint(3),
+    note_id int(11) NOT NULL DEFAULT 0,
+    is_important smallint(3) DEFAULT 0,
+    is_registered smallint(3) DEFAULT 0,
+    notifytime int(11),
+    notified smallint(3) DEFAULT 0,
+    location varchar(255),
+    human_start timestamp,
+    human_end timestamp,
+    is_group int(11),
+    group_id int(11),
+    kilometers int(11),
+    is_repeat int(11),
+    multirel varchar(255),
+    repeat_type character(1),
+    is_alert smallint(3) DEFAULT 0,
+    is_holiday smallint(3) DEFAULT 0,
+    is_specialleave smallint(3) DEFAULT 0,
+    is_ill smallint(3) DEFAULT 0,
+    e4l_id varchar(255),
+    is_dnd smallint(3) DEFAULT 0,
+    deckm smallint(3) DEFAULT 0,
+    modified int(11),
+    modified_by int(11),
+    sync_guid int(11),
+    sync_hash varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE agenda_machtiging (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    user_id_visitor int(11),
+    permissions varchar(255) DEFAULT 'RO',
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE agenda_sync (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    sync_guid int(11),
+    `action` varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE akties (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11),
+    omschrijving mediumtext,
+    datum int(11),
+    rekeningflow numeric(16,2),
+    factuur_nr int(11),
+    rekeningflow_btw numeric(16,2),
+    grootboeknummer_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE arbo (
+    `id` int(11) NOT NULL auto_increment,
+    regiokantoor varchar(255),
+    regiofax varchar(255),
+    regiotel varchar(255),
+    regioteam varchar(255),
+    werkgever varchar(255),
+    adres varchar(255),
+    postcode varchar(255),
+    city varchar(255),
+    aansluitcode varchar(255),
+    contactpers varchar(255),
+    tel varchar(255),
+    fax varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE arbo_verslag (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    manager int(11),
+    soort int(11),
+    datum int(11),
+    omschrijving mediumtext,
+    acties mediumtext,
+    betrokkenen mediumtext,
+    datum_invoer int(11),
+    ziekmelding int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE arbo_ziek (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    werkgever_id int(11),
+    arbo_id int(11),
+    datum int(11),
+    datum_ziek int(11),
+    datum_melding int(11),
+    datum_herstel int(11),
+    herstel int(11),
+    herstel_loon int(11),
+    zwanger smallint(3) DEFAULT 0,
+    zwanger_ziek smallint(3) DEFAULT 0,
+    orgaandonatie smallint(3) DEFAULT 0,
+    ongeval smallint(3) DEFAULT 0,
+    ontvangt_wao smallint(3) DEFAULT 0,
+    wao_perc int(11),
+    herintr_wao smallint(3) DEFAULT 0,
+    herintr_perc int(11),
+    bijzonderheden mediumtext,
+    ziekmelding int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE bcards (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11) NOT NULL DEFAULT 0,
+    givenname varchar(255),
+    initials varchar(255),
+    infix varchar(255),
+    surname varchar(255),
+    timestamp_birthday int(11),
+    mobile_nr varchar(255),
+    phone_nr varchar(255),
+    email varchar(255),
+    memo mediumtext,
+    commencement smallint(3) DEFAULT 3,
+    classification varchar(255),
+    letterhead smallint(3) DEFAULT 2,
+    business_address varchar(255),
+    business_zipcode varchar(255),
+    business_city varchar(255),
+    business_mobile_nr varchar(255),
+    business_phone_nr varchar(255),
+    business_email varchar(255),
+    business_fax_nr varchar(255),
+    personal_address varchar(255),
+    personal_zipcode varchar(255),
+    personal_city varchar(255),
+    personal_mobile_nr varchar(255),
+    personal_phone_nr varchar(255),
+    personal_email varchar(255),
+    personal_fax_nr varchar(255),
+    e4lid varchar(255),
+    title int(11),
+    alternative_name varchar(255),
+    modified int(11),
+    photo varchar(255),
+    sync_modified int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE bedrijfsclassifi (
+    `id` int(11) NOT NULL auto_increment,
+    description varchar(255),
+    is_active smallint(3) DEFAULT 0,
+    is_locked smallint(3),
+    subtype smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE begin_standen_finance (
+    `id` int(11) NOT NULL auto_increment,
+    grootboek_id int(11) NOT NULL DEFAULT 0,
+    stand numeric(16,2) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE boekingen (
+    `id` int(11) NOT NULL auto_increment,
+    credit smallint(3) NOT NULL DEFAULT 0,
+    factuur int(11) NOT NULL DEFAULT 0,
+    grootboek_id int(11),
+    status smallint(3),
+    datum int(11),
+    koppel_id int(11),
+    bedrag numeric(16,2),
+    product int(11),
+    inkoop smallint(3) NOT NULL DEFAULT 0,
+    deb_nr int(11) NOT NULL DEFAULT 0,
+    betaald smallint(3) NOT NULL DEFAULT 0,
+    locked smallint(3) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE boekingen_20012003 (
+    `id` int(11) NOT NULL auto_increment,
+    credit smallint(3) NOT NULL DEFAULT 0,
+    factuur int(11) NOT NULL DEFAULT 0,
+    grootboek_id int(11),
+    status smallint(3),
+    datum int(11),
+    koppel_id int(11),
+    bedrag numeric(16,2),
+    product int(11),
+    inkoop smallint(3) NOT NULL DEFAULT 0,
+    deb_nr int(11) NOT NULL  DEFAULT 0,
+    betaald smallint(3) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE bugs (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    module varchar(255),
+    subject varchar(255),
+    description mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE cdr (
+    `calldate` timestamp NOT NULL DEFAULT now(),
+    clid varchar(255),
+    src varchar(255),
+    dst varchar(255),
+    dconmediumtext varchar(255),
+    channel varchar(255),
+    dstchannel varchar(255),
+    lastapp varchar(255),
+    lastdata varchar(255),
+    duration bigint,
+    billsec bigint,
+    disposition varchar(255),
+    amaflags bigint,
+    accountcode varchar(255),
+    uniqueid varchar(255),
+    userfield varchar(255)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE chat_rooms (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    users mediumtext,
+    topic varchar(255),
+    is_active smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE chat_text (
+    `id` int(11) NOT NULL auto_increment,
+    room int(11),
+    `user` int(11),
+    `text` varchar(255),
+    `timestamp` int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE cms_bestanden (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    dat varchar(255),
+    `type` varchar(255) DEFAULT 'application/octet-stream',
+    size varchar(255) DEFAULT '0',
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE cms_data (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11) NOT NULL DEFAULT 0,
+    page_parent int(11) NOT NULL DEFAULT 0,
+    page_type int(11) NOT NULL DEFAULT 0,
+    page_titel varchar(255),
+    publicationdate int(11) NOT NULL DEFAULT 0,
+    page_data mediumtext,
+    page_redirect varchar(255)  DEFAULT '0',
+    is_public smallint(3) NOT NULL DEFAULT 0,
+    is_active smallint(3) NOT NULL DEFAULT 0,
+    is_menuitem smallint(3) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE cms_images (
+    `id` int(11) NOT NULL auto_increment,
+    page_id int(11) NOT NULL DEFAULT 0,
+    path varchar(255),
+    description varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE faq (
+    `id` int(11) NOT NULL auto_increment,
+    category_id int(11),
+    question mediumtext,
+    answer mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE faq_cat (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE faxes (
+    `id` int(11) NOT NULL auto_increment,
+    date int(11),
+    sender varchar(255),
+    receiver varchar(255),
+    relation_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE filesys_bestanden (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    folder_id int(11) NOT NULL DEFAULT 0,
+    project_id int(11) NOT NULL DEFAULT 0,
+    address_id int(11) NOT NULL DEFAULT 0,
+    `timestamp` int(11) NOT NULL DEFAULT 0,
+    user_id int(11) NOT NULL DEFAULT 0,
+    data varchar(255),
+    `type` varchar(255),
+    size varchar(255),
+    description mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE filesys_mappen (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255) ,
+    is_public smallint(3) NOT NULL DEFAULT 0,
+    is_relation smallint(3) NOT NULL DEFAULT 0,
+    address_id int(11),
+    user_id int(11),
+    parent_id int(11),
+    is_shared varchar(255),
+    description mediumtext,
+    hrm_id int(11),
+    sticky smallint(3) DEFAULT 0,
+    project_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE filesys_rechten (
+    `id` int(11) NOT NULL auto_increment,
+    folder_id int(11),
+    user_id varchar(255),
+    permissions varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE forum (
+    `id` int(11) NOT NULL auto_increment,
+    ref int(11),
+    user_id int(11) NOT NULL DEFAULT 0,
+    project_id int(11) NOT NULL DEFAULT 0,
+    `timestamp` int(11),
+    subject varchar(255),
+    body mediumtext,
+    `read` mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE functies (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    description mediumtext
+,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE gebruikers (
+    `id` int(11) NOT NULL auto_increment,
+    `username` varchar(255),
+    `password` varchar(255),
+    pers_nr int(11),
+    xs_usermanage smallint(3) DEFAULT 0,
+    xs_addressmanage smallint(3),
+    xs_projectmanage smallint(3),
+    xs_forummanage smallint(3),
+    address_id int(11),
+    xs_pollmanage smallint(3),
+    xs_faqmanage smallint(3),
+    xs_issuemanage smallint(3),
+    xs_chatmanage smallint(3),
+    xs_turnovermanage smallint(3),
+    xs_notemanage smallint(3),
+    xs_todomanage smallint(3) DEFAULT 0,
+    `comment` mediumtext,
+    is_active smallint(3) NOT NULL DEFAULT 1,
+    style smallint(3),
+    mail_server varchar(255),
+    mail_user_id varchar(255),
+    mail_password varchar(255),
+    mail_email varchar(255),
+    mail_email1 varchar(255),
+    mail_html smallint(3),
+    mail_signature mediumtext,
+    mail_showcount smallint(3) DEFAULT 0,
+    mail_deltime int(11),
+    days smallint(3) DEFAULT 0,
+    htmleditor smallint(3) DEFAULT 2 NOT NULL,
+    addressaccountmanage varchar(255),
+    calendarselection varchar(255),
+    showhelp int(11) NOT NULL DEFAULT 0,
+    showpopup smallint(3) DEFAULT 1,
+    xs_salariscommanage smallint(3) DEFAULT 0,
+    mail_server_deltime int(11) DEFAULT 1,
+    xs_companyinfomanage smallint(3) DEFAULT 0,
+    xs_hrmmanage smallint(3) DEFAULT 0,
+    language character(2) NOT NULL DEFAULT 'NL',
+    employer_id int(11),
+    automatic_logout smallint(3) DEFAULT 0,
+    mail_view_textmail_only smallint(3),
+    e4l_update int(11),
+    dayquote int(11),
+    infowin_altmethod int(11),
+    xs_e4l smallint(3) DEFAULT 0,
+    xs_filemanage int(11),
+    xs_limitusermanage int(11),
+    change_theme int(11),
+    xs_relationmanage int(11),
+    xs_newslettermanage int(11),
+    renderstatus mediumtext,
+    mail_forward int(11),
+    showvoip smallint(3) DEFAULT 0,
+    signature varchar(255),
+    voip_device varchar(255),
+    xs_salesmanage smallint(3),
+    e4l_username varchar(255),
+    e4l_password varchar(255),
+    mail_imap int(11),
+    xs_hypo smallint(3),
+    mail_num_items int(11),
+    xs_arbo int(11),
+    xs_arbo_validated int(11),
+    alternative_note_view_desktop int(11),
+    rssnews int(11),
+    mail_showbcc int(11),
+    calendarmode int(11) DEFAULT 1,
+    sync4j_source varchar(255),
+    sync4j_path varchar(255),
+    sync4j_source_adres varchar(255),
+    sync4j_source_todo varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE gebruikers_log (
+    `id` int(11) NOT NULL auto_increment,
+    manager int(11),
+    user_id int(11),
+    `timestamp` int(11),
+    `change` mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE groep (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    description varchar(255),
+    members varchar(255),
+    manager int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE grootboeknummers (
+    `id` int(11) NOT NULL auto_increment,
+    nr int(11),
+    titel varchar(255),
+    debiteur smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE hoofd_project (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    description mediumtext,
+    manager int(11),
+    is_active smallint(3),
+    status smallint(3) DEFAULT 0,
+    address_id int(11),
+    address_businesscard_id int(11)
+,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE hypotheek (
+    `id` int(11) NOT NULL auto_increment,
+    timestamp int(11),
+    total_sum numeric(16,2),
+    investor int(11),
+    insurancer int(11),
+    year_payement int(11),
+    user_id int(11),
+    user_src int(11),
+    subject varchar(255),
+    description mediumtext,
+    `type` int(11),
+    address_id int(11),
+    is_active smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE inkopen (
+    `id` int(11) NOT NULL auto_increment,
+    datum int(11) NOT NULL DEFAULT 0,
+    balanspost int(11) NOT NULL DEFAULT 0,
+    boekstuknr int(11) NOT NULL DEFAULT 1,
+    descr varchar(255),
+    leverancier_nr int(11) NOT NULL DEFAULT 0,
+    bedrag_ex numeric(16,2),
+    bedrag_inc numeric(16,2),
+    bedrag_btw numeric(16,2),
+    betaald numeric(16,2) NOT NULL,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE jaar_afsluitingen (
+    jaar int(11) NOT NULL DEFAULT 0,
+    datum_afgesloten int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE klachten (
+    `id` int(11) NOT NULL auto_increment,
+    `timestamp` int(11),
+    description mediumtext,
+    solution mediumtext,
+    project_id int(11),
+    registering_id int(11),
+    user_id int(11),
+    `priority` smallint(3) DEFAULT 0,
+    is_solved smallint(3),
+    address_id int(11),
+    email mediumtext,
+    reference_nr int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE klanten (
+    `id` int(11) NOT NULL auto_increment,
+    naam varchar(255),
+    adres varchar(255),
+    postcode varchar(255),
+    city varchar(255),
+    land varchar(255),
+    telefoonnummer varchar(255),
+    faxnummer varchar(255),
+    email varchar(255),
+    soortbedrijf_id int(11),
+    aantalwerknemers int(11),
+    address_id int(11),
+    contactpersoon varchar(255),
+    contactpersoon_voorletters varchar(255),
+    totaal_flow int(11),
+    totaal_flow_12 int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE license (
+    name varchar(255) ,
+    code varchar(255) ,
+    `timestamp` int(11) NOT NULL DEFAULT 0,
+    has_project smallint(3),
+    has_faq smallint(3),
+    has_forum smallint(3),
+    has_issues smallint(3),
+    has_chat smallint(3),
+    has_announcements smallint(3),
+    has_enquete smallint(3),
+    has_emagazine smallint(3),
+    has_finance smallint(3),
+    has_external smallint(3),
+    has_snack smallint(3),
+    email varchar(255),
+    has_snelstart smallint(3),
+    plain smallint(3),
+    latest_version varchar(255) DEFAULT '0',
+    has_multivers smallint(3),
+    multivers_path varchar(255),
+    mail_interval int(11),
+    has_salariscom smallint(3) DEFAULT 1,
+    multivers_update int(11),
+    has_hrm smallint(3),
+    has_exact smallint(3) DEFAULT 0,
+    finance_start_date int(11),
+    max_upload_size varchar(255) DEFAULT '24M',
+    has_e4l smallint(3) DEFAULT 0,
+    dayquote int(11),
+    dayquote_nr int(11),
+    mail_shell smallint(3) DEFAULT 0,
+    has_voip smallint(3) DEFAULT 0,
+    has_sales smallint(3),
+    filesyspath varchar(255),
+    has_hypo smallint(3),
+    has_arbo int(11),
+    disable_basics int(11),
+    has_privoxy_config int(11),
+    has_sync4j int(11)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE login_log (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11) NOT NULL DEFAULT 0,
+    ip varchar(255),
+    `time` int(11) NOT NULL DEFAULT 0,
+    `day` int(11) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_attachments (
+    `id` int(11) NOT NULL auto_increment,
+    message_id int(11) NOT NULL DEFAULT 0,
+    name varchar(255),
+    temp_id int(11) NOT NULL DEFAULT 0,
+    dat varchar(255),
+    `type` varchar(255) DEFAULT 'application/octet-stream',
+    size varchar(255) DEFAULT '0',
+    cid varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_berichten (
+    `id` int(11) NOT NULL auto_increment,
+    message_id varchar(255),
+    folder_id int(11) NOT NULL DEFAULT 0,
+    user_id int(11) NOT NULL DEFAULT 0,
+    address_id int(11) NOT NULL DEFAULT 0,
+    project_id int(11),
+    sender varchar(255),
+    subject mediumtext,
+    header mediumtext,
+    body mediumtext,
+    `date` varchar(255),
+    is_html smallint(3),
+    is_public smallint(3),
+    sender_emailaddress varchar(255),
+    `to` mediumtext,
+    cc mediumtext,
+    description mediumtext,
+    is_new smallint(3) NOT NULL DEFAULT 0,
+    replyto varchar(255),
+    status_pop smallint(3) NOT NULL DEFAULT 0,
+    bcc mediumtext,
+    date_received int(11) NOT NULL DEFAULT 0,
+    template_id int(11) NOT NULL DEFAULT 0,
+    askwichrel smallint(3) DEFAULT 0,
+    indexed int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_filters (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11) NOT NULL DEFAULT 0,
+    sender varchar(255),
+    receipient varchar(255),
+    subject varchar(255),
+    to_mapid int(11) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_mappen (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    user_id int(11),
+    parent_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_signatures (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    email varchar(255),
+    `signature` mediumtext,
+    subject varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_templates (
+    `id` int(11) NOT NULL auto_increment,
+    header mediumtext NOT NULL,
+    description varchar(255) ,
+    width varchar(255) NOT NULL DEFAULT '800',
+    `repeat` smallint(3) NOT NULL DEFAULT 1,
+    footer mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_templates_bestanden (
+    `id` int(11) NOT NULL auto_increment,
+    template_id int(11) NOT NULL DEFAULT 0,
+    name varchar(255),
+    temp_id int(11) NOT NULL DEFAULT 0,
+    dat varchar(255),
+    `type` varchar(255) DEFAULT 'application/octet-stream',
+    size varchar(255) DEFAULT '0',
+    position character(1) NOT NULL DEFAULT ' ',
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE mail_tracking (
+    `id` int(11) NOT NULL auto_increment,
+    mail_id int(11),
+    email varchar(255),
+    timestamp_first int(11),
+    timestamp_last int(11),
+    `count` int(11),
+    mail_id_2 int(11),
+    clients mediumtext,
+    agents mediumtext,
+    mailcode varchar(255),
+    hyperlinks mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE medewerker (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11) NOT NULL DEFAULT 0,
+    social_security_nr varchar(255),
+    timestamp_started int(11),
+    timestamp_birthday int(11),
+    gender smallint(3) NOT NULL DEFAULT 0,
+    contract_type mediumtext,
+    `function` varchar(255),
+    functionlevel varchar(255),
+    contract_hours int(11),
+    contract_holidayhours int(11),
+    timestamp_stop int(11),
+    evaluation mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE meta_table (
+    `id` int(11) NOT NULL auto_increment,
+    tablename varchar(255),
+    fieldname varchar(255),
+    fieldtype int(11),
+    fieldorder int(11),
+    record_id int(11),
+    `value` mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE notitie (
+    `id` int(11) NOT NULL auto_increment,
+    `timestamp` int(11),
+    subject varchar(255),
+    body mediumtext,
+    sender int(11),
+    is_read smallint(3),
+    user_id int(11),
+    is_done smallint(3),
+    delstatus smallint(3) NOT NULL DEFAULT 0,
+    project_id smallint(3),
+    address_id int(11),
+    is_support smallint(3) DEFAULT 0,
+    extra_receipients varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE offertes (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11),
+    titel varchar(255),
+    status int(11),
+    uitvoerder varchar(255),
+    producten_id_0 varchar(255),
+    producten_id_1 varchar(255),
+    producten_id_2 varchar(255),
+    producten_id_3 varchar(255),
+    html_0 mediumtext,
+    html_1 mediumtext,
+    html_2 mediumtext,
+    html_3 mediumtext,
+    datum_0 varchar(255),
+    datum_1 varchar(255),
+    datum_2 varchar(255),
+    datum_3 varchar(255),
+    bedrijfsnaam varchar(255),
+    prec_betaald_0 int(11),
+    prec_betaald_1 int(11),
+    prec_betaald_2 int(11),
+    prec_betaald_3 int(11),
+    factuur_nr_0 int(11),
+    factuur_nr_1 int(11),
+    factuur_nr_2 int(11),
+    factuur_nr_3 int(11),
+    btw_tonen smallint(3),
+    btw_prec numeric,
+    factuur_nr int(11),
+    datum varchar(255),
+    definitief_2 smallint(3) NOT NULL DEFAULT 0,
+    definitief_3 smallint(3) NOT NULL DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE omzet_akties (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11),
+    omschrijving mediumtext,
+    datum int(11),
+    datum_betaald int(11),
+    rekeningflow numeric(16,2),
+    rekeningflow_btw numeric(16,2),
+    rekeningflow_ex numeric(16,2),
+    factuur_nr int(11),
+    grootboeknummer_id int(11),
+    bedrag_betaald numeric(16,2) NOT NULL,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE omzet_totaal (
+    `id` int(11) NOT NULL auto_increment,
+    address_id int(11) NOT NULL DEFAULT 0,
+    totaal_flow int(11),
+    totaal_flow_btw numeric(16,2),
+    totaal_flow_ex numeric(16,2),
+    totaal_flow_12 int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE overige_posten (
+    `id` int(11) NOT NULL auto_increment,
+    grootboek_id int(11) NOT NULL DEFAULT 0,
+    omschrijving mediumtext NOT NULL,
+    debiteur int(11) NOT NULL DEFAULT 0,
+    datum int(11) NOT NULL DEFAULT 0,
+    bedrag numeric(16,2) NOT NULL,
+    tegenrekening int(11) NOT NULL DEFAULT 59,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE poll_antwoord (
+    `id` int(11) NOT NULL auto_increment,
+    poll_id int(11),
+    user_id int(11),
+    answer smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE poll_vraag (
+    `id` int(11) NOT NULL auto_increment,
+    question mediumtext,
+    is_active smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE prefs (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    bgcolor varchar(255),
+    style smallint(3),
+    mail_server varchar(255),
+    mail_user_id varchar(255),
+    mail_wachtwoord varchar(255),
+    mail_email varchar(255),
+    mail_html smallint(3),
+    mail_handtekening mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE prikbord (
+    `id` int(11) NOT NULL auto_increment,
+    subject varchar(255),
+    body mediumtext,
+    is_popup smallint(3),
+    is_active smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE producten (
+    `id` int(11) NOT NULL auto_increment,
+    titel varchar(255),
+    html mediumtext,
+    prijsperjaar smallint(3),
+    categorie varchar(255),
+    grootboeknummer_id int(11),
+    address_id int(11),
+    prijs numeric(10,2),
+    btw_prec numeric(10,2),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE producten_in_offertes (
+    `id` int(11) NOT NULL auto_increment,
+    producten_id int(11),
+    omschrijving mediumtext,
+    link_id int(11),
+    aantal int(11),
+    btw numeric,
+    prijs numeric(16,2),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE project (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+    description mediumtext,
+    manager int(11),
+    group_id smallint(3) NOT NULL DEFAULT 0,
+    is_active smallint(3),
+    status smallint(3) DEFAULT 0,
+    address_id int(11),
+    lfact int(11),
+    budget int(11),
+    hours int(11),
+    address_businesscard_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE relatie_type (
+    `id` int(11) NOT NULL auto_increment,
+    `type` varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE rssfeeds (
+    `id` int(11) NOT NULL auto_increment,
+    `name` varchar(255),
+    homepage varchar(255),
+    url varchar(255),
+    user_id int(11),
+    `count` int(11) DEFAULT 5,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE rssitems (
+    `id` int(11) NOT NULL auto_increment,
+    feed int(11),
+    subject varchar(255),
+    body mediumtext,
+    link varchar(255),
+    date int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE sales (
+    `id` int(11) NOT NULL auto_increment,
+    subject varchar(255),
+    expected_score int(11),
+    total_sum numeric(16,2),
+    timestamp_proposal int(11),
+    timestamp_order int(11),
+    timestamp_invoice int(11),
+    address_id int(11),
+    description mediumtext,
+    is_active int(11),
+    timestamp_prospect int(11),
+    user_id_modified int(11),
+    user_sales_id int(11),
+    user_id_create int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE snack_bestel (
+    `id` int(11) NOT NULL auto_increment,
+    ammount smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE snack_lijst (
+    `id` int(11) NOT NULL auto_increment,
+    name varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE soortbedrijf (
+    `id` int(11) NOT NULL auto_increment,
+    omschrijving varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE `statistics` (
+    `table` varchar(255),
+    updates int(11),
+    `vacuum` int(11)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE status_conn (
+    user_id int(11) NOT NULL DEFAULT 0,
+    timestamp int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE status_list (
+    `id` int(11) NOT NULL auto_increment,
+    msg_id varchar(255) DEFAULT '0' NOT NULL,
+    mail_id int(11) NOT NULL DEFAULT 0,
+    `timestamp` int(11) NOT NULL DEFAULT 0,
+    user_id int(11) NOT NULL DEFAULT 0,
+    mark_delete smallint(3) NOT NULL DEFAULT 0,
+    PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE support (
+    `id` int(11) NOT NULL auto_increment,
+    timestamp int(11),
+    body mediumtext,
+    `type` int(11),
+    relation_name mediumtext,
+    email mediumtext,
+    reference_nr int(11),
+    customer_id int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE talen (
+    `id` int(11) NOT NULL auto_increment,
+    nl mediumtext,
+    de mediumtext,
+    en mediumtext,
+    es mediumtext,
+    it mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE talen_backup (
+    `id` int(11) NOT NULL auto_increment,
+    nl mediumtext,
+    de mediumtext,
+    en mediumtext,
+    es mediumtext,
+    it mediumtext,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE teksten (
+    `id` int(11) NOT NULL auto_increment,
+    html mediumtext,
+    description varchar(255),
+    `type` int(11),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE templates (
+    `id` int(11) NOT NULL auto_increment,
+    address_businesscard_id smallint(3) NOT NULL DEFAULT 0,
+    font varchar(255) ,
+    fontsize int(11) NOT NULL DEFAULT 0,
+    body mediumtext,
+    footer mediumtext,
+    sender mediumtext,
+    address_id int(11) NOT NULL DEFAULT 0,
+    description varchar(255),
+    classification varchar(255),
+    ids mediumtext,
+    header varchar(255),
+    user_id int(11) NOT NULL DEFAULT 0,
+    settings_id int(11) NOT NULL DEFAULT 0,
+    `date` varchar(255),
+    city varchar(255),
+    negative_classification varchar(255),
+    multirel varchar(255),
+    save_date timestamp,
+    and_or varchar(255) DEFAULT 'AND',
+    fax_nr smallint(3),
+    signature smallint(3),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE templates_instellingen (
+    `id` int(11) NOT NULL auto_increment,
+    page_left numeric(16,2) NOT NULL DEFAULT 0,
+    page_top numeric(16,2) NOT NULL DEFAULT 0,
+    page_right numeric(16,2) NOT NULL DEFAULT 0,
+    address_left numeric(16,2) NOT NULL DEFAULT 0,
+    address_width numeric(16,2) NOT NULL DEFAULT 0,
+    address_top numeric(16,2) NOT NULL DEFAULT 0,
+    address_position smallint(3) NOT NULL DEFAULT 0,
+    description varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE todo (
+    `id` int(11) NOT NULL auto_increment,
+    timestamp int(11) NOT NULL DEFAULT 0,
+    user_id int(11) NOT NULL DEFAULT 0,
+    is_done smallint(3) DEFAULT 0,
+    subject varchar(255),
+    body mediumtext,
+    address_id int(11),
+    timestamp_end int(11),
+    project_id int(11),
+    is_alert smallint(3) DEFAULT 0,
+    is_customercontact int(11),
+    sync_guid int(11),
+    sync_hash varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE todo_sync (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11),
+    sync_guid int(11),
+    `action` varchar(255),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE uren_activ (
+    `id` int(11) NOT NULL auto_increment,
+    activity varchar(255),
+    tarif numeric(16,2),
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;
+
+CREATE TABLE urenreg (
+    `id` int(11) NOT NULL auto_increment,
+    user_id int(11) NOT NULL DEFAULT 0,
+    project_id int(11) NOT NULL DEFAULT 0,
+    timestamp_start int(11),
+    timestamp_end int(11),
+    activity_id varchar(255),
+    description mediumtext,
+    is_billable smallint(3) DEFAULT 0,
+    `type` smallint(3) DEFAULT 0,
+		PRIMARY KEY (`id`)
+) ENGINE=MyISAM CHARSET=latin1;

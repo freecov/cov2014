@@ -1,0 +1,4 @@
+img.imagebutton:hover {
+	moz-opacity: .50;
+	opacity: 0.5;
+}

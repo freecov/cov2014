@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+	<item>
+		<context>office1</context>
+		<uri>www.test.com</uri>
+		<login>myuser</login>
+		<passwd>mypasswd</passwd>
+	</item>
+</records>

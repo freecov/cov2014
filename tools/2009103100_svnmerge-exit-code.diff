@@ -1,0 +1,98 @@
+--- svnmerge.py	Thu Aug 13 17:12:55 2009
++++ svnmerge	Sat Oct 31 22:49:57 2009
+@@ -1415,6 +1415,8 @@
+         f.close()
+         report('wrote commit message to "%s"' % opts["commit-file"])
+ 
++    return 0
++
+ def action_avail(branch_dir, branch_props):
+     """Show commits available for merges."""
+     source_revs, phantom_revs, reflected_revs, initialized_revs = \
+@@ -1443,10 +1445,15 @@
+     if opts["revision"]:
+         revs = revs & RevisionSet(opts["revision"])
+ 
++    if not revs:
++        return 2
++
+     display_revisions(revs, opts["avail-display"],
+                       report_msg,
+                       opts["source-url"])
+ 
++    return 0
++
+ def action_integrated(branch_dir, branch_props):
+     """Show change sets already merged.  This set of revisions is
+     calculated from taking svnmerge-integrated property from the
+@@ -1471,6 +1478,8 @@
+     display_revisions(revs, opts["integrated-display"],
+                       "revisions already integrated are:", opts["source-url"])
+ 
++    return 0
++
+ def action_merge(branch_dir, branch_props):
+     """Record merge meta data, and do the actual merge (if not
+     requested otherwise via --record-only)."""
+@@ -1565,6 +1574,8 @@
+         f.close()
+         report('wrote commit message to "%s"' % opts["commit-file"])
+ 
++    return 0
++
+ def action_block(branch_dir, branch_props):
+     """Block revisions."""
+     # Check branch directory is ready for being modified
+@@ -1598,6 +1609,8 @@
+         f.close()
+         report('wrote commit message to "%s"' % opts["commit-file"])
+ 
++    return 0
++
+ def action_unblock(branch_dir, branch_props):
+     """Unblock revisions."""
+     # Check branch directory is ready for being modified
+@@ -1628,6 +1641,8 @@
+         f.close()
+         report('wrote commit message to "%s"' % opts["commit-file"])
+ 
++    return 0
++
+ def action_rollback(branch_dir, branch_props):
+     """Rollback previously integrated revisions."""
+ 
+@@ -1706,6 +1721,8 @@
+     branch_props[opts["source-pathid"]] = str(merged_revs)
+     set_merge_props(branch_dir, branch_props)
+ 
++    return 0
++
+ def action_uninit(branch_dir, branch_props):
+     """Uninit SOURCE URL."""
+     # Check branch directory is ready for being modified
+@@ -1734,6 +1751,8 @@
+         f.close()
+         report('wrote commit message to "%s"' % opts["commit-file"])
+ 
++    return 0
++
+ ###############################################################################
+ # Command line parsing -- options and commands management
+ ###############################################################################
+@@ -2358,12 +2377,14 @@
+                                                           opts["source-pathid"])
+ 
+     # Perform the action
+-    cmd(branch_dir, branch_props)
++    return cmd(branch_dir, branch_props)
+ 
+ 
+ if __name__ == "__main__":
++    result = 1
+     try:
+-        main(sys.argv[1:])
++        result = main(sys.argv[1:])
++        sys.exit(result)
+     except LaunchError, (ret, cmd, out):
+         err_msg = "command execution failed (exit code: %d)\n" % ret
+         err_msg += cmd + "\n"

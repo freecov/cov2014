@@ -1,0 +1,22 @@
+/*
+.venster_data {
+	-moz-border-radius-bottomleft: 10px;
+}
+.venster_left_nomenu {
+	-moz-border-radius-topleft: 10px;
+}
+.venster_right {
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-topright: 10px;
+}
+*/
+div.infolayer {
+	-moz-opacity: .95;
+}
+IMG.imagebutton:hover {
+	/* MSIE suffers rendering speed when using opacity on png */
+	-moz-opacity: .50;
+}
+INPUT, TEXTAREA {
+	-moz-border-radius: 8px;
+}

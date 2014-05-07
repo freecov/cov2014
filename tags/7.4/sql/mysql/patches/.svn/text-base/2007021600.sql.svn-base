@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `project_ext_share` VARCHAR(255);

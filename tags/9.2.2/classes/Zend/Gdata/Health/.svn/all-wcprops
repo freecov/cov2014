@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health
+END
+ProfileFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health/ProfileFeed.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health/Query.php
+END
+ProfileListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health/ProfileListEntry.php
+END
+ProfileListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health/ProfileListFeed.php
+END
+ProfileEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/Zend/Gdata/Health/ProfileEntry.php
+END

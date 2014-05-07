@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<external-filters>
+ <filter>
+  <mimetype>application/msword</mimetype>
+  <extension>.doc</extension>
+  <command>catdoc</command>
+  <arguments> %s</arguments>
+ </filter>
+ <filter>
+  <mimetype>application/xml</mimetype>
+  <extension>.xml</extension>
+  <command>cat</command>
+  <arguments> %s</arguments>
+ </filter>
+ <filter>
+  <mimetype>application/vnd.ms-access</mimetype>
+  <extension>.mdb</extension>
+  <command>strings</command>
+  <arguments> %s</arguments>
+ </filter>
+ <filter>
+  <mimetype>application/vnd.ms-powerpoint</mimetype>
+  <extension>.ppt</extension>
+  <command>strings</command>
+  <arguments> %s</arguments>
+ </filter>
+ <filter>
+  <mimetype>application/zip</mimetype>
+  <extension>.zip</extension>
+  <command>unzip</command>
+  <arguments> -l -P '' %s</arguments>
+ </filter>
+ <filter>
+  <mimetype>application/x-rar</mimetype>
+  <extension>.rar</extension>
+  <command>unrar</command>
+  <arguments> l -p- %s</arguments>
+ </filter>
+</external-filters>
+

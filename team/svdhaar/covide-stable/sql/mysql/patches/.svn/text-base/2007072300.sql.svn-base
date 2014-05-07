@@ -1,0 +1,1 @@
+ ALTER TABLE `cms_gallery` ADD `last_update` INT( 11 ) NOT NULL ;

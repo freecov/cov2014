@@ -1,0 +1,50 @@
+
+/***** To do Needed*****/
+
+
+
+
+/***** To do Optionnal*****/
+
+- several instances ?
+
+
+/***** BUGS ****/
+- on first display (when file not in cache) or with xhtml doctype there is a display bug (the content of the textarea exceed of 4px), don't know why.
+
+
+
+/****** Lacks *****/
+- Quite slower when page have other content => don't know why
+- can't change font-size on IE due to the fact that for IE \t= a given width and not a given number of white spaces
+- Mozilla, and opera have problems with mouse wheel (can't do anything for that)
+- Mozila don't accept "width: 100%" for width of the source textarea (textarea will expend alone...)
+- The resize icon have bottom-margin => don't know why (doctype xhtml)
+
+
+/*** HIGHLIHTS bugs***/
+- when all the content is replaced with a new one (ctrl+A and Ctrl+v ) there is a desyncronisation
+
+
+/*** HIGHLIHTS Lacks***/
+- not perfect
+- allow to search keywords witch caracters like '$'
+- only one language at the same time (no hmlt and php on the same time)
+
+
+/***** compatibility ****/
+Firefox 1.5
+IE 6
+Netscape 8 with rendering mode IE
+Mozilla 1.7
+
+
+OPERA:
+- textarea refresh very bad
+- resize pb: no resize depending on content... must use setAttribute() to modify style (elem.style.margin=... does'nt working for opera)
+
+
+
+NETSCAPE:
+- can't manage lineHeight for textarea in firefox mode
+- setting highlight mode on crash the navigator with no warning in firefox mode

@@ -1,0 +1,248 @@
+<?php
+	/**
+	 * Covide Groupware-CRM Filesys module
+	 *
+	 * Covide Groupware-CRM is the solutions for all groups off people
+	 * that want the most efficient way to work to together.
+	 * @version %%VERSION%%
+	 * @license http://www.gnu.org/licenses/gpl.html GPL
+	 * @link http://www.covide.net Project home.
+	 * @author Michiel van Baak <mvanbaak@users.sourceforge.net>
+	 * @author Stephan vd Haar <svdhaar@users.sourceforge.net>
+	 * @copyright Copyright 2000-2007 Covide BV
+	 * @package Covide
+	 */
+	if (!class_exists("Filesys_output")) {
+		exit("no class definition found");
+	}
+
+	$fsdata = new Filesys_data();
+
+	$output = new Layout_output();
+	$output->layout_page("filesys", 1);
+
+	$folder = $_REQUEST["folder"];
+
+
+	$q = sprintf("select count(*) from filesys_permissions where folder_id = %d", $folder);
+	$res = sql_query($q);
+	if (sql_result($res,0)==1) {
+		$useparent = 0;
+	} else {
+		$useparent = 1;
+	}
+
+	$users = explode(",", $_REQUEST["users"]);
+	$read  = $_REQUEST["read"];
+	$write = $_REQUEST["write"];
+
+	#print_r($_REQUEST);
+
+	/* if there is a subaction */
+	switch ($_REQUEST["subaction"]){
+
+		case "update_useparent":
+			$useparent = $_REQUEST["useparent"];
+
+			$q = "delete from filesys_permissions where folder_id = $folder";
+			sql_query($q);
+
+			if ($useparent==0){
+				$r = $fsdata->retrieveFullPermissions($folder);
+				$q = "insert into filesys_permissions (folder_id, user_id, permissions) values ($folder, '".$r[0]."', '".$r[1]."')";
+				sql_query($q);
+			}
+			break;
+
+		case "add_read":
+			$r = $fsdata->retrieveFullPermissions($folder);
+			foreach ($users as $uid) {
+				$r = $fsdata->modifyPermissionArray($r, $uid, "R");
+			}
+			$fsdata->updatePermissionsDb($folder, $r);
+			$prefetched=1;
+			break;
+		case "del_complete":
+			$r = $fsdata->retrieveFullPermissions($folder);
+			foreach ($users as $uid) {
+				$r = $fsdata->modifyPermissionArray($r, $uid, "D");
+			}
+			$fsdata->updatePermissionsDb($folder, $r);
+			$prefetched=1;
+			break;
+		case "add_write":
+			$r = $fsdata->retrieveFullPermissions($folder);
+			foreach ($users as $uid) {
+				$r = $fsdata->modifyPermissionArray($r, $uid, "W");
+			}
+			$fsdata->updatePermissionsDb($folder, $r);
+			$prefetched=1;
+			break;
+
+	}
+
+	if (!$prefetched){
+		$r = $fsdata->retrieveFullPermissions($folder);
+	}
+
+	$r_user        = explode("|",$r[0]);
+	$r_permissions = explode("|",$r[1]);
+
+	/* create arrays */
+	$read  = array();
+	$write = array();
+
+	$userdata   = new User_data();
+	$enabled_users  = $userdata->getUserList(1);
+	$disabled_users = $userdata->getUserList(0);
+	$groups         = $userdata->getGroupList(1);
+
+	foreach ($r_user as $k=>$v){
+		if ($r_permissions[$k]=="R"){
+			if ($enabled_users[$v]) {
+				$read[$v] = "enabled";
+			} elseif ($disabled_users[$v]) {
+				$read[$v] = "disabled";
+			} elseif ($groups[$v]) {
+				$read[$v] = "group";
+			} else {
+				$read[$v] = "special";
+			}
+		}elseif ($r_permissions[$k]=="W"){
+			if ($enabled_users[$v]) {
+				$write[$v] = "enabled";
+			} elseif ($disabled_users[$v]) {
+				$write[$v] = "disabled";
+			} elseif ($groups[$v]) {
+				$write[$v] = "group";
+			} else {
+				$write[$v] = "special";
+			}
+		}
+	}
+	/* end subaction */
+
+
+	$venster = new Layout_venster(array(
+		"title" => gettext("file management"),
+		"subtitle" => gettext("grant permissions")
+	));
+	$venster->addVensterData();
+
+		$table = new Layout_table( array(
+			"width"   => "100%",
+			"cellspacing" => 1
+
+		));
+		$table->addTableRow();
+			$table->addTableData( array("colspan"=>2), "data");
+				if ($useparent) {
+					$table->insertAction("folder_up", "", "");
+					$table->addSpace();
+					$table->addCode( gettext("this folder uses the permissions of it's parent") );
+					$table->addTag("br");
+					$table->addTag("br");
+					$table->insertAction("folder_lock", gettext("apply folder specific permissions"), "?mod=filesys&action=set_permissions&folder=$folder&subaction=update_useparent&useparent=0");
+					$table->addSpace();
+					$table->addCode( gettext("apply page specific permissions") );
+				} else {
+					$table->insertAction("folder_denied", gettext("disable folder specific permissions"), "?mod=filesys&action=set_permissions&folder=$folder&subaction=update_useparent&useparent=1");
+					$table->addSpace();
+					$table->addCode( gettext("disable page specific permissions") );
+					$table->addSpace();
+				}
+				$table->addTableData("","datatop");
+					$table->addTag("div", array(
+						"align" => "right"
+					));
+					$table->endTag("div");
+
+				$table->endTableData();
+
+			$table->endTableData();
+		$table->endTableRow();
+
+
+		$table->addTableRow();
+			$table->insertTableData(gettext("pick users"), "", "header");
+			$table->insertTableData(gettext("read permissions"), "", "header");
+			$table->insertTableData(gettext("write permissions"), "", "header");
+		$table->endTableRow();
+		$table->addTableRow();
+			$table->addTableData("", "datatop");
+
+			$table->addHiddenField("users", "");
+			$table->addTag("div", array("style"=>"text-align: left"));
+
+				if (!$useparent) {
+					$useroutput = new User_output();
+
+					$table->addCode( $useroutput->user_selection("users", "", 1, 0, 1, 0, 1) );
+					$table->insertAction("delete",  gettext("remove all permissions for this user"), "javascript: permissions_del_complete()");
+					$table->insertAction("permissions_add_read",  gettext("grant read permissions for this user"), "javascript: permissions_add_read()");
+					$table->insertAction("permissions_add_write", gettext("grant write permissions for this user"), "javascript: permissions_add_write()");
+				} else {
+					$table->addCode( gettext("Enable page specific permissions before this option is active") );
+				}
+			$table->endTag("div");
+
+
+			$table->endTableData();
+			$table->addTableData("", "datatop");
+			foreach ($read as $k=>$v) {
+				$table->addTag("li", array("class"=>$v));
+				if (!$useparent) {
+					$table->addTag("a", array(
+						"href" => "?mod=filesys&action=set_permissions&folder=$folder&subaction=del_complete&users=$k"
+					));
+				}
+				$table->addCode( $userdata->getUsernameById($k) );
+				if (!$useparent) {
+					$table->endTag("a");
+				}
+				$table->endTag("li");
+			}
+
+			$table->endTableData();
+			$table->addTableData("", "datatop");
+			foreach ($write as $k=>$v) {
+				$table->addTag("li", array("class"=>$v));
+				if (!$useparent) {
+					$table->addTag("a", array(
+						"href" => "?mod=filesys&action=set_permissions&folder=$folder&subaction=del_complete&users=$k"
+					));
+				}
+				$table->addCode( $userdata->getUsernameById($k) );
+				if (!$useparent) {
+					$table->endTag("a");
+				}
+				$table->endTag("li");
+			}
+
+			$table->endTableData();
+
+		$table->endTableRow();
+		$table->endTable();
+
+		$venster->addCode( $table->generate_output() );
+	$venster->endVensterData();
+
+
+	$output->addTag("form", array(
+		"id"     => "velden",
+		"action" => "index.php",
+		"method" => "post"
+	));
+
+
+	$output->addHiddenField("mod", "filesys");
+	$output->addHiddenField("action", "set_permissions");
+	$output->addHiddenField("subaction", "");
+	$output->addHiddenField("folder", $_REQUEST["folder"]);
+
+	$output->addCode( $venster->generate_output() );
+	$output->endTag("form");
+	$output->load_javascript(self::include_dir."file_operations.js");
+
+	$output->exit_buffer();
+?>

@@ -1,0 +1,13 @@
+K 14
+svn:executable
+V 1
+*
+K 13
+svn:mergeinfo
+V 238
+/branches/covide-stable/themes/default/modules/kontact_todo.png:4802,4808,4810,4813,4815-4816,4819,4822,4824,4826,4828,4831,4833,4852,4855,4860,4870-4876,4879,4881,4883,4886,4888-4890,4897,4899,4901-4903,4905-4906,4909,4925,4927,4933,4936
+K 13
+svn:mime-type
+V 24
+application/octet-stream
+END

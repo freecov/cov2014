@@ -1,0 +1,3 @@
+img.imagebutton:hover {
+	opacity: .50;
+}

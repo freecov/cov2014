@@ -1,0 +1,29 @@
+
+
+.venster_data {
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-topleft: 10px;
+}
+.venster_left_nomenu {
+	-moz-border-radius-topleft: 10px;
+}
+/*
+.venster_right {
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-topright: 10px;
+}
+*/
+div.infolayer {
+	-moz-opacity: .95;
+	background-color:#dee9fc;
+}
+/* MSIE suffers rendering speed when using opacity on png */
+img.imagebutton:hover {
+	-moz-opacity: .50;
+}
+
+/* something not so likeable at this point
+input, textarea {
+	-moz-border-radius: 4px;
+}
+*/

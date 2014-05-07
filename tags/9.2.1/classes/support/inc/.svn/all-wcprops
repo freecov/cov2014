@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc
+END
+showList.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showList.php
+END
+dataGetSupportItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/dataGetSupportItemById.php
+END
+issue_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/issue_actions.js
+END
+showListExternal.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showListExternal.php
+END
+showSupportForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showSupportForm.php
+END
+external_support_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/external_support_actions.js
+END
+save2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/save2db.php
+END
+showEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showEdit.php
+END
+showSupportForm.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showSupportForm.js
+END
+showExport.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showExport.js
+END
+dataGetExternalIssues.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/dataGetExternalIssues.php
+END
+dataGetSupportItems.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/dataGetSupportItems.php
+END
+showIssue.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6686/tags/9.2.1/classes/support/inc/showIssue.php
+END

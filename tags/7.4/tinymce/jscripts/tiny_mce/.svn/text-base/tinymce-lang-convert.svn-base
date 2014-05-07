@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -name $1.js -exec ./cnv2utf8 {} ';'

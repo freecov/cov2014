@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/p/covide/code/!svn/ver/7130/tools
+END
+svnautomerge
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/covide/code/!svn/ver/7100/tools/svnautomerge
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/p/covide/code/!svn/ver/4583/tools/TODO
+END
+authors
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/p/covide/code/!svn/ver/6880/tools/authors
+END
+genapidocs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/p/covide/code/!svn/ver/6677/tools/genapidocs.sh
+END
+mergetool.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/covide/code/!svn/ver/4584/tools/mergetool.sh
+END
+svnmerge
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/p/covide/code/!svn/ver/6951/tools/svnmerge
+END
+qp_xml.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/p/covide/code/!svn/ver/4594/tools/qp_xml.py
+END
+rb-htpasswdauth.diff
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/covide/code/!svn/ver/7071/tools/rb-htpasswdauth.diff
+END
+mkrelease
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/p/covide/code/!svn/ver/7101/tools/mkrelease
+END
+svn2log
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/p/covide/code/!svn/ver/4830/tools/svn2log
+END
+2009103100_svnmerge-exit-code.diff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7083/tools/2009103100_svnmerge-exit-code.diff
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/p/covide/code/!svn/ver/4585/tools/Makefile
+END
+mergetool
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/p/covide/code/!svn/ver/4503/tools/mergetool
+END

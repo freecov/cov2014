@@ -1,0 +1,1 @@
+ALTER TABLE `address` MODIFY `debtor_nr` VARCHAR(50);

@@ -1,0 +1,32 @@
+<?php
+/**
+ * Configuration file for the database connection.
+ * In this file you can specify each office you are hosting.
+ * This is an example file that should be edited to your needs and then be copied to offices.php
+ *
+ * The $dsn uses the PEAR DB class syntax.
+ * For info check here: http://pear.php.net/manual/en/package.database.db.intro-dsn.php
+ * In short: databasetype://username:password@protocol(host:port)/database
+ */
+/* Connect to a database based on the url */
+switch($_SERVER["SERVER_NAME"]) {
+	case "covide.customer.a":
+		$dsn = "mysql://mysql:mysql@tcp(localhost:3306)/covide";
+		break;
+	case "covide.customer.b":
+		$dsn = "pgsql://postgressql:postgresql@tcp(localhost:5432)/covide";
+		break;
+	default :
+		die("No covide office configuration found for this url. Check conf/offices.php file content.");
+		break;
+}
+/* run a contrib folder */
+// $contrib["USE_CONTRIB_SCRIPT"] = "covide";
+
+/* set certificate file */
+// $certificate = "conf/server.crt";
+
+/* offload beagle to an external index machine */
+// $beagle["prefix"] = "ssh -C 192.168.1.2 -p 1026 -l www-data";
+// $beagle["home"]   = "/var/indexinfo";
+?>

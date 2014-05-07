@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies
+END
+checktimeout.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/checktimeout.class.php
+END
+checknickchange.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/checknickchange.class.php
+END
+lock.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/lock.class.php
+END
+censor.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/censor.class.php
+END
+noflood.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/noflood.class.php
+END
+auth.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/auth.class.php
+END
+log.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/src/proxies/log.class.php
+END

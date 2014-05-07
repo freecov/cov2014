@@ -1,0 +1,1 @@
+ALTER TABLE `cms_users` ADD `address_id` INT( 11 ) NOT NULL ;

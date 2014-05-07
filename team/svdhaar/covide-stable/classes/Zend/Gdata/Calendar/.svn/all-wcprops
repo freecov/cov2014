@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar
+END
+ListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar/ListEntry.php
+END
+ListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar/ListFeed.php
+END
+EventEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar/EventEntry.php
+END
+EventFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar/EventFeed.php
+END
+EventQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/Zend/Gdata/Calendar/EventQuery.php
+END

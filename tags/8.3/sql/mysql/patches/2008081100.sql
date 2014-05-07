@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `mail_default_template` INT NULL ;

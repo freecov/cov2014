@@ -1,0 +1,1 @@
+ALTER TABLE  `mail_messages` ADD  `star` BINARY DEFAULT  '0' NOT NULL ;

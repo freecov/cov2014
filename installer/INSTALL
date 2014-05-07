@@ -1,0 +1,51 @@
+#Covide      : Cooperative Virtual Desktop copyright (c) 2000-2007 Covide BV
+#License     : Licensed under GPL
+#Web         : http://www.covide.net, http://covide.sourceforge.net
+#Info        : info@covide.nl
+#Author      : SvdHaar - svdhaar@users.sf.net
+#Last update : 17 jan 2007 10:00 GMT+1
+
+
+QUICK INSTALL ON A *CLEAN* DEBIAN ETCH BASE INSTALL
+
+Warning: do not run the quick install script on a system that is already configured!
+
+- install base system, business card cd
+- task setup: disable all except base system
+- login as root or su to root
+- extract the covide_package.tgz package
+- cd to covide_package
+- run the install_complete.sh script
+
+
+MANUAL INSTALLATION STEPS
+
+<update the system>
+#apt-get update
+#apt-get dist-upgrade
+
+<install ssh>
+#apt-get install ssh sudo
+
+<create covide files directory>
+#mkdir /var/covide_files
+
+<copy covide_config.tgz to /var/covide_files
+#cp <covide config file> /var/covide_files && cd /var/covide_files
+# tar zxvf covide_config.tgz && cd covide_config
+
+<install covide base packages>
+#sh install_covide_base.sh
+
+<now install beagle>
+#sh install_beagle_base.sh
+
+<create mysql user>
+#mysql -p
+> grant all privileges on *.* to 'covide'@'localhost' identified by 'mypass' with grant option
+> quit
+
+<run covide install script>
+#sh covide_install.sh
+
+<check your new covide install in the browser>

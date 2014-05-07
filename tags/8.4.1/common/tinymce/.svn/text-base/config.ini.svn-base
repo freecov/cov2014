@@ -1,0 +1,7 @@
+[global]
+version=3231
+tinymce=http://prdownloads.sourceforge.net/tinymce/tinymce_3_2_3_1.zip?download
+compressor=http://prdownloads.sourceforge.net/tinymce/tinymce_compressor_php_2_0_2.zip?download
+spellchecker=http://prdownloads.sourceforge.net/tinymce/tinymce_spellchecker_php_2_0_2.zip?download
+langpack=http://services.moxiecode.com/i18n/download.aspx?format=zip&product=tinymce
+langcodes=code10=da|code11=nl|code12=en|code32=nn|code44=es|code17=de

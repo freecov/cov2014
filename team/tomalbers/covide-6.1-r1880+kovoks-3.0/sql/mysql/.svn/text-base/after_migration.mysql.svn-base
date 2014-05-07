@@ -1,0 +1,126 @@
+RENAME TABLE adres TO address;
+ALTER TABLE address ADD address2 varchar(255);
+
+RENAME TABLE adres_multivers TO address_multivers;
+ALTER TABLE address_multivers ADD address2 varchar(255);
+
+RENAME TABLE adres_overig TO address_other;
+
+RENAME TABLE adres_personen TO address_private;
+
+RENAME TABLE adres_sync TO address_sync;
+
+RENAME TABLE adres_sync_guid TO address_sync_guid;
+
+RENAME TABLE adres_sync_records TO address_sync_records;
+
+RENAME TABLE adresinfo TO address_info;
+
+RENAME TABLE agenda TO calendar;
+ALTER TABLE calendar ADD `subject` varchar(255);
+
+RENAME TABLE agenda_machtiging TO calendar_permissions;
+
+RENAME TABLE akties TO finance_akties;
+
+RENAME TABLE arbo TO arbo_arbo;
+
+RENAME TABLE bcards TO address_businesscards;
+
+RENAME TABLE bedrijfsclassifi TO address_classifications;
+
+RENAME TABLE begin_standen_finance TO finance_begin_standen_finance;
+
+RENAME TABLE boekingen TO finance_boekingen;
+
+RENAME TABLE boekingen_20012003 TO finance_boekingen_20012003;
+
+RENAME TABLE cms_bestanden TO cms_files;
+ALTER TABLE cms_files DROP dat;
+
+RENAME TABLE filesys_bestanden TO filesys_files;
+ALTER TABLE filesys_files DROP data;
+
+RENAME TABLE filesys_mappen TO filesys_folders;
+
+RENAME TABLE filesys_rechten TO filesys_permissions;
+
+RENAME TABLE functies TO functions;
+
+RENAME TABLE gebruikers TO users;
+
+RENAME TABLE gebruikers_log TO userchangelog;
+
+RENAME TABLE groep TO user_groups;
+
+RENAME TABLE grootboeknummers TO finance_grootboeknummers;
+
+RENAME TABLE hoofd_project TO projects_master;
+
+RENAME TABLE hypotheek TO morgage;
+
+RENAME TABLE inkopen TO finance_inkopen;
+
+RENAME TABLE jaar_afsluitingen TO finance_jaar_afsluitingen;
+
+RENAME TABLE klachten TO issues;
+
+RENAME TABLE klanten TO finance_klanten;
+
+ALTER TABLE mail_attachments DROP dat;
+
+RENAME TABLE mail_berichten TO mail_messages;
+
+RENAME TABLE mail_mappen TO mail_folders;
+
+RENAME TABLE mail_templates_bestanden TO mail_templates_files;
+ALTER TABLE mail_templates_files DROP dat;
+
+RENAME TABLE medewerker TO employees_info;
+
+RENAME TABLE notitie TO notes;
+
+RENAME TABLE offertes TO finance_offertes;
+
+RENAME TABLE omzet_akties TO finance_omzet_akties;
+
+RENAME TABLE omzet_totaal TO finance_omzet_totaal;
+
+RENAME TABLE overige_posten TO finance_overige_posten;
+
+RENAME TABLE poll_antwoord TO poll_answers;
+
+RENAME TABLE poll_vraag TO polls;
+
+DROP TABLE prefs;
+
+RENAME TABLE prikbord TO announcements;
+
+RENAME TABLE producten TO finance_producten;
+
+RENAME TABLE producten_in_offertes TO finance_producten_in_offertes;
+
+RENAME TABLE relatie_type TO finance_relatie_type;
+
+RENAME TABLE snack_bestel TO snack_order;
+
+RENAME TABLE snack_lijst TO snack_items;
+
+RENAME TABLE soortbedrijf TO finance_soortbedrijf;
+
+DROP TABLE talen;
+
+DROP TABLE talen_backup;
+
+RENAME TABLE teksten TO finance_teksten;
+
+RENAME TABLE templates_instellingen TO templates_settings;
+
+RENAME TABLE uren_activ TO hours_activities;
+
+RENAME TABLE urenreg TO hours_registration;
+
+ALTER TABLE mail_messages ADD is_text int;
+UPDATE mail_messages SET is_text = is_html;
+ALTER TABLE mail_messages DROP is_html;
+

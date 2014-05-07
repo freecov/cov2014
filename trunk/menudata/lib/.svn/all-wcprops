@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/covide/code/!svn/ver/2198/trunk/menudata/lib
+END
+layersmenu.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/2198/trunk/menudata/lib/layersmenu.inc.php
+END
+treemenu.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/treemenu.inc.php
+END
+PHPLIB.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/PHPLIB.php
+END
+plainmenu.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/plainmenu.inc.php
+END
+layersmenu-common.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/1711/trunk/menudata/lib/layersmenu-common.inc.php
+END
+layersmenu-browser_detection.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/layersmenu-browser_detection.php
+END
+phptreemenu.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/phptreemenu.inc.php
+END
+layersmenu-process.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/665/trunk/menudata/lib/layersmenu-process.inc.php
+END

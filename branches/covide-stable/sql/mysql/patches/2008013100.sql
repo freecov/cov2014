@@ -1,0 +1,1 @@
+ALTER TABLE `campaign_records` ADD `call_again` INT NOT NULL ;

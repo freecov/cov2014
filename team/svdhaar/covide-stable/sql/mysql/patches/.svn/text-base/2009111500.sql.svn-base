@@ -1,0 +1,1 @@
+ALTER TABLE hours_registration MODIFY COLUMN `hours` DECIMAL(16,2) DEFAULT NULL;

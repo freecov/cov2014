@@ -1,0 +1,1 @@
+ALTER TABLE `templates` ADD `finance` INT( 11 ) NOT NULL ;

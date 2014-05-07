@@ -1,0 +1,1 @@
+ALTER TABLE `license` MODIFY `dayquote_nr` TEXT;

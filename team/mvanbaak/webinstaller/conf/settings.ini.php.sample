@@ -1,0 +1,21 @@
+[general]
+devmode    = 1
+fspath     = /var/covide_file
+configfile = /var/www/covide/conf/offices.php
+
+[database]
+hostname = localhost
+username = root_username
+password = root_password
+prefix   = wewanttostartthedatabasenamewiththis_
+
+[voip]
+hostname = your.asterisk.box
+username = manager_username
+password = manager_password
+
+[configurationfile]
+database_host = "$_mysql_host"
+database_user = "$_mysql_user"
+database_pass = "$_mysql_pass"
+defaultdomain = default.domain.to.append.to.officename

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies
+END
+noflood.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/noflood.class.php
+END
+auth.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/auth.class.php
+END
+log.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/log.class.php
+END
+checktimeout.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/checktimeout.class.php
+END
+checknickchange.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/checknickchange.class.php
+END
+lock.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/lock.class.php
+END
+censor.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/chat/inc/src/proxies/censor.class.php
+END

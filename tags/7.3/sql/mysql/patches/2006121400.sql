@@ -1,0 +1,1 @@
+ALTER TABLE cms_data ADD address_level TINYINT(3);

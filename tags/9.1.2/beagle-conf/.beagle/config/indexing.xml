@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IndexingConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http:// www.w3.org/2001/XMLSchema-instance">
+	<Roots>
+		<Root>/var/covide_files/</Root>
+	</Roots>
+	<IndexHomeDir>false</IndexHomeDir>
+	<Excludes />
+</IndexingConfig>

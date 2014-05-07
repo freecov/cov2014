@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube
+END
+PlaylistListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/PlaylistListFeed.php
+END
+UserProfileEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/UserProfileEntry.php
+END
+CommentEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/CommentEntry.php
+END
+CommentFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/CommentFeed.php
+END
+VideoEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/VideoEntry.php
+END
+VideoFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/VideoFeed.php
+END
+VideoQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/VideoQuery.php
+END
+MediaEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/MediaEntry.php
+END
+InboxEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/InboxEntry.php
+END
+InboxFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/InboxFeed.php
+END
+SubscriptionEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/SubscriptionEntry.php
+END
+SubscriptionFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/SubscriptionFeed.php
+END
+PlaylistVideoEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/PlaylistVideoEntry.php
+END
+PlaylistVideoFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/PlaylistVideoFeed.php
+END
+ContactEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/ContactEntry.php
+END
+ActivityEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/ActivityEntry.php
+END
+PlaylistListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/PlaylistListEntry.php
+END
+ContactFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/ContactFeed.php
+END
+ActivityFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/Zend/Gdata/YouTube/ActivityFeed.php
+END

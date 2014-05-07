@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common
+END
+handle_magicquotesgpc.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/handle_magicquotesgpc.php
+END
+functions_onderdelen.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/functions_onderdelen.php
+END
+initInfoWindow.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/initInfoWindow.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/autoload.php
+END
+headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/headers.php
+END
+functions_postgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/functions_postgres.php
+END
+functions_pear.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/functions_pear.php
+END
+check_requirements.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/check_requirements.php
+END
+handle_php_bugs.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/4593/team/sjktje/vamos/stable/common/handle_php_bugs.php
+END

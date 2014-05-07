@@ -1,0 +1,73 @@
+em.tt_tooltip {
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+div#alternative_footer {
+	background-color: white;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	padding-top: 1px;
+	padding-right: 1px;
+	display: block;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	z-index: 5;
+	vertical-align: middle;
+}
+div#alternative_footer span {
+	font-family: sans-serif;
+	font-size: 10px;
+}
+.valign_top {
+	vertical-align: top;
+}
+img.banner {
+	padding: 1px;
+	border: 0;
+}
+.nowrap {
+	/* white-space: no-wrap; */
+}
+div#print_container {
+	visibility: hidden;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+div.tt_abbr {
+	display: none;
+}
+#cms_navigation img {
+	border: 0;
+}
+fieldset {
+	border: 0;
+}
+.cms_sitemap A {
+	display: block;
+}
+.gallery_image {
+	border: 0;
+}
+A:hover .gallery_image {
+	opacity: 0.8;
+}
+.gallery_row {
+	vertical-align: top; 
+	text-align: center; 
+	border-bottom: 1px solid #666;
+}
+.form_generator td {
+	text-align: left;
+	vertical-align: top;
+}
+.form_generator input, .form_generator textarea {
+	text-align: left;
+}
+#cms_textfooter {
+	margin-bottom: 8px;
+}
+#extra_search_options {
+	margin-top: 8px;
+}

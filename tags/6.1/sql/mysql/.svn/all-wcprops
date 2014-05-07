@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql
+END
+after_migration.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql/after_migration.mysql
+END
+covide_6_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql/covide_6_install.sql
+END
+indexes.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql/indexes.mysql
+END
+patch1.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql/patch1.mysql
+END
+covide_schema_6X.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/4606/tags/6.1/sql/mysql/covide_schema_6X.mysql
+END

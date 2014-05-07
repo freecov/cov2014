@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql
+END
+kovoks-add-events2calendar.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-add-events2calendar.sql
+END
+after_migration.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/after_migration.mysql
+END
+kovoks-products-no-sell.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-products-no-sell.sql
+END
+covide_6_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/covide_6_install.sql
+END
+patch1.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/patch1.mysql
+END
+kovoks-relations-scemes.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-relations-scemes.sql
+END
+kovoks-finance-scemes.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-finance-scemes.sql
+END
+kovoks-add-speeddial.sql
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-add-speeddial.sql
+END
+kovoks-letterhead.sql
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-letterhead.sql
+END
+kovoks-offers.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-offers.sql
+END
+kovoks-add-trasporter-and-contact.sql
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-add-trasporter-and-contact.sql
+END
+kovoks-prices
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-prices
+END
+indexes.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/indexes.mysql
+END
+covide_schema_6X.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/covide_schema_6X.mysql
+END
+kovoks-products.sql
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/sql/mysql/kovoks-products.sql
+END

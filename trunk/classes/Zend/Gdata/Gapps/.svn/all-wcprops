@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps
+END
+Error.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/Error.php
+END
+UserEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/UserEntry.php
+END
+UserFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/UserFeed.php
+END
+UserQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/UserQuery.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/Query.php
+END
+EmailListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListEntry.php
+END
+NicknameEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/NicknameEntry.php
+END
+EmailListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListFeed.php
+END
+EmailListRecipientEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListRecipientEntry.php
+END
+NicknameFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/NicknameFeed.php
+END
+EmailListQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListQuery.php
+END
+EmailListRecipientFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListRecipientFeed.php
+END
+NicknameQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/NicknameQuery.php
+END
+EmailListRecipientQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/EmailListRecipientQuery.php
+END
+ServiceException.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/6450/trunk/classes/Zend/Gdata/Gapps/ServiceException.php
+END

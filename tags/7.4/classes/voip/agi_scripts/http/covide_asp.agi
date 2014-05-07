@@ -1,0 +1,192 @@
+#!/usr/bin/php
+<?php
+ob_implicit_flush(1);
+set_time_limit(5);
+$in = fopen("php://stdin","r");
+$logfile = "/var/log/asterisk/my_agi.log";
+if (is_writable($logfile))
+	$stdlog = fopen($logfile, "w");
+else
+	$stdlog = fopen(sprintf("/tmp/%s", basename($logfile)), "w");
+
+// toggle debugging output (more verbose)
+$debug = false;
+
+// Do function definitions before we start the main loop
+function parseXML($XML)
+{
+   $xml_parser = xml_parser_create();
+   xml_parse_into_struct($xml_parser, $XML, $vals);
+   xml_parser_free($xml_parser);
+   // wyznaczamy tablice z powtarzajacymi sie tagami na tym samym poziomie
+   $_tmp='';
+   foreach ($vals as $xml_elem)
+   {
+       $x_tag=$xml_elem['tag'];
+       $x_level=$xml_elem['level'];
+       $x_type=$xml_elem['type'];
+       if ($x_level!=1 && $x_type == 'close')
+       {
+           if (isset($multi_key[$x_tag][$x_level]))
+               $multi_key[$x_tag][$x_level]=1;
+           else
+               $multi_key[$x_tag][$x_level]=0;
+       }
+       if ($x_level!=1 && $x_type == 'complete')
+       {
+           if ($_tmp==$x_tag)
+               $multi_key[$x_tag][$x_level]=1;
+           $_tmp=$x_tag;
+       }
+   }
+   // jedziemy po tablicy
+   foreach ($vals as $xml_elem)
+   {
+       $x_tag=$xml_elem['tag'];
+       $x_level=$xml_elem['level'];
+       $x_type=$xml_elem['type'];
+       if ($x_type == 'open')
+           $level[$x_level] = $x_tag;
+       $start_level = 1;
+       $php_stmt = '$xml_array';
+       if ($x_type=='close' && $x_level!=1)
+           $multi_key[$x_tag][$x_level]++;
+       while($start_level < $x_level)
+       {
+             $php_stmt .= '[$level['.$start_level.']]';
+             if (isset($multi_key[$level[$start_level]][$start_level]) && $multi_key[$level[$start_level]][$start_level])
+                 $php_stmt .= '['.($multi_key[$level[$start_level]][$start_level]-1).']';
+             $start_level++;
+       }
+       $add='';
+       if (isset($multi_key[$x_tag][$x_level]) && $multi_key[$x_tag][$x_level] && ($x_type=='open' || $x_type=='complete'))
+       {
+           if (!isset($multi_key2[$x_tag][$x_level]))
+               $multi_key2[$x_tag][$x_level]=0;
+           else
+               $multi_key2[$x_tag][$x_level]++;
+             $add='['.$multi_key2[$x_tag][$x_level].']';
+       }
+       if (isset($xml_elem['value']) && trim($xml_elem['value'])!='' && !array_key_exists('attributes',$xml_elem))
+       {
+           if ($x_type == 'open')
+               $php_stmt_main=$php_stmt.'[$x_type]'.$add.'[\'content\'] = $xml_elem[\'value\'];';
+           else
+               $php_stmt_main=$php_stmt.'[$x_tag]'.$add.' = $xml_elem[\'value\'];';
+           eval($php_stmt_main);
+       }
+       if (array_key_exists('attributes',$xml_elem))
+       {
+           if (isset($xml_elem['value']))
+           {
+               $php_stmt_main=$php_stmt.'[$x_tag]'.$add.'[\'content\'] = $xml_elem[\'value\'];';
+               eval($php_stmt_main);
+           }
+           foreach ($xml_elem['attributes'] as $key=>$value)
+           {
+               $php_stmt_att=$php_stmt.'[$x_tag]'.$add.'[$key] = $value;';
+               eval($php_stmt_att);
+           }
+       }
+   }
+     return $xml_array;
+}    // END XMLtoArray
+
+function read() {
+	global $in, $debug, $stdlog;
+	$input = str_replace("\n", "", fgets($in, 4096));
+	if ($debug) fputs($stdlog, "read: $input\n");
+	return $input;
+}
+
+function errlog($line) {
+	global $err;
+	echo "VERBOSE \"$line\"\n";
+}
+
+function write($line) {
+	global $debug, $stdlog;
+	if ($debug) fputs($stdlog, "write: $line\n");
+	echo $line."\n";
+}
+
+// parse agi headers into array
+while ($env=read()) {
+	$s = split(": ",$env);
+	$agi[str_replace("agi_","",$s[0])] = trim($s[1]);
+	if (($env == "") || ($env == "\n")) {
+		break;
+	}
+}
+
+$ccfg = dirname(__FILE__)."/contexts.cfg";
+$xml = parseXML(file_get_contents($ccfg));
+$config = array();
+
+foreach ($xml["RECORDS"]["ITEM"] as $item) {
+	$config[$item["CONTEXT"]] = array(
+		"uri"    => $item["URI"],
+		"login"  => $item["LOGIN"],
+		"passwd" => $item["PASSWD"]
+	);
+}
+
+$current_config = $config[$agi["context"]];
+if (!is_array($current_config))
+	exit(1);
+
+unset($config);
+unset($xml);
+
+//remove all CFIM keys
+write("DATABASE DELTREE CFIM");
+$n = read();
+
+//fix callerid
+if (substr($agi["callerid"],0,4)=="0031") {
+	$agi["callerid"] = substr($agi["callerid"],4,strlen($agi["callerid"]));
+	$calleridnum = "0".$agi["callerid"];
+	write("EXEC SetCallerID \"".$calleridnum."\"");
+	write("EXEC SetCIDNum \"".$calleridnum."\"");
+}
+if (substr($agi["callerid"],0,2)=="31") {
+	$agi["callerid"] = substr($agi["callerid"],2,strlen($agi["callerid"]));
+	$calleridnum = "0".$agi["callerid"];
+	write("EXEC SetCallerID \"".$calleridnum."\"");
+	write("EXEC SetCIDNum \"".$calleridnum."\"");
+}
+
+/* make call to Covide office */
+if (!$current_config["uri"]) {
+	write("VERBOSE \"No URI found\"");
+	exit(2);
+}
+	
+$fp = sprintf("http://%s/?mod=voip&action=updatecallts&login=%s&password=%s&phonenr=%s&prefix=%s",
+	$current_config["uri"], $current_config["login"], $current_config["passwd"], $calleridnum, $argv[1]);
+
+$data = file_get_contents($fp);
+if (!$data)
+	exit(3);
+
+$data = parseXML($data);
+$companyname =& $data["ITEM"]["COMPANYNAME"];
+$dnd         =& $data["ITEM"]["DND"];
+
+if ($dnd) {
+	$dnd = explode(",", $dnd);
+	foreach ($dnd as $dnd_device) {
+		write("DATABASE PUT CFIM $dnd_device 1");
+		write("VERBOSE \"put $dnd_device in dnd mode\"");
+		$n = read();
+	}
+}
+
+
+write("EXEC SetCIDName \"".$companyname."\"");
+echo "VERBOSE \"call from ".$companyname."!\" \n";
+$n = read();
+fclose($in);
+fclose($stdlog);
+exit(0);
+?>

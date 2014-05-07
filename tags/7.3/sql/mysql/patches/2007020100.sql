@@ -1,0 +1,1 @@
+ALTER TABLE `projects_master` ADD `executor` INT(11);

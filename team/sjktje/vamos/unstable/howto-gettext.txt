@@ -1,0 +1,39 @@
+Updating language files -- sjk sjk@ankeborg.nu 06-12-11
+
+Covide/vamos's language support consists of heavy gettext usage :). You'll often 
+add new gettext statements in your code, so it's important that you update the language
+files when necessary. 
+
+We do this by using a few programs: find, xgettext, cat and msgfmt. It's not a 
+difficult process. To update the Swedish language file, do the following:
+
+cd /path/to/covide
+touch gettext.patch
+find . -type f -iname \*.php -exec xgettext -o gettext.patch -j -x \
+lang/sv_SE/LC_MESSAGES/messages.po {} \;
+ 
+Find searches for php files and runs xgettext which parses the files for gettext()
+statements. It will ignore entries already added to lang/sv_SE/LC_MESSAGES/messages.po.
+We now must do the same thing for the javascript files:
+
+find . -type f -iname \*.js -exec xgettext -o gettext.patch -j -x \
+lang/sv_SE/LC_MESSAGES/messages.po {} \;
+
+Now, if you master the Swedish language, go ahead and edit gettext.patch. When done,
+add it to the original messages.po:
+
+cat gettext.patch >> lang/sv_SE/LC_MESSAGES/messages.po 
+
+Now, as you may have noticed, there are two files in the LC_MESSAGES directory.
+messages.po and messages.mo. The one with the .po extension is the one you edit.
+The .mo one is a binary version of the .po file. To generate a bin file, use
+msgfmt:
+
+cd lang/sv_SE/LC_MESSAGES/
+msgfmt -o messages.mo messages.po
+
+Remember to do this for all language directories in lang! If you don't know 
+a language, at least add the generated output from xgettext to the language
+file in question and let someone else do the translating.
+
+(You might want to rm gettext.patch when done.)

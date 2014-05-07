@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins
+END
+function.html_select_time.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_select_time.php
+END
+shared.make_timestamp.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/shared.make_timestamp.php
+END
+modifier.debug_print_var.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.debug_print_var.php
+END
+modifier.replace.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.replace.php
+END
+modifiercompiler.indent.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.indent.php
+END
+function.mailto.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.mailto.php
+END
+function.popup_init.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.popup_init.php
+END
+function.math.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.math.php
+END
+modifier.date_format.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.date_format.php
+END
+modifier.truncate.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.truncate.php
+END
+function.cycle.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.cycle.php
+END
+modifiercompiler.upper.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.upper.php
+END
+function.html_select_date.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_select_date.php
+END
+shared.escape_special_chars.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/shared.escape_special_chars.php
+END
+block.textformat.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/block.textformat.php
+END
+modifiercompiler.count_sentences.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.count_sentences.php
+END
+function.popup.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.popup.php
+END
+modifiercompiler.count_paragraphs.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.count_paragraphs.php
+END
+function.html_radios.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_radios.php
+END
+modifiercompiler.strip.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.strip.php
+END
+function.html_image.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_image.php
+END
+modifier.escape.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.escape.php
+END
+modifiercompiler.count_words.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.count_words.php
+END
+modifiercompiler.cat.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.cat.php
+END
+modifier.regex_replace.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.regex_replace.php
+END
+function.counter.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.counter.php
+END
+modifiercompiler.string_format.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.string_format.php
+END
+modifiercompiler.strip_tags.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.strip_tags.php
+END
+modifiercompiler.default.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.default.php
+END
+function.fetch.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.fetch.php
+END
+modifiercompiler.count_characters.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.count_characters.php
+END
+block.php.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/block.php.php
+END
+variablefilter.htmlspecialchars.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/variablefilter.htmlspecialchars.php
+END
+modifiercompiler.lower.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.lower.php
+END
+modifiercompiler.noprint.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.noprint.php
+END
+modifier.capitalize.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.capitalize.php
+END
+function.html_checkboxes.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_checkboxes.php
+END
+modifier.spacify.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifier.spacify.php
+END
+modifiercompiler.wordwrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/modifiercompiler.wordwrap.php
+END
+outputfilter.trimwhitespace.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/outputfilter.trimwhitespace.php
+END
+function.html_table.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_table.php
+END
+function.html_options.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/7269/team/svdhaar/covide-stable/classes/smarty-3rc4/plugins/function.html_options.php
+END

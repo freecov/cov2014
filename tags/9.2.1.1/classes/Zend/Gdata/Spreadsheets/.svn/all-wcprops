@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets
+END
+ListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/ListEntry.php
+END
+WorksheetEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/WorksheetEntry.php
+END
+ListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/ListFeed.php
+END
+WorksheetFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/WorksheetFeed.php
+END
+CellEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/CellEntry.php
+END
+ListQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/ListQuery.php
+END
+CellFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/CellFeed.php
+END
+DocumentQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/DocumentQuery.php
+END
+CellQuery.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/CellQuery.php
+END
+SpreadsheetEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/SpreadsheetEntry.php
+END
+SpreadsheetFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Spreadsheets/SpreadsheetFeed.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/p/covide/code/!svn/ver/4607/tags/7.3/shellscripts
+END
+cron.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/covide/code/!svn/ver/4607/tags/7.3/shellscripts/cron.sh
+END
+mailfetch.zsh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/4607/tags/7.3/shellscripts/mailfetch.zsh
+END
+mailfetch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/4607/tags/7.3/shellscripts/mailfetch.sh
+END
+covide_install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/4607/tags/7.3/shellscripts/covide_install.sh
+END

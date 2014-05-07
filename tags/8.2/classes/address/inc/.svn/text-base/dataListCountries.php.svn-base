@@ -1,0 +1,297 @@
+<?php
+	/**
+	 * Covide Groupware-CRM Addressbook module.
+	 *
+	 * Covide Groupware-CRM is the solutions for all groups off people
+	 * that want the most efficient way to work to together.
+	 * @version %%VERSION%%
+	 * @license http://www.gnu.org/licenses/gpl.html GPL
+	 * @link http://www.covide.net Project home.
+	 * @author Michiel van Baak <mvanbaak@users.sourceforge.net>
+	 * @copyright Copyright 2000-2007 Covide BV
+	 * @package Covide
+	 */
+	if (!class_exists("Address_data")) {
+		die("no class definition found");
+	}
+
+	$countryArray = array(
+		"XX" => "",
+		"AF" => gettext("Afghanistan"),
+		"AL" => gettext("Albania"),
+		"DZ" => gettext("Algeria"),
+		"AS" => gettext("American Samoa"),
+		"AD" => gettext("Andorra"),
+		"AO" => gettext("Angola"),
+		"AI" => gettext("Anguilla"),
+		"AQ" => gettext("Antarctica"),
+		"AG" => gettext("Antigua And Barbuda"),
+		"AR" => gettext("Argentina"),
+		"AM" => gettext("Armenia"),
+		"AW" => gettext("Aruba"),
+		"AU" => gettext("Australia"),
+		"AT" => gettext("Austria"),
+		"AZ" => gettext("Azerbaijan"),
+		"BS" => gettext("Bahamas"),
+		"BH" => gettext("Bahrain"),
+		"BD" => gettext("Bangladesh"),
+		"BB" => gettext("Barbados"),
+		"BY" => gettext("Belarus"),
+		"BE" => gettext("Belgium"),
+		"BZ" => gettext("Belize"),
+		"BJ" => gettext("Benin"),
+		"BM" => gettext("Bermuda"),
+		"BT" => gettext("Bhutan"),
+		"BO" => gettext("Bolivia"),
+		"BA" => gettext("Bosnia And Herzegowina"),
+		"BW" => gettext("Botswana"),
+		"BV" => gettext("Bouvet Island"),
+		"BR" => gettext("Brazil"),
+		"IO" => gettext("British Indian Ocean Territory"),
+		"BN" => gettext("Brunei Darussalam"),
+		"BG" => gettext("Bulgaria"),
+		"BF" => gettext("Burkina Faso"),
+		"BI" => gettext("Burundi"),
+		"KH" => gettext("Cambodia"),
+		"CM" => gettext("Cameroon"),
+		"CA" => gettext("Canada"),
+		"CV" => gettext("Cape Verde"),
+		"KY" => gettext("Cayman Islands"),
+		"CF" => gettext("Central African Republic"),
+		"TD" => gettext("Chad"),
+		"CL" => gettext("Chile"),
+		"CN" => gettext("China"),
+		"CX" => gettext("Christmas Island"),
+		"CC" => gettext("Cocos (Keeling) Islands"),
+		"CO" => gettext("Colombia"),
+		"KM" => gettext("Comoros"),
+		"CG" => gettext("Congo"),
+		"CD" => gettext("Congo, The Democratic Republic Of The"),
+		"CK" => gettext("Cook Islands"),
+		"CR" => gettext("Costa Rica"),
+		"CI" => gettext("Cote D\"Ivoire"),
+		"HR" => gettext("Croatia (Local Name: Hrvatska)"),
+		"CU" => gettext("Cuba"),
+		"CY" => gettext("Cyprus"),
+		"CZ" => gettext("Czech Republic"),
+		"DK" => gettext("Denmark"),
+		"DJ" => gettext("Djibouti"),
+		"DM" => gettext("Dominica"),
+		"DO" => gettext("Dominican Republic"),
+		"TP" => gettext("East Timor"),
+		"EC" => gettext("Ecuador"),
+		"EG" => gettext("Egypt"),
+		"SV" => gettext("El Salvador"),
+		"GQ" => gettext("Equatorial Guinea"),
+		"ER" => gettext("Eritrea"),
+		"EE" => gettext("Estonia"),
+		"ET" => gettext("Ethiopia"),
+		"FK" => gettext("Falkland Islands (Malvinas)"),
+		"FO" => gettext("Faroe Islands"),
+		"FJ" => gettext("Fiji"),
+		"FI" => gettext("Finland"),
+		"FR" => gettext("France"),
+		"FX" => gettext("France, Metropolitan"),
+		"GF" => gettext("French Guiana"),
+		"PF" => gettext("French Polynesia"),
+		"TF" => gettext("French Southern Territories"),
+		"GA" => gettext("Gabon"),
+		"GM" => gettext("Gambia"),
+		"GE" => gettext("Georgia"),
+		"DE" => gettext("Germany"),
+		"GH" => gettext("Ghana"),
+		"GI" => gettext("Gibraltar"),
+		"GR" => gettext("Greece"),
+		"GL" => gettext("Greenland"),
+		"GD" => gettext("Grenada"),
+		"GP" => gettext("Guadeloupe"),
+		"GU" => gettext("Guam"),
+		"GT" => gettext("Guatemala"),
+		"GN" => gettext("Guinea"),
+		"GW" => gettext("Guinea-Bissau"),
+		"GY" => gettext("Guyana"),
+		"HT" => gettext("Haiti"),
+		"HM" => gettext("Heard And Mc Donald Islands"),
+		"VA" => gettext("Holy See (Vatican City State)"),
+		"HN" => gettext("Honduras"),
+		"HK" => gettext("Hong Kong"),
+		"HU" => gettext("Hungary"),
+		"IS" => gettext("Iceland"),
+		"IN" => gettext("India"),
+		"ID" => gettext("Indonesia"),
+		"IR" => gettext("Iran (Islamic Republic Of)"),
+		"IQ" => gettext("Iraq"),
+		"IE" => gettext("Ireland"),
+		"IL" => gettext("Israel"),
+		"IT" => gettext("Italy"),
+		"JM" => gettext("Jamaica"),
+		"JP" => gettext("Japan"),
+		"JO" => gettext("Jordan"),
+		"KZ" => gettext("Kazakhstan"),
+		"KE" => gettext("Kenya"),
+		"KI" => gettext("Kiribati"),
+		"KP" => gettext("Korea, Democratic People\"S Republic Of"),
+		"KR" => gettext("Korea, Republic Of"),
+		"KW" => gettext("Kuwait"),
+		"KG" => gettext("Kyrgyzstan"),
+		"LA" => gettext("Lao People\"S Democratic Republic"),
+		"LV" => gettext("Latvia"),
+		"LB" => gettext("Lebanon"),
+		"LS" => gettext("Lesotho"),
+		"LR" => gettext("Liberia"),
+		"LY" => gettext("Libyan Arab Jamahiriya"),
+		"LI" => gettext("Liechtenstein"),
+		"LT" => gettext("Lithuania"),
+		"LU" => gettext("Luxembourg"),
+		"MO" => gettext("Macau"),
+		"MK" => gettext("Macedonia, Former Yugoslav Republic Of"),
+		"MG" => gettext("Madagascar"),
+		"MW" => gettext("Malawi"),
+		"MY" => gettext("Malaysia"),
+		"MV" => gettext("Maldives"),
+		"ML" => gettext("Mali"),
+		"MT" => gettext("Malta"),
+		"MH" => gettext("Marshall Islands"),
+		"MQ" => gettext("Martinique"),
+		"MR" => gettext("Mauritania"),
+		"MU" => gettext("Mauritius"),
+		"YT" => gettext("Mayotte"),
+		"MX" => gettext("Mexico"),
+		"FM" => gettext("Micronesia, Federated States Of"),
+		"MD" => gettext("Moldova, Republic Of"),
+		"MC" => gettext("Monaco"),
+		"MN" => gettext("Mongolia"),
+		"MS" => gettext("Montserrat"),
+		"MA" => gettext("Morocco"),
+		"MZ" => gettext("Mozambique"),
+		"MM" => gettext("Myanmar"),
+		"NA" => gettext("Namibia"),
+		"NR" => gettext("Nauru"),
+		"NP" => gettext("Nepal"),
+		"NL" => gettext("Netherlands"),
+		"AN" => gettext("Netherlands Antilles"),
+		"NC" => gettext("New Caledonia"),
+		"NZ" => gettext("New Zealand"),
+		"NI" => gettext("Nicaragua"),
+		"NE" => gettext("Niger"),
+		"NG" => gettext("Nigeria"),
+		"NU" => gettext("Niue"),
+		"NF" => gettext("Norfolk Island"),
+		"MP" => gettext("Northern Mariana Islands"),
+		"NO" => gettext("Norway"),
+		"OM" => gettext("Oman"),
+		"PK" => gettext("Pakistan"),
+		"PW" => gettext("Palau"),
+		"PA" => gettext("Panama"),
+		"PG" => gettext("Papua New Guinea"),
+		"PY" => gettext("Paraguay"),
+		"PE" => gettext("Peru"),
+		"PH" => gettext("Philippines"),
+		"PN" => gettext("Pitcairn"),
+		"PL" => gettext("Poland"),
+		"PT" => gettext("Portugal"),
+		"PR" => gettext("Puerto Rico"),
+		"QA" => gettext("Qatar"),
+		"RE" => gettext("Reunion"),
+		"RO" => gettext("Romania"),
+		"RU" => gettext("Russian Federation"),
+		"RW" => gettext("Rwanda"),
+		"KN" => gettext("Saint Kitts And Nevis"),
+		"LC" => gettext("Saint Lucia"),
+		"VC" => gettext("Saint Vincent And The Grenadines"),
+		"WS" => gettext("Samoa"),
+		"SM" => gettext("San Marino"),
+		"ST" => gettext("Sao Tome And Principe"),
+		"SA" => gettext("Saudi Arabia"),
+		"SN" => gettext("Senegal"),
+		"SC" => gettext("Seychelles"),
+		"SL" => gettext("Sierra Leone"),
+		"SG" => gettext("Singapore"),
+		"SK" => gettext("Slovakia (Slovak Republic)"),
+		"SI" => gettext("Slovenia"),
+		"SB" => gettext("Solomon Islands"),
+		"SO" => gettext("Somalia"),
+		"ZA" => gettext("South Africa"),
+		"GS" => gettext("South Georgia, South Sandwich Islands"),
+		"ES" => gettext("Spain"),
+		"LK" => gettext("Sri Lanka"),
+		"SH" => gettext("St. Helena"),
+		"PM" => gettext("St. Pierre And Miquelon"),
+		"SD" => gettext("Sudan"),
+		"SR" => gettext("Suriname"),
+		"SJ" => gettext("Svalbard And Jan Mayen Islands"),
+		"SZ" => gettext("Swaziland"),
+		"SE" => gettext("Sweden"),
+		"CH" => gettext("Switzerland"),
+		"SY" => gettext("Syrian Arab Republic"),
+		"TW" => gettext("Taiwan"),
+		"TJ" => gettext("Tajikistan"),
+		"TZ" => gettext("Tanzania, United Republic Of"),
+		"TH" => gettext("Thailand"),
+		"TG" => gettext("Togo"),
+		"TK" => gettext("Tokelau"),
+		"TO" => gettext("Tonga"),
+		"TT" => gettext("Trinidad And Tobago"),
+		"TN" => gettext("Tunisia"),
+		"TR" => gettext("Turkey"),
+		"TM" => gettext("Turkmenistan"),
+		"TC" => gettext("Turks And Caicos Islands"),
+		"TV" => gettext("Tuvalu"),
+		"UG" => gettext("Uganda"),
+		"UA" => gettext("Ukraine"),
+		"AE" => gettext("United Arab Emirates"),
+		"GB" => gettext("United Kingdom"),
+		"US" => gettext("United States of America"),
+		"UM" => gettext("United States Minor Outlying Islands"),
+		"UY" => gettext("Uruguay"),
+		"UZ" => gettext("Uzbekistan"),
+		"VU" => gettext("Vanuatu"),
+		"VE" => gettext("Venezuela"),
+		"VN" => gettext("Viet Nam"),
+		"VG" => gettext("Virgin Islands (British)"),
+		"VI" => gettext("Virgin Islands (U.S.)"),
+		"WF" => gettext("Wallis And Futuna Islands"),
+		"EH" => gettext("Western Sahara"),
+		"YE" => gettext("Yemen"),
+		"YU" => gettext("Yugoslavia"),
+		"ZM" => gettext("Zambia"),
+		"ZW" => gettext("Zimbabwe")
+	);
+
+	if ($only_db) {
+		$availCountries = $countryArray;
+		//TODO: fixme!
+		$countryArray = array(
+			"XX" => ""
+		);
+
+		$q = "select country from address group by country";
+		$res = sql_query($q);
+		while ($row = sql_fetch_assoc($res)) {
+			$c = $row["country"];
+			if (!$c)
+				$c = "NL";
+
+			$c = strtoupper($c);
+			$name = $availCountries[$c];
+			if (!$name)
+				$c = array_search($c, $availCountries);
+
+			if ($c)
+				$countryArray[$c] = $name;
+		}
+	}
+
+    /* 
+     * The list will not be sorted correctly if one's using certain languages. 
+     * In Dutch, for example, "Sweden" translates to "Zweden", so unless we sort 
+     * the array "Zweden" would show up in the S range.
+     * 
+     * (Bug 1905163, thanks to initx for reporting it.)
+     * -- sjk
+     */
+    if ($_SESSION["locale"] != "en_US") { /* Don't bother sorting if we're using English */
+        asort($countryArray);
+    }
+
+?>

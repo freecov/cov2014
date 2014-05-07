@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `use_project_global_reghour` TINYINT( 3 ) NOT NULL ;

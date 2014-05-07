@@ -1,0 +1,1 @@
+ALTER TABLE cms_license ADD cms_manage_hostname VARCHAR(255);

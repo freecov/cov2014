@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc
+END
+dataGetSubprojectsById.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataGetSubprojectsById.php
+END
+activate_projectfolders.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/activate_projectfolders.php
+END
+hour_operations.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/hour_operations.js
+END
+show_overview.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_overview.php
+END
+dataGetProjectById.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataGetProjectById.php
+END
+showCharts.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/showCharts.js
+END
+edit_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/edit_project.php
+END
+edit_master_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/edit_master_project.js
+END
+dataGetMasterProjectArray.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataGetMasterProjectArray.php
+END
+pick_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/pick_project.php
+END
+dataSaveProject.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataSaveProject.php
+END
+costs.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/costs.js
+END
+show_info.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_info.js
+END
+activitygroups.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/activitygroups.js
+END
+project_print.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/project_print.php
+END
+dataGetHoursList.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataGetHoursList.php
+END
+showProjectHours.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/showProjectHours.php
+END
+activities.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/activities.js
+END
+show_costs.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_costs.php
+END
+show_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_info.php
+END
+show_overview.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_overview.js
+END
+hourStats.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/hourStats.php
+END
+show_activitygroups.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_activitygroups.php
+END
+dataSetLfact.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataSetLfact.php
+END
+edit_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/edit_project.js
+END
+pick_project.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/pick_project.js
+END
+showHours.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/showHours.php
+END
+hourOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/hourOverview.php
+END
+dataGetProjectsBySearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/dataGetProjectsBySearch.php
+END
+show_activities.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/7098/tags/9.2.2/classes/project/inc/show_activities.php
+END

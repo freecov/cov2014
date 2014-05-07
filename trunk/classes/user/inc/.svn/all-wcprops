@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/p/covide/code/!svn/ver/7251/trunk/classes/user/inc
+END
+useredit.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/7065/trunk/classes/user/inc/useredit.php
+END
+show_online.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/6119/trunk/classes/user/inc/show_online.php
+END
+pick_user.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/5375/trunk/classes/user/inc/pick_user.php
+END
+autocomplete.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/7069/trunk/classes/user/inc/autocomplete.js
+END
+js_userlist.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/1/trunk/classes/user/inc/js_userlist.js
+END
+show_index.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/896/trunk/classes/user/inc/show_index.js
+END
+show_groupinfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/319/trunk/classes/user/inc/show_groupinfo.js
+END
+showManagerAccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4388/trunk/classes/user/inc/showManagerAccess.php
+END
+autocomplete.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/3749/trunk/classes/user/inc/autocomplete.php
+END
+show_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7251/trunk/classes/user/inc/show_index.php
+END
+usereditcheck.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/2271/trunk/classes/user/inc/usereditcheck.js
+END
+show_login.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/7038/trunk/classes/user/inc/show_login.php
+END
+dataSaveUserSettings.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/6343/trunk/classes/user/inc/dataSaveUserSettings.php
+END
+useredit.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/covide/code/!svn/ver/6071/trunk/classes/user/inc/useredit.js
+END
+pop_tester.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/5485/trunk/classes/user/inc/pop_tester.js
+END
+pick_user.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/5257/trunk/classes/user/inc/pick_user.js
+END
+js_common.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/6774/trunk/classes/user/inc/js_common.js
+END

@@ -1,0 +1,4 @@
+<sitemap plain="{tlocation}">
+	<loc>{location}</loc>
+	<lastmod>{date}</lastmod>
+</sitemap>

@@ -1,0 +1,1 @@
+ALTER TABLE `status_list` ADD `mark_expunge` TINYINT( 3 ) NOT NULL ;

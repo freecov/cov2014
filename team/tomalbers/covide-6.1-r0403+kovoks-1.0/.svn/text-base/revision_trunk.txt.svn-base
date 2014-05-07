@@ -1,0 +1,4 @@
+This branch is uptodate untill trunk revision 403 
+
+-- Watchlist:
+Do not merge 202 (classes/metafields/output.php) from trunk to branch, as that contains whitespace fixes in trunk && additional modifications in the branch so it is likely to get conflict markers on each line. Wait untill Michiel ports the modifications to trunk and copy the file from trunk after that. 

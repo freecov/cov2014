@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/7227/branches/covide-stable/classes/email
+END
+default.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/default.php
+END
+retrieve.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/retrieve.php
+END
+common.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/common.php
+END
+data.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/data.php
+END
+migration.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/migration.php
+END
+generate.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/generate.php
+END
+output.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/output.php
+END
+container.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/container.php
+END
+smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/smtp.php
+END

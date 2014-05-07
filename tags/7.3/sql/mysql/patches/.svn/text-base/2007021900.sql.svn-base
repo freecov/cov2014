@@ -1,0 +1,1 @@
+ALTER TABLE `address_classifications` ADD `access_read` VARCHAR( 255 ) NOT NULL;

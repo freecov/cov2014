@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/covide/code/!svn/ver/7232/branches/covide-stable/sql/mysql
+END
+calendar_rewrite.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4429/branches/covide-stable/sql/mysql/calendar_rewrite.sql
+END
+covide_install_cmsenabled.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4863/branches/covide-stable/sql/mysql/covide_install_cmsenabled.sql
+END
+covide_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/4863/branches/covide-stable/sql/mysql/covide_install.sql
+END
+covide_7_install.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4863/branches/covide-stable/sql/mysql/covide_7_install.sql
+END
+patchfile_all_upto_2007071601.sql
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/2747/branches/covide-stable/sql/mysql/patchfile_all_upto_2007071601.sql
+END

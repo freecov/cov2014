@@ -1,0 +1,1 @@
+ALTER TABLE mail_filters ADD `priority` INT(11);

@@ -1,0 +1,1 @@
+ALTER TABLE `sales` ADD `classification` VARCHAR( 255 ) NOT NULL ;

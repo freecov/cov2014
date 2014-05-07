@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7227/branches/covide-stable/classes/email/inc
+END
+retrieveUUdecodeMailAtt.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/retrieveUUdecodeMailAtt.php
+END
+sendqueue.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/sendqueue.js
+END
+dataParseEmailHeader.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/4429/branches/covide-stable/classes/email/inc/dataParseEmailHeader.php
+END
+dataHtml2Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/dataHtml2Filter.php
+END
+retrieveXmailAdd.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/retrieveXmailAdd.php
+END
+emailSelectFromPrepare.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/emailSelectFromPrepare.php
+END
+filterEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/filterEdit.php
+END
+emailOpen.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/emailOpen.js
+END
+getEmails.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/getEmails.js
+END
+dataUserMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/5773/branches/covide-stable/classes/email/inc/dataUserMove.php
+END
+vcard.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/vcard.php
+END
+emailSelectFrom.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/emailSelectFrom.js
+END
+autocomplete.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7164/branches/covide-stable/classes/email/inc/autocomplete.php
+END
+dataGetEmailBySearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/dataGetEmailBySearch.php
+END
+emailCompose.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/emailCompose.js
+END
+fitPicture.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/fitPicture.js
+END
+dataUserCopy.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2720/branches/covide-stable/classes/email/inc/dataUserCopy.php
+END
+dataSaveConcept.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7122/branches/covide-stable/classes/email/inc/dataSaveConcept.php
+END
+emailGetFromList.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/emailGetFromList.php
+END
+signatureEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/signatureEdit.php
+END
+dataAddAttachmentsCovide.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/3502/branches/covide-stable/classes/email/inc/dataAddAttachmentsCovide.php
+END
+pa_autoreply_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/4863/branches/covide-stable/classes/email/inc/pa_autoreply_actions.js
+END
+js_common.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/js_common.js
+END
+showPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/showPermissions.php
+END
+dataSendMailComplex.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/7227/branches/covide-stable/classes/email/inc/dataSendMailComplex.php
+END
+filterEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/filterEdit.js
+END
+vbook.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/vbook.php
+END
+vcard_style.css
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/vcard_style.css
+END
+permissionsEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/permissionsEdit.php
+END
+templateEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/5860/branches/covide-stable/classes/email/inc/templateEdit.php
+END
+emailList.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7205/branches/covide-stable/classes/email/inc/emailList.php
+END
+dataHtml2Text.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/dataHtml2Text.php
+END
+retrieveParseMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6755/branches/covide-stable/classes/email/inc/retrieveParseMessage.php
+END
+autocomplete.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/autocomplete.js
+END
+dataSendMail.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/dataSendMail.php
+END
+retrieveMailProcess.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/retrieveMailProcess.php
+END
+dataGetEmailById.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/dataGetEmailById.php
+END
+signatureEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/signatureEdit.js
+END
+templateOutput.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/3502/branches/covide-stable/classes/email/inc/templateOutput.php
+END
+dataUploadFiles.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/2763/branches/covide-stable/classes/email/inc/dataUploadFiles.php
+END
+retrieveCheckBouncer.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6753/branches/covide-stable/classes/email/inc/retrieveCheckBouncer.php
+END
+selectionMove.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/selectionMove.js
+END
+folderMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/folderMove.php
+END
+retrieveMimeScanMultipart.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/retrieveMimeScanMultipart.php
+END
+permissionsEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/permissionsEdit.js
+END
+templateEdit.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/3502/branches/covide-stable/classes/email/inc/templateEdit.js
+END
+emailList.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/6693/branches/covide-stable/classes/email/inc/emailList.js
+END
+emailOpen.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7205/branches/covide-stable/classes/email/inc/emailOpen.php
+END
+retrieveGetPart.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/3502/branches/covide-stable/classes/email/inc/retrieveGetPart.php
+END
+retrieveParseAttachments.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/4231/branches/covide-stable/classes/email/inc/retrieveParseAttachments.php
+END
+selectionMove.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/selectionMove.php
+END
+emailCompose.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7092/branches/covide-stable/classes/email/inc/emailCompose.php
+END
+migration.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/2284/branches/covide-stable/classes/email/inc/migration.js
+END

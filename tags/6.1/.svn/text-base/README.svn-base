@@ -1,0 +1,238 @@
+Covide
+
+	Version     : 6.0
+	Copyright   : Copyright 1999-2006 by Covide BV.
+	Homepage    : http://www.covide.net
+	Projectpage : http://sourceforge.net/projects/covide
+
+	Authors     : Michiel van Baak <michiel (at) vanbaak (dot) info>
+                  Stephan vd Haar <stephan (AT) terrazur (dot) nl>
+	License     : General Public License
+
+	Covide offers you OpenSource and webbased CRM-Groupware with possibilities 
+	for integrated usage as mail-, web-, and fileserver AND VoIP PBX!
+
+Table of contents
+
+	1. About Covide
+	2. Installation / Upgrade
+	   2.1. Requirements
+	   2.2. Installation / Upgrade
+		2.2.1. Manual installation / Upgrade
+	   2.3. Configuring
+	3. Feedback / Contributing.
+	   3.1. Feedback (bugs/questions/feature requests)
+	   3.2. Contributing
+		   3.2.1. Writing patches/contributions.
+	   3.3. Credits
+	4. Roadmap
+	5. Legal stuff
+	6. Authors
+
+1. About Covide
+
+	Covide offers you OpenSource and webbased CRM-Groupware with possibilities 
+	for integrated usage as mail-, web-, and fileserver AND VoIP PBX!
+
+	It provides features for communicating and maintaining projects, appointments,
+	email, support calls, incidents, etc etc
+	
+	
+2. Installation
+
+WARNING!
+THE FOLLOWING INSTRUCTIONS ASUME YOU HAVE GOOD KNOWLEDGE OF *NIX.
+NOT EVERY BIT IS DOCUMENTED, SO SOME IS LEFT TO THE KNOWLEDGE OF THE USER.
+
+OFFICIAL PARTNERS GET HELP DIRECTLY AND INSTANTLY FROM THE DEV TEAM.
+FOR MORE INFO ABOUT BECOMING A PARTNER VISIT THE COVIDE.NET WEBSITE.
+
+NON-PARTNER SHOULD POST PROBLEMS AND QUESTIONS ON SOURCEFORGE.
+QUESTIONS THAT SHOW A LACK OF REASONABLE KNOWLEDGE MIGHT BE IGNORED BY THE DEV TEAM OR ANSWERED WITH DELAY.
+
+
+
+2.1. Requirements
+	Serverside requirements:
+		* php5.0.2 or better (see below for modules) 
+		 * php pear (see below for modules)
+		 * buffering on
+		* database Postgres or Mysql
+
+	Used php modules
+		* soap
+		* tidy
+		* pgsql or mysql
+		* imap
+		* session
+		* xml
+	
+	Used pear modules
+		* PHP::DB
+		* PHP::HTTP_Request (for sending sms through Bayham systems)
+
+	Serverside recommendations:
+		* php 5.1+
+		* memory size in php 32 MB+
+		* database server PostgreSQL 7.4+ or Mysql 4+ 
+
+	Clientside requirements:
+		* Javascript enabled browser (Javascript 1.2)
+		* CSS2
+
+	Developed and tested using:
+		* Mozilla 1.4 and higher / Internet Explorer 5.5/6
+		* Apache 1.3.29/2.0.50
+		* PHP 5.0.2 and later.
+		* MySQL 4.0.17 and later and Postgres 7.4.7 and later
+		
+2.2. Installation / Upgrade
+
+	2.2.1. Manual installation / Upgrade
+
+	To install a completely new version, follow these steps:
+
+	1. Create a new MySQL/PostgreSQL database.
+	2. Create a new user for the database.
+	3. Import the file sql/$DATABASE_TYPE/covide.sql into the database.
+	4. Change the defines in the src/conf/offices.php file to match with the 
+	   database and user names. Also change the other settings to your liking.
+	5. Copy all .php files in the src/ directory to your webserver directory.
+	6. Create a dir /var/covide_files and give the webserver user read/write permissions.
+	7. log in with username/password covide/covide .
+
+	For the rss feeds on the portal, you need some kind of trigger.
+	We recommend using cron for this with something like:
+	wget -q -r http://your.covide.url/index.php?mod=rss
+	
+	
+	To upgrade a current version:
+
+	See UPGRADING
+
+	It is A Good Thing To Do (tm) to backup everything before doing this.
+	
+2.3. Configuring
+	
+	Once logged in click on the first icon right of the C on top of the screen.
+
+
+3. Feedback / Contributing.
+
+	If you wish to contribute to Covide, please read this section. It contains
+	rules and guidelines for contribution. 
+
+3.1. Feedback (bugs/questions/feature requests)
+
+	If you've got feedback about Covide, and wish to share it, you can do so
+	in a couple of ways.
+
+	1. Send email to <support (AT) terrazur (DOT) nl>
+	2. Use the tools in sourceforge
+	
+	The preferred way is using the sourceforge tools.
+
+	When giving feedback, please keep these following rules in mind:
+
+	* Be specific. If you've found a bug or have a feature request, please
+	  provide the URL where you've found the bug or want the feature. Try to
+	  be short but clear.
+	* If you're going to report a bug, please follow the standard bug-reporting
+	  guidelines. You can find a good guide to reporting bugs here:
+	  http://www.chiark.greenend.org.uk/~sgtatham/bugs.html
+
+3.2. Contributing
+
+	If you wish to contribute to this project, you'll have to come up with a
+	good contribution. 
+	What kind of contributions is the core dev team interested in? 
+
+	* Bug-fixing patches.
+	* Feature enhancements. (Please note the 'enhancement' part.. it means the core dev team would
+	  like enhancements to currently available features).
+	
+	Completely new features might get accepted, but don't yet bet money on it. The best
+	way to go here is to first tell the core dev team about your idea. We will then let you know
+	if it's likely to be included in Covide. 
+
+	If you contribute a completely new module, we might include it in the Covide
+	distribution or provide an additional download on the website for the 
+	module. That way, people can still use the module but we don't have to 
+	provide support for it.
+
+	3.2.1. Writing patches/contributions.
+
+	There are, at the moment, official coding guidelines. 
+	If you need more information about those guidelines, send us an email at <support@terrazur.nl>
+	and we can send them to you.
+	Also look at the other sources to get an impression about code-style, layout, used functions,
+	etc. 
+	
+	Some rules you should follow are:
+	* Create patches using: diff -ruN [latest-release] [your-changes]
+	  Run it in the directory which CONTAINS the covide/ directory.
+	* If you can, use the following editor settings:
+	  - Vim: 
+		:set tabstop=2
+		:set softtabstop=2
+		:set shiftwidth=2
+		:set noexpandtab
+		:set guioptions-=T
+	  - Other editors:
+		Tabs should be tabs, not just a couple of spaces.
+		Only use tabs at the start of a line. Use spaces eveywhere else 
+		(aligning).
+		Try to keep lines in sourcecode under 120 characters. If you really have to make a longer line
+		that is ok, but please try to keep under it. Almost all editors have some option to place a marker
+		at 120 characters so it is easier to see.
+
+3.3. Credits
+
+	See the CREDITS FILE
+
+4. Roadmap
+
+	So, where's this project going?
+
+	Just keep an eye on the website
+
+5. Legal stuff
+
+	Covide is Copyright by Covide BV, licensed under 
+	the General Public License (GPL)
+
+	Copyright (C), 1999-2006 by Covide BV
+
+	This program is free software; you can redistribute it and/or modify it
+	under the terms of the GNU General Public License as published by the Free
+	Software Foundation; either version 2 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+	for more details.
+
+	You should have received a copy of the GNU General Public License along
+	with this program; if not, write to the Free Software Foundation, Inc.,
+	675 Mass Ave, Cambridge, MA 02139, USA.
+
+	For more information, see the COPYING file supplied with this program.
+
+6. Authors
+
+	Covide created by:
+
+		Michiel van Baak <michiel (AT) vanbaak (DOT) info>
+		Homepage: http://michiel.vanbaak.info/
+
+	and
+
+		Stephan vd Haar <stephan (AT) terrazur (dot) nl>
+
+	and
+		
+		Some other developers who worked for Terrazur BV
+		
+	(for address information, please email us.)
+

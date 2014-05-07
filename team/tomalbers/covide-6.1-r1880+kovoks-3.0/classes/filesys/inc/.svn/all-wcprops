@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc
+END
+datafile_upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/datafile_upload.php
+END
+show_folders.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/show_folders.php
+END
+show_files.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/show_files.php
+END
+fitPicture.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/fitPicture.js
+END
+deleteFolderOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/deleteFolderOverview.php
+END
+show_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/show_search.php
+END
+file_operations.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/file_operations.js
+END
+setPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/setPermissions.php
+END
+show_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/show_index.php
+END
+moveFolderOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/filesys/inc/moveFolderOverview.php
+END

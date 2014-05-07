@@ -1,0 +1,1 @@
+ALTER TABLE `user_groups` CHANGE `members` `members` TEXT;

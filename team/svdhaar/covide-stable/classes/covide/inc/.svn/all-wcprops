@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/covide/inc
+END
+define_schema.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/covide/inc/define_schema.php
+END
+init_db_postgresql.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/covide/inc/init_db_postgresql.php
+END
+languages.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/covide/inc/languages.txt
+END

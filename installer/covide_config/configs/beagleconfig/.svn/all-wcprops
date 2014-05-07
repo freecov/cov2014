@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig
+END
+indexing.suffix
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/indexing.suffix
+END
+beagle-stop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/beagle-stop.sh
+END
+webservices.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/webservices.xml
+END
+indexing.prefix
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/indexing.prefix
+END
+daemon.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/daemon.xml
+END
+searching.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/searching.xml
+END
+beagle-start.sh
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/beagle-start.sh
+END
+networking.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6952/installer/covide_config/configs/beagleconfig/networking.xml
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl
+END
+TeraWurflDatabase.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/TeraWurflDatabase.php
+END
+TeraWurflConfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/TeraWurflConfig.php
+END
+TeraWurflLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/TeraWurflLoader.php
+END
+test_usage.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/test_usage.php
+END
+UserAgentFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentFactory.php
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/README
+END
+TeraWurflWebservice.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/TeraWurflWebservice.php
+END
+TeraWurfl.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/TeraWurfl.php
+END
+WurflConstants.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/WurflConstants.php
+END
+WurflSupport.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/WurflSupport.php
+END
+check_wurfl.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/check_wurfl.php
+END
+webservice.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/webservice.php
+END
+test_fallback.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/test_fallback.php
+END
+UserAgentUtils.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/7260/team/svdhaar/covide-stable/classes/wurfl/UserAgentUtils.php
+END

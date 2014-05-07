@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit
+END
+TestResult.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestResult.php
+END
+Assert.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/Assert.php
+END
+TestDecorator.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestDecorator.php
+END
+Skeleton.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/Skeleton.php
+END
+TestListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestListener.php
+END
+TestFailure.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestFailure.php
+END
+RepeatedTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/RepeatedTest.php
+END
+TestSuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestSuite.php
+END
+TestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/covide/code/!svn/ver/4610/tags/8.2/classes/chat/inc/lib/pear/PHPUnit/TestCase.php
+END

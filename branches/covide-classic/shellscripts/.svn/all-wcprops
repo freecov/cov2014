@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts
+END
+covide_install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/covide_install.sh
+END
+cron.sh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/cron.sh
+END
+update.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/update.sh
+END
+covidevm_setup
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/covidevm_setup
+END
+update_translations.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/update_translations.sh
+END
+convertdb.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/convertdb.sh
+END
+mailfetch.zsh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/mailfetch.zsh
+END
+covidecron.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/covidecron.py
+END
+setup_permissions.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/setup_permissions.sh
+END
+mailfetch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/covide/code/!svn/ver/6692/branches/covide-classic/shellscripts/mailfetch.sh
+END

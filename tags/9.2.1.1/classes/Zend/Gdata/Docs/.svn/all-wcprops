@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Docs
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Docs/Query.php
+END
+DocumentListEntry.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Docs/DocumentListEntry.php
+END
+DocumentListFeed.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Docs/DocumentListFeed.php
+END

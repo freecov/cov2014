@@ -1,0 +1,1 @@
+ALTER TABLE `cms_license_siteroots` ADD `yahoo_key` VARCHAR(255);

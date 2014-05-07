@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc
+END
+show_planning.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_planning.php
+END
+print_week.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/print_week.php
+END
+show_km.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_km.php
+END
+calendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/calendar.php
+END
+show_main.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_main.js
+END
+show_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_edit.js
+END
+dataGetAppointments.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/dataGetAppointments.php
+END
+showPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/showPermissions.php
+END
+dataConvertTodoToCalendarItem.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/dataConvertTodoToCalendarItem.php
+END
+dataSave2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/dataSave2db.php
+END
+show_monthview.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_monthview.php
+END
+reg_input.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/reg_input.js
+END
+show_monthview_mu.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_monthview_mu.php
+END
+show_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_main.php
+END
+show_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_edit.php
+END
+dataRegSave.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/dataRegSave.php
+END
+calendar.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/calendar.html
+END
+dataGetCalendarItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/dataGetCalendarItemById.php
+END
+show_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_info.php
+END
+show_planning.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_planning.js
+END
+show_week.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/show_week.php
+END
+reg_input.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/reg_input.php
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/calendar.js
+END
+print_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/4597/team/tomalbers/cvd_kovoks/classes/calendar/inc/print_main.php
+END

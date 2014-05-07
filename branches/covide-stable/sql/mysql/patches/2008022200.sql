@@ -1,0 +1,1 @@
+ALTER TABLE `address` DROP `do_not_contact` 

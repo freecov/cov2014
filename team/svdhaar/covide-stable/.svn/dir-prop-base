@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 12
+tmp
+tmp_cms
+
+K 16
+svnmerge-blocked
+V 43
+/branches/covide-stable:7014-7022,7024-7037
+K 19
+svnmerge-integrated
+V 65
+/branches/covide-stable:1-7013,7023,7038-7481,7484-7514,7516-7765
+END

@@ -1,0 +1,10 @@
+INSERT INTO address_titles VALUES (1, 'Dr.');
+INSERT INTO address_titles VALUES (2, 'Drs.');
+INSERT INTO address_titles VALUES (3, 'Ing.');
+INSERT INTO address_titles VALUES (4, 'Ir.');
+INSERT INTO address_titles VALUES (5, 'Mr.');
+INSERT INTO address_titles VALUES (6, 'Prof.');
+INSERT INTO address_titles VALUES (7, 'Prof. Dr.');
+INSERT INTO address_titles VALUES (8, 'BSc.');
+INSERT INTO address_titles VALUES (9, 'MSc.');
+INSERT INTO address_titles VALUES (10, 'Drs. Ing.');

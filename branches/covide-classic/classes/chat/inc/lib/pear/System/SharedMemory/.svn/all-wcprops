@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory
+END
+Common.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Common.php
+END
+Eaccelerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Eaccelerator.php
+END
+Systemv.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Systemv.php
+END
+Mmcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Mmcache.php
+END
+Sharedance.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Sharedance.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/File.php
+END
+Sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Sqlite.php
+END
+Memcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Memcache.php
+END
+Apc.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Apc.php
+END
+Shmop.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Shmop.php
+END
+Apachenote.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/Apachenote.php
+END
+PEAR.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/6692/branches/covide-classic/classes/chat/inc/lib/pear/System/SharedMemory/PEAR.php
+END

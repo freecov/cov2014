@@ -1,0 +1,11 @@
+This module should be either
+a) redone to match current code guidelines
+b) removed in favour of reeleezee
+c) totally redone, started from scratch
+
+It's a quick hack to take parts of the Covide internal
+finance module and fold it into a module that is/can be
+usefull for customers.
+It still has a lot of code that's not in objects and it's
+scattered with Dutch comments and functionnames and variablenames.
+It also lacks documentation.

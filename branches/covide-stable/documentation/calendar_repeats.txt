@@ -1,0 +1,33 @@
+Short description of the different repeat types implemented.
+
+1. Daily
+Daily repeating item. The weekends will be included as well.
+
+2. Weekly
+Weekly repeating item. You can specify what days of the week you want the item to appear
+
+3. Monthly by day
+Monthly repeating item.
+It will repeat on the same day of the month as the day the item is created.
+For example, if you create the item on the first monday of January, the item will
+appear on the first monday of February, first monday of March etc.
+Again, you can select the days of the week you want the item to appear
+
+4. Monthly by day (from end)
+Monthly repeating item.
+It will repeat on the same day of the month as the day the item is created, based on the end of the month.
+For example, if you create the item on the last monday of January, the item will
+appear on the last monday of February, last monday of March etc.
+Again, you can select the days of the week you want the item to appear
+
+5. Monthly by date
+Monthly repeating item.
+It will repeat on date. So if you create an item on January 2nd, it will appear
+on February 2nd, March 2nd etc.
+No use to select the day of the week, because it's based on dates.
+
+6. Yearly
+Yearly repeating item.
+Item will repeat on the same date every year (think December 25 for xmas)
+No use to select the day of the week, because it's based on dates.
+

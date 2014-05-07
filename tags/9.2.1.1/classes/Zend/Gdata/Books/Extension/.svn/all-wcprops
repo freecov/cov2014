@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension
+END
+AnnotationLink.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/AnnotationLink.php
+END
+Viewability.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/Viewability.php
+END
+InfoLink.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/InfoLink.php
+END
+BooksCategory.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/BooksCategory.php
+END
+BooksLink.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/BooksLink.php
+END
+Embeddability.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/Embeddability.php
+END
+PreviewLink.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/PreviewLink.php
+END
+Review.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/Review.php
+END
+ThumbnailLink.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/covide/code/!svn/ver/6749/tags/9.2.1.1/classes/Zend/Gdata/Books/Extension/ThumbnailLink.php
+END

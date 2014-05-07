@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 66
+.cache
+.settings
+.project
+.projectOptions
+tags
+non-oop
+custom.css
+
+K 16
+svnmerge-blocked
+V 52
+/team/svdhaar/covide-stable:4916,4929,4951,4961,4988
+K 19
+svnmerge-integrated
+V 64
+/team/svdhaar/covide-stable:1-4915,4917,4919-4924,4967,4970,5242
+END

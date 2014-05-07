@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc
+END
+show_offers.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/show_offers.php
+END
+editProduct.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/editProduct.php
+END
+pick_product.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/pick_product.php
+END
+dataGetOfferList.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataGetOfferList.php
+END
+dataNoSellStore2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataNoSellStore2db.php
+END
+dataDelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataDelete.php
+END
+dataStoreOffer2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataStoreOffer2db.php
+END
+showOffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/showOffer.php
+END
+editNoSell.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/editNoSell.php
+END
+offer_actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/offer_actions.js
+END
+dataGetProductList.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataGetProductList.php
+END
+editOffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/editOffer.php
+END
+product_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/product_edit.js
+END
+show_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/show_list.php
+END
+pick_product.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/pick_product.js
+END
+dataStore2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/dataStore2db.php
+END
+showProduct.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/covide/code/!svn/ver/4600/team/tomalbers/covide-6.1-r1880+kovoks-3.0/classes/product/inc/showProduct.php
+END

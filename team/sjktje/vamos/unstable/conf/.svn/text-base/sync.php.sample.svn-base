@@ -1,0 +1,3 @@
+<?php
+	$dsn_sync = "mysqli://myuser:mypass@tcp(localhost:3306)/funambol";
+?>

@@ -1,0 +1,43 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	#some cms rewrites
+	RewriteRule ^/{0,1}page/(.*)$ /site.php?page=$1 [NC,L]
+	RewriteRule ^/{0,1}list/(.*)$ /site.php?list=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}gallery/(.*)$ /site.php?gallery=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}enquete/(.*)$ /site.php?enquete=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}enquete/(.*)$ /site.php?enquete=1&page=$1 [NC,L]
+	RewriteRule ^/{0,1}metadata/(.*) /site.php?mode=metadata&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}rss/feed/(.*)$ /site.php?mode=rss&parent=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/live/(.*)$ /site.php?mode=rss&live=$1 [NC,L]
+	RewriteRule ^/{0,1}rss/{0,1}$ /site.php?mode=rss [NC,L]
+	RewriteRule ^/{0,1}menu/(.*)$ /site.php?mode=menu&pid=$1 [NC,L]
+	RewriteRule ^/{0,1}sitemap.xml$ /site.php?mode=google [NC,L]
+	RewriteRule ^/{0,1}sitemap.xml.gz$ /site.php?mode=googlegz [NC,L]
+	RewriteRule ^/{0,1}sitemap.htm$ /site.php?mode=sitemap [NC,L]
+	RewriteRule ^/{0,1}include/(.*)$ /site.php?include=$1 [NC,L]
+	RewriteRule ^/{0,1}cmsfile/(.*)$ /showcms.php?id=$1 [NC,L]
+	RewriteRule ^/{0,1}covide(.*) /index.php?mod=desktop [NC,L,R=301]
+	RewriteRule ^/{0,1}search/(.*) /site.php?mode=search&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}text(/){0,1}(.*) /site.php?mode=text&page=$2 [NC,L]
+	RewriteRule ^/{0,1}sitemap_plain.htm$ /site.php?mode=sitemap_plain [NC,L]
+	RewriteRule ^/{0,1}favicon.ico$ /img/cms/favicon.png [NC,L]
+	RewriteRule ^/{0,1}robots.txt$ /site.php?mode=robots [NC,L]
+
+	#some apc functions
+	RewriteRule ^/{0,1}robots.txt$ /site.php?mode=robots [NC,L]
+
+	#some mvblog internal rewrites
+	RewriteRule ^/{0,1}blog/post/(.*)$ /blog/index.php?action=view&id=$1 [NC]
+	RewriteRule ^/{0,1}blog/archive/(.*)$ /blog/index.php?action=archive&m=$1 [NC]
+	RewriteRule ^/{0,1}blog/category/(.*)$ /blog/index.php?action=archive_cat&c=$1 [NC]
+
+	#some blog/cms specific rewrites
+	RewriteRule ^/{0,1}common/tb.php(.*)$ /plugins/mvblog/common/tb.php?%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}blog/index.php(.*)$ /site.php?mode=blog&%{QUERY_STRING} [NC,L]
+	RewriteRule ^/{0,1}blog/(menudata|themes|classes)/(.*)$ /$1/$2 [NC,L]
+	RewriteRule ^/{0,1}blog/{0,1}(.*)$ /site.php?mode=blog&param=$1 [NC,L]
+
+	RewriteRule ^/{0,1}forum$ /site.php?mode=forum [NC,L]
+
+</IfModule>

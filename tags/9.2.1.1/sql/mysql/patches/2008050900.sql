@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `google_map_key` VARCHAR( 255 ) NOT NULL ;

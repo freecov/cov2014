@@ -1,0 +1,12 @@
+This branch is uptodate up to covide-stable revision: 1260
+
+Merge command: 
+	svn merge -r800:??? https://tomalbers@svn.sourceforge.net/svnroot/covide/branches/covide-stable .
+
+
+-- Watchlist:
+Do not merge 202 (classes/metafields/output.php) from trunk to branch, as that contains whitespace fixes in trunk && additional modifications in the branch so it is likely to get conflict markers on each line. Wait untill Michiel ports the modifications to trunk and copy the file from trunk after that. 
+
+
+-- Old news:
+This branch is uptodate until trunk revision 800. After that stable is developed in a branch, so only merge from there!

@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/covide/code/!svn/ver/7241/trunk/classes/calendar/inc
+END
+calendar.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/covide/code/!svn/ver/1/trunk/classes/calendar/inc/calendar.html
+END
+dataRegSave.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/7241/trunk/classes/calendar/inc/dataRegSave.php
+END
+dataGetCalendarItemById.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/covide/code/!svn/ver/6653/trunk/classes/calendar/inc/dataGetCalendarItemById.php
+END
+show_planning.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/4466/trunk/classes/calendar/inc/show_planning.js
+END
+show_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7182/trunk/classes/calendar/inc/show_info.php
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/covide/code/!svn/ver/1/trunk/classes/calendar/inc/calendar.js
+END
+externalcalendarsunittest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/covide/code/!svn/ver/4575/trunk/classes/calendar/inc/externalcalendarsunittest.php
+END
+calendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7204/trunk/classes/calendar/inc/calendar.php
+END
+show_edit.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7182/trunk/classes/calendar/inc/show_edit.js
+END
+dataConvertTodoToCalendarItem.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/covide/code/!svn/ver/2280/trunk/classes/calendar/inc/dataConvertTodoToCalendarItem.php
+END
+dataSave2db.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/7115/trunk/classes/calendar/inc/dataSave2db.php
+END
+show_monthview_mu.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6654/trunk/classes/calendar/inc/show_monthview_mu.php
+END
+show_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7195/trunk/classes/calendar/inc/show_main.php
+END
+show_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/7231/trunk/classes/calendar/inc/show_edit.php
+END
+vcalendarlib.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/6270/trunk/classes/calendar/inc/vcalendarlib.php
+END
+show_week.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/5922/trunk/classes/calendar/inc/show_week.php
+END
+reg_input.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/6978/trunk/classes/calendar/inc/reg_input.php
+END
+batch_reg_input.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6978/trunk/classes/calendar/inc/batch_reg_input.php
+END
+externalcalendars.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6270/trunk/classes/calendar/inc/externalcalendars.php
+END
+print_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6778/trunk/classes/calendar/inc/print_main.php
+END
+print_month.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/6778/trunk/classes/calendar/inc/print_month.php
+END
+print_month_mu.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/6778/trunk/classes/calendar/inc/print_month_mu.php
+END
+show_planning.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/4689/trunk/classes/calendar/inc/show_planning.php
+END
+show_km.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/covide/code/!svn/ver/6444/trunk/classes/calendar/inc/show_km.php
+END
+misc_reg_input.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/6978/trunk/classes/calendar/inc/misc_reg_input.php
+END
+print_week.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6778/trunk/classes/calendar/inc/print_week.php
+END
+show_main.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/7182/trunk/classes/calendar/inc/show_main.js
+END
+dataGetAppointments.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6909/trunk/classes/calendar/inc/dataGetAppointments.php
+END
+showPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/covide/code/!svn/ver/6778/trunk/classes/calendar/inc/showPermissions.php
+END
+show_monthview.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/6998/trunk/classes/calendar/inc/show_monthview.php
+END
+reg_input.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/6294/trunk/classes/calendar/inc/reg_input.js
+END

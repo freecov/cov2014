@@ -1,0 +1,14 @@
+/*
+div.infolayer {
+	opacity: .95;
+}
+*/
+IMG.imagebutton:hover {
+	opacity: .50;
+}
+IMG.imageconstanttransparancy {
+	opacity: .50;
+}
+LI.enabled, LI.special, LI.disabled, LI.group {
+	min-height: 20px;
+}

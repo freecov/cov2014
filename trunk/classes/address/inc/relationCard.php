@@ -1,0 +1,1431 @@
+<?php
+/**
+ * Covide Groupware-CRM Addressbook module.
+ *
+ * Covide Groupware-CRM is the solutions for all groups off people
+ * that want the most efficient way to work to together.
+ * @version %%VERSION%%
+ * @license http://www.gnu.org/licenses/gpl.html GPL
+ * @link http://www.covide.net Project home.
+ * @author Michiel van Baak <mvanbaak@users.sourceforge.net>
+ * @copyright Copyright 2000-2007 Covide BV
+ * @package Covide
+ */
+
+if (!class_exists("Address_output")) {
+	die("no class definition found");
+}
+/* FIXME: quick and dirty way to solve relationcard for relation 'none' */
+if ($id == 0) {
+	echo "<script language=\"javascript\">history.go(-1);</script>";
+}
+$days = array(0 => "---");
+$months = array(0 => "---");
+$years = array(0 => "---");
+for ($i=1; $i <= 31; $i++) {
+	$days[$i] = $i;
+}
+
+for ($i=1; $i <= 12; $i++) {
+	$months[$i] = $i;
+}
+
+for ($i = date("Y")-10; $i <= date("Y"); $i++) {
+	$years[$i] = $i;
+}
+/* init user object */
+$user_data = new User_data();
+$userperms = $user_data->getUserPermissionsById($_SESSION["user_id"]);
+$accmanager_arr = explode(",", $user_data->permissions["addressaccountmanage"]);
+
+/* get the address */
+$address_data   = new Address_data();
+$addressinfo[0] = $address_data->getAddressById($id);
+$countryArray = $address_data->listCountries();
+
+/* create rcbc if it's not there yet */
+$address_data->checkrcbc($addressinfo[0]);
+
+/* init calendar output object */
+$calendar_output = new Calendar_output();
+
+if ($userperms["xs_addressmanage"]) {
+	$astrict = 1;
+	$astrict_rw = 1;
+} elseif ($GLOBALS["covide"]->license["address_strict_permissions"]) {
+
+	$classification_data = new Classification_data();
+	$cla_permission = $classification_data->getClassificationByAccess();
+
+	/* get rw permissions for later use */
+	$cla_address = explode("|", $addressinfo[0]["classifi"]);
+	$cla_permission_rw = $classification_data->getClassificationByAccess(1);
+	$cla_xs = array_intersect($cla_address, $cla_permission_rw);
+	if (count($cla_xs) > 0)
+		$astrict_rw = 1;
+
+	$cla_xs = array_intersect($cla_address, $cla_permission);
+	if (count($cla_xs) > 0)
+		$astrict = 1;
+} elseif ($addressinfo[0]["addressacc"] || $addressinfo[0]["addressmanage"]) {
+	$astrict_rw = 1;
+	$astrict = 1;
+} else {
+	$astrict_rw = 0;
+	$astrict = 1;
+}
+$achange =& $astrict_rw;
+
+if (!$astrict) {
+	$output = new Layout_output();
+	$output->layout_page("address");
+
+	$venster = new Layout_venster(array(
+		"title" => gettext("Relation Card"),
+		"subtitle" => gettext("No permissions")
+	));
+	$venster->addVensterData();
+		$venster->addCode(gettext("You have no permissions to access the following relation").": ");
+		$venster->insertTag("b", $addressinfo[0]["companyname"]);
+		$venster->addTag("br");
+
+		$history = new Layout_history();
+		$link = $history->generate_history_call();
+		$venster->addCode($link);
+
+		$venster->insertAction("back", gettext("back"), "javascript: history_goback();");
+	$venster->endVensterData();
+
+	$table = new Layout_table();
+
+	$output->addCode($table->createEmptyTable($venster->generate_output()));
+	$output->exit_buffer();
+}
+/* end access check */
+
+/* we can taggle some stuff, so lets do that before we enter the rest */
+if ($_REQUEST["relcardaction"] == "toggle_custcont" && is_array($_REQUEST["checkbox_custcont"])) {
+	foreach ($_REQUEST["checkbox_custcont"] as $k=>$item) {
+		$sql = sprintf("UPDATE notes SET is_done = 1, is_read = 1 WHERE (is_done !=1 OR is_done is null) AND id=%d", $k);
+		$res = sql_query($sql);
+	}
+}
+if ($_REQUEST["relcardaction"] == "cardrem") {
+	$address_data->remove_bcard($_REQUEST["cardid"]);
+}
+if (is_array($addressinfo[0]["photo"]) && $addressinfo[0]["photo"]["size"]) {
+	$url = "index.php?mod=address&action=showrelimg&addresstype=relations";
+	foreach ($addressinfo[0]["photo"] as $k=>$v) {
+		$url .= "&photo[$k]=$v";
+	}
+	$addressinfo[0]["photourl"] = $url;
+}
+/* get the meta data for this address record */
+$meta_data = new Metafields_data();
+$meta_output = new Metafields_output();
+$metafields = $meta_data->meta_list_fields("adres", $id);
+
+/* get the active notes for this relation */
+$notes_data     = new Note_data();
+if ($_REQUEST["history"] == "notes") {
+	$noteinfo       = $notes_data->getNotesByContact($id, 0);
+	$subtitle_notes = gettext("history");
+} else {
+	$noteinfo       = $notes_data->getNotesByContact($id, 1);
+	$subtitle_notes = gettext("current");
+}
+/* get the active customer contact items for this relation */
+if (!$GLOBALS["covide"]->license["disable_basics"]) {
+	if ($_REQUEST["history"] == "customercontact") {
+		$custcontinfo   = $notes_data->getNotesByContact($id, 0, 1);
+	} else {
+		$custcontinfo   = $notes_data->getNotesByContact($id, 1, 1);
+	}
+	/* get the appointments */
+	/* TODO: Get all appointments and after that get the right users
+	attending them so we don't have to un-double */
+	$calendar_data = new Calendar_data();
+	if ($_REQUEST["history"] == "calendar") {
+		$calendarinfo  =$calendar_data->getAppointmentsByAddress($id, 1);
+	} else {
+		$calendarinfo  =$calendar_data->getAppointmentsByAddress($id);
+	}
+	/* un-doubling (if there are appointments) */
+	if (count($calendarinfo)) {
+		$app_ids = array();
+		foreach ($calendarinfo as $old_id => $cal) {
+			if (!in_array($cal["id"], $app_ids)) {
+				$app_ids[] = $cal["id"];
+			} else {
+				unset($calendarinfo[$old_id]);
+			}
+		}
+	}
+	/* get the filesys data */
+	$filesys_data = new Filesys_data();
+	$filesysinfo = $filesys_data->getRelFolder($id);
+	$filesysdata = $filesys_data->getFolders(array("ids"=>$filesysinfo));
+	/* get the email data */
+	$email_data   = new Email_data();
+	$emailinfo    = $email_data->getEmailBySearch( array("relation_inbox" => $id) );
+	$emailarchive = $email_data->getSpecialFolder("Archief", 0);
+	if ($GLOBALS["covide"]->license["has_sales"]) {
+		if ($_REQUEST["history"] == "sales") {
+			/* get sales data */
+			$sales_data   = new Sales_data();
+			$salesinfo    = $sales_data->getSalesBySearch( array("address_id"=>$id, "in_active"=>1) );
+		} else {
+			/* get sales data */
+			$sales_data   = new Sales_data();
+			$salesinfo    = $sales_data->getSalesBySearch( array("address_id"=>$id) );
+		}
+	}
+	/* get mortgage data */
+	$mortgage_data   = new Mortgage_data();
+	$mortgageinfo    = $mortgage_data->getMortgageBySearch( array("address_id"=>$id) );
+
+	if ($GLOBALS["covide"]->license["has_project"]) {
+		/* get the project data */
+		$project_data = new Project_data();
+		$projectoptions = array("address_id" => $id);
+		$projectinfo = $project_data->getProjectsBySearch($projectoptions);
+		unset($projectoptions);
+		foreach($projectinfo as $k=>$v) {
+			if (!$v["allow_edit"]) {
+				unset($projectinfo[$k]);
+			}
+		}
+	}
+
+	/* get the support data */
+	$support_data = new Support_data();
+	if ($_REQUEST["history"] == "support") {
+		$supportinfo = $support_data->getSupportItems(array("address_id" => $id, "active" => 0, "nolimit" => 1));
+		$subtitle_support = gettext("history");
+	} else {
+		$supportinfo = $support_data->getSupportItems(array("address_id" => $id, "active" => 1, "nolimit" => 1));
+		$subtitle_support = gettext("current");
+	}
+
+	/* get the support data */
+	$templates_data = new Templates_data();
+	$templates_info = $templates_data->getTemplateBySearch($id, 0, 1);
+}
+/* get the active todos */
+$todo_data      = new Todo_data();
+if ($_REQUEST["history"] == "todos") {
+	$todoinfo       = $todo_data->getTodosByAddressId($id, 1);
+	$subtitle_todo  = gettext("history");
+} else {
+	$todoinfo       = $todo_data->getTodosByAddressId($id);
+	$subtitle_todo  = gettext("current");
+}
+//communication items
+if ($_REQUEST["start_day"]) {
+	$com_start = mktime(0, 0, 0, $_REQUEST["start_month"], $_REQUEST["start_day"], $_REQUEST["start_year"]);
+}
+if ($_REQUEST["end_day"]) {
+	$com_end = mktime(0, 0, 0, $_REQUEST["end_month"], $_REQUEST["end_day"], $_REQUEST["end_year"]);
+}
+
+$com_limit = "";
+if (!$com_start || !$com_end) {
+	$com_start = 0;
+	$com_end = time();
+	$com_limit = " LIMIT 5";
+}
+$commitems = array();
+$sql = sprintf("SELECT id, timestamp, user_id, subject, 'note' as type FROM notes WHERE is_draft != 1 AND address_id = %1\$d AND timestamp BETWEEN %3\$d AND %4\$d
+	UNION
+	SELECT id, timestamp, user_id, subject, 'todo' as type FROM todo WHERE address_id = %1\$d AND timestamp BETWEEN %3\$d AND %4\$d
+	UNION
+	SELECT id, timestamp_start as timestamp, calendar_user.user_id as user_id, subject, 'calendar' as type FROM calendar,calendar_user WHERE calendar.id = calendar_user.calendar_id AND address_id = %1\$d AND timestamp_start BETWEEN %3\$d AND %4\$d
+	UNION
+	SELECT id, timestamp_proposal as timestamp, user_sales_id as user_id, subject, 'sales' as type FROM sales WHERE address_id = %1\$d AND timestamp_proposal BETWEEN %3\$d AND %4\$d
+	UNION
+	SELECT id, IF(date_received, date_received, date) as timestamp, user_id, subject, 'mail' as type FROM mail_messages WHERE folder_id = %2\$d AND address_id = %1\$d AND date_received BETWEEN %3\$d AND %4\$d
+	UNION
+	SELECT id, timestamp, user_id, description AS subject, 'support' as type FROM issues WHERE address_id = %1\$d AND timestamp BETWEEN %3\$d AND %4\$d
+	ORDER BY timestamp DESC %5\$s
+	", $id, $emailarchive["id"], $com_start, $com_end, $com_limit);
+$res = sql_query($sql);
+while ($row = sql_fetch_array($res)) {
+	$row["h_type"] = gettext($row["type"]);
+	$row["h_time"] = date("d-m-Y H:i:s", $row["timestamp"]);
+	$row["h_username"] = $user_data->getUsernameById($row["user_id"]);
+	switch($row["type"]) {
+	case "calendar":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=calendar&action=show_info&id=%d&user_id=%d');", $row["id"], $row["user_id"]);
+		break;
+	case "mail":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=email&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "todo":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=todo&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "note":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=note&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "sales":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=sales&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "support":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=support&action=show_info&id=%d');", $row["id"]);
+		break;
+	}
+	$commitems[] = $row;
+}
+
+$commitems_planning = array();
+$sql = sprintf("SELECT id, timestamp, user_id, subject, 'note' as type FROM notes WHERE is_draft != 1 AND address_id = %1\$d AND timestamp >= %3\$d
+	UNION
+	SELECT id, timestamp, user_id, subject, 'todo' as type FROM todo WHERE address_id = %1\$d AND timestamp >= %3\$d
+	UNION
+	SELECT id, timestamp_start as timestamp, calendar_user.user_id as user_id, subject, 'calendar' as type FROM calendar,calendar_user WHERE calendar.id = calendar_user.calendar_id AND address_id = %1\$d AND timestamp_start >= %3\$d
+	UNION
+	SELECT id, timestamp_proposal as timestamp, user_sales_id as user_id, subject, 'sales' as type FROM sales WHERE address_id = %1\$d AND timestamp_proposal >= %3\$d
+	UNION
+	SELECT id, IF(date_received, date_received, date) as timestamp, user_id, subject, 'mail' as type FROM mail_messages WHERE folder_id = %2\$d AND address_id = %1\$d AND date_received >= %3\$d
+	UNION
+	SELECT id, timestamp, user_id, description AS subject, 'support' as type FROM issues WHERE address_id = %1\$d AND timestamp >= %3\$d
+	ORDER BY timestamp DESC
+	", $id, $emailarchive["id"], time());
+$res = sql_query($sql);
+while ($row = sql_fetch_array($res)) {
+	$row["h_type"] = gettext($row["type"]);
+	$row["h_time"] = date("d-m-Y H:i:s", $row["timestamp"]);
+	$row["h_username"] = $user_data->getUsernameById($row["user_id"]);
+	switch($row["type"]) {
+	case "calendar":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=calendar&action=show_info&id=%d&user_id=%d');", $row["id"], $row["user_id"]);
+		break;
+	case "mail":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=email&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "todo":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=todo&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "note":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=note&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "sales":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=sales&action=show_info&id=%d');", $row["id"]);
+		break;
+	case "support":
+		$row["infolink"] = sprintf("javascript: loadXML('index.php?mod=support&action=show_info&id=%d');", $row["id"]);
+		break;
+	}
+	$commitems_planning[] = $row;
+}
+
+/* init the output object */
+$output = new Layout_output();
+$output->layout_page(gettext("Relation Card"), $_REQUEST["hide"]);
+
+/* create frame */
+$frame_settings = array(
+	"title" => gettext("Relation Card")
+);
+$frame = new Layout_venster($frame_settings);
+$frame->addVensterData();
+
+/* dual column rendering */
+$buf1 = new Layout_output();
+$buf2 = new Layout_output();
+
+/* address record */
+$history = new Layout_history();
+$link = $history->generate_history_call();
+$buf1->addCode($link);
+
+$buf1->insertAction("back", gettext("back"), sprintf(
+	"javascript: history_goback('%d');" , $_REQUEST["restore_point_steps"]));
+
+if ($GLOBALS["covide"]->license["has_project_ext_samba"]) {
+	$buf1->insertAction(
+		"view_all",
+		gettext("template merge"),
+		sprintf("javascript:popup('?mod=projectext&action=extGenerateDocumentTree&address_id=%d', 'samba', 700, 600, 1);", $_REQUEST["id"])
+		);
+}
+$view = new Layout_view();
+$view->setHtmlField("phone_nr_link");
+$view->setHtmlField("mobile_nr_link");
+
+$view->addData($addressinfo);
+
+/* specify layout */
+if (!$addressinfo[0]["is_active"])
+	$view->addMapping("&nbsp", "<span style=\"background-color: #d34545; color: white;\">&nbsp;".gettext("inactive")."&nbsp;</b>");
+$view->addMapping(gettext("company name"), "%%companyname");
+$view->addMapping(gettext("SSN"), "%bsn");
+$view->addMapping(gettext("birth date"), "%h_birthday");
+$view->addMapping(gettext("warning"), array("<b>", "%warning", "</b>"));
+$view->addMapping(gettext("picture"), "%%photo");
+$view->addMapping(gettext("debtor nr"), "%debtor_nr");
+$view->addMapping(gettext("addresstype"), "%%addresstype");
+$view->addMapping(gettext("branche"), "%branche");
+$view->addMapping(gettext("bankaccount"), "%bankaccount");
+$view->addMapping(gettext("giroaccount"), "%giro");
+$view->addMapping(gettext("contact"), "%%tav");
+$view->addMapping(gettext("jobtitle"), "%jobtitle");
+$view->addMapping(gettext("address"), array("%address","\n","%address2"));
+$view->addMapping(gettext("zip code"), "%zipcode");
+$view->addMapping(gettext("city"), "%city");
+$view->addMapping(gettext("state/province"), "%state");
+$view->addMapping(gettext("country"), $countryArray[$addressinfo[0]["country"]]);
+$view->addMapping(gettext("streetmap"), "%%map");
+$view->addMapping(gettext("po box"), "%pobox");
+$view->addMapping(gettext("zip code po box"), "%pobox_zipcode");
+$view->addMapping(gettext("city po box"), "%pobox_city");
+$view->addMapping(gettext("telephone nr"), "%%phone_nr");
+$view->addMapping(gettext("mobile phone nr"), "%%mobile_nr");
+$view->addMapping(gettext("fax nr"), "%fax_nr");
+$view->addMapping(gettext("email"), "%%email");
+$view->addMapping(gettext("website"), "%%website");
+$view->addMapping(gettext("classification(s)"), "%classification_names");
+$view->addMapping(gettext("account manager"), "%account_manager_name");
+$view->addMapping(gettext("last changed"), "%%last_changed");
+
+if ($achange) {
+	$view->addMapping(gettext("search for communication items"), "%%complex_search");
+
+	$view->defineComplexMapping("companyname", array(
+		array(
+			"type" => "link",
+			"link" => array("javascript: popup('index.php?mod=address&action=edit_bcard&from=relation&id=", "%bcard_id", "&address_id=", "%address_id", "&addresstype=relations', 'addressedit', 700, 600, 0);"),
+			"text" => "%companyname"
+		),
+		array(
+			"type" => "action",
+			"src"  => "edit",
+			"link" => array("javascript: popup('index.php?mod=address&action=edit_bcard&from=relation&id=", "%bcard_id", "&address_id=", "%address_id", "&addresstype=relations', 'addressedit', 700, 600, 0);"),
+			"alt" => gettext("alter")
+		)
+	));
+} else {
+	$view->defineComplexMapping("companyname", array(
+		array(
+			"type" => "text",
+			"text" => "%companyname"
+		)
+	));
+}
+$view->defineComplexMapping("addresstype", array(
+	array(
+		"type"  => "text",
+		"text"  => array(" ", gettext("supplier")),
+		"check" => "%is_supplier"
+	),
+	array(
+		"type"  => "text",
+		"text"  => array(" ", gettext("customer")),
+		"check" => "%is_customer"
+	),
+	array(
+		"type"  => "text",
+		"text"  => array(" ", gettext("private")),
+		"check" => "%is_person"
+	)
+));
+$view->defineComplexMapping("last_changed", array(
+	array(
+		"type" => "text",
+		"text" => array(gettext("last changed")," ", gettext("by")," ", "%changed_by_name"," ", gettext("on")," ", "%changed_human_date" ),
+		"check" => "%changed_by_name"
+	)
+));
+$view->defineComplexMapping("photo", array(
+	array(
+		"type" => "text",
+		"text" => array("<img src=\"", "%photourl", "\">"),
+		"check" => "%photourl"
+	)
+));
+$view->defineComplexMapping("tav", array(
+	array(
+		"type" => "text",
+		"text" => "%tav"
+	),
+	array(
+		"type" => "text",
+		"text" => array(" (", "%contact_givenname", ")"),
+		"check" => "%contact_givenname"
+	)
+));
+$view->defineComplexMapping("phone_nr", array(
+	array(
+		"type" => "text",
+		"text" => "%phone_nr_link"
+	)
+));
+$view->defineComplexMapping("mobile_nr", array(
+	array(
+		"type" => "text",
+		"text" => "%mobile_nr_link"
+	)
+));
+$view->defineComplexMapping("email", array(
+	array(
+		"type"    => "link",
+		"text"    => "%email",
+		"link"    => array("javascript: emailSelectFrom('", "%email", "','", "%id", "');")
+	)
+));
+$view->defineComplexMapping("website", array(
+	array(
+		"type"   => "link",
+		"text"   => "%website",
+		"link"   => "%website",
+		"target" => "_blank"
+	)
+));
+$view->defineComplexMapping("complex_search", array(
+	array(
+		"type" => "action",
+		"src"  => "search",
+		"link" => array("index.php?mod=index&search[address_id]=", "%id")
+	),
+	array(
+		"text" => " "
+	),
+	array(
+		"type" => "link",
+		"text" => gettext("search for communication items"),
+		"link" => array("index.php?mod=index&search[address_id]=", "%id")
+	)
+));
+$view->defineComplexMapping("map", array(
+	array(
+		"type"   => "link",
+		"text"   => gettext("show map"),
+		"link"   => array("javascript: popup('index.php?mod=googlemaps&action=show_map&id=", "%id", "&location=", "%address", ", ", "%city", ", ", "%country", "', 'googlemap', 580, 650, 1);")
+	)
+));
+
+/**
+* Get data for each block
+* Put block in a div with class sortable, to make a block sortable
+* function serialize get the id of each block and save the order of the id into the database
+*/
+
+/* block extra */
+$table = new Layout_table(array("cellspacing" => 1));
+if (!count($metafields)) {
+	$table->addTableRow();
+		$table->insertTableData(gettext("no items found"), "", "data");
+	$table->endTableRow();
+}
+foreach ($metafields as $v) {
+	$table->addTableRow();
+		$table->insertTableData($v["fieldname"], "", "header");
+		$table->addTableData("", "data");
+			$table->addCode($meta_output->meta_print_field($v));
+		$table->endTableData();
+	$table->endTableRow();
+}
+$table->endTable();
+$tableExtra = $table->generate_output();
+unset($table);
+
+/* block business cards */
+$businessCards = new Layout_output();
+//if ($GLOBALS["covide"]->license["has_funambol"]) {
+	$users = explode(",", $user_info_fb["addresssyncmanage"]);
+	$sel = array(
+		$_SESSION["user_id"] => $user_data->getUserNameById($_SESSION["user_id"])
+	);
+
+	/* create funambol object */
+	$funambol_data = new Funambol_data();
+	foreach ($users as $k=>$v) {
+		if ($funambol_data->checkUserSyncState($v) === true)
+			$sel[$v] = $user_data->getUserNameById($v);
+	}
+
+	$businessCards->addTag("form", array(
+		"id"     => "deze",
+		"method" => "get",
+		"action" => "index.php"
+	));
+	$businessCards->addHiddenField("mod", "address");
+	$businessCards->addHiddenField("action", "relcard");
+	$businessCards->addHiddenField("id", $_REQUEST["id"]);
+	$businessCards->addHiddenField("history", $_REQUEST["history"]);
+	$businessCards->addCode(gettext("sync user").": ");
+	$businessCards->addSelectField("funambol_user", $sel, $_REQUEST["funambol_user"]);
+
+	$businessCards->addSpace(5);
+	$businessCards->addCode(gettext("search").": ");
+	$businessCards->addTextField("bcard_search", "");
+	$businessCards->insertAction("forward", gettext("search"), sprintf(
+		"javascript: load_bcards('%d', document.getElementById('bcard_search').value, '%d');",
+			$id, $_REQUEST["funambol_user"]
+	));
+	$businessCards->insertAction("toggle", gettext("show all"), sprintf(
+		"javascript: document.getElementById('bcard_search').value = ''; load_bcards('%d', '', '%d');",
+			$id, $_REQUEST["funambol_user"]
+	));
+
+	$businessCards->endTag("form");
+	$businessCards->start_javascript();
+		$businessCards->addCode("
+			document.getElementById('funambol_user').onchange = function() {
+				document.getElementById('deze').submit();
+			}
+		");
+	$businessCards->end_javascript();
+	$businessCards->addSpace(3);
+
+	if ($achange)
+		$businessCards->insertAction("new", gettext("new businesscard"), "javascript: bcard_edit(0, $id);");
+
+$businessCards->insertTag("div", $this->getBcardsXML($id), array("id" => "bcards_layer"));
+//$buf1->addCode($venster->generate_output());
+$businessCards->load_javascript(self::include_dir."sync.js");
+
+
+/* block memo */
+$memo = new Layout_output();
+if (trim($addressinfo[0]["memo"])) {
+	$memo->addCode(nl2br($addressinfo[0]["memo"]));
+} else {
+	$memo->addCode(gettext("no memo found"));
+}
+
+/* block  project information */
+$pr_viewData = "";
+if ($GLOBALS["covide"]->license["has_project"] && !$GLOBALS["covide"]->license["disable_basics"]) {
+	$pr_view = new Layout_view();
+	$pr_view->addData($projectinfo);
+	$pr_view->addMapping(gettext("name"), "%%complex_name");
+	$pr_view->addMapping(gettext("description"), "%description");
+	$pr_view->addMapping(gettext("active"), "%%complex_active");
+	$pr_view->defineComplexMapping("complex_name", array(
+		array(
+			"type" => "link",
+			"link" => array("index.php?mod=project&action=showhours&id=", "%id"),
+			"text" => "%name"
+		)
+	));
+	$pr_view->defineComplexMapping("complex_active", array(
+		array(
+			"type"  => "action",
+			"src"   => "enabled",
+			"check" => "%is_active"
+		),
+		array(
+			"type"  => "action",
+			"src"   => "disabled",
+			"check" => "%is_nonactive"
+		)
+	));
+
+	if ($GLOBALS["covide"]->license["has_project_declaration"]) {
+		$h1Projects = gettext("declarations");
+	} else {
+		$h1Projects = gettext("projects");
+	}
+	$pr_viewData = $pr_view->generate_output();
+}
+
+/* block history */
+$history = new Layout_output();
+$view_com = new Layout_view();
+$view_com->addData($commitems);
+$view_com->addMapping(gettext("date"), "%h_time");
+$view_com->addMapping(gettext("type"), "%h_type");
+$view_com->addMapping(gettext("user"), "%h_username");
+$view_com->addMapping(gettext("subject"), "%%subject");
+$view_com->defineComplexMapping("subject", array(
+	array(
+		"type" => "link",
+		"link" => "%infolink",
+		"text" => "%subject"
+	),
+));
+$history->addCode($view_com->generate_output());
+unset($view_com);
+$history->addTag("form", array("id" => "comrange", "method" => "get", "action" => "index.php"));
+$history->addHiddenField("mod", "address");
+$history->addHiddenField("action", "relcard");
+$history->addHiddenField("id", $id);
+/* use table */
+$table = new Layout_table();
+$table->addTableRow();
+$table->addTableRow();
+	$table->insertTableData("<br> ", array("colspan" => 2));
+$table->endTableRow();
+	$table->addTableData();
+		$table->addCode(gettext("from"));
+	$table->endTableData();
+	$table->addTableData();
+		$table->addSelectField("start_day", $days, $_REQUEST["start_day"]);
+		$table->addSelectField("start_month", $months, $_REQUEST["start_month"]);
+		$table->addSelectField("start_year", $years, $_REQUEST["start_year"]);
+		$table->addCode( $calendar_output->show_calendar("document.getElementById('start_day')", "document.getElementById('start_month')", "document.getElementById('start_year')" ));
+	$table->endTableData();
+$table->endTableRow();
+$table->addTableRow();
+	$table->addTableData();
+		$table->addCode(gettext("till"));
+	$table->endTableData();
+	$table->addTableData();
+		$table->addSelectField("end_day", $days, $_REQUEST["end_day"]);
+		$table->addSelectField("end_month", $months, $_REQUEST["end_month"]);
+		$table->addSelectField("end_year", $years, $_REQUEST["end_year"]);
+		$table->addCode( $calendar_output->show_calendar("document.getElementById('end_day')", "document.getElementById('end_month')", "document.getElementById('end_year')" ));
+	$table->endTableData();
+$table->endTableRow();
+$table->endTableRow();
+$table->addTableRow();
+	$table->addTableData(array("align" => "right", "colspan" => 2));
+		$table->insertAction("search", gettext("search"), "javascript: document.getElementById('comrange').submit();");
+	$table->endTableData();
+$table->endTableRow();
+$table->endTable();
+$search = $table->generate_output();
+unset($table);
+$history->addCode($search);
+$history->endTag("form");
+
+/* block planning */
+$view_com = new Layout_view();
+$view_com->addData($commitems_planning);
+$view_com->addMapping(gettext("date"), "%h_time");
+$view_com->addMapping(gettext("type"), "%h_type");
+$view_com->addMapping(gettext("user"), "%h_username");
+$view_com->addMapping(gettext("subject"), "%%subject");
+$view_com->defineComplexMapping("subject", array(
+	array(
+		"type" => "link",
+		"link" => "%infolink",
+		"text" => "%subject"
+	),
+));
+$planning = $view_com->generate_output();
+unset($view_com);
+
+/* block support inforamtion */
+$supportData = "";
+if ($GLOBALS["covide"]->license["has_issues"] && !$GLOBALS["covide"]->license["disable_basics"]) {
+	$support = new Layout_output();
+	$view_support = new Layout_view();
+	$view_support->addData($supportinfo["items"]);
+	$view_support->addMapping("&nbsp;", "%%complex_actions");
+	$view_support->addMapping(gettext("date"), "%human_date");
+	$view_support->addMapping(gettext("support request"), "%short_desc");
+	$view_support->addMapping(gettext("dispatching"), "%short_sol");
+	$view_support->addMapping(gettext("issuer"), "%sender_name");
+	$view_support->addMapping(gettext("executor"), "%rcpt_name");
+
+	$view_support->defineComplexMapping("complex_actions", array(
+		array(
+			"type" => "action",
+			"src"  => "info",
+			"link" => array("javascript: loadXML('index.php?mod=support&action=show_info&id=", "%id", "');")
+		)
+	));
+	$support->addCode($view_support->generate_output());
+	if ($_REQUEST["history"] == "support") {
+		$support->insertLink(gettext("current"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=nothing"
+		));
+		$support->addSpace(3);
+	} else {
+		$support->insertLink(gettext("history"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=support"
+		));
+		$support->addSpace(3);
+	}
+	$support->insertAction("new", gettext("new supportitem"), "javascript: popup('index.php?mod=support&action=edit&id=0&relation_id=$id');");
+	$support->insertLink(gettext("new supportitem"), array(
+		"href" => "javascript: popup('index.php?mod=support&action=edit&id=0&relation_id=$id');"
+	));
+	$supportData = $support->generate_output();
+}
+
+/* block note information */
+$actions = 0;
+$note = new Layout_output();
+if ($user_data->checkPermission("xs_notemanage")) {
+	$actions = 1;
+}
+$viewNote = new Layout_view();
+$viewNote->addData($noteinfo);
+$viewNote->addMapping(gettext("date"), "%human_date");
+$viewNote->addMapping(gettext("from"), "%from_name");
+$viewNote->addMapping(gettext("to"), "%to_name");
+$viewNote->addMapping(gettext("subject"), "%%subject");
+$viewNote->defineComplexMapping("subject", array(
+	array(
+		"type" => "link",
+		"link" => array("javascript: popup('index.php?mod=note&action=message&hidenav=1&actions=",$actions,"&msg_id=", "%id", "', 'shownote', 820, 400, 1);"),
+		"text" => "%subject"
+	)
+));
+$note->addCode($viewNote->generate_output());
+unset($viewNote);
+if ($_REQUEST["history"] == "notes") {
+	$note->insertLink(gettext("current"), array(
+		"href" => "index.php?mod=address&action=relcard&id=".$id."&history=nothing"
+	));
+	$note->addSpace(3);
+} else {
+	$note->insertLink(gettext("history"), array(
+		"href" => "index.php?mod=address&action=relcard&id=".$id."&history=notes"
+	));
+	$note->addSpace(3);
+}
+$note->insertAction("new", gettext("make note"), "javascript: new_note(".$id.");");
+$note->insertLink(gettext("make note"), array(
+	"href" => "javascript: new_note(".$id.");"
+));
+
+/* block customer information */
+$customer = new Layout_output();
+$viewCustomer = new Layout_view();
+$viewCustomer->addData($custcontinfo);
+$viewCustomer->addMapping(gettext("date"), "%human_date");
+$viewCustomer->addMapping(gettext("from"), "%from_name");
+$viewCustomer->addMapping(gettext("to"), "%to_name");
+$viewCustomer->addMapping(gettext("subject"), "%%subject");
+if ($_REQUEST["history"] != "customercontact") {
+	$viewCustomer->addMapping("%%actions_header", "%%actions");
+}
+$viewCustomer->defineComplexMapping("subject", array(
+	array(
+		"type"  => "link",
+		"link"  => array("javascript: popup('index.php?mod=note&action=message&hidenav=1&msg_id=", "%id", "', 'shownote', 820, 500, 1);"),
+		"text"  => "%subject",
+	)
+));
+$viewCustomer->defineComplexMapping("actions_header", array(
+	array(
+		"type" => "action",
+		"src"  => "toggle",
+		"alt"  => gettext("archive selected customer contacts"),
+		"link" => "javascript: custcont_togglestate();"
+	)
+));
+$viewCustomer->defineComplexMapping("actions", array(
+	array(
+		"text" => $output->insertCheckbox(array("checkbox_custcont[", "%id", "]"), "1", 0, 1)
+	)
+));
+$customer->addTag("form", array(
+	"id"     => "custcont",
+	"method" => "get",
+	"action" => "index.php"
+));
+$customer->addHiddenField("mod", "address");
+$customer->addHiddenField("action", "relcard");
+$customer->addHiddenField("id", $_REQUEST["id"]);
+$customer->addHiddenField("history", $_REQUEST["history"]);
+$customer->addHiddenField("relcardaction", "toggle_custcont");
+$customer->addCode($viewCustomer->generate_output());
+	unset($viewCustomer);
+	if ($_REQUEST["history"] == "customercontact") {
+		$customer->insertLink(gettext("current"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=nothing"
+		));
+		$customer->addSpace(3);
+	} else {
+		$customer->insertLink(gettext("history"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=customercontact"
+		));
+		$customer->addSpace(3);
+	}
+	$customer->insertAction("new", gettext("create customer contact item"), "javascript: new_note(".$id.", 1);");
+	$customer->insertLink(gettext("create customer contact item"), array(
+		"href" => "javascript: new_note(".$id.", 1);"
+	));
+
+$customer->endTag("form");
+
+/* block todo */
+$todoData = "";
+$calendarData = "";
+$filemanagementData = "";
+$output_templateData = "";
+$output_emailData = "";
+if (!$GLOBALS["covide"]->license["disable_basics"]) {
+	$viewTodo = new Layout_view();
+	$todo = new Layout_output();
+	$viewTodo->addData($todoinfo);
+	$viewTodo->addMapping(gettext("date"), "%desktop_time");
+	$viewTodo->addMapping(gettext("user"), "%user_name");
+	$viewTodo->addMapping(gettext("subject"), "%%subject");
+	$viewTodo->addMapping("", "%%complex_actions");
+	$viewTodo->defineComplexMapping("subject", array(
+		array(
+			"type" => "link",
+			"link" => array("javascript: loadXML('index.php?mod=todo&action=show_info&id=", "%id", "');"),
+			"text" => "%subject"
+		)
+	));
+	$viewTodo->defineComplexMapping("complex_actions", array(
+		array(
+			"type" => "action",
+			"src"  => "info",
+			"alt"  => gettext("information"),
+			"link" => array("javascript: toonInfo(", "%id", ");"),
+		),
+		array(
+			"type" => "action",
+			"src"  => "ok",
+			"alt"  => gettext("done"),
+			"link" => array("javascript: todo_delete(", "%id", ", 1, 1);"),
+			"check" => "%is_current"
+		),
+		array(
+			"type" => "action",
+			"src"  => "edit",
+			"alt"  => gettext("change:"),
+			"link" => array("javascript: todo_edit(", "%id", ", 1);"),
+			"check" => "%is_current"
+		),
+		array(
+			"type" => "action",
+			"src"  => "go_calendar",
+			"alt"  => gettext("plan in calendar"),
+			"link" => array("javascript: todo_to_cal(", "%id", ");"),
+			"check" => "%is_current"
+		),
+	));
+	$todo->addCode($viewTodo->generate_output());
+	unset($viewTodo);
+	if ($_REQUEST["history"] == "todos") {
+		$todo->insertLink(gettext("current"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=nothing"
+		));
+		$todo->addSpace(3);
+	} else {
+		$todo->insertLink(gettext("history"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=todos"
+		));
+		$todo->addSpace(3);
+	}
+	$todo->insertAction("new", gettext("create todo"), "javascript: popup('?mod=todo&action=edit_todo&address_id=".$id."&hide=1');");
+	$todo->insertLink(gettext("create todo"), array(
+		"href" => "javascript: popup('?mod=todo&action=edit_todo&address_id=".$id."&hide=1');"
+	));
+	$todo->load_javascript(self::todo_include_dir."todo_actions.js");
+	$todoData = $todo->generate_output();
+
+	/* block calendar */
+	$viewCalendar = new Layout_view();
+	$calendar = new Layout_output();
+	$viewCalendar->addData($calendarinfo);
+	$viewCalendar->addMapping(gettext("from"), "%%human_start");
+	$viewCalendar->addMapping(gettext("till"), "%%human_end");
+	$viewCalendar->addMapping(gettext("subject"), "%%subject");
+	$viewCalendar->addMapping(gettext("user"), "%user_name");
+	$viewCalendar->defineComplexMapping("human_start", array(
+		array(
+			"type" => "link",
+			"link" => array("index.php?mod=calendar&extra_user=", "%user_id", "&timestamp=", "%timestamp_start"),
+			"text" => "%human_start"
+		)
+	));
+	$viewCalendar->defineComplexMapping("human_end", array(
+		array(
+			"type" => "link",
+			"link" => array("index.php?mod=calendar&extra_user=", "%user_id", "&timestamp=", "%timestamp_end"),
+			"text" => "%human_end"
+		)
+	));
+	$viewCalendar->defineComplexMapping("subject", array(
+		array(
+			"type"  => "action",
+			"src"   => "state_private",
+			"alt"   => gettext("private appointment"),
+			"check" => "%is_private"
+		),
+		array(
+			"type" => "link",
+			"link" => array("javascript: showcalitem(", "%id", ", ", "%user_id", ");"),
+			"text" => "%subject"
+		)
+	));
+	$calendar->addCode($viewCalendar->generate_output());
+	unset($viewCalendar);
+
+	if ($_REQUEST["history"] == "calendar") {
+		$calendar->insertLink(gettext("current"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=nothing"
+		));
+		$calendar->addSpace(3);
+	} else {
+		$calendar->insertLink(gettext("history"), array(
+			"href" => "index.php?mod=address&action=relcard&id=$id&history=calendar"
+		));
+		$calendar->addSpace(3);
+	}
+	$calendar->insertAction("new", gettext("create calendar item"), "javascript: new_calitem(".$id.");");
+	$calendar->insertLink(gettext("create calendar item"), array(
+		"href" => "javascript: new_calitem(".$id.");"
+	));
+	$calendarData = $calendar->generate_output();
+
+	/* block filemanagement */
+	$filemanagement = new Layout_output();
+	$filemanagement->insertAction("open", gettext("open filesystem folder of this contact"),
+		"index.php?mod=filesys&action=opendir&id=".$filesysinfo
+	);
+	$filemanagement->addSpace();
+	$filemanagement->insertTag("a", gettext("open filesystem folder of this contact"), array(
+		"href" => "index.php?mod=filesys&action=opendir&id=".$filesysinfo
+	));
+	$filemanagement->addSpace();
+	$filemanagement->insertTag("span","(". $filesysdata["data"]["0"]["filecount"]."/".$filesysdata["data"]["0"]["foldercount"].")");
+	$filemanagementData = $filemanagement->generate_output();
+
+	$sales_outputData = "";
+	if ($GLOBALS["covide"]->license["has_sales"]) {
+		/* block sales link */
+		$viewSales = new Layout_view();
+		$sales_output = new Layout_output();
+		$viewSales->addData($salesinfo["data"]);
+
+		/* add the mappings (columns) we needed */
+		$viewSales->addMapping(gettext("prospect"), "%h_timestamp_prospect");
+		$viewSales->addMapping(gettext("title"), "%subject");
+		$viewSales->addMapping(gettext("score"), array("%expected_score", "&#037;"), "right");
+		$viewSales->addMapping(gettext("price"), "%total_sum", "right");
+
+		$sales_output->addCode($viewSales->generate_output());
+
+		//$venster->addCode( $view->generate_output() );
+		if ($_REQUEST["history"] == "sales") {
+			$sales_output->insertLink(gettext("current"), array(
+				"href" => "index.php?mod=address&action=relcard&id=$id&history=nothing"
+			));
+			$sales_output->addSpace(3);
+		} else {
+			$sales_output->insertLink(gettext("history"), array(
+				"href" => "index.php?mod=address&action=relcard&id=$id&history=sales"
+			));
+			$sales_output->addSpace(3);
+		}
+		$sales_output->insertAction("go_sales", gettext("open sales folder of this contact"),
+			"index.php?mod=sales&action=list&search[address_id]=".$id
+		);
+		$sales_output->addSpace();
+		$sales_output->insertTag("a", gettext("open sales folder of this contact"), array(
+			"href"=>"index.php?mod=sales&action=list&search[address_id]=".$id
+		));
+	$sales_outputData = $sales_output->generate_output();
+	}
+
+	/* block mortgage link */
+	$output_mortgageData = "";
+	if ($GLOBALS["covide"]->license["has_hypo"]) {
+		$view_mortgage = new Layout_view();
+		$output_mortgage = new Layout_output();
+		$view_mortgage->addData($salesinfo["data"]);
+
+		/* add the mappings (columns) we needed */
+		$view_mortgage->addMapping(gettext("type"), "%h_type");
+		$view_mortgage->addMapping(gettext("date"), "%h_timestamp");
+		$view_mortgage->addMapping(gettext("title"), "%subject");
+		$view_mortgage->addMapping(gettext("price"), "%total_sum", "right");
+
+		$output_mortgage->addCode($view_mortgage->generate_output());
+
+		$output_mortgage->insertAction("go_mortgage", gettext("open mortgage folder of this contact"),
+			"index.php?mod=mortgage&action=list&search[address_id]=".$id
+		);
+		$output_mortgage->addSpace();
+		$output_mortgage->insertTag("a", gettext("open mortgage folder of this contact"), array(
+			"href"=>"index.php?mod=mortgage&action=list&search[address_id]=".$id
+		));
+		$output_mortgageData = $output_mortgage->generate_output();
+	}
+
+	/* block template link */
+	$output_template = new Layout_output();
+	$view_template = new Layout_view();
+	$view_template->addData($templates_info["data"]);
+
+	/* add the mappings (columns) we needed */
+	$view_template->addMapping(gettext("type"), "%%complex_type");
+	$view_template->addMapping(gettext("description"), "%%complex_description");
+	$view_template->addMapping(gettext("date and city"), "%datecity");
+	$view_template->addMapping("", "%%complex_actions");
+
+	$view_template->defineComplexMapping("complex_description", array(
+		array(
+			"type"    => "link",
+			"text"    => "%description",
+			"link"    => array("javascript: popup('index.php?mod=templates&action=edit&id=", "%id", "', 'salesedit', 0, 0, 1);")
+		)
+	));
+
+	$view_template->defineComplexMapping("complex_type", array(
+		array(
+			"type"  => "action",
+			"src"   => "addressbook",
+			"alt"   => gettext("single address"),
+			"check" => "%icon_single"
+		),
+		array(
+			"type"  => "action",
+			"src"   => "state_public",
+			"alt"   => gettext("businesscard"),
+			"check" => "%icon_bcard"
+		),
+		array(
+			"type"  => "action",
+			"src"   => "state_multiple",
+			"alt"   => gettext("multiple addresses"),
+			"check" => "%icon_multi"
+		)
+	));
+
+	$view_template->defineComplexMapping("complex_actions", array(
+		array(
+			"type"    => "action",
+			"src"     => "edit",
+			"alt"     => gettext("edit"),
+			"link"    => array("javascript: popup('index.php?mod=templates&action=edit&id=", "%id", "', 'salesedit', 0, 0, 1);")
+		),
+		array(
+			"type"    => "action",
+			"src"     => "delete",
+			"alt"     => gettext("delete"),
+			"link"    => array("?mod=templates&action=delete&back_address_id=", $id, "&id=", "%id"),
+			"confirm" => gettext("Are you sure you want to remove this template?")
+		)
+	));
+	$output_template->addCode($view_template->generate_output());
+	$output_template->insertAction("view_all", gettext("open template module"),
+		"index.php?mod=templates&address_id=".$id
+	);
+	$output_template->addSpace();
+	$output_template->insertTag("a", gettext("open template module"), array(
+		"href" => "index.php?mod=templates&address_id=".$id
+	));
+	$output_template->addSpace();
+	$output_template->insertAction("new", gettext("new letter for this relation"),
+		"javascript: popup('index.php?mod=templates&action=edit&address_id=$id', 'template', 960, 600, 1);"
+	);
+	$output_template->addSpace();
+	$output_template->insertTag("a", gettext("new letter for this relation"), array(
+		"href" => "javascript: popup('index.php?mod=templates&action=edit&address_id=$id', 'template', 960, 600, 1);"
+	));
+	$output_templateData = $output_template->generate_output();
+
+	/* email link */
+	$output_email = new Layout_output();
+	$count = count($emailinfo["data"]);
+	if ($count >= 6) {
+		$limit_height = "height: 300px; overflow:auto;";
+	} else {
+		$limit_height = "";
+	}
+	$output_email->addTag("div", array(
+		"class"  => "limit_height",
+		"style" => $limit_height
+	));
+	/* create a new view and add the data */
+	$view_email = new Layout_view();
+	$view_email->addData($emailinfo["data"]);
+
+	$view_email->addMapping("%%header_fromto", "%%data_fromto");
+	$view_email->addMapping(gettext("date"), "%%data_datum", "right");
+	$view_email->addMapping(gettext("folder"), "%folder_name", "right");
+
+	$view_email->addSubMapping("%%data_subject", "%is_new");
+	$view_email->addSubMapping("%%data_description", "");
+	/* define complex header fromto */
+	$view_email->defineComplexMapping("header_fromto", array(
+		array(
+			"text" => array(
+				gettext("subject"),
+				"\n",
+				gettext("sender"),
+				"/",
+				gettext("recipient")
+			)
+		)
+	));
+	/* define complex data fromto */
+	$view_email->defineComplexMapping("data_fromto", array(
+		array(
+			"text" => array(
+				gettext("from"), ": ", "%sender_emailaddress", "\n",
+				gettext("to"), ": ", "%to"
+			)
+		)
+	));
+	/* define complex mapping for subject  */
+	$_action = "open";
+	$view_email->defineComplexMapping("data_subject", array(
+		array(
+			"type" => "link",
+			"text" => "%subject",
+			"link" => array("?mod=email&action=$_action&id=", "%id")
+		)
+	));
+	$view_email->defineComplexMapping("data_description", array(
+		array(
+			"type" => "text",
+			"text" => "%h_description"
+		)
+	));
+	/* define complex mapping for datum  */
+	$view_email->defineComplexMapping("data_datum", array(
+		array(
+			"text" => array( "%short_date", "\n", "%short_time" )
+		)
+	));
+	$output_email->insertAction("go_email", gettext("open email archive of this contact"),
+		"index.php?mod=email&action=list&address_id=".$id."&folder_id=".$emailarchive["id"]
+	);
+	$output_email->addSpace();
+	$output_email->insertTag("a", gettext("open email archive of this contact"), array(
+		"href" => "index.php?mod=email&action=list&address_id=".$id."&folder_id=".$emailarchive["id"]
+	));
+	$output_email->endTag("div");
+	$output_email->addCode($view_email->generate_output());
+	unset($view_email);
+	$output_emailData = $output_email->generate_output();
+}
+
+
+/* get personal user information */
+$user_info_fb = $user_data->getUserDetailsById($_SESSION["user_id"]);
+$userinfo = $user_info_fb;
+
+/* put the data in a div */
+$blocks = array(
+			"information" => $this->showAddressBlock("relcard_information", gettext("information"), $view->generate_output_vertical(1)),
+			"extra" => $this->showAddressBlock("relcard_extra", gettext("extra"), $tableExtra),
+			"bcards" => $this->showAddressBlock("relcard_bcards", gettext("business cards"), $businessCards->generate_output()),
+			"memo" => $this->showAddressBlock("relcard_memo", gettext("memo"), $memo->generate_output()),
+			"projects" => $this->showAddressBlock("relcard_projects", $h1Projects, $pr_viewData),
+			"commitems" => $this->showAddressBlock("relcard_commitems", gettext("history"), $history->generate_output()),
+			"planning" => $this->showAddressBlock("relcard_planning", gettext("planning"), $planning),
+			"support" => $this->showAddressBlock("relcard_support", gettext("issues/support"), $supportData),
+			"notes" => $this->showAddressBlock("relcard_notes", gettext("notes"), $note->generate_output()),
+			"customercontact" => $this->showAddressBlock("relcard_customercontact", gettext("customer contact items"), $customer->generate_output()),
+			"todo" => $this->showAddressBlock("relcard_todo", gettext("to do's"), $todoData),
+			"calendar" => $this->showAddressBlock("relcard_calendar", gettext("calendar"), $calendarData),
+			"filemanagement" => $this->showAddressBlock("relcard_filemanagement", gettext("file management"), $filemanagementData),
+			"sales" => $this->showAddressBlock("relcard_sales", gettext("sales"), $sales_outputData),
+			"morgage" => $this->showAddressBlock("relcard_morgage", gettext("morgage"), $output_mortgageData),
+			"templates" => $this->showAddressBlock("relcard_templates", gettext("letters by templates"), $output_templateData),
+			"email" => $this->showAddressBlock("relcard_email", gettext("email"), $output_emailData),
+);
+
+$address_layout = unserialize($userinfo["addresslayout"]);
+if (!is_array($address_layout)) {
+	$address_layout = array(
+		"sortable-container" => array(
+			"information",
+			"extra",
+			"bcards",
+			"memo",
+			"projects",
+		),
+		"sortable-container2" => array(
+			"commitems",
+			"planning",
+			"support",
+			"notes",
+			"customercontact",
+			"todo",
+			"calendar",
+			"filemanagement",
+			"sales",
+			"morgage",
+			"templates",
+			"email",
+		),
+	);
+}
+/* if license change, the blocks must be added in the database, else the blocks won't visible */
+$address_layout["allBlocks"] = array(
+	"information",
+	"extra",
+	"bcards",
+	"memo",
+	"projects",
+	"commitems",
+	"planning",
+	"support",
+	"notes",
+	"customercontact",
+	"todo",
+	"calendar",
+	"filemanagement",
+	"sales",
+	"morgage",
+	"templates",
+	"email",
+);
+
+//put divs in div with class sortable-container to make the divs sortavble
+$buf1->addTag("div", array("id" => "sortable-container"));
+/* show blocks items of colom1 in standard sequence */
+if (!is_array($address_layout["sortable-container"])) {
+	$buf1->addCode($blocks["information"]);
+	$buf1->addCode($blocks["extra"]);
+	$buf1->addCode($blocks["bcards"]);
+	$buf1->addCode($blocks["memo"]);
+	$buf1->addCode($blocks["projects"]);
+} else {
+	/* show blocks items in personal sequence */
+	foreach ($address_layout["sortable-container"] as $b) {
+		$buf1->addCode($blocks[$b]);
+		$blockAdd[] = $b;
+	}
+}
+$buf1->endTag("div");
+//put divs in div with class sortable-container to make the divs sortavble
+$buf2->addTag("div", array("id" => "sortable-container2"));
+/* show blocks items of colom2 in standard sequence */
+if (!is_array($address_layout["sortable-container2"])) {
+	$buf2->addCode($blocks["commitems"]);
+	$buf2->addCode($blocks["planning"]);
+	$buf2->addCode($blocks["support"]);
+	$buf2->addCode($blocks["notes"]);
+	$buf2->addCode($blocks["customercontact"]);
+	$buf2->addCode($blocks["todo"]);
+	$buf2->addCode($blocks["calendar"]);
+	$buf2->addCode($blocks["filemanagement"]);
+	$buf2->addCode($blocks["sales"]);
+	$buf2->addCode($blocks["morgage"]);
+	$buf2->addCode($blocks["templates"]);
+	$buf2->addCode($blocks["email"]);
+/* show blocks items in personal sequence */
+} else {
+	foreach ($address_layout["sortable-container2"] as $b) {
+		$buf2->addCode($blocks[$b]);
+		$blockAdd[] = $b;
+	}
+}
+
+/* blocks will be add when lisence change */
+foreach ($address_layout["allBlocks"] as $v) {
+	if(!in_array($v, $blockAdd)) {
+		$buf2->addCode($blocks[$v]);
+	}
+}
+$buf2->endTag("div");
+$buf2->endTag("div");
+$tbl = new Layout_table( array("width"=>"100%", "id" => "relcardtable") );
+$tbl->addTableRow();
+	$tbl->insertTableData($buf1->generate_output(), array("width"=>"50%", "style"=>"padding-right: 5px; padding-left: 9px; vertical-align: top;") );
+	if ($achange)
+		$tbl->insertTableData($buf2->generate_output(), array("width"=>"50%", "style"=>"padding-top:19px; padding-left: 5px; vertical-align: top;") );
+$tbl->endTableRow();
+$tbl->start_javascript();
+		$tbl->addCode('
+			function update_columns_by_id(el) {
+				var order = $("#"+el).sortable("serialize");
+				var col = el;
+				loadXML("?mod=address&action=saveLayoutAddress&col="+col+"&"+order);
+			}
+			$("#sortable-container").sortable({
+				connectWith: ["#sortable-container2"],
+				update: function () {
+							update_columns_by_id(this.id);
+						}
+			});
+
+			$("#sortable-container2").sortable({
+				connectWith: ["#sortable-container"],
+				update: function () {
+							update_columns_by_id(this.id);
+						}
+			});
+		');
+$tbl->end_javascript();
+
+/* finance */
+if ($userperms["xs_turnovermanage"] && !$GLOBALS["covide"]->license["disable_basics"] && $addressinfo[0]["debtor_nr"]) {
+	$finance_output = new Finance_output();
+	$tbl->addTableRow();
+		$tbl->addTableData(array("colspan" => 2));
+			$tbl->addCode( $finance_output->relationCard($_REQUEST["id"], $_REQUEST["finance_toggle"], $_REQUEST["finance_history"]) );
+		$tbl->endTableData();
+	$tbl->endTableRow();
+}
+
+if (($GLOBALS["covide"]->license["has_finance"] && $userperms["xs_turnovermanage"]) && !$GLOBALS["covide"]->license["disable_basics"]) {
+
+	if ($addressinfo[0]["is_supplier"] || $addressinfo[0]["is_customer"]) {
+		if (file_exists("non-oop/relcard.php")) {
+			$tbl->addTableRow();
+				$tbl->addTableData(array("colspan"=>2));
+					$tbl->addTag("iframe", array(
+						"id" => "turnoverinfo",
+						"src" => "non-oop/relcard.php?klant_id=".$_REQUEST["id"],
+						"border" => "0",
+						"frameborder" => "0",
+						"width" => "100%",
+						"height" => "20px",
+						"scrolling" => "no"
+					));
+					$tbl->endTag("iframe");
+				$tbl->endTableData();
+			$tbl->endTableRow();
+		}
+	}
+}
+if ($GLOBALS["covide"]->license["has_twinfield"]) {
+	for ($i=date("Y"); $i>=date("Y")-2; $i--) {
+	$tbl->addTableRow();
+		$tbl->addTableData(array("colspan" => "2"));
+			$tw_frame = new Layout_venster(array("title" => "Twinfield", "subtitle" => $i));
+			$tw_frame->addVensterData();
+			$twinfield_data = new twinfield_data();
+			$twinfield_data->office = $addressinfo[0]["twinfield_office"];
+			$findata = $twinfield_data->getFinancialsById($addressinfo[0]["debtor_nr"], "$i", 1);
+			$twtable = new Layout_table(array("width"=>"100%"));
+			$twtable->addTableRow();
+				$twtable->insertTableData(gettext("Dagboek"), "", "header");
+				$twtable->insertTableData(gettext("Boekstuk Nummer"), "", "header");
+				$twtable->insertTableData(gettext("Factuur Nummer"), "", "header");
+				$twtable->insertTableData(gettext("Totaal bedrag"), "", "header");
+				$twtable->insertTableData(gettext("Nog te betalen"), "", "header");
+			$twtable->endTableRow();
+			$twtable->addCode($findata);
+			$twtable->endTable();
+			$tw_frame->addCode($twtable->generate_output());
+			$tw_frame->endVensterData();
+			$tbl->addCode($tw_frame->generate_output());
+		$tbl->endTableData();
+	$tbl->endTableRow();
+	}
+}
+$tbl->endTable();
+$output->addCode($tbl->generate_output());
+$output->load_javascript(self::include_dir."address_actions.js");
+$output->load_javascript(self::include_dir."relcard_actions.js");
+
+$email = new Email_output();
+$output->addCode( $email->emailSelectFromPrepare() );
+
+
+$history = new Layout_history();
+if (!$_REQUEST["restore_point_steps"])
+	$output->addCode( $history->generate_save_state() );
+
+/* back and top links */
+$output->addTag("br");
+$output->addTag("center");
+
+$output->insertAction("back", gettext("back"), sprintf(
+	"javascript: history_goback('%d');" , $_REQUEST["restore_point_steps"]));
+
+$url = $_SERVER["QUERY_STRING"];
+$output->insertAction("up", gettext("up"), "?$url#top");
+$output->endTag("center");
+
+
+$output->layout_page_end();
+echo $output->exit_buffer();
+?>

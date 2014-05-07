@@ -1,0 +1,1 @@
+ALTER TABLE `cms_license` ADD `cms_use_strict_mode` TINYINT(3) NOT NULL;

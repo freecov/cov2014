@@ -1,0 +1,6 @@
+CREATE TABLE `products_nosell` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`productid` INT NOT NULL ,
+`country` VARCHAR( 250 ) NOT NULL ,
+`zip` VARCHAR( 250 ) NOT NULL
+) ENGINE = MYISAM ;

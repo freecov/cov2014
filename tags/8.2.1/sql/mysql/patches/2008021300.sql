@@ -1,0 +1,5 @@
+CREATE TABLE `calendar_notifications` (
+	`id` INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	`user_id` INT( 11 ) UNSIGNED NOT NULL ,
+	`template` TEXT NOT NULL
+) ENGINE = MYISAM ;

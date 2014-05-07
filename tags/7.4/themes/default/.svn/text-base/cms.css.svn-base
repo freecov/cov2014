@@ -1,0 +1,33 @@
+TR.cms_hover {
+	behavior: url('classes/cms/inc/cms_hover.htc');
+}
+TR.cms_hover:hover TD, TR.cms_hover_msie TD {
+	background-color: #ffeed9 !important;
+	border-color: #ffb559 !important;
+}
+.cms_right  {
+	border-right: 1px solid #666 !important;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.cms_top {
+	border-top: 1px solid #aaa !important;
+}
+.cms_top2 {
+	border-bottom: 1px solid #ddd !important;
+}
+.cms_bottom {
+	border-bottom: 1px solid #a0a0a0 !important;
+}
+.cms_level {
+	display: inline-table;
+	whitespace: nowrap;
+	padding-left: 3px;
+	padding-right: 4px;
+}
+img.cms_img {
+	border: 0px;
+}
+table.cms {
+	border: 1px solid #aaa; width: 100% !important;
+}

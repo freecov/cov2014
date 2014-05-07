@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task>
+	<ActualWork>0</ActualWork>
+	<BillingInformation></BillingInformation>
+	<Body>{body}</Body>
+	<Categories></Categories>
+	<Companies></Companies>
+	<Complete>{is_done}</Complete>
+	<DateCompleted></DateCompleted>
+	<DayOfMonth>0</DayOfMonth>
+	<DayOfWeekMask>1</DayOfWeekMask>
+	<DueDate>{end_date}</DueDate>
+	<Importance>{importance}</Importance>
+	<Instance>0</Instance>
+	<Interval>1</Interval>
+	<IsRecurring>0</IsRecurring>
+	<Mileage></Mileage>
+	<MonthOfYear>0</MonthOfYear>
+	<NoEndDate>1</NoEndDate>
+	<Occurrences>10</Occurrences>
+	<PatternEndDate></PatternEndDate>
+	<PatternStartDate>{start_ts}</PatternStartDate>
+	<PercentComplete>{percent_complete}</PercentComplete>
+	<RecurrenceType>1</RecurrenceType>
+	<ReminderSet>0</ReminderSet>
+	<ReminderTime>{end_ts}</ReminderTime>
+	<Sensitivity>0</Sensitivity>
+	<StartDate>{start_date}</StartDate>
+	<Status>1</Status>
+	<Subject>{subject}</Subject>
+	<TeamTask>0</TeamTask>
+	<TotalWork>0</TotalWork>
+</task>

@@ -1,0 +1,1 @@
+ALTER TABLE `license` ADD `disable_local_gzip` TINYINT( 3 ) NOT NULL ;

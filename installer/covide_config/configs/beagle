@@ -1,0 +1,12 @@
+#! /bin/sh
+case "$1" in
+  start)
+  	echo "Starting beagle indexing...";
+	sudo -u www-data /var/covide_files/.beagle/config/beagle-start.sh
+	;;
+  stop)
+  	echo "Stopping beagle indexing";
+	sudo -u www-data /var/covide_files/.beagle/config/beagle-stop.sh
+	;;
+esac
+:

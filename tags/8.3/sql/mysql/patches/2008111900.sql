@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `default_address_fields` MEDIUMTEXT NULL ;

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/covide/code/!svn/ver/6978/trunk/classes/filesys/inc
+END
+deleteFolderOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/covide/code/!svn/ver/6778/trunk/classes/filesys/inc/deleteFolderOverview.php
+END
+show_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/covide/code/!svn/ver/6778/trunk/classes/filesys/inc/show_search.php
+END
+extractPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6698/trunk/classes/filesys/inc/extractPermissions.php
+END
+file_operations.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6778/trunk/classes/filesys/inc/file_operations.js
+END
+setPermissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/covide/code/!svn/ver/6778/trunk/classes/filesys/inc/setPermissions.php
+END
+show_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/5935/trunk/classes/filesys/inc/show_index.php
+END
+moveFolderOverview.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/covide/code/!svn/ver/6778/trunk/classes/filesys/inc/moveFolderOverview.php
+END
+create_subdir.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/covide/code/!svn/ver/2327/trunk/classes/filesys/inc/create_subdir.php
+END
+datafile_upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/covide/code/!svn/ver/6978/trunk/classes/filesys/inc/datafile_upload.php
+END
+searchAll.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/covide/code/!svn/ver/6185/trunk/classes/filesys/inc/searchAll.php
+END
+show_folders.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/4403/trunk/classes/filesys/inc/show_folders.php
+END
+file_preview.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/covide/code/!svn/ver/6978/trunk/classes/filesys/inc/file_preview.php
+END
+show_files.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/covide/code/!svn/ver/5705/trunk/classes/filesys/inc/show_files.php
+END
+fitPicture.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/covide/code/!svn/ver/1/trunk/classes/filesys/inc/fitPicture.js
+END

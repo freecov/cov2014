@@ -1,0 +1,1 @@
+ALTER TABLE `rssfeeds` ADD `category` VARCHAR( 255 ) NULL AFTER `name` ;
